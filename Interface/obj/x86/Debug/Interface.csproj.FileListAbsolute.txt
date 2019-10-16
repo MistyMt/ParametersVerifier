@@ -1,0 +1,16 @@
+D:\测试软件\Interface\Interface\bin\x86\Debug\Interface.exe.config
+D:\测试软件\Interface\Interface\obj\x86\Debug\Interface.csproj.ResolveComReference.cache
+D:\测试软件\Interface\Interface\bin\x86\Debug\Interface.exe
+D:\测试软件\Interface\Interface\bin\x86\Debug\Interface.pdb
+D:\测试软件\Interface\Interface\bin\x86\Debug\AnyCAD.Exchange.Net.dll
+D:\测试软件\Interface\Interface\bin\x86\Debug\AnyCAD.Foundation.Net.dll
+D:\测试软件\Interface\Interface\bin\x86\Debug\AnyCAD.Presentation.Net.dll
+D:\测试软件\Interface\Interface\obj\x86\Debug\Interface.Form1.resources
+D:\测试软件\Interface\Interface\obj\x86\Debug\Interface.Form3.resources
+D:\测试软件\Interface\Interface\obj\x86\Debug\Interface.Form4.resources
+D:\测试软件\Interface\Interface\obj\x86\Debug\Interface.MainForm.resources
+D:\测试软件\Interface\Interface\obj\x86\Debug\Interface.Form7.resources
+D:\测试软件\Interface\Interface\obj\x86\Debug\Interface.Properties.Resources.resources
+D:\测试软件\Interface\Interface\obj\x86\Debug\Interface.csproj.GenerateResource.Cache
+D:\测试软件\Interface\Interface\obj\x86\Debug\Interface.exe
+D:\测试软件\Interface\Interface\obj\x86\Debug\Interface.pdb
