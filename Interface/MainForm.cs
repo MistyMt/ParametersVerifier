@@ -704,6 +704,17 @@ namespace Interface
 
         }
 
+        private void button20_Click(object sender, EventArgs e)
+        {
+            TopoShape rect = GlobalInstance.BrepTools.MakeRectangle(100, 50, 10, new Coordinate3(new Vector3(1, 1, 1), new Vector3(1, 1, 1), new Vector3(1, 1, 1), new Vector3(1, 1, 1)));
+            rect = GlobalInstance.BrepTools.MakeFace(rect);
+            RenderableGeometry geom = new RenderableGeometry();
+            geom.SetGeometry(rect);
+            EntitySceneNode node = new EntitySceneNode();
+            node.SetEntity(geom);
+            m_RenderView.ShowSceneNode(node);
+        }
+
 
 
 
