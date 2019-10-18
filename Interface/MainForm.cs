@@ -469,7 +469,7 @@ namespace Interface
 
         private void button14_Click(object sender, EventArgs e)
         {
-            
+
             //创建"温度云图数据.txt"文件
             string filedir = Environment.CurrentDirectory.ToString() + "\\bin";
             string fullFilename = filedir + "\\温度云图数据.txt";
@@ -490,135 +490,135 @@ namespace Interface
 
             if (fname != "")
             {
-            string newTxtPath2 = filedir + "\\温度云图数据.txt";
-            StreamWriter sw2 = new StreamWriter(newTxtPath2, true, Encoding.Default);
-            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fname);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet2 = xlWorkbook.Sheets[2];
-            Microsoft.Office.Interop.Excel.Range xRange2 = xlWorksheet2.get_Range("C2:Q17");
-            int rowCount2 = xRange2.Rows.Count;
-            for (int k = 2; k <= rowCount2; k++)
-            {
-                string lineNum = k.ToString();
-                double LineC2 = xlWorksheet2.Range["C" + lineNum].Value;
-                double LineD2 = xlWorksheet2.Range["D" + lineNum].Value;
-                double LineE2 = xlWorksheet2.Range["E" + lineNum].Value;
-                double LineF2 = xlWorksheet2.Range["F" + lineNum].Value;
-                double LineG2 = xlWorksheet2.Range["G" + lineNum].Value;
-                double LineH2 = xlWorksheet2.Range["H" + lineNum].Value;
-                double LineI2 = xlWorksheet2.Range["I" + lineNum].Value;
-                double LineJ2 = xlWorksheet2.Range["J" + lineNum].Value;
-                double LineK2 = xlWorksheet2.Range["K" + lineNum].Value;
-                double LineL2 = xlWorksheet2.Range["L" + lineNum].Value;
-                double LineM2 = xlWorksheet2.Range["M" + lineNum].Value;
-                double LineN2 = xlWorksheet2.Range["N" + lineNum].Value;
-                double LineO2 = xlWorksheet2.Range["O" + lineNum].Value;
-                double LineP2 = xlWorksheet2.Range["P" + lineNum].Value;
-                double LineQ2 = xlWorksheet2.Range["Q" + lineNum].Value;
-                sw2.WriteLine(LineC2 + "\t" + LineD2 + "\t" + LineE2 + "\t" + LineF2 + "\t" + LineG2 + "\t" + LineH2 + "\t" + LineI2 + "\t" + LineJ2 + "\t" + LineK2 + "\t" + LineL2 + "\t" + LineM2 + "\t" + LineN2 + "\t" + LineO2 + "\t" + LineP2 + "\t" + LineQ2 + "\t");
-            }
-            sw2.Close();
-            MessageBox.Show("ok");
-
-            xlWorkbook.Close();
-            
-            //由"温度云图数据.txt"显示图像
-            double[] xdata = { -8.37, -7.87, -7.37, -6.87, -6.37, -5.87, -5.37, -4.87, -4.37, -3.87, -3.37, -2.87, -2.37, -1.87, -1.37 };
-            double[] ydata = { 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0 ,7.5};
-            double[,] results = new double[xdata.Length, ydata.Length];
-            double minValue = 10000000;
-            double maxValue = -10000000;
-            StreamReader sr = new StreamReader(fullFilename , Encoding.Default);
-            String line;
-            int numLine = 0;
-            while ((line = sr.ReadLine()) != null)
-            {
-                String[] items = line.Split('\t');
-                if (items.Length < 1)
-                    continue;
-
-                for (int ii = 0; ii < items.Length; ++ii)
+                string newTxtPath2 = filedir + "\\温度云图数据.txt";
+                StreamWriter sw2 = new StreamWriter(newTxtPath2, true, Encoding.Default);
+                Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fname);
+                Microsoft.Office.Interop.Excel._Worksheet xlWorksheet2 = xlWorkbook.Sheets[2];
+                Microsoft.Office.Interop.Excel.Range xRange2 = xlWorksheet2.get_Range("C2:Q17");
+                int rowCount2 = xRange2.Rows.Count;
+                for (int k = 2; k <= rowCount2; k++)
                 {
-                    try
+                    string lineNum = k.ToString();
+                    double LineC2 = xlWorksheet2.Range["C" + lineNum].Value;
+                    double LineD2 = xlWorksheet2.Range["D" + lineNum].Value;
+                    double LineE2 = xlWorksheet2.Range["E" + lineNum].Value;
+                    double LineF2 = xlWorksheet2.Range["F" + lineNum].Value;
+                    double LineG2 = xlWorksheet2.Range["G" + lineNum].Value;
+                    double LineH2 = xlWorksheet2.Range["H" + lineNum].Value;
+                    double LineI2 = xlWorksheet2.Range["I" + lineNum].Value;
+                    double LineJ2 = xlWorksheet2.Range["J" + lineNum].Value;
+                    double LineK2 = xlWorksheet2.Range["K" + lineNum].Value;
+                    double LineL2 = xlWorksheet2.Range["L" + lineNum].Value;
+                    double LineM2 = xlWorksheet2.Range["M" + lineNum].Value;
+                    double LineN2 = xlWorksheet2.Range["N" + lineNum].Value;
+                    double LineO2 = xlWorksheet2.Range["O" + lineNum].Value;
+                    double LineP2 = xlWorksheet2.Range["P" + lineNum].Value;
+                    double LineQ2 = xlWorksheet2.Range["Q" + lineNum].Value;
+                    sw2.WriteLine(LineC2 + "\t" + LineD2 + "\t" + LineE2 + "\t" + LineF2 + "\t" + LineG2 + "\t" + LineH2 + "\t" + LineI2 + "\t" + LineJ2 + "\t" + LineK2 + "\t" + LineL2 + "\t" + LineM2 + "\t" + LineN2 + "\t" + LineO2 + "\t" + LineP2 + "\t" + LineQ2 + "\t");
+                }
+                sw2.Close();
+                MessageBox.Show("ok");
+
+                xlWorkbook.Close();
+
+                //由"温度云图数据.txt"显示图像
+                double[] xdata = { -8.37, -7.87, -7.37, -6.87, -6.37, -5.87, -5.37, -4.87, -4.37, -3.87, -3.37, -2.87, -2.37, -1.87, -1.37 };
+                double[] ydata = { 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5 };
+                double[,] results = new double[xdata.Length, ydata.Length];
+                double minValue = 10000000;
+                double maxValue = -10000000;
+                StreamReader sr = new StreamReader(fullFilename, Encoding.Default);
+                String line;
+                int numLine = 0;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    String[] items = line.Split('\t');
+                    if (items.Length < 1)
+                        continue;
+
+                    for (int ii = 0; ii < items.Length; ++ii)
                     {
-                        double val = double.Parse(items[ii]);
-                        results[ii, numLine] = val;
+                        try
+                        {
+                            double val = double.Parse(items[ii]);
+                            results[ii, numLine] = val;
 
-                        minValue = Math.Min(minValue, val);
-                        maxValue = Math.Max(maxValue, val);
+                            minValue = Math.Min(minValue, val);
+                            maxValue = Math.Max(maxValue, val);
+                        }
+                        catch (Exception)
+                        {
+                        }
+
                     }
-                    catch (Exception)
+
+                    ++numLine;
+                }
+                double range = maxValue - minValue;
+                const long MaxValue = 0xff0000;
+                const long MinValue = 0xffff00;
+                const double Range = MaxValue - MinValue;
+                float[] positionBuffer = new float[xdata.Length * ydata.Length * 3];
+                float[] normalBuffer = new float[positionBuffer.Length];
+                float[] colorBuffer = new float[positionBuffer.Length / 3 * 4];
+
+                for (int jj = 0, lenjj = ydata.Length; jj < lenjj; ++jj)
+                    for (int ii = 0, lenii = xdata.Length; ii < lenii; ++ii)
                     {
+                        int idx = jj * lenii + ii;
+                        positionBuffer[idx * 3] = (float)xdata[ii] * 10;
+                        positionBuffer[idx * 3 + 1] = (float)ydata[jj] * 10;
+                        positionBuffer[idx * 3 + 2] = 0;
+                        normalBuffer[idx * 3] = 0;
+                        normalBuffer[idx * 3 + 1] = 0;
+                        normalBuffer[idx * 3 + 2] = 1;
+                        double rst = results[ii, jj];
+                        double ratio = (rst - minValue) / range;
+                        long rgb = (long)(Range * ratio) + MinValue;
+                        long red = rgb >> 16 & 0xFF;
+                        long green = rgb >> 8 & 0xFF;
+                        long blue = rgb & 0xFF;
+                        colorBuffer[idx * 4] = red / 255.0f;
+                        colorBuffer[idx * 4 + 1] = green / 255.0f;
+                        colorBuffer[idx * 4 + 2] = blue / 255.0f;
+                        colorBuffer[idx * 4 + 3] = 1.0f;
                     }
+                int faceCount = (xdata.Length - 1) * (ydata.Length - 1) * 2;
+                uint[] facets = new uint[faceCount * 3];
+                int faceId = 0;
+                for (uint jj = 0, lenjj = (uint)ydata.Length; jj < lenjj - 1; ++jj)
+                    for (uint ii = 0, lenii = (uint)xdata.Length; ii < lenii - 1; ++ii)
+                    {
+                        uint a = jj * lenii + ii;
+                        uint b = a + 1;
+                        uint c = (jj + 1) * lenii + ii;
+                        uint d = c + 1;
+                        /*
+                        c----------d
+                        |          |
+                        |          |
+                        |          |
+                        a----------b
+                        */
+                        facets[faceId * 3] = a;
+                        facets[faceId * 3 + 1] = d;
+                        facets[faceId * 3 + 2] = c;
 
-                }
+                        ++faceId;
+                        facets[faceId * 3] = a;
+                        facets[faceId * 3 + 1] = b;
+                        facets[faceId * 3 + 2] = d;
 
-                ++numLine;
-            }
-            double range = maxValue - minValue;
-            const long MaxValue = 0xff0000;
-            const long MinValue = 0xffff00;
-            const double Range = MaxValue - MinValue;
-            float[] positionBuffer = new float[xdata.Length * ydata.Length * 3];
-            float[] normalBuffer = new float[positionBuffer.Length];
-            float[] colorBuffer = new float[positionBuffer.Length / 3 * 4];
-
-            for (int jj = 0, lenjj = ydata.Length; jj < lenjj; ++jj)
-                for (int ii = 0, lenii = xdata.Length; ii < lenii; ++ii)
-                {
-                    int idx = jj * lenii + ii;
-                    positionBuffer[idx * 3] = (float)xdata[ii] * 10;
-                    positionBuffer[idx * 3 + 1] = (float)ydata[jj] * 10;
-                    positionBuffer[idx * 3 + 2] = 0;
-                    normalBuffer[idx * 3] = 0;
-                    normalBuffer[idx * 3 + 1] = 0;
-                    normalBuffer[idx * 3 + 2] = 1;
-                    double rst = results[ii, jj];
-                    double ratio = (rst - minValue) / range;
-                    long rgb = (long)(Range * ratio) + MinValue;
-                    long red = rgb >> 16 & 0xFF;
-                    long green = rgb >> 8 & 0xFF;
-                    long blue = rgb & 0xFF;
-                    colorBuffer[idx * 4] = red / 255.0f;
-                    colorBuffer[idx * 4 + 1] = green / 255.0f;
-                    colorBuffer[idx * 4 + 2] = blue / 255.0f;
-                    colorBuffer[idx * 4 + 3] = 1.0f;
-                }
-            int faceCount = (xdata.Length - 1) * (ydata.Length - 1) * 2;
-            uint[] facets = new uint[faceCount * 3];
-            int faceId = 0;
-            for (uint jj = 0, lenjj = (uint)ydata.Length; jj < lenjj - 1; ++jj)
-                for (uint ii = 0, lenii = (uint)xdata.Length; ii < lenii - 1; ++ii)
-                {
-                    uint a = jj * lenii + ii;
-                    uint b = a + 1;
-                    uint c = (jj + 1) * lenii + ii;
-                    uint d = c + 1;
-                    /*
-                    c----------d
-                    |          |
-                    |          |
-                    |          |
-                    a----------b
-                    */
-                    facets[faceId * 3] = a;
-                    facets[faceId * 3 + 1] = d;
-                    facets[faceId * 3 + 2] = c;
-
-                    ++faceId;
-                    facets[faceId * 3] = a;
-                    facets[faceId * 3 + 1] = b;
-                    facets[faceId * 3 + 2] = d;
-
-                    ++faceId;
-                }
-            AABox bbox = new AABox();
-            bbox.MinPt = new Vector3(positionBuffer[0], positionBuffer[1], positionBuffer[3]);
-            bbox.MaxPt = new Vector3(positionBuffer[positionBuffer.Length - 3], positionBuffer[positionBuffer.Length - 2], positionBuffer[positionBuffer.Length - 1]);
-            var entity = GlobalInstance.TopoShapeConvert.CreateColoredFaceEntity(positionBuffer, facets, normalBuffer, colorBuffer, bbox);
-            var node = new EntitySceneNode();
-            node.SetEntity(entity);
-            RenderView.ShowSceneNode(node);
+                        ++faceId;
+                    }
+                AABox bbox = new AABox();
+                bbox.MinPt = new Vector3(positionBuffer[0], positionBuffer[1], positionBuffer[3]);
+                bbox.MaxPt = new Vector3(positionBuffer[positionBuffer.Length - 3], positionBuffer[positionBuffer.Length - 2], positionBuffer[positionBuffer.Length - 1]);
+                var entity = GlobalInstance.TopoShapeConvert.CreateColoredFaceEntity(positionBuffer, facets, normalBuffer, colorBuffer, bbox);
+                var node = new EntitySceneNode();
+                node.SetEntity(entity);
+                RenderView.ShowSceneNode(node);
             }
         }
 
@@ -686,7 +686,7 @@ namespace Interface
         private void 导出图像_Click(object sender, EventArgs e)
         {
             Bitmap bit1 = new Bitmap(panel3.Width, panel3.Height);
-            panel3.DrawToBitmap(bit1,new System.Drawing.Rectangle(0,0,panel3.Width,panel3.Height));
+            panel3.DrawToBitmap(bit1, new System.Drawing.Rectangle(0, 0, panel3.Width, panel3.Height));
             int border = (panel3.Width - panel3.ClientSize.Width) / 2;//边框宽度
             int caption = (panel3.Height - panel3.ClientSize.Height) - border;//标题栏高度
             Bitmap bit2 = bit1.Clone(new System.Drawing.Rectangle(border, caption, panel3.ClientSize.Width, panel3.ClientSize.Height), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
@@ -706,7 +706,17 @@ namespace Interface
 
         private void button20_Click(object sender, EventArgs e)
         {
-            TopoShape rect = GlobalInstance.BrepTools.MakeRectangle(100, 50, 10, new Coordinate3(new Vector3(1, 1, 1), new Vector3(1, 1, 1), new Vector3(1, 1, 1), new Vector3(1, 1, 1)));
+            panelRectSet.BringToFront();
+            panelRectSet.Visible = true;
+
+        }
+
+        private void DrawRect_Click(object sender, EventArgs e)
+        {
+
+            Coordinate3 rectCoord = new Coordinate3();
+            rectCoord.Origion = new Vector3(int.Parse(textBox1.Text), int.Parse(textBox2.Text), int.Parse(textBox3.Text));
+            TopoShape rect = GlobalInstance.BrepTools.MakeRectangle(int.Parse(textBox4.Text), int.Parse(textBox5.Text), int.Parse(textBox6.Text), rectCoord);
             rect = GlobalInstance.BrepTools.MakeFace(rect);
             RenderableGeometry geom = new RenderableGeometry();
             geom.SetGeometry(rect);
