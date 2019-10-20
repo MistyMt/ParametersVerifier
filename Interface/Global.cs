@@ -37,7 +37,10 @@ namespace Interface
         /// 模板文件名
         /// </summary>
         public static string templateName = "未选择模板";
-
+        /// <summary>
+        /// 截图
+        /// </summary>
+        /// <returns></returns>
         public static Bitmap GetScreenCapture()
         {
             System.Drawing.Rectangle tScreenRect = new System.Drawing.Rectangle(0, 0, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
@@ -47,6 +50,7 @@ namespace Interface
             gp.DrawImage(tSrcBmp, 0, 0, tScreenRect, GraphicsUnit.Pixel);
             return tSrcBmp;
         }
+
 
     }
 }
