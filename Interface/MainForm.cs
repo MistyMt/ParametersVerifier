@@ -756,11 +756,8 @@ namespace Interface
                     Clipboard.Clear();
                 }
             }
-
-
-
         }
-
+        
 
 
 
