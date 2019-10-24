@@ -16,6 +16,7 @@ using System.IO;
 using AnyCAD.Platform;
 using AnyCAD.Basic;
 using Microsoft.Office.Interop.Word;
+using System.Threading;
 
 
 namespace Interface
@@ -718,6 +719,15 @@ namespace Interface
             node.SetEntity(geom);
             m_RenderView.ShowSceneNode(node);
         }
+        #region 截图功能
+        public enum KeyModifiers
+        {
+            None = 0,
+            Alt = 1,
+            Ctrl = 2,
+            Shift = 4,
+            WindowsKey = 8
+        }
         /// <summary>
         /// 截图按钮单击事件处理程序
         /// </summary>
@@ -757,9 +767,67 @@ namespace Interface
                 }
             }
         }
+        /// <summary>
+        /// 窗体加载事件处理
+        /// 在窗体加载时注册热键
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            uint ctrlHotKey = (uint)(KeyModifiers.Alt | KeyModifiers.Ctrl);
+            // 注册热键为Alt+Ctrl+C, "100"为唯一标识热键
+            HotKey.RegisterHotKey(Handle, 100, ctrlHotKey, Keys.C);
+        }
+        /// <summary>
+        /// 窗体关闭时处理程序
+        /// 窗体关闭时取消热键注册
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // 卸载热键
+            HotKey.UnregisterHotKey(Handle, 100);
+        }
+        // 热键按下执行的方法
+        private void GlobalKeyProcess()
+        {
+            this.WindowState = FormWindowState.Minimized;
+            //// 窗口最小化也需要一定时间
+            Thread.Sleep(200);
+            button21.PerformClick();
+        }
+
+        /// <summary>
+        /// 重写WndProc()方法，通过监视系统消息，来调用过程
+        /// 监视Windows消息
+        /// </summary>
+        /// <param name="m"></param>
+        protected override void WndProc(ref Message m)
+        {
+            //如果m.Msg的值为0x0312那么表示用户按下了热键
+            const int WM_HOTKEY = 0x0312;
+            switch (m.Msg)
+            {
+                case WM_HOTKEY:
+                    if (m.WParam.ToString() == "100")
+                    {
+                        GlobalKeyProcess();
+                    }
+
+                    break;
+            }
+
+            // 将系统消息传递自父类的WndProc
+            base.WndProc(ref m);
+        }
+
+
+
+        #endregion
+
         
-
-
-
+        
     }
 }

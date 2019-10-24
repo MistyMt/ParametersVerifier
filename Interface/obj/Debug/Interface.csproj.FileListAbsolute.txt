@@ -239,5 +239,6 @@ D:\ParametersVerifier\Interface\obj\Debug\Interface.exe.manifest
 D:\ParametersVerifier\Interface\obj\Debug\Interface.application
 D:\ParametersVerifier\Interface\obj\Debug\Interface.exe
 D:\ParametersVerifier\Interface\obj\Debug\Interface.pdb
-D:\ParametersVerifier\Interface\obj\Debug\Interface.csprojResolveAssemblyReference.cache
 D:\ParametersVerifier\Interface\obj\Debug\Interface.Cutter.resources
+D:\ParametersVerifier\Interface\obj\Debug\Interface.csprojResolveAssemblyReference.cache
+D:\ParametersVerifier\Interface\obj\Debug\Interface.Form1.resources

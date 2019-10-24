@@ -189,6 +189,11 @@ namespace QQ截图工具
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
+            else
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
     }
 }

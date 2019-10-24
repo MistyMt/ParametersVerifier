@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 322);
+            this.ClientSize = new System.Drawing.Size(511, 344);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Cutter";
             this.Opacity = 0.98D;
@@ -43,6 +43,12 @@
             this.Text = "截图窗体";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Cutter_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Cutter_MouseClick);
+            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Cutter_MouseDoubleClick_1);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Cutter_MouseDown_1);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Cutter_MouseMove_1);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Cutter_MouseUp_1);
             this.ResumeLayout(false);
 
         }

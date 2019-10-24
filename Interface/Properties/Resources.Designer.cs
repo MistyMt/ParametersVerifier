@@ -59,5 +59,25 @@ namespace Interface.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mmexport1571898209306 {
+            get {
+                object obj = ResourceManager.GetObject("mmexport1571898209306", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap mmexport1571898211320 {
+            get {
+                object obj = ResourceManager.GetObject("mmexport1571898211320", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

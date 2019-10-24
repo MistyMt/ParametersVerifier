@@ -12,20 +12,29 @@ namespace Interface
 {
     public partial class Cutter : Form
     {
+
         public Cutter()
         {
             InitializeComponent();
         }
+
+        #region 定义程序变量
+        // 定义变量
         // 用来记录鼠标按下的坐标，用来确定绘图起点
         private Point DownPoint;
+
         // 用来表示是否截图完成
         private bool CatchFinished = false;
+
         // 用来表示截图开始
         private bool CatchStart = false;
+
         // 用来保存原始图像
         private Bitmap originBmp;
+
         // 用来保存截图的矩形
         private Rectangle CatchRectangle;
+        #endregion
 
         /// <summary>
         /// 窗体初始化操作
@@ -58,13 +67,12 @@ namespace Interface
                 this.Close();
             }
         }
-
         /// <summary>
         /// 鼠标按下事件处理程序
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Cutter_MouseDown(object sender, MouseEventArgs e)
+        private void Cutter_MouseDown_1(object sender, MouseEventArgs e)
         {
             // 鼠标左键按下是开始画图，也就是截图
             if (e.Button == MouseButtons.Left)
@@ -78,14 +86,13 @@ namespace Interface
                 }
             }
         }
-
         /// <summary>
         /// 鼠标移动事件处理程序，即用户改变截图大小的处理
         ///  这个方法是截图功能的核心方法，也就是绘制截图
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Cutter_MouseMove(object sender, MouseEventArgs e)
+        private void Cutter_MouseMove_1(object sender, MouseEventArgs e)
         {
             // 确保截图开始
             if (CatchStart)
@@ -133,13 +140,12 @@ namespace Interface
                 copyBmp.Dispose();
             }
         }
-
         /// <summary>
         /// 鼠标左键弹起事件
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Cutter_MouseUp(object sender, MouseEventArgs e)
+        private void Cutter_MouseUp_1(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -151,21 +157,18 @@ namespace Interface
                 }
             }
         }
-
         /// <summary>
         /// 鼠标双击事件，如果鼠标位于矩形内,则将矩形内的图片保存到剪切板中
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Cutter_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void Cutter_MouseDoubleClick_1(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left && CatchFinished)
             {
                 // 新建一个与矩形一样大小的空白图片
                 Bitmap CatchedBmp = new Bitmap(CatchRectangle.Width, CatchRectangle.Height);
-
                 Graphics g = Graphics.FromImage(CatchedBmp);
-
                 // 把originBmp中指定部分按照指定大小画到空白图片上
                 // CatchRectangle指定originBmp中指定部分
                 // 第二个参数指定绘制到空白图片的位置和大小
@@ -181,6 +184,12 @@ namespace Interface
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-        }
+            else
+            {
+
+
+                this.Close();
+            }
+        }        
     }
 }
