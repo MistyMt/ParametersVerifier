@@ -242,3 +242,5 @@ D:\ParametersVerifier\Interface\obj\Debug\Interface.pdb
 D:\ParametersVerifier\Interface\obj\Debug\Interface.Cutter.resources
 D:\ParametersVerifier\Interface\obj\Debug\Interface.csprojResolveAssemblyReference.cache
 D:\ParametersVerifier\Interface\obj\Debug\Interface.Form1.resources
+D:\Git\ParametersVerifier\Interface\obj\Debug\Interface.Form1.resources
+D:\Git\ParametersVerifier\Interface\obj\Debug\Interface.Cutter.resources

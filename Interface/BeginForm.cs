@@ -15,9 +15,15 @@ namespace Interface
         public Form1()
         {
             InitializeComponent();
+            pictureBox1.Parent = this.pictureBox2;
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
