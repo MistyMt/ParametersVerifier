@@ -37,21 +37,23 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(440, 502);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.BackColor = System.Drawing.Color.Gray;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Coral;
+            this.button1.Location = new System.Drawing.Point(874, 456);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 38);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "确定";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Size = new System.Drawing.Size(50, 50);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Interface.Properties.Resources.CoverMt;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 1);
+            this.pictureBox2.Image = global::Interface.Properties.Resources.star;
+            this.pictureBox2.Location = new System.Drawing.Point(-6, -2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(906, 539);
+            this.pictureBox2.Size = new System.Drawing.Size(368, 520);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -60,10 +62,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Interface.Properties.Resources.mmexport1571898211320;
-            this.pictureBox1.Location = new System.Drawing.Point(440, 112);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(854, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(110, 110);
+            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -71,15 +73,18 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(906, 539);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(936, 518);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -90,7 +95,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button1;
     }
 }

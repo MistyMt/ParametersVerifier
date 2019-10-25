@@ -244,3 +244,4 @@ D:\ParametersVerifier\Interface\obj\Debug\Interface.csprojResolveAssemblyReferen
 D:\ParametersVerifier\Interface\obj\Debug\Interface.Form1.resources
 D:\Git\ParametersVerifier\Interface\obj\Debug\Interface.Form1.resources
 D:\Git\ParametersVerifier\Interface\obj\Debug\Interface.Cutter.resources
+D:\ParametersVerifier\Interface\obj\Debug\Interface.banner.resources
