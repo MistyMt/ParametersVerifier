@@ -114,6 +114,12 @@
     <Compile Include="banner.Designer.cs">
       <DependentUpon>banner.cs</DependentUpon>
     </Compile>
+    <Compile Include="BeginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BeginForm.Designer.cs">
+      <DependentUpon>BeginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cutter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,12 +127,6 @@
       <DependentUpon>Cutter.cs</DependentUpon>
     </Compile>
     <Compile Include="DrawLineEditor.cs" />
-    <Compile Include="BeginForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BeginForm.Designer.cs">
-      <DependentUpon>BeginForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormBasicInformation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,19 +178,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -229,19 +229,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mmexport1571898211320.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\mmexport1571898209306.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CoverMt.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BlackStar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\star.png" />
+    <None Include="Resources\封面.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

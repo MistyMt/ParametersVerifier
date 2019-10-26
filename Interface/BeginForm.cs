@@ -10,25 +10,14 @@ using System.Windows.Forms;
 
 namespace Interface
 {
-    public partial class Form1 : Form
+    public partial class BeginForm : Form
     {
-        public Form1()
+        public BeginForm()
         {
             InitializeComponent();
-            //pictureBox1.Parent = this.pictureBox3;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
             this.Close();
         }
