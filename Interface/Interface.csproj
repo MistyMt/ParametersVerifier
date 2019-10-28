@@ -108,72 +108,72 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="banner.cs">
+    <Compile Include="Forms\banner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="banner.Designer.cs">
+    <Compile Include="Forms\banner.Designer.cs">
       <DependentUpon>banner.cs</DependentUpon>
     </Compile>
-    <Compile Include="BeginForm.cs">
+    <Compile Include="Forms\BeginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BeginForm.Designer.cs">
+    <Compile Include="Forms\BeginForm.Designer.cs">
       <DependentUpon>BeginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cutter.cs">
+    <Compile Include="Forms\Cutter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cutter.Designer.cs">
+    <Compile Include="Forms\Cutter.Designer.cs">
       <DependentUpon>Cutter.cs</DependentUpon>
     </Compile>
     <Compile Include="DrawLineEditor.cs" />
-    <Compile Include="FormBasicInformation.cs">
+    <Compile Include="Forms\FormBasicInformation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBasicInformation.Designer.cs">
+    <Compile Include="Forms\FormBasicInformation.Designer.cs">
       <DependentUpon>FormBasicInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDataView.cs">
+    <Compile Include="Forms\FormDataView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDataView.Designer.cs">
+    <Compile Include="Forms\FormDataView.Designer.cs">
       <DependentUpon>FormDataView.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAnalysisOfData.cs">
+    <Compile Include="Forms\FormAnalysisOfData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAnalysisOfData.Designer.cs">
+    <Compile Include="Forms\FormAnalysisOfData.Designer.cs">
       <DependentUpon>FormAnalysisOfData.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="HotKey.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="banner.resx">
+    <EmbeddedResource Include="Forms\banner.resx">
       <DependentUpon>banner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BeginForm.resx">
+    <EmbeddedResource Include="Forms\BeginForm.resx">
       <DependentUpon>BeginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cutter.resx">
+    <EmbeddedResource Include="Forms\Cutter.resx">
       <DependentUpon>Cutter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBasicInformation.resx">
+    <EmbeddedResource Include="Forms\FormBasicInformation.resx">
       <DependentUpon>FormBasicInformation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDataView.resx">
+    <EmbeddedResource Include="Forms\FormDataView.resx">
       <DependentUpon>FormDataView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAnalysisOfData.resx">
+    <EmbeddedResource Include="Forms\FormAnalysisOfData.resx">
       <DependentUpon>FormAnalysisOfData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -181,7 +181,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
