@@ -839,9 +839,30 @@ namespace Interface
 
         }
 
+        private void button22_Click(object sender, EventArgs e)
+        {
+
+            //TopoShape cone = GlobalInstance.BrepTools.MakeDish(100, 30, Vector3.ZERO);
+
+            SceneNode s = new SceneNode();
+            //RenderView.ShowGeometry(cone, 3);
+
+            s.SetName("sensor1");
+
+            RenderView.SceneManager.SelectNode(s);
+
+            RenderView.RequestDraw();
+
+            SelectedEntityQuery query = new SelectedEntityQuery();
+            RenderView.QuerySelection(query);
+            SceneNode node2 = query.GetRootNode();
+            if (node2 != null)
+            {
+                MessageBox.Show(String.Format("Selected Node: {0}", s.GetName()));
+            }
+        }
 
 
-        
-        
+
     }
 }
