@@ -285,6 +285,8 @@ namespace Interface
             geom.SetShapeFilter((int)EnumPickMode.RF_Edge);// only display face
             EntitySceneNode node = new EntitySceneNode();
             node.SetEntity(geom);
+            node.SetName("sssss");
+            node.SetId(new ElementId(3));
             RenderView.ShowSceneNode(node);
         }
 
@@ -841,28 +843,36 @@ namespace Interface
 
         private void button22_Click(object sender, EventArgs e)
         {
-
-            //TopoShape cone = GlobalInstance.BrepTools.MakeDish(100, 30, Vector3.ZERO);
-
-            SceneNode s = new SceneNode();
-            //RenderView.ShowGeometry(cone, 3);
-
-            s.SetName("sensor1");
-
-            RenderView.SceneManager.SelectNode(s);
-
-            RenderView.RequestDraw();
-
             SelectedEntityQuery query = new SelectedEntityQuery();
             RenderView.QuerySelection(query);
             SceneNode node2 = query.GetRootNode();
             if (node2 != null)
             {
-                MessageBox.Show(String.Format("Selected Node: {0}", s.GetName()));
+                MessageBox.Show(String.Format("Selected Node: {0}", node2.GetId().AsInt()));
             }
         }
 
+        private void button23_Click(object sender, EventArgs e)
+        {
+            SelectedEntityQuery query = new SelectedEntityQuery();
+            RenderView.QuerySelection(query);
+            SceneNode node2 = query.GetRootNode();
+            if (node2 != null)
+            {
+                MessageBox.Show(String.Format("Selected Node: {0}", node2.GetName()));
+            }
+        }
 
+        private void button24_Click(object sender, EventArgs e)
+        {
+            TopoShape box = GlobalInstance.BrepTools.MakeBox(Vector3.ZERO, new Vector3(10, 0, 0), 10, 10);
+            RenderView.ShowGeometry(box, new ElementId(333));
 
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            RenderView.FitAll();
+        }
     }
 }

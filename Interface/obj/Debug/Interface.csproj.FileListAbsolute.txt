@@ -231,7 +231,6 @@ D:\ParametersVerifier\Interface\bin\Debug\Interface.pdb
 D:\ParametersVerifier\Interface\bin\Debug\AnyCAD.Exchange.Net.dll
 D:\ParametersVerifier\Interface\bin\Debug\AnyCAD.Foundation.Net.dll
 D:\ParametersVerifier\Interface\bin\Debug\AnyCAD.Presentation.Net.dll
-D:\ParametersVerifier\Interface\obj\Debug\Interface.csprojResolveAssemblyReference.cache
 D:\ParametersVerifier\Interface\obj\Debug\Interface.banner.resources
 D:\ParametersVerifier\Interface\obj\Debug\Interface.BeginForm.resources
 D:\ParametersVerifier\Interface\obj\Debug\Interface.Cutter.resources
@@ -245,3 +244,4 @@ D:\ParametersVerifier\Interface\obj\Debug\Interface.exe.manifest
 D:\ParametersVerifier\Interface\obj\Debug\Interface.application
 D:\ParametersVerifier\Interface\obj\Debug\Interface.exe
 D:\ParametersVerifier\Interface\obj\Debug\Interface.pdb
+D:\ParametersVerifier\Interface\obj\Debug\Interface.csprojResolveAssemblyReference.cache
