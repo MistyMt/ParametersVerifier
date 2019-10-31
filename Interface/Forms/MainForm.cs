@@ -156,7 +156,7 @@ namespace Interface
         private void buttonPrimitive_Click(object sender, EventArgs e)
         {
             panelPrimitive.BringToFront();
-            panelPrimitive.HorizontalScroll.Enabled = false;
+            panelPrimitive.HorizontalScroll.Enabled = true;
             panelPrimitive.Visible = true;
             panelPrimitive.AutoScroll = true;
             panelPrimitive.AutoScrollMinSize = new Size(225, 554);
@@ -873,6 +873,13 @@ namespace Interface
         private void button25_Click(object sender, EventArgs e)
         {
             RenderView.FitAll();
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            ElementId id = new ElementId();
+            SceneManager scmgr = new SceneManager();
+            scmgr.FindNode(id);
         }
     }
 }
