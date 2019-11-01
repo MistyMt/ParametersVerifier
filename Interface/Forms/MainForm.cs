@@ -239,21 +239,57 @@ namespace Interface
         private void button10_Click(object sender, EventArgs e)
         {
 
+            //{
+            //    TopoShape box = GlobalInstance.BrepTools.MakeBox(new Vector3(40, -20, 0), new Vector3(0, 0, 1), new Vector3(30, 40, 60));
+
+            //    SceneNode sceneNode = RenderView.ShowGeometry(box, 100);
+
+            //    FaceStyle style = new FaceStyle();
+            //    style.SetColor(new ColorValue(0.5f, 0.3f, 0, 0.5f));
+
+            //    //Texture texture = new Texture();
+            //    //texture.SetName("mytexture2");
+            //    //texture.SetFilePath(new AnyCAD.Platform.Path("E:\\198.png"));
+            //    //style.SetTexture(0, texture);
+
+            //    style.SetTransparent(true);
+
+
+            //    sceneNode.SetFaceStyle(style);
+            //}
             {
-                TopoShape box = GlobalInstance.BrepTools.MakeBox(new Vector3(40, -20, 0), new Vector3(0, 0, 1), new Vector3(30, 40, 60));
+                //图像参数
+                Vector3 start = new Vector3(40, -20, 0);
+                Vector3 dir = new Vector3(0, 0, 1);
+                Vector3 size = new Vector3(30, 40, 60);
 
-                SceneNode sceneNode = RenderView.ShowGeometry(box, 100);
+                //图像Topo结构
+                TopoShape box = GlobalInstance.BrepTools.MakeBox(start, dir, size);
 
+                //图像entity参数
+                RenderableEntity entity = GlobalInstance.TopoShapeConvert.ToEntity(box, 0);
+                entity.SetShapeFilter((int)EnumPickMode.RF_Edge);// only display face
+
+                //face颜色
                 FaceStyle style = new FaceStyle();
                 style.SetColor(new ColorValue(0.5f, 0.3f, 0, 0.5f));
+                ////face质地
+                //Texture texture = new Texture();
+                //texture.SetName("mytexture2");
+                //texture.SetFilePath(new AnyCAD.Platform.Path("E:\\198.png"));
+                //style.SetTexture(0, texture);
+                //style.SetTransparent(true);
 
-                Texture texture = new Texture();
-                texture.SetName("mytexture2");
-                texture.SetFilePath(new AnyCAD.Platform.Path("E:\\198.png"));
-                style.SetTexture(0, texture);
+                //图像节点，添加参数
+                EntitySceneNode node = new EntitySceneNode();
+                node.SetFaceStyle(style);
+                node.SetEntity(entity);
+                node.SetName("sssss");
+                node.SetId(new ElementId(3));
 
-                style.SetTransparent(true);
-                sceneNode.SetFaceStyle(style);
+
+                //显示图像
+                RenderView.ShowSceneNode(node);
             }
         }
 
@@ -275,18 +311,25 @@ namespace Interface
 
         private void button4_Click_1(object sender, EventArgs e)
         {
+            //图像参数
             double len = 20 * Convert.ToDouble(10);
             double width = 20 * Convert.ToDouble(10);
             double height = 20 * Convert.ToDouble(5);
 
+            //图像Topo结构
             TopoShape box = GlobalInstance.BrepTools.MakeBox(Vector3.ZERO, new Vector3(len, 0, 0), width, height);
-            RenderableGeometry geom = new RenderableGeometry();
-            geom.SetGeometry(box);
-            geom.SetShapeFilter((int)EnumPickMode.RF_Edge);// only display face
+
+            //图像entity参数
+            RenderableEntity entity = GlobalInstance.TopoShapeConvert.ToEntity(box, 0);
+            entity.SetShapeFilter((int)EnumPickMode.RF_Edge);// only display face
+
+            //图像节点，添加参数
             EntitySceneNode node = new EntitySceneNode();
-            node.SetEntity(geom);
+            node.SetEntity(entity);
             node.SetName("sssss");
             node.SetId(new ElementId(3));
+
+            //显示图像
             RenderView.ShowSceneNode(node);
         }
 
@@ -880,6 +923,22 @@ namespace Interface
             ElementId id = new ElementId();
             SceneManager scmgr = new SceneManager();
             scmgr.FindNode(id);
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            SelectedEntityQuery query = new SelectedEntityQuery();
+            RenderView.QuerySelection(query);
+            SceneNode node2 = query.GetRootNode();
+
+            ElementId id = node2.GetId();
+            MessageBox.Show("Remove Node");
+            SceneManager sceneMgr = RenderView.SceneManager;
+            SceneNode node = sceneMgr.FindNode(id);
+            if (node != null)
+            {
+                sceneMgr.RemoveNode(node);
+            }
         }
     }
 }
