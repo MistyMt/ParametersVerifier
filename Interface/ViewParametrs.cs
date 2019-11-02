@@ -13,5 +13,9 @@ namespace Interface
         /// 节点ID列表
         /// </summary>
         public static List<ElementId> IDs = new List<ElementId>();
+        /// <summary>
+        /// 当前节点ID
+        /// </summary>
+        public static ElementId CurrentId = new ElementId(0);
     }
 }

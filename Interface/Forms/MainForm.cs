@@ -136,39 +136,21 @@ namespace Interface
             mainform.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            panelPrimitive.BringToFront();
-            panelPrimitive.Visible = true;
-            panelPrimitive.AutoScroll = true;
-            panelPrimitive.AutoScrollMinSize = new Size(221, 554);
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            panelFeature.BringToFront();
-            panelFeature.Visible = true;
-            panelFeature.AutoScroll = true;
-            panelFeature.AutoScrollMinSize = new Size(221, 554);
-        }
 
         private void buttonPrimitive_Click(object sender, EventArgs e)
         {
-            panelPrimitive.BringToFront();
-            panelPrimitive.HorizontalScroll.Enabled = true;
-            panelPrimitive.Visible = true;
-            panelPrimitive.AutoScroll = true;
-            panelPrimitive.AutoScrollMinSize = new Size(225, 554);
+            tabControlPrimitive.BringToFront();
+
+            tabControlPrimitive.Visible = true;
+
         }
 
         private void buttonFeature_Click(object sender, EventArgs e)
         {
-            panelFeature.BringToFront();
-            panelFeature.HorizontalScroll.Enabled = false;
-            panelFeature.Visible = true;
-            panelFeature.AutoScroll = true;
-            panelFeature.AutoScrollMinSize = new Size(221, 554);
+            tabControlFeature.BringToFront();
+
+            tabControlFeature.Visible = true;
+
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -351,7 +333,7 @@ namespace Interface
 
             sceneNode.SetPickable(false);
         }
-        DrawLineEditor drawLine;
+
         private void button6_Click(object sender, EventArgs e)
         {
 
@@ -939,6 +921,485 @@ namespace Interface
             {
                 sceneMgr.RemoveNode(node);
             }
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+            tabControlPrimitive.SelectedTab = tabpagePrimitiveFrameParameterSetter;
+            panelFrame.Visible = true;
+
+            ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
+            ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
+            textBox11.Text = ViewParametrs.CurrentId.AsInt().ToString();
+
+            //提示当前ID与ID列表
+            //MessageBox.Show(ViewParametrs.CurrentId.AsInt().ToString() +"     "+ ViewParametrs.IDs[ViewParametrs.IDs.Count-1].AsInt().ToString());
+
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            tabControlPrimitive.SelectedTab = tabpagePrimitiveFrameParameterSetter;
+            panelBox.Visible = true;
+
+            ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
+            ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
+            textBox13.Text = ViewParametrs.CurrentId.AsInt().ToString();
+
+        }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            tabControlPrimitive.SelectedTab = tabpagePrimitiveFrameParameterSetter;
+            panelSphere.Visible = true;
+
+            ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
+            ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
+            textBox21.Text = ViewParametrs.CurrentId.AsInt().ToString();
+
+
+
+
+            
+        }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            tabControlPrimitive.SelectedTab = tabpagePrimitiveFrameParameterSetter;
+            panelCylinder.Visible = true;
+
+            ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
+            ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
+            textBox26.Text = ViewParametrs.CurrentId.AsInt().ToString();
+
+        }
+        DrawLineEditor drawLine;
+        private void button37_Click(object sender, EventArgs e)
+        {
+
+            if (drawLine == null)
+                drawLine = new DrawLineEditor();
+            RenderView.ActiveEditor(drawLine);
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            tabControlPrimitive.SelectedTab = tabpagePrimitiveFrameParameterSetter;
+            panelSpiral.Visible = true;
+
+            ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
+            ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
+            textBox38.Text = ViewParametrs.CurrentId.AsInt().ToString();
+
+
+        }
+
+        private void button36_Click(object sender, EventArgs e)
+        {
+            AxesWidget axes = new AxesWidget();
+            Matrix4 trf = GlobalInstance.MatrixBuilder.MakeTranslate(100, 100, 100);
+            axes.SetTransform(trf);
+
+            RenderView.ShowSceneNode(axes);
+        }
+
+        private void button35_Click(object sender, EventArgs e)
+        {
+            ArrowWidget arrow = new ArrowWidget();
+            Matrix4 trf = GlobalInstance.MatrixBuilder.MakeTranslate(100, 100, 100);
+            arrow.SetTransform(trf);
+
+            RenderView.ShowSceneNode(arrow);
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            panelRectSet.BringToFront();
+            panelRectSet.Visible = true;
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            SelectedEntityQuery query = new SelectedEntityQuery();
+            RenderView.QuerySelection(query);
+            SceneNode node2 = query.GetRootNode();
+            if (node2 != null)
+            {
+                MessageBox.Show(String.Format("Selected Node: {0}", node2.GetId().AsInt()));
+            }
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            SelectedEntityQuery query = new SelectedEntityQuery();
+            RenderView.QuerySelection(query);
+            SceneNode node2 = query.GetRootNode();
+            if (node2 != null)
+            {
+                MessageBox.Show(String.Format("Selected Node: {0}", node2.GetName()));
+            }
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            TopoShape box = GlobalInstance.BrepTools.MakeBox(Vector3.ZERO, new Vector3(10, 0, 0), 10, 10);
+            RenderView.ShowGeometry(box, new ElementId(333));
+
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            RenderView.FitAll();
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            ElementId id = new ElementId();
+            SceneManager scmgr = new SceneManager();
+            scmgr.FindNode(id);
+        }
+
+        private void button4_Click_2(object sender, EventArgs e)
+        {
+            SelectedEntityQuery query = new SelectedEntityQuery();
+            RenderView.QuerySelection(query);
+            SceneNode node2 = query.GetRootNode();
+
+            ElementId id = node2.GetId();
+            MessageBox.Show("Remove Node");
+            SceneManager sceneMgr = RenderView.SceneManager;
+            SceneNode node = sceneMgr.FindNode(id);
+            if (node != null)
+            {
+                sceneMgr.RemoveNode(node);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //图像参数
+                double len = Convert.ToDouble(textBox7.Text);
+                double width = Convert.ToDouble(textBox8.Text);
+                double height = Convert.ToDouble(textBox9.Text);
+
+                //图像Topo结构
+                TopoShape box = GlobalInstance.BrepTools.MakeBox(Vector3.ZERO, new Vector3(len, 0, 0), width, height);
+
+                //图像entity参数
+                RenderableEntity entity = GlobalInstance.TopoShapeConvert.ToEntity(box, 0);
+                entity.SetShapeFilter((int)EnumPickMode.RF_Edge);// only display face
+
+                //图像节点，添加参数
+                EntitySceneNode node = new EntitySceneNode();
+                node.SetEntity(entity);
+                node.SetName(textBox10.Text);
+                node.SetId(new ElementId(Convert.ToInt32(textBox11.Text)));
+
+                //显示图像
+                RenderView.ShowSceneNode(node);
+            }
+            catch (Exception)
+            {
+            }
+
+            tabControlPrimitive.SelectedTab = tabPagePrimitiveOptions1;
+            panelFrame.Visible = false;
+        }
+
+        private void button15_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                //图像参数
+                Vector3 start = new Vector3(Convert.ToInt32(textBox12.Text), Convert.ToInt32(textBox12.Text), Convert.ToInt32(textBox12.Text));
+                Vector3 dir = new Vector3();
+                switch (comboBox1.Text)
+                {
+                    case "X":
+                         dir = new Vector3(1, 0, 0);
+                        break;
+                    case "Y":
+                         dir = new Vector3(0, 1, 0);
+                        break;
+                    case "Z":
+                        dir = new Vector3(0, 0, 1);
+                        break;
+                }
+                Vector3 size = new Vector3(Convert.ToInt32(textBox15.Text), Convert.ToInt32(textBox16.Text), Convert.ToInt32(textBox17.Text));
+
+                //图像Topo结构
+                TopoShape box = GlobalInstance.BrepTools.MakeBox(start, dir, size);
+
+                //图像entity参数
+                RenderableEntity entity = GlobalInstance.TopoShapeConvert.ToEntity(box, 0);
+                entity.SetShapeFilter((int)EnumPickMode.RF_Edge);// only display face
+
+                //face颜色
+                FaceStyle style = new FaceStyle();
+                style.SetColor(new ColorValue(0.5f, 0.3f, 0, 0.5f));
+                ////face质地
+                //Texture texture = new Texture();
+                //texture.SetName("mytexture2");
+                //texture.SetFilePath(new AnyCAD.Platform.Path("E:\\198.png"));
+                //style.SetTexture(0, texture);
+                //style.SetTransparent(true);
+
+                //图像节点，添加参数
+                EntitySceneNode node = new EntitySceneNode();
+                node.SetFaceStyle(style);
+                node.SetEntity(entity);
+                node.SetName(Convert.ToString(textBox14.Text));
+                node.SetId(new ElementId(Convert.ToInt32(textBox13.Text)));
+
+
+                //显示图像
+                RenderView.ShowSceneNode(node);
+
+            }
+            catch (Exception)
+            {
+            }
+            tabControlPrimitive.SelectedTab = tabPagePrimitiveOptions1;
+            panelBox.Visible = false;
+        }
+
+        private void button16_Click_1(object sender, EventArgs e)
+        {
+            tabControlPrimitive.SelectedTab = tabPagePrimitiveOptions1;
+            panelFrame.Visible = false;
+
+            ViewParametrs.IDs.Remove(ViewParametrs.CurrentId);
+            ViewParametrs.CurrentId = --ViewParametrs.CurrentId;
+        }
+
+        private void button19_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                //图像参数
+                Vector3 start = new Vector3(Convert.ToInt32(textBox22.Text), Convert.ToInt32(textBox23.Text), Convert.ToInt32(textBox24.Text));
+                double radius = Convert.ToDouble(textBox25.Text);
+
+                //图像Topo结构
+                TopoShape sphere = GlobalInstance.BrepTools.MakeSphere(start, radius);
+
+                //图像entity参数
+                RenderableEntity entity = GlobalInstance.TopoShapeConvert.ToEntity(sphere, 0);
+                //entity.SetShapeFilter((int)EnumPickMode.RF_Edge);// only display face
+
+                //face颜色
+                //FaceStyle style = new FaceStyle();
+                //style.SetColor(new ColorValue(0.5f, 0.3f, 0, 0.5f));
+                ////face质地
+                //Texture texture = new Texture();
+                //texture.SetName("mytexture2");
+                //texture.SetFilePath(new AnyCAD.Platform.Path("E:\\198.png"));
+                //style.SetTexture(0, texture);
+                //style.SetTransparent(true);
+
+                //图像节点，添加参数
+                EntitySceneNode node = new EntitySceneNode();
+                //node.SetFaceStyle(style);
+                node.SetEntity(entity);
+                node.SetName(Convert.ToString(textBox18.Text));
+                node.SetId(new ElementId(Convert.ToInt32(textBox21.Text)));
+
+
+                //显示图像
+                RenderView.ShowSceneNode(node);
+
+            }
+            catch (Exception)
+            {
+            }
+            tabControlPrimitive.SelectedTab = tabPagePrimitiveOptions1;
+            panelSphere.Visible = false;
+        }
+
+        private void button23_Click_2(object sender, EventArgs e)
+        {
+            tabControlPrimitive.SelectedTab = tabPagePrimitiveOptions1;
+            panelBox.Visible = false;
+
+            ViewParametrs.IDs.Remove(ViewParametrs.CurrentId);
+            ViewParametrs.CurrentId = --ViewParametrs.CurrentId;
+        }
+
+        private void button24_Click_1(object sender, EventArgs e)
+        {
+            tabControlPrimitive.SelectedTab = tabPagePrimitiveOptions1;
+            panelSphere.Visible = false;
+
+            ViewParametrs.IDs.Remove(ViewParametrs.CurrentId);
+            ViewParametrs.CurrentId = --ViewParametrs.CurrentId;
+        }
+
+        private void label32_Click(object sender, EventArgs e)
+        {
+            label32.Text=("当前节点总数："+ViewParametrs.IDs.Count);
+        }
+
+        private void button25_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                //图像参数
+                Vector3 start = new Vector3(Convert.ToInt32(textBox27.Text), Convert.ToInt32(textBox28.Text), Convert.ToInt32(textBox29.Text));
+                double radius = Convert.ToDouble(textBox31.Text);
+                double height = Convert.ToDouble(textBox32.Text);
+                double degree = Convert.ToDouble(textBox33.Text);
+                Vector3 dir = new Vector3();
+                switch (comboBox2.Text)
+                {
+                    case "X":
+                        dir = new Vector3(1, 0, 0);
+                        break;
+                    case "Y":
+                        dir = new Vector3(0, 0, 1);
+                        break;
+                    case "Z":
+                        dir = new Vector3(0, 1, 0);
+                        break;
+                }
+                Vector3 rotationDir = new Vector3();
+                switch (comboBox2.Text)
+                {
+                    case "X":
+                        rotationDir = new Vector3(1, 0, 0);
+                        break;
+                    case "Y":
+                        rotationDir = new Vector3(0, 1, 0);
+                        break;
+                    case "Z":
+                        rotationDir = new Vector3(0, 0, 1);
+                        break;
+                }
+                double ratationDegree = Convert.ToDouble(textBox34.Text);
+
+                //图像Topo结构
+                TopoShape cylinder = GlobalInstance.BrepTools.MakeCylinder(start, dir, radius, height, degree);
+                Matrix4 mat = GlobalInstance.MatrixBuilder.MakeRotation(ratationDegree, rotationDir);
+                cylinder = GlobalInstance.BrepTools.Transform(cylinder, mat);
+
+                //图像entity参数
+                RenderableEntity entity = GlobalInstance.TopoShapeConvert.ToEntity(cylinder, 0);
+                //entity.SetShapeFilter((int)EnumPickMode.RF_Edge);// only display face
+
+                //face颜色
+                //FaceStyle style = new FaceStyle();
+                //style.SetColor(new ColorValue(0.5f, 0.3f, 0, 0.5f));
+                ////face质地
+                //Texture texture = new Texture();
+                //texture.SetName("mytexture2");
+                //texture.SetFilePath(new AnyCAD.Platform.Path("E:\\198.png"));
+                //style.SetTexture(0, texture);
+                //style.SetTransparent(true);
+
+                //图像节点，添加参数
+                EntitySceneNode node = new EntitySceneNode();
+                //node.SetFaceStyle(style);
+                node.SetEntity(entity);
+                node.SetName(Convert.ToString(textBox30.Text));
+                node.SetId(new ElementId(Convert.ToInt32(textBox26.Text)));
+
+
+                //显示图像
+                RenderView.ShowSceneNode(node);
+
+            }
+            catch (Exception)
+            {
+            }
+            tabControlPrimitive.SelectedTab = tabPagePrimitiveOptions1;
+            panelCylinder.Visible = false;
+
+        }
+
+        private void button26_Click_1(object sender, EventArgs e)
+        {
+            tabControlPrimitive.SelectedTab = tabPagePrimitiveOptions1;
+            panelCylinder.Visible = false;
+
+            ViewParametrs.IDs.Remove(ViewParametrs.CurrentId);
+            ViewParametrs.CurrentId = --ViewParametrs.CurrentId;
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button27_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                //图像参数
+                Vector3 start = new Vector3(Convert.ToInt32(textBox22.Text), Convert.ToInt32(textBox23.Text), Convert.ToInt32(textBox24.Text));
+                double radius = Convert.ToDouble(textBox25.Text);
+
+                //图像Topo结构
+                TopoShape spiralCurve = GlobalInstance.BrepTools.MakeSpiralCurve(100, 10, 10, Coordinate3.UNIT_XYZ);
+
+                //图像entity参数
+                RenderableEntity entity = GlobalInstance.TopoShapeConvert.ToEntity(spiralCurve, 0);
+                //entity.SetShapeFilter((int)EnumPickMode.RF_Edge);// only display face
+
+                //face颜色
+                //FaceStyle style = new FaceStyle();
+                //style.SetColor(new ColorValue(0.5f, 0.3f, 0, 0.5f));
+                ////face质地
+                //Texture texture = new Texture();
+                //texture.SetName("mytexture2");
+                //texture.SetFilePath(new AnyCAD.Platform.Path("E:\\198.png"));
+                //style.SetTexture(0, texture);
+                //style.SetTransparent(true);
+
+                //图像节点，添加参数
+                EntitySceneNode node = new EntitySceneNode();
+                //node.SetFaceStyle(style);
+                node.SetEntity(entity);
+                node.SetName(Convert.ToString(textBox39.Text));
+                node.SetId(new ElementId(Convert.ToInt32(textBox38.Text)));
+
+
+                //显示图像
+                RenderView.ShowSceneNode(node);
+
+            }
+            catch (Exception)
+            {
+            }
+            tabControlPrimitive.SelectedTab = tabPagePrimitiveOptions1;
+            panelSpiral.Visible = false;
+        }
+
+        private void button38_Click(object sender, EventArgs e)
+        {
+            tabControlPrimitive.SelectedTab = tabPagePrimitiveOptions1;
+            panelSpiral.Visible = false;
+
+            ViewParametrs.IDs.Remove(ViewParametrs.CurrentId);
+            ViewParametrs.CurrentId = --ViewParametrs.CurrentId;
+        }
+
+        private void button31_Click_1(object sender, EventArgs e)
+        {
+            TopoShape box = GlobalInstance.BrepTools.MakeBox(Vector3.ZERO, new Vector3(10, 0, 0), 10, 10);
+            RenderableGeometry geom = new RenderableGeometry();
+            geom.SetGeometry(box);
+            geom.SetShapeFilter((int)EnumPickMode.RF_Default);// only display face
+            EntitySceneNode node = new EntitySceneNode();
+            node.SetEntity(geom);
+            RenderView.ShowSceneNode(node);
         }
     }
 }
