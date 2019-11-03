@@ -1393,13 +1393,85 @@ namespace Interface
 
         private void button31_Click_1(object sender, EventArgs e)
         {
-            TopoShape box = GlobalInstance.BrepTools.MakeBox(Vector3.ZERO, new Vector3(10, 0, 0), 10, 10);
-            RenderableGeometry geom = new RenderableGeometry();
-            geom.SetGeometry(box);
-            geom.SetShapeFilter((int)EnumPickMode.RF_Default);// only display face
-            EntitySceneNode node = new EntitySceneNode();
-            node.SetEntity(geom);
-            RenderView.ShowSceneNode(node);
+            tabControlPrimitive.SelectedTab = tabpagePrimitiveFrameParameterSetter;
+            panelSensor.Visible = true;
+
+            ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
+            ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
+            textBox44.Text = ViewParametrs.CurrentId.AsInt().ToString();
+        }
+
+        private void button8_Click_2(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                //图像参数
+                Vector3 start = new Vector3(Convert.ToInt32(textBox40.Text), Convert.ToInt32(textBox41.Text), Convert.ToInt32(textBox42.Text));
+                Vector3 dir = Vector3.UNIT_Z;
+                //switch (comboBox1.Text)
+                //{
+                //    case "X":
+                //        dir = new Vector3(1, 0, 0);
+                //        break;
+                //    case "Y":
+                //        dir = new Vector3(0, 1, 0);
+                //        break;
+                //    case "Z":
+                //        dir = new Vector3(0, 0, 1);
+                //        break;
+                //}
+                //Vector3 size = new Vector3(Convert.ToInt32(textBox15.Text), Convert.ToInt32(textBox16.Text), Convert.ToInt32(textBox17.Text));
+                Vector3 size = Vector3.UNIT_SCALE;
+                //图像Topo结构
+                TopoShape box = GlobalInstance.BrepTools.MakeBox(start, dir, size);
+
+                //图像entity参数
+                RenderableEntity entity = GlobalInstance.TopoShapeConvert.ToEntity(box, 0);
+                entity.SetShapeFilter((int)EnumPickMode.RF_Default);// only display face
+
+                //face颜色
+                FaceStyle style = new FaceStyle();
+                style.SetColor(new ColorValue(0.5f, 0.3f, 0, 0.5f));
+                ////face质地
+                //Texture texture = new Texture();
+                //texture.SetName("mytexture2");
+                //texture.SetFilePath(new AnyCAD.Platform.Path("E:\\198.png"));
+                //style.SetTexture(0, texture);
+                //style.SetTransparent(true);
+
+                //图像节点，添加参数
+                EntitySceneNode node = new EntitySceneNode();
+                node.SetFaceStyle(style);
+                node.SetEntity(entity);
+                node.SetName(Convert.ToString(textBox43.Text));
+                node.SetId(new ElementId(Convert.ToInt32(textBox44.Text)));
+
+
+                //显示图像
+                RenderView.ShowSceneNode(node);
+
+            }
+            catch (Exception)
+            {
+            }
+            tabControlPrimitive.SelectedTab = tabPagePrimitiveOptions1;
+            panelSensor.Visible = false;
+        }
+
+        private void button11_Click_2(object sender, EventArgs e)
+        {
+            tabControlPrimitive.SelectedTab = tabPagePrimitiveOptions1;
+            panelSensor.Visible = false;
+
+            ViewParametrs.IDs.Remove(ViewParametrs.CurrentId);
+            ViewParametrs.CurrentId = --ViewParametrs.CurrentId;
+        }
+
+        private void button39_Click(object sender, EventArgs e)
+        {
+            RenderView.FitAll();
         }
     }
 }
