@@ -17,6 +17,8 @@ namespace Interface
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new banner());
+            Application.Run(new BeginForm());
             Application.Run(new MainForm());
         }
     }
