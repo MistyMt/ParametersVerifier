@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Interface.Forms;
 
 
 namespace Interface
@@ -19,7 +20,7 @@ namespace Interface
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new banner());
             Application.Run(new BeginForm());
-            Application.Run(new BeginForm());
+            Application.Run(new GeneralInfo());
             Application.Run(new MainForm());
         }
     }

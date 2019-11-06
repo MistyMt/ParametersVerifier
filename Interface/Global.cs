@@ -36,7 +36,7 @@ namespace Interface
         /// <summary>
         /// 模板文件名
         /// </summary>
-        public static string templateName = "未选择模板";
+        public static string templateName = "冷库验证项目模拟报告模板";
         /// <summary>
         /// 截图
         /// </summary>
