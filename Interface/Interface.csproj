@@ -108,6 +108,108 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FormsOfWrite\FormAfterCalibrationValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormAfterCalibrationValue.Designer.cs">
+      <DependentUpon>FormAfterCalibrationValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormBeforeCalibrationValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormBeforeCalibrationValue.Designer.cs">
+      <DependentUpon>FormBeforeCalibrationValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormConclusion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormConclusion.Designer.cs">
+      <DependentUpon>FormConclusion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormContentImplementation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormContentImplementation.Designer.cs">
+      <DependentUpon>FormContentImplementation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormContrast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormContrast.Designer.cs">
+      <DependentUpon>FormContrast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormEnvironmentInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormEnvironmentInformation.Designer.cs">
+      <DependentUpon>FormEnvironmentInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormFanRunningStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormFanRunningStatus.Designer.cs">
+      <DependentUpon>FormFanRunningStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormFullload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormFullload.Designer.cs">
+      <DependentUpon>FormFullload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormNoload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormNoload.Designer.cs">
+      <DependentUpon>FormNoload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormOpenImpact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormOpenImpact.Designer.cs">
+      <DependentUpon>FormOpenImpact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormOutagesImpact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormOutagesImpact.Designer.cs">
+      <DependentUpon>FormOutagesImpact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormRunningStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormRunningStatus.Designer.cs">
+      <DependentUpon>FormRunningStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormTemperatureDistribution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormTemperatureDistribution.Designer.cs">
+      <DependentUpon>FormTemperatureDistribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormValidationPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormValidationPerson.Designer.cs">
+      <DependentUpon>FormValidationPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormVerificationInstrument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormVerificationInstrument.Designer.cs">
+      <DependentUpon>FormVerificationInstrument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormVerificationTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormVerificationTime.Designer.cs">
+      <DependentUpon>FormVerificationTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GeneralInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GeneralInfo.Designer.cs">
+      <DependentUpon>GeneralInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sensor.cs" />
     <Compile Include="Forms\banner.cs">
       <SubType>Form</SubType>
@@ -175,6 +277,57 @@
     <EmbeddedResource Include="Forms\FormAnalysisOfData.resx">
       <DependentUpon>FormAnalysisOfData.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormAfterCalibrationValue.resx">
+      <DependentUpon>FormAfterCalibrationValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormBeforeCalibrationValue.resx">
+      <DependentUpon>FormBeforeCalibrationValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormConclusion.resx">
+      <DependentUpon>FormConclusion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormContentImplementation.resx">
+      <DependentUpon>FormContentImplementation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormContrast.resx">
+      <DependentUpon>FormContrast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormEnvironmentInformation.resx">
+      <DependentUpon>FormEnvironmentInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormFanRunningStatus.resx">
+      <DependentUpon>FormFanRunningStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormFullload.resx">
+      <DependentUpon>FormFullload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormNoload.resx">
+      <DependentUpon>FormNoload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormOpenImpact.resx">
+      <DependentUpon>FormOpenImpact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormOutagesImpact.resx">
+      <DependentUpon>FormOutagesImpact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormRunningStatus.resx">
+      <DependentUpon>FormRunningStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormTemperatureDistribution.resx">
+      <DependentUpon>FormTemperatureDistribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormValidationPerson.resx">
+      <DependentUpon>FormValidationPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormVerificationInstrument.resx">
+      <DependentUpon>FormVerificationInstrument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormVerificationTime.resx">
+      <DependentUpon>FormVerificationTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GeneralInfo.resx">
+      <DependentUpon>GeneralInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +388,7 @@
   <ItemGroup>
     <None Include="Resources\封面.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

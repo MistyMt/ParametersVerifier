@@ -17,6 +17,7 @@ using AnyCAD.Platform;
 using AnyCAD.Basic;
 using Microsoft.Office.Interop.Word;
 using System.Threading;
+using Interface.Forms;
 
 
 namespace Interface
@@ -868,24 +869,12 @@ namespace Interface
 
         private void button22_Click(object sender, EventArgs e)
         {
-            SelectedEntityQuery query = new SelectedEntityQuery();
-            RenderView.QuerySelection(query);
-            SceneNode node2 = query.GetRootNode();
-            if (node2 != null)
-            {
-                MessageBox.Show(String.Format("Selected Node: {0}", node2.GetId().AsInt()));
-            }
+
         }
 
         private void button23_Click(object sender, EventArgs e)
         {
-            SelectedEntityQuery query = new SelectedEntityQuery();
-            RenderView.QuerySelection(query);
-            SceneNode node2 = query.GetRootNode();
-            if (node2 != null)
-            {
-                MessageBox.Show(String.Format("Selected Node: {0}", node2.GetName()));
-            }
+
         }
 
         private void button24_Click(object sender, EventArgs e)
@@ -909,18 +898,7 @@ namespace Interface
 
         private void button27_Click(object sender, EventArgs e)
         {
-            SelectedEntityQuery query = new SelectedEntityQuery();
-            RenderView.QuerySelection(query);
-            SceneNode node2 = query.GetRootNode();
 
-            ElementId id = node2.GetId();
-            MessageBox.Show("Remove Node");
-            SceneManager sceneMgr = RenderView.SceneManager;
-            SceneNode node = sceneMgr.FindNode(id);
-            if (node != null)
-            {
-                sceneMgr.RemoveNode(node);
-            }
         }
 
         private void button32_Click(object sender, EventArgs e)
@@ -1333,11 +1311,6 @@ namespace Interface
             ViewParametrs.CurrentId = --ViewParametrs.CurrentId;
         }
 
-        private void button31_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button27_Click_1(object sender, EventArgs e)
         {
             try
@@ -1472,6 +1445,102 @@ namespace Interface
         private void button39_Click(object sender, EventArgs e)
         {
             RenderView.FitAll();
+        }
+
+        private void button55_Click(object sender, EventArgs e)
+        {
+            FormValidationPerson validationPersonForm = new FormValidationPerson();
+            validationPersonForm.ShowDialog();
+        }
+
+        private void button53_Click(object sender, EventArgs e)
+        {
+            FormContentImplementation contentImplemenationForm = new FormContentImplementation();
+            contentImplemenationForm.ShowDialog();
+        }
+
+        private void button54_Click(object sender, EventArgs e)
+        {
+            FormVerificationInstrument verificationInstrumentForm = new FormVerificationInstrument();
+            verificationInstrumentForm.ShowDialog();
+        }
+
+        private void button52_Click(object sender, EventArgs e)
+        {
+            FormVerificationTime verificationTimeForm = new FormVerificationTime();
+            verificationTimeForm.ShowDialog();
+        }
+
+        private void button51_Click(object sender, EventArgs e)
+        {
+            FormEnvironmentInformation environmentInformationForm = new FormEnvironmentInformation();
+            environmentInformationForm.ShowDialog();
+        }
+
+        private void button50_Click(object sender, EventArgs e)
+        {
+            FormNoload noloadForm = new FormNoload();
+            noloadForm.ShowDialog();
+        }
+
+        private void button49_Click(object sender, EventArgs e)
+        {
+            FormFullload fullloadForm = new FormFullload();
+            fullloadForm.ShowDialog();
+        }
+
+        private void button48_Click(object sender, EventArgs e)
+        {
+            FormTemperatureDistribution temperatureDistributionForm = new FormTemperatureDistribution();
+            temperatureDistributionForm.ShowDialog();
+        }
+
+        private void button47_Click(object sender, EventArgs e)
+        {
+            FormRunningStatus runningStatusForm = new FormRunningStatus();
+            runningStatusForm.ShowDialog();
+        }
+
+        private void button46_Click(object sender, EventArgs e)
+        {
+            FormContrast contrastForm = new FormContrast();
+            contrastForm.ShowDialog();
+        }
+
+        private void button45_Click(object sender, EventArgs e)
+        {
+            FormOpenImpact openImpactForm = new FormOpenImpact();
+            openImpactForm.ShowDialog();
+        }
+
+        private void button44_Click(object sender, EventArgs e)
+        {
+            FormOutagesImpact outagesImpactForm = new FormOutagesImpact();
+            outagesImpactForm.ShowDialog();
+        }
+
+        private void button43_Click(object sender, EventArgs e)
+        {
+            FormFanRunningStatus fanRunningStatusForm = new FormFanRunningStatus();
+            fanRunningStatusForm.ShowDialog();
+        }
+
+        private void button42_Click(object sender, EventArgs e)
+        {
+            FormConclusion conclusionForm = new FormConclusion();
+            conclusionForm.ShowDialog();
+        }
+
+        private void button41_Click(object sender, EventArgs e)
+        {
+            FormBeforeCalibrationValue beforeCalibrationValue = new FormBeforeCalibrationValue();
+            beforeCalibrationValue.ShowDialog();
+        }
+
+        private void button40_Click(object sender, EventArgs e)
+        {
+            FormAfterCalibrationValue afterCalibrationValue = new FormAfterCalibrationValue();
+            afterCalibrationValue.ShowDialog();
         }
     }
 }
