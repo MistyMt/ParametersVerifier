@@ -210,6 +210,7 @@
     <Compile Include="Forms\GeneralInfo.Designer.cs">
       <DependentUpon>GeneralInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="MeasureDistanceEditor.cs" />
     <Compile Include="Sensor.cs" />
     <Compile Include="Forms\banner.cs">
       <SubType>Form</SubType>

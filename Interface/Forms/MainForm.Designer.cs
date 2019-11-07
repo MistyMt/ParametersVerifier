@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series25 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series26 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series27 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series28 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series29 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series30 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
@@ -116,28 +116,34 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button40 = new System.Windows.Forms.Button();
-            this.button41 = new System.Windows.Forms.Button();
-            this.button42 = new System.Windows.Forms.Button();
-            this.button43 = new System.Windows.Forms.Button();
-            this.button44 = new System.Windows.Forms.Button();
-            this.button45 = new System.Windows.Forms.Button();
-            this.button46 = new System.Windows.Forms.Button();
+            this.button57 = new System.Windows.Forms.Button();
+            this.button56 = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.button47 = new System.Windows.Forms.Button();
-            this.button48 = new System.Windows.Forms.Button();
-            this.button49 = new System.Windows.Forms.Button();
-            this.button50 = new System.Windows.Forms.Button();
-            this.button51 = new System.Windows.Forms.Button();
-            this.button52 = new System.Windows.Forms.Button();
-            this.button53 = new System.Windows.Forms.Button();
-            this.button54 = new System.Windows.Forms.Button();
+            this.button40 = new System.Windows.Forms.Button();
             this.button55 = new System.Windows.Forms.Button();
+            this.button41 = new System.Windows.Forms.Button();
+            this.button54 = new System.Windows.Forms.Button();
+            this.button42 = new System.Windows.Forms.Button();
+            this.button53 = new System.Windows.Forms.Button();
+            this.button43 = new System.Windows.Forms.Button();
+            this.button52 = new System.Windows.Forms.Button();
+            this.button44 = new System.Windows.Forms.Button();
+            this.button51 = new System.Windows.Forms.Button();
+            this.button45 = new System.Windows.Forms.Button();
+            this.button50 = new System.Windows.Forms.Button();
+            this.button46 = new System.Windows.Forms.Button();
+            this.button49 = new System.Windows.Forms.Button();
+            this.button48 = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.butClear = new System.Windows.Forms.Button();
             this.butMove = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPageDraw = new System.Windows.Forms.TabPage();
+            this.button59 = new System.Windows.Forms.Button();
+            this.button58 = new System.Windows.Forms.Button();
             this.button39 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.buttonFeature = new System.Windows.Forms.Button();
@@ -298,15 +304,29 @@
             this.button13 = new System.Windows.Forms.Button();
             this.tabPageFeatureParameterSetter = new System.Windows.Forms.TabPage();
             this.label32 = new System.Windows.Forms.Label();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.button56 = new System.Windows.Forms.Button();
-            this.button57 = new System.Windows.Forms.Button();
+            this.textBox45 = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.textBox46 = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.textBox47 = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.textBox48 = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.textBox49 = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.textBox50 = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.button60 = new System.Windows.Forms.Button();
+            this.textBox51 = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPageDraw.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -332,7 +352,7 @@
             this.groupBox4.SuspendLayout();
             this.tabControlFeature.SuspendLayout();
             this.tabPageFeatureOptions.SuspendLayout();
-            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -913,76 +933,76 @@
             // 
             // chart1
             // 
-            chartArea3.AxisX.LabelAutoFitMinFontSize = 5;
-            chartArea3.AxisX.LabelStyle.Interval = 20D;
-            chartArea3.AxisX.MajorGrid.Enabled = false;
-            chartArea3.AxisY.MajorGrid.Enabled = false;
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
+            chartArea1.AxisX.LabelAutoFitMinFontSize = 5;
+            chartArea1.AxisX.LabelStyle.Interval = 20D;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisY.MajorGrid.Enabled = false;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Margin = new System.Windows.Forms.Padding(2);
             this.chart1.Name = "chart1";
-            series21.ChartArea = "ChartArea1";
-            series21.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series21.Name = "1";
-            series21.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series21.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series22.ChartArea = "ChartArea1";
-            series22.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series22.Name = "2";
-            series22.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series22.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series23.ChartArea = "ChartArea1";
-            series23.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series23.Name = "3";
-            series23.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series23.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series24.ChartArea = "ChartArea1";
-            series24.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series24.Name = "4";
-            series24.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series24.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series25.ChartArea = "ChartArea1";
-            series25.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series25.Name = "5";
-            series25.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series25.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series26.ChartArea = "ChartArea1";
-            series26.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series26.Name = "6";
-            series26.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series26.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series27.ChartArea = "ChartArea1";
-            series27.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series27.Name = "7";
-            series27.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series27.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series28.ChartArea = "ChartArea1";
-            series28.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series28.Name = "8";
-            series28.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series28.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series29.ChartArea = "ChartArea1";
-            series29.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series29.Name = "9";
-            series29.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series29.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series30.ChartArea = "ChartArea1";
-            series30.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series30.Name = "10";
-            series30.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series30.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.chart1.Series.Add(series21);
-            this.chart1.Series.Add(series22);
-            this.chart1.Series.Add(series23);
-            this.chart1.Series.Add(series24);
-            this.chart1.Series.Add(series25);
-            this.chart1.Series.Add(series26);
-            this.chart1.Series.Add(series27);
-            this.chart1.Series.Add(series28);
-            this.chart1.Series.Add(series29);
-            this.chart1.Series.Add(series30);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Name = "1";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Name = "2";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Name = "3";
+            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Name = "4";
+            series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series4.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.Name = "5";
+            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Name = "6";
+            series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series6.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series7.Name = "7";
+            series7.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series7.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series8.Name = "8";
+            series8.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series8.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series9.Name = "9";
+            series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series9.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series10.Name = "10";
+            series10.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series10.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
+            this.chart1.Series.Add(series5);
+            this.chart1.Series.Add(series6);
+            this.chart1.Series.Add(series7);
+            this.chart1.Series.Add(series8);
+            this.chart1.Series.Add(series9);
+            this.chart1.Series.Add(series10);
             this.chart1.Size = new System.Drawing.Size(611, 219);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
@@ -991,6 +1011,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(0, 126);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
@@ -1019,6 +1040,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1308, 671);
             this.panel3.TabIndex = 0;
+            this.panel3.Click += new System.EventHandler(this.panel3_Click);
             // 
             // tabPage2
             // 
@@ -1034,75 +1056,48 @@
             this.tabPage2.Text = "报表";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button40
+            // button57
             // 
-            this.button40.Location = new System.Drawing.Point(429, 421);
-            this.button40.Name = "button40";
-            this.button40.Size = new System.Drawing.Size(130, 36);
-            this.button40.TabIndex = 51;
-            this.button40.Text = "标准器后校准值";
-            this.button40.UseVisualStyleBackColor = true;
-            this.button40.Click += new System.EventHandler(this.button40_Click);
+            this.button57.Location = new System.Drawing.Point(673, 281);
+            this.button57.Name = "button57";
+            this.button57.Size = new System.Drawing.Size(118, 37);
+            this.button57.TabIndex = 53;
+            this.button57.Text = "全部重置";
+            this.button57.UseVisualStyleBackColor = true;
             // 
-            // button41
+            // button56
             // 
-            this.button41.Location = new System.Drawing.Point(429, 358);
-            this.button41.Name = "button41";
-            this.button41.Size = new System.Drawing.Size(130, 36);
-            this.button41.TabIndex = 50;
-            this.button41.Text = "标准器前校准值";
-            this.button41.UseVisualStyleBackColor = true;
-            this.button41.Click += new System.EventHandler(this.button41_Click);
+            this.button56.Location = new System.Drawing.Point(673, 210);
+            this.button56.Name = "button56";
+            this.button56.Size = new System.Drawing.Size(118, 37);
+            this.button56.TabIndex = 53;
+            this.button56.Text = "全部导入";
+            this.button56.UseVisualStyleBackColor = true;
             // 
-            // button42
+            // groupBox8
             // 
-            this.button42.Location = new System.Drawing.Point(429, 298);
-            this.button42.Name = "button42";
-            this.button42.Size = new System.Drawing.Size(130, 36);
-            this.button42.TabIndex = 49;
-            this.button42.Text = "总结";
-            this.button42.UseVisualStyleBackColor = true;
-            this.button42.Click += new System.EventHandler(this.button42_Click);
-            // 
-            // button43
-            // 
-            this.button43.Location = new System.Drawing.Point(429, 154);
-            this.button43.Name = "button43";
-            this.button43.Size = new System.Drawing.Size(130, 43);
-            this.button43.TabIndex = 48;
-            this.button43.Text = "验证分析风机运行状况";
-            this.button43.UseVisualStyleBackColor = true;
-            this.button43.Click += new System.EventHandler(this.button43_Click);
-            // 
-            // button44
-            // 
-            this.button44.Location = new System.Drawing.Point(216, 284);
-            this.button44.Name = "button44";
-            this.button44.Size = new System.Drawing.Size(142, 72);
-            this.button44.TabIndex = 47;
-            this.button44.Text = "开门测试期间温度变化曲线图";
-            this.button44.UseVisualStyleBackColor = true;
-            this.button44.Click += new System.EventHandler(this.button44_Click);
-            // 
-            // button45
-            // 
-            this.button45.Location = new System.Drawing.Point(216, 154);
-            this.button45.Name = "button45";
-            this.button45.Size = new System.Drawing.Size(142, 72);
-            this.button45.TabIndex = 46;
-            this.button45.Text = "验证分析开门作业对冷库温度的影响";
-            this.button45.UseVisualStyleBackColor = true;
-            this.button45.Click += new System.EventHandler(this.button45_Click);
-            // 
-            // button46
-            // 
-            this.button46.Location = new System.Drawing.Point(216, 24);
-            this.button46.Name = "button46";
-            this.button46.Size = new System.Drawing.Size(142, 72);
-            this.button46.TabIndex = 45;
-            this.button46.Text = "监控系统测点温度与验证测点及均匀性温度分布对比图";
-            this.button46.UseVisualStyleBackColor = true;
-            this.button46.Click += new System.EventHandler(this.button46_Click);
+            this.groupBox8.Controls.Add(this.button47);
+            this.groupBox8.Controls.Add(this.button40);
+            this.groupBox8.Controls.Add(this.button55);
+            this.groupBox8.Controls.Add(this.button41);
+            this.groupBox8.Controls.Add(this.button54);
+            this.groupBox8.Controls.Add(this.button42);
+            this.groupBox8.Controls.Add(this.button53);
+            this.groupBox8.Controls.Add(this.button43);
+            this.groupBox8.Controls.Add(this.button52);
+            this.groupBox8.Controls.Add(this.button44);
+            this.groupBox8.Controls.Add(this.button51);
+            this.groupBox8.Controls.Add(this.button45);
+            this.groupBox8.Controls.Add(this.button50);
+            this.groupBox8.Controls.Add(this.button46);
+            this.groupBox8.Controls.Add(this.button49);
+            this.groupBox8.Controls.Add(this.button48);
+            this.groupBox8.Location = new System.Drawing.Point(29, 21);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(587, 474);
+            this.groupBox8.TabIndex = 52;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "报表填写细则";
             // 
             // button47
             // 
@@ -1114,65 +1109,35 @@
             this.button47.UseVisualStyleBackColor = true;
             this.button47.Click += new System.EventHandler(this.button47_Click);
             // 
-            // button48
+            // button40
             // 
-            this.button48.Location = new System.Drawing.Point(222, 414);
-            this.button48.Name = "button48";
-            this.button48.Size = new System.Drawing.Size(130, 43);
-            this.button48.TabIndex = 43;
-            this.button48.Text = "各层平面温度分布特性表";
-            this.button48.UseVisualStyleBackColor = true;
-            this.button48.Click += new System.EventHandler(this.button48_Click);
+            this.button40.Location = new System.Drawing.Point(429, 421);
+            this.button40.Name = "button40";
+            this.button40.Size = new System.Drawing.Size(130, 36);
+            this.button40.TabIndex = 51;
+            this.button40.Text = "标准器后校准值";
+            this.button40.UseVisualStyleBackColor = true;
+            this.button40.Click += new System.EventHandler(this.button40_Click);
             // 
-            // button49
+            // button55
             // 
-            this.button49.Location = new System.Drawing.Point(15, 421);
-            this.button49.Name = "button49";
-            this.button49.Size = new System.Drawing.Size(130, 36);
-            this.button49.TabIndex = 42;
-            this.button49.Text = "满载数据汇总";
-            this.button49.UseVisualStyleBackColor = true;
-            this.button49.Click += new System.EventHandler(this.button49_Click);
+            this.button55.Location = new System.Drawing.Point(15, 24);
+            this.button55.Name = "button55";
+            this.button55.Size = new System.Drawing.Size(130, 36);
+            this.button55.TabIndex = 36;
+            this.button55.Text = "验证人员及职责";
+            this.button55.UseVisualStyleBackColor = true;
+            this.button55.Click += new System.EventHandler(this.button55_Click);
             // 
-            // button50
+            // button41
             // 
-            this.button50.Location = new System.Drawing.Point(15, 356);
-            this.button50.Name = "button50";
-            this.button50.Size = new System.Drawing.Size(130, 36);
-            this.button50.TabIndex = 41;
-            this.button50.Text = "空载数据汇总";
-            this.button50.UseVisualStyleBackColor = true;
-            this.button50.Click += new System.EventHandler(this.button50_Click);
-            // 
-            // button51
-            // 
-            this.button51.Location = new System.Drawing.Point(15, 284);
-            this.button51.Name = "button51";
-            this.button51.Size = new System.Drawing.Size(130, 43);
-            this.button51.TabIndex = 40;
-            this.button51.Text = "验证期间外部环境确认";
-            this.button51.UseVisualStyleBackColor = true;
-            this.button51.Click += new System.EventHandler(this.button51_Click);
-            // 
-            // button52
-            // 
-            this.button52.Location = new System.Drawing.Point(15, 219);
-            this.button52.Name = "button52";
-            this.button52.Size = new System.Drawing.Size(130, 36);
-            this.button52.TabIndex = 39;
-            this.button52.Text = "验证时间";
-            this.button52.UseVisualStyleBackColor = true;
-            this.button52.Click += new System.EventHandler(this.button52_Click);
-            // 
-            // button53
-            // 
-            this.button53.Location = new System.Drawing.Point(15, 89);
-            this.button53.Name = "button53";
-            this.button53.Size = new System.Drawing.Size(130, 36);
-            this.button53.TabIndex = 38;
-            this.button53.Text = "验证内容实施";
-            this.button53.UseVisualStyleBackColor = true;
-            this.button53.Click += new System.EventHandler(this.button53_Click);
+            this.button41.Location = new System.Drawing.Point(429, 358);
+            this.button41.Name = "button41";
+            this.button41.Size = new System.Drawing.Size(130, 36);
+            this.button41.TabIndex = 50;
+            this.button41.Text = "标准器前校准值";
+            this.button41.UseVisualStyleBackColor = true;
+            this.button41.Click += new System.EventHandler(this.button41_Click);
             // 
             // button54
             // 
@@ -1184,15 +1149,125 @@
             this.button54.UseVisualStyleBackColor = true;
             this.button54.Click += new System.EventHandler(this.button54_Click);
             // 
-            // button55
+            // button42
             // 
-            this.button55.Location = new System.Drawing.Point(15, 24);
-            this.button55.Name = "button55";
-            this.button55.Size = new System.Drawing.Size(130, 36);
-            this.button55.TabIndex = 36;
-            this.button55.Text = "验证人员及职责";
-            this.button55.UseVisualStyleBackColor = true;
-            this.button55.Click += new System.EventHandler(this.button55_Click);
+            this.button42.Location = new System.Drawing.Point(429, 298);
+            this.button42.Name = "button42";
+            this.button42.Size = new System.Drawing.Size(130, 36);
+            this.button42.TabIndex = 49;
+            this.button42.Text = "总结";
+            this.button42.UseVisualStyleBackColor = true;
+            this.button42.Click += new System.EventHandler(this.button42_Click);
+            // 
+            // button53
+            // 
+            this.button53.Location = new System.Drawing.Point(15, 89);
+            this.button53.Name = "button53";
+            this.button53.Size = new System.Drawing.Size(130, 36);
+            this.button53.TabIndex = 38;
+            this.button53.Text = "验证内容实施";
+            this.button53.UseVisualStyleBackColor = true;
+            this.button53.Click += new System.EventHandler(this.button53_Click);
+            // 
+            // button43
+            // 
+            this.button43.Location = new System.Drawing.Point(429, 154);
+            this.button43.Name = "button43";
+            this.button43.Size = new System.Drawing.Size(130, 43);
+            this.button43.TabIndex = 48;
+            this.button43.Text = "验证分析风机运行状况";
+            this.button43.UseVisualStyleBackColor = true;
+            this.button43.Click += new System.EventHandler(this.button43_Click);
+            // 
+            // button52
+            // 
+            this.button52.Location = new System.Drawing.Point(15, 219);
+            this.button52.Name = "button52";
+            this.button52.Size = new System.Drawing.Size(130, 36);
+            this.button52.TabIndex = 39;
+            this.button52.Text = "验证时间";
+            this.button52.UseVisualStyleBackColor = true;
+            this.button52.Click += new System.EventHandler(this.button52_Click);
+            // 
+            // button44
+            // 
+            this.button44.Location = new System.Drawing.Point(216, 284);
+            this.button44.Name = "button44";
+            this.button44.Size = new System.Drawing.Size(142, 72);
+            this.button44.TabIndex = 47;
+            this.button44.Text = "开门测试期间温度变化曲线图";
+            this.button44.UseVisualStyleBackColor = true;
+            this.button44.Click += new System.EventHandler(this.button44_Click);
+            // 
+            // button51
+            // 
+            this.button51.Location = new System.Drawing.Point(15, 284);
+            this.button51.Name = "button51";
+            this.button51.Size = new System.Drawing.Size(130, 43);
+            this.button51.TabIndex = 40;
+            this.button51.Text = "验证期间外部环境确认";
+            this.button51.UseVisualStyleBackColor = true;
+            this.button51.Click += new System.EventHandler(this.button51_Click);
+            // 
+            // button45
+            // 
+            this.button45.Location = new System.Drawing.Point(216, 154);
+            this.button45.Name = "button45";
+            this.button45.Size = new System.Drawing.Size(142, 72);
+            this.button45.TabIndex = 46;
+            this.button45.Text = "验证分析开门作业对冷库温度的影响";
+            this.button45.UseVisualStyleBackColor = true;
+            this.button45.Click += new System.EventHandler(this.button45_Click);
+            // 
+            // button50
+            // 
+            this.button50.Location = new System.Drawing.Point(15, 356);
+            this.button50.Name = "button50";
+            this.button50.Size = new System.Drawing.Size(130, 36);
+            this.button50.TabIndex = 41;
+            this.button50.Text = "空载数据汇总";
+            this.button50.UseVisualStyleBackColor = true;
+            this.button50.Click += new System.EventHandler(this.button50_Click);
+            // 
+            // button46
+            // 
+            this.button46.Location = new System.Drawing.Point(216, 24);
+            this.button46.Name = "button46";
+            this.button46.Size = new System.Drawing.Size(142, 72);
+            this.button46.TabIndex = 45;
+            this.button46.Text = "监控系统测点温度与验证测点及均匀性温度分布对比图";
+            this.button46.UseVisualStyleBackColor = true;
+            this.button46.Click += new System.EventHandler(this.button46_Click);
+            // 
+            // button49
+            // 
+            this.button49.Location = new System.Drawing.Point(15, 421);
+            this.button49.Name = "button49";
+            this.button49.Size = new System.Drawing.Size(130, 36);
+            this.button49.TabIndex = 42;
+            this.button49.Text = "满载数据汇总";
+            this.button49.UseVisualStyleBackColor = true;
+            this.button49.Click += new System.EventHandler(this.button49_Click);
+            // 
+            // button48
+            // 
+            this.button48.Location = new System.Drawing.Point(222, 414);
+            this.button48.Name = "button48";
+            this.button48.Size = new System.Drawing.Size(130, 43);
+            this.button48.TabIndex = 43;
+            this.button48.Text = "各层平面温度分布特性表";
+            this.button48.UseVisualStyleBackColor = true;
+            this.button48.Click += new System.EventHandler(this.button48_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1312, 675);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Data";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // richTextBox1
             // 
@@ -1247,6 +1322,9 @@
             // 
             // tabPageDraw
             // 
+            this.tabPageDraw.Controls.Add(this.button60);
+            this.tabPageDraw.Controls.Add(this.button59);
+            this.tabPageDraw.Controls.Add(this.button58);
             this.tabPageDraw.Controls.Add(this.button39);
             this.tabPageDraw.Controls.Add(this.button14);
             this.tabPageDraw.Controls.Add(this.buttonFeature);
@@ -1261,6 +1339,26 @@
             this.tabPageDraw.TabIndex = 0;
             this.tabPageDraw.Text = "绘图";
             this.tabPageDraw.UseVisualStyleBackColor = true;
+            // 
+            // button59
+            // 
+            this.button59.Location = new System.Drawing.Point(731, 9);
+            this.button59.Name = "button59";
+            this.button59.Size = new System.Drawing.Size(107, 36);
+            this.button59.TabIndex = 14;
+            this.button59.Text = "SensorInfo";
+            this.button59.UseVisualStyleBackColor = true;
+            this.button59.Click += new System.EventHandler(this.button59_Click);
+            // 
+            // button58
+            // 
+            this.button58.Location = new System.Drawing.Point(920, 9);
+            this.button58.Name = "button58";
+            this.button58.Size = new System.Drawing.Size(90, 36);
+            this.button58.TabIndex = 13;
+            this.button58.Text = " Distance";
+            this.button58.UseVisualStyleBackColor = true;
+            this.button58.Click += new System.EventHandler(this.button58_Click);
             // 
             // button39
             // 
@@ -1704,7 +1802,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(35, 239);
+            this.button4.Location = new System.Drawing.Point(34, 199);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(116, 29);
@@ -1715,7 +1813,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(35, 170);
+            this.button6.Location = new System.Drawing.Point(34, 148);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(153, 29);
@@ -1726,7 +1824,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(35, 329);
+            this.button7.Location = new System.Drawing.Point(35, 257);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(91, 29);
@@ -1737,7 +1835,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(35, 116);
+            this.button9.Location = new System.Drawing.Point(34, 95);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(91, 29);
@@ -1774,13 +1872,14 @@
             // 
             // panelSensor
             // 
+            this.panelSensor.Controls.Add(this.textBox44);
+            this.panelSensor.Controls.Add(this.label54);
+            this.panelSensor.Controls.Add(this.groupBox9);
             this.panelSensor.Controls.Add(this.button11);
             this.panelSensor.Controls.Add(this.button8);
             this.panelSensor.Controls.Add(this.groupBox7);
             this.panelSensor.Controls.Add(this.label53);
-            this.panelSensor.Controls.Add(this.label54);
             this.panelSensor.Controls.Add(this.textBox43);
-            this.panelSensor.Controls.Add(this.textBox44);
             this.panelSensor.Location = new System.Drawing.Point(4, 20);
             this.panelSensor.Name = "panelSensor";
             this.panelSensor.Size = new System.Drawing.Size(213, 526);
@@ -1876,7 +1975,7 @@
             // 
             this.label53.AutoSize = true;
             this.label53.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label53.Location = new System.Drawing.Point(25, 148);
+            this.label53.Location = new System.Drawing.Point(30, 397);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(39, 15);
             this.label53.TabIndex = 5;
@@ -1886,7 +1985,7 @@
             // 
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label54.Location = new System.Drawing.Point(25, 207);
+            this.label54.Location = new System.Drawing.Point(38, 428);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(23, 15);
             this.label54.TabIndex = 4;
@@ -1894,14 +1993,14 @@
             // 
             // textBox43
             // 
-            this.textBox43.Location = new System.Drawing.Point(86, 145);
+            this.textBox43.Location = new System.Drawing.Point(94, 394);
             this.textBox43.Name = "textBox43";
             this.textBox43.Size = new System.Drawing.Size(100, 25);
             this.textBox43.TabIndex = 9;
             // 
             // textBox44
             // 
-            this.textBox44.Location = new System.Drawing.Point(86, 204);
+            this.textBox44.Location = new System.Drawing.Point(94, 425);
             this.textBox44.Name = "textBox44";
             this.textBox44.Size = new System.Drawing.Size(100, 25);
             this.textBox44.TabIndex = 8;
@@ -2898,48 +2997,157 @@
             this.label32.Text = "当前节点总数：";
             this.label32.Click += new System.EventHandler(this.label32_Click);
             // 
-            // groupBox8
+            // textBox45
             // 
-            this.groupBox8.Controls.Add(this.button47);
-            this.groupBox8.Controls.Add(this.button40);
-            this.groupBox8.Controls.Add(this.button55);
-            this.groupBox8.Controls.Add(this.button41);
-            this.groupBox8.Controls.Add(this.button54);
-            this.groupBox8.Controls.Add(this.button42);
-            this.groupBox8.Controls.Add(this.button53);
-            this.groupBox8.Controls.Add(this.button43);
-            this.groupBox8.Controls.Add(this.button52);
-            this.groupBox8.Controls.Add(this.button44);
-            this.groupBox8.Controls.Add(this.button51);
-            this.groupBox8.Controls.Add(this.button45);
-            this.groupBox8.Controls.Add(this.button50);
-            this.groupBox8.Controls.Add(this.button46);
-            this.groupBox8.Controls.Add(this.button49);
-            this.groupBox8.Controls.Add(this.button48);
-            this.groupBox8.Location = new System.Drawing.Point(29, 21);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(587, 474);
-            this.groupBox8.TabIndex = 52;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "报表填写细则";
+            this.textBox45.Location = new System.Drawing.Point(91, 35);
+            this.textBox45.Name = "textBox45";
+            this.textBox45.Size = new System.Drawing.Size(100, 25);
+            this.textBox45.TabIndex = 9;
             // 
-            // button56
+            // label52
             // 
-            this.button56.Location = new System.Drawing.Point(673, 210);
-            this.button56.Name = "button56";
-            this.button56.Size = new System.Drawing.Size(118, 37);
-            this.button56.TabIndex = 53;
-            this.button56.Text = "全部导入";
-            this.button56.UseVisualStyleBackColor = true;
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label52.Location = new System.Drawing.Point(31, 38);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(37, 15);
+            this.label52.TabIndex = 5;
+            this.label52.Text = "名称";
             // 
-            // button57
+            // textBox46
             // 
-            this.button57.Location = new System.Drawing.Point(673, 281);
-            this.button57.Name = "button57";
-            this.button57.Size = new System.Drawing.Size(118, 37);
-            this.button57.TabIndex = 53;
-            this.button57.Text = "全部重置";
-            this.button57.UseVisualStyleBackColor = true;
+            this.textBox46.Location = new System.Drawing.Point(91, 75);
+            this.textBox46.Name = "textBox46";
+            this.textBox46.Size = new System.Drawing.Size(100, 25);
+            this.textBox46.TabIndex = 9;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label55.Location = new System.Drawing.Point(31, 81);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(37, 15);
+            this.label55.TabIndex = 5;
+            this.label55.Text = "编号";
+            // 
+            // textBox47
+            // 
+            this.textBox47.Location = new System.Drawing.Point(91, 115);
+            this.textBox47.Name = "textBox47";
+            this.textBox47.Size = new System.Drawing.Size(35, 25);
+            this.textBox47.TabIndex = 9;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label56.Location = new System.Drawing.Point(16, 118);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(67, 15);
+            this.label56.TabIndex = 5;
+            this.label56.Text = "测量范围";
+            // 
+            // textBox48
+            // 
+            this.textBox48.Location = new System.Drawing.Point(91, 155);
+            this.textBox48.Name = "textBox48";
+            this.textBox48.Size = new System.Drawing.Size(100, 25);
+            this.textBox48.TabIndex = 9;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label57.Location = new System.Drawing.Point(16, 158);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(67, 15);
+            this.label57.TabIndex = 5;
+            this.label57.Text = "型号规格";
+            // 
+            // textBox49
+            // 
+            this.textBox49.Location = new System.Drawing.Point(91, 195);
+            this.textBox49.Name = "textBox49";
+            this.textBox49.Size = new System.Drawing.Size(100, 25);
+            this.textBox49.TabIndex = 9;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label58.Location = new System.Drawing.Point(16, 198);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(67, 15);
+            this.label58.TabIndex = 5;
+            this.label58.Text = "不确定度";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.label52);
+            this.groupBox9.Controls.Add(this.label60);
+            this.groupBox9.Controls.Add(this.textBox45);
+            this.groupBox9.Controls.Add(this.textBox46);
+            this.groupBox9.Controls.Add(this.label59);
+            this.groupBox9.Controls.Add(this.label58);
+            this.groupBox9.Controls.Add(this.textBox51);
+            this.groupBox9.Controls.Add(this.textBox47);
+            this.groupBox9.Controls.Add(this.label57);
+            this.groupBox9.Controls.Add(this.textBox48);
+            this.groupBox9.Controls.Add(this.textBox50);
+            this.groupBox9.Controls.Add(this.label56);
+            this.groupBox9.Controls.Add(this.textBox49);
+            this.groupBox9.Controls.Add(this.label55);
+            this.groupBox9.Location = new System.Drawing.Point(3, 109);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(200, 279);
+            this.groupBox9.TabIndex = 0;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "仪表信息";
+            // 
+            // textBox50
+            // 
+            this.textBox50.Location = new System.Drawing.Point(91, 235);
+            this.textBox50.Name = "textBox50";
+            this.textBox50.Size = new System.Drawing.Size(100, 25);
+            this.textBox50.TabIndex = 9;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label59.Location = new System.Drawing.Point(16, 239);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(67, 15);
+            this.label59.TabIndex = 5;
+            this.label59.Text = "证书编号";
+            // 
+            // button60
+            // 
+            this.button60.Location = new System.Drawing.Point(568, 18);
+            this.button60.Name = "button60";
+            this.button60.Size = new System.Drawing.Size(75, 23);
+            this.button60.TabIndex = 15;
+            this.button60.Text = "button60";
+            this.button60.UseVisualStyleBackColor = true;
+            this.button60.Click += new System.EventHandler(this.button60_Click);
+            // 
+            // textBox51
+            // 
+            this.textBox51.Location = new System.Drawing.Point(156, 115);
+            this.textBox51.Name = "textBox51";
+            this.textBox51.Size = new System.Drawing.Size(35, 25);
+            this.textBox51.TabIndex = 9;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label60.Location = new System.Drawing.Point(132, 127);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(15, 15);
+            this.label60.TabIndex = 4;
+            this.label60.Text = "~";
             // 
             // MainForm
             // 
@@ -2977,6 +3185,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPageDraw.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -3017,7 +3226,8 @@
             this.groupBox4.PerformLayout();
             this.tabControlFeature.ResumeLayout(false);
             this.tabPageFeatureOptions.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3287,5 +3497,24 @@
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button button57;
         private System.Windows.Forms.Button button56;
+        private System.Windows.Forms.Button button58;
+        private System.Windows.Forms.Button button59;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.TextBox textBox45;
+        private System.Windows.Forms.TextBox textBox46;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.TextBox textBox47;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.TextBox textBox48;
+        private System.Windows.Forms.TextBox textBox50;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.TextBox textBox49;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Button button60;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.TextBox textBox51;
     }
 }

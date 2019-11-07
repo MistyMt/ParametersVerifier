@@ -18,12 +18,14 @@ using AnyCAD.Basic;
 using Microsoft.Office.Interop.Word;
 using System.Threading;
 using Interface.Forms;
+using System.Data.SqlClient;
 
 
 namespace Interface
 {
     public partial class MainForm : Form
     {
+
         private AnyCAD.Presentation.RenderWindow3d m_RenderView = null;
 
         public AnyCAD.Presentation.RenderWindow3d RenderView
@@ -905,6 +907,7 @@ namespace Interface
         {
             tabControlPrimitive.SelectedTab = tabpagePrimitiveFrameParameterSetter;
             panelFrame.Visible = true;
+            panelFrame.BringToFront();
 
             ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
             ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
@@ -919,6 +922,7 @@ namespace Interface
         {
             tabControlPrimitive.SelectedTab = tabpagePrimitiveFrameParameterSetter;
             panelBox.Visible = true;
+            panelBox.BringToFront();
 
             ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
             ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
@@ -930,6 +934,7 @@ namespace Interface
         {
             tabControlPrimitive.SelectedTab = tabpagePrimitiveFrameParameterSetter;
             panelSphere.Visible = true;
+            panelSphere.BringToFront();
 
             ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
             ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
@@ -938,13 +943,15 @@ namespace Interface
 
 
 
-            
+
         }
 
         private void button30_Click(object sender, EventArgs e)
         {
             tabControlPrimitive.SelectedTab = tabpagePrimitiveFrameParameterSetter;
             panelCylinder.Visible = true;
+            panelCylinder.BringToFront();
+
 
             ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
             ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
@@ -964,6 +971,8 @@ namespace Interface
         {
             tabControlPrimitive.SelectedTab = tabpagePrimitiveFrameParameterSetter;
             panelSpiral.Visible = true;
+            panelSpiral.BringToFront();
+
 
             ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
             ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
@@ -1103,10 +1112,10 @@ namespace Interface
                 switch (comboBox1.Text)
                 {
                     case "X":
-                         dir = new Vector3(1, 0, 0);
+                        dir = new Vector3(1, 0, 0);
                         break;
                     case "Y":
-                         dir = new Vector3(0, 1, 0);
+                        dir = new Vector3(0, 1, 0);
                         break;
                     case "Z":
                         dir = new Vector3(0, 0, 1);
@@ -1223,7 +1232,7 @@ namespace Interface
 
         private void label32_Click(object sender, EventArgs e)
         {
-            label32.Text=("当前节点总数："+ViewParametrs.IDs.Count);
+            label32.Text = ("当前节点总数：" + ViewParametrs.IDs.Count);
         }
 
         private void button25_Click_1(object sender, EventArgs e)
@@ -1368,6 +1377,8 @@ namespace Interface
         {
             tabControlPrimitive.SelectedTab = tabpagePrimitiveFrameParameterSetter;
             panelSensor.Visible = true;
+            panelSensor.BringToFront();
+
 
             ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
             ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
@@ -1378,8 +1389,6 @@ namespace Interface
         {
             try
             {
-
-
                 //图像参数
                 Vector3 start = new Vector3(Convert.ToInt32(textBox40.Text), Convert.ToInt32(textBox41.Text), Convert.ToInt32(textBox42.Text));
                 Vector3 dir = Vector3.UNIT_Z;
@@ -1421,6 +1430,20 @@ namespace Interface
                 node.SetName(Convert.ToString(textBox43.Text));
                 node.SetId(new ElementId(Convert.ToInt32(textBox44.Text)));
 
+                //生成仪表实例
+                Sensor  sensor  = new Sensor();
+                sensor.name = textBox45.Text;
+                sensor.serialNumber =Convert.ToInt32( textBox46.Text);
+                sensor.rangeMin = Convert.ToInt32(textBox47.Text);
+                sensor.rangeMax = Convert.ToInt32(textBox51.Text);
+                sensor.type = textBox48.Text;
+                sensor.uncertainty =Convert.ToInt32( textBox49.Text);
+                sensor.certificateNo =textBox50.Text;
+                sensor.positonCoordinate = start;
+                sensor.NodeId = node.GetId();
+                sensor.NodeName = node.GetName();
+ 
+                Global.sensors.Add(sensor); 
 
                 //显示图像
                 RenderView.ShowSceneNode(node);
@@ -1542,5 +1565,38 @@ namespace Interface
             FormAfterCalibrationValue afterCalibrationValue = new FormAfterCalibrationValue();
             afterCalibrationValue.ShowDialog();
         }
+
+        private void button58_Click(object sender, EventArgs e)
+        {
+            MeasureDistanceEditor editor = new MeasureDistanceEditor();
+            RenderView.ActiveEditor(editor);
+        }
+
+        public delegate void BoilerLogHandler(string status);
+
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            GlobalInstance.EventListener.OnSelectElementEvent += EventListener_OnSelectElementEvent;
+        }
+
+        void EventListener_OnSelectElementEvent(SelectionChangeArgs args)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void button59_Click(object sender, EventArgs e)
+        {
+            SelectedEntityQuery query = new SelectedEntityQuery();
+            RenderView.QuerySelection(query);
+            SceneNode node2 = query.GetRootNode();
+            string selectedSensor = node2.GetName();
+        }
+
+        private void button60_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Global.sensors[0].rangeMax.ToString());
+            //MessageBox.Show(sensor.rangeMax.ToString());
+        }
+
     }
 }
