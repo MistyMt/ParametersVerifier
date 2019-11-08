@@ -270,6 +270,10 @@ namespace Interface
             //wordDoc.Close();
 
             Global.objectName = comboBox1.Text;
+            Global.objectLen = Convert.ToInt32( textBox2.Text);
+            Global.objectWidth = Convert.ToInt32(textBox4.Text);
+            Global.objectHeight = Convert.ToInt32(textBox5.Text);
+
             this.Close();
         }
     }

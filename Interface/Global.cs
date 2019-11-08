@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
+using AnyCAD.Platform;
 
 
 namespace Interface
@@ -51,7 +52,19 @@ namespace Interface
             return tSrcBmp;
         }
 
-        public static List<Sensor> sensors = new List<Sensor>();
+        /// <summary>
+        /// 测试布点列表
+        /// </summary>
+        public static Dictionary<string, Sensor> sensors = new Dictionary<string, Sensor>();
+
+
+        /// <summary>
+        /// 对象大小
+        /// </summary>
+        public static int objectLen = 0;
+        public static int objectWidth = 0;
+        public static int objectHeight = 0;
+
 
 
 

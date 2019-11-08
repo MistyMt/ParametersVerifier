@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AnyCAD.Platform;
+using AnyCAD.Basic;
 
 namespace Interface
 {
@@ -49,15 +50,7 @@ namespace Interface
         /// </summary>
         public Vector3 positonCoordinate = Vector3.ZERO;
 
-        /// <summary>
-        /// 节点ID
-        /// </summary>
-        public ElementId NodeId;
 
-        /// <summary>
-        /// 节点Name
-        /// </summary>
-        public string NodeName = "Default";
 
 
     }

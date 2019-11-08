@@ -43,6 +43,8 @@ namespace Interface
             m_RenderView = new AnyCAD.Presentation.RenderWindow3d();
             m_RenderView.Size = container.ClientSize;
             m_RenderView.Dock = System.Windows.Forms.DockStyle.Fill;
+            //m_RenderView.BackColor = Color.White;
+
             container.Controls.Add(m_RenderView);
 
         }
@@ -909,6 +911,10 @@ namespace Interface
             panelFrame.Visible = true;
             panelFrame.BringToFront();
 
+            textBox7.Text = Global.objectLen.ToString();
+            textBox8.Text = Global.objectWidth.ToString();
+            textBox9.Text = Global.objectHeight.ToString();
+
             ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
             ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
             textBox11.Text = ViewParametrs.CurrentId.AsInt().ToString();
@@ -1392,26 +1398,14 @@ namespace Interface
                 //图像参数
                 Vector3 start = new Vector3(Convert.ToInt32(textBox40.Text), Convert.ToInt32(textBox41.Text), Convert.ToInt32(textBox42.Text));
                 Vector3 dir = Vector3.UNIT_Z;
-                //switch (comboBox1.Text)
-                //{
-                //    case "X":
-                //        dir = new Vector3(1, 0, 0);
-                //        break;
-                //    case "Y":
-                //        dir = new Vector3(0, 1, 0);
-                //        break;
-                //    case "Z":
-                //        dir = new Vector3(0, 0, 1);
-                //        break;
-                //}
-                //Vector3 size = new Vector3(Convert.ToInt32(textBox15.Text), Convert.ToInt32(textBox16.Text), Convert.ToInt32(textBox17.Text));
                 Vector3 size = Vector3.UNIT_SCALE;
+
                 //图像Topo结构
                 TopoShape box = GlobalInstance.BrepTools.MakeBox(start, dir, size);
 
                 //图像entity参数
                 RenderableEntity entity = GlobalInstance.TopoShapeConvert.ToEntity(box, 0);
-                entity.SetShapeFilter((int)EnumPickMode.RF_Default);// only display face
+                entity.SetShapeFilter((int)EnumPickMode.RF_Default);
 
                 //face颜色
                 FaceStyle style = new FaceStyle();
@@ -1431,19 +1425,18 @@ namespace Interface
                 node.SetId(new ElementId(Convert.ToInt32(textBox44.Text)));
 
                 //生成仪表实例
-                Sensor  sensor  = new Sensor();
+                Sensor sensor = new Sensor();
                 sensor.name = textBox45.Text;
-                sensor.serialNumber =Convert.ToInt32( textBox46.Text);
+                sensor.serialNumber = Convert.ToInt32(textBox46.Text);
                 sensor.rangeMin = Convert.ToInt32(textBox47.Text);
                 sensor.rangeMax = Convert.ToInt32(textBox51.Text);
                 sensor.type = textBox48.Text;
-                sensor.uncertainty =Convert.ToInt32( textBox49.Text);
-                sensor.certificateNo =textBox50.Text;
+                sensor.uncertainty = Convert.ToInt32(textBox49.Text);
+                sensor.certificateNo = textBox50.Text;
                 sensor.positonCoordinate = start;
-                sensor.NodeId = node.GetId();
-                sensor.NodeName = node.GetName();
- 
-                Global.sensors.Add(sensor); 
+
+
+                Global.sensors.Add(node.GetName(), sensor);
 
                 //显示图像
                 RenderView.ShowSceneNode(node);
@@ -1589,12 +1582,23 @@ namespace Interface
             SelectedEntityQuery query = new SelectedEntityQuery();
             RenderView.QuerySelection(query);
             SceneNode node2 = query.GetRootNode();
-            string selectedSensor = node2.GetName();
+            //string selectedSensor = node2.GetName();
+            //Sensor selectedSensors = Global.sensors[0];
+            string nodeName = node2.GetName();
+            if (Global.sensors.ContainsKey(nodeName))
+            {
+                MessageBox.Show("1");
+            }
+            else
+            {
+                MessageBox.Show("2");
+            }
+
         }
 
         private void button60_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Global.sensors[0].rangeMax.ToString());
+            //MessageBox.Show(Global.sensors[0].rangeMax.ToString());
             //MessageBox.Show(sensor.rangeMax.ToString());
         }
 
