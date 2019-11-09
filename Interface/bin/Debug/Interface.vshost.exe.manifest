@@ -85,17 +85,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vK/KG86jH0kkJPsIuAD1LPBKq8LR5qEbJs2cmRqVnrg=</dsig:DigestValue>
+        <dsig:DigestValue>prMyeOtH+Or4mAj1O8lD/d+hmcg0JgRa8HK2o+re78A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Interface.exe.config" size="184">
+  <file name="Interface.exe.config" size="186">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>YyXx11OQ8Y9qQaMsAPfgWQIUIJMPT4Sw3i2UQTU2sRM=</dsig:DigestValue>
+      <dsig:DigestValue>udkzHcF7CSyao6/9/keb6UQ5EGs1M5+q7mPvXoU9vOs=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
