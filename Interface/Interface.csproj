@@ -31,7 +31,7 @@
     </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -64,17 +64,17 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AnyCAD.Exchange.Net, Version=10.0.6995.39969, Culture=neutral, PublicKeyToken=adad17ef48f32d48, processorArchitecture=x86">
+    <Reference Include="AnyCAD.Exchange.Net, Version=10.0.6988.38528, Culture=neutral, PublicKeyToken=adad17ef48f32d48, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Release\AnyCAD.Exchange.Net.dll</HintPath>
+      <HintPath>bin\Debug\AnyCAD.Exchange.Net.dll</HintPath>
     </Reference>
-    <Reference Include="AnyCAD.Foundation.Net, Version=10.0.6995.39967, Culture=neutral, PublicKeyToken=adad17ef48f32d48, processorArchitecture=x86">
+    <Reference Include="AnyCAD.Foundation.Net, Version=10.0.6988.38526, Culture=neutral, PublicKeyToken=adad17ef48f32d48, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Release\AnyCAD.Foundation.Net.dll</HintPath>
+      <HintPath>bin\Debug\AnyCAD.Foundation.Net.dll</HintPath>
     </Reference>
-    <Reference Include="AnyCAD.Presentation.Net, Version=10.0.6995.39969, Culture=neutral, PublicKeyToken=adad17ef48f32d48, processorArchitecture=x86">
+    <Reference Include="AnyCAD.Presentation.Net, Version=10.0.6988.38528, Culture=neutral, PublicKeyToken=adad17ef48f32d48, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Release\AnyCAD.Presentation.Net.dll</HintPath>
+      <HintPath>bin\Debug\AnyCAD.Presentation.Net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
