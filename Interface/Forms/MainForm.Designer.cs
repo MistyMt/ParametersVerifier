@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series25 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series26 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series27 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series28 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series29 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series30 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
@@ -136,6 +136,7 @@
             this.button49 = new System.Windows.Forms.Button();
             this.button48 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.butClear = new System.Windows.Forms.Button();
@@ -149,6 +150,7 @@
             this.button14 = new System.Windows.Forms.Button();
             this.buttonFeature = new System.Windows.Forms.Button();
             this.buttonPrimitive = new System.Windows.Forms.Button();
+            this.tabPageSets = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button21 = new System.Windows.Forms.Button();
@@ -341,8 +343,6 @@
             this.button13 = new System.Windows.Forms.Button();
             this.tabPageFeatureParameterSetter = new System.Windows.Forms.TabPage();
             this.label32 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabPageSets = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -351,6 +351,7 @@
             this.tabPage2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPageDraw.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -377,7 +378,6 @@
             this.groupBox4.SuspendLayout();
             this.tabControlFeature.SuspendLayout();
             this.tabPageFeatureOptions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -958,76 +958,76 @@
             // 
             // chart1
             // 
-            chartArea3.AxisX.LabelAutoFitMinFontSize = 5;
-            chartArea3.AxisX.LabelStyle.Interval = 20D;
-            chartArea3.AxisX.MajorGrid.Enabled = false;
-            chartArea3.AxisY.MajorGrid.Enabled = false;
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
+            chartArea1.AxisX.LabelAutoFitMinFontSize = 5;
+            chartArea1.AxisX.LabelStyle.Interval = 20D;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisY.MajorGrid.Enabled = false;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Margin = new System.Windows.Forms.Padding(2);
             this.chart1.Name = "chart1";
-            series21.ChartArea = "ChartArea1";
-            series21.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series21.Name = "1";
-            series21.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series21.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series22.ChartArea = "ChartArea1";
-            series22.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series22.Name = "2";
-            series22.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series22.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series23.ChartArea = "ChartArea1";
-            series23.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series23.Name = "3";
-            series23.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series23.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series24.ChartArea = "ChartArea1";
-            series24.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series24.Name = "4";
-            series24.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series24.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series25.ChartArea = "ChartArea1";
-            series25.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series25.Name = "5";
-            series25.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series25.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series26.ChartArea = "ChartArea1";
-            series26.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series26.Name = "6";
-            series26.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series26.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series27.ChartArea = "ChartArea1";
-            series27.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series27.Name = "7";
-            series27.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series27.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series28.ChartArea = "ChartArea1";
-            series28.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series28.Name = "8";
-            series28.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series28.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series29.ChartArea = "ChartArea1";
-            series29.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series29.Name = "9";
-            series29.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series29.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series30.ChartArea = "ChartArea1";
-            series30.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series30.Name = "10";
-            series30.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series30.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.chart1.Series.Add(series21);
-            this.chart1.Series.Add(series22);
-            this.chart1.Series.Add(series23);
-            this.chart1.Series.Add(series24);
-            this.chart1.Series.Add(series25);
-            this.chart1.Series.Add(series26);
-            this.chart1.Series.Add(series27);
-            this.chart1.Series.Add(series28);
-            this.chart1.Series.Add(series29);
-            this.chart1.Series.Add(series30);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Name = "1";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Name = "2";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Name = "3";
+            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Name = "4";
+            series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series4.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.Name = "5";
+            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Name = "6";
+            series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series6.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series7.Name = "7";
+            series7.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series7.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series8.Name = "8";
+            series8.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series8.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series9.Name = "9";
+            series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series9.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series10.Name = "10";
+            series10.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series10.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
+            this.chart1.Series.Add(series5);
+            this.chart1.Series.Add(series6);
+            this.chart1.Series.Add(series7);
+            this.chart1.Series.Add(series8);
+            this.chart1.Series.Add(series9);
+            this.chart1.Series.Add(series10);
             this.chart1.Size = new System.Drawing.Size(611, 219);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
@@ -1316,6 +1316,15 @@
             this.tabPage3.Text = "Data";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(266, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 27;
+            this.dataGridView1.Size = new System.Drawing.Size(1046, 315);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(1194, -1);
@@ -1339,7 +1348,7 @@
             // 
             this.butClear.Dock = System.Windows.Forms.DockStyle.Right;
             this.butClear.Location = new System.Drawing.Point(1207, 4);
-            this.butClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butClear.Margin = new System.Windows.Forms.Padding(4);
             this.butClear.Name = "butClear";
             this.butClear.Size = new System.Drawing.Size(99, 49);
             this.butClear.TabIndex = 0;
@@ -1350,7 +1359,7 @@
             // butMove
             // 
             this.butMove.Location = new System.Drawing.Point(1108, 4);
-            this.butMove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butMove.Margin = new System.Windows.Forms.Padding(4);
             this.butMove.Name = "butMove";
             this.butMove.Size = new System.Drawing.Size(99, 49);
             this.butMove.TabIndex = 1;
@@ -1363,7 +1372,7 @@
             this.tabControl2.Controls.Add(this.tabPageDraw);
             this.tabControl2.Controls.Add(this.tabPageSets);
             this.tabControl2.Location = new System.Drawing.Point(8, 39);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(1318, 86);
@@ -1381,9 +1390,9 @@
             this.tabPageDraw.Controls.Add(this.butClear);
             this.tabPageDraw.Controls.Add(this.butMove);
             this.tabPageDraw.Location = new System.Drawing.Point(4, 25);
-            this.tabPageDraw.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageDraw.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageDraw.Name = "tabPageDraw";
-            this.tabPageDraw.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageDraw.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageDraw.Size = new System.Drawing.Size(1310, 57);
             this.tabPageDraw.TabIndex = 0;
             this.tabPageDraw.Text = "绘图";
@@ -1396,7 +1405,7 @@
             this.button60.Name = "button60";
             this.button60.Size = new System.Drawing.Size(99, 49);
             this.button60.TabIndex = 15;
-            this.button60.Text = "button60";
+            this.button60.Text = "导入数据";
             this.button60.UseVisualStyleBackColor = true;
             this.button60.Click += new System.EventHandler(this.button60_Click);
             // 
@@ -1436,7 +1445,7 @@
             // button14
             // 
             this.button14.Location = new System.Drawing.Point(328, 4);
-            this.button14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button14.Margin = new System.Windows.Forms.Padding(4);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(99, 49);
             this.button14.TabIndex = 4;
@@ -1447,7 +1456,7 @@
             // buttonFeature
             // 
             this.buttonFeature.Location = new System.Drawing.Point(194, 4);
-            this.buttonFeature.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFeature.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFeature.Name = "buttonFeature";
             this.buttonFeature.Size = new System.Drawing.Size(99, 49);
             this.buttonFeature.TabIndex = 3;
@@ -1458,13 +1467,23 @@
             // buttonPrimitive
             // 
             this.buttonPrimitive.Location = new System.Drawing.Point(64, 4);
-            this.buttonPrimitive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonPrimitive.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPrimitive.Name = "buttonPrimitive";
             this.buttonPrimitive.Size = new System.Drawing.Size(99, 49);
             this.buttonPrimitive.TabIndex = 2;
             this.buttonPrimitive.Text = "Primitive";
             this.buttonPrimitive.UseVisualStyleBackColor = true;
             this.buttonPrimitive.Click += new System.EventHandler(this.buttonPrimitive_Click);
+            // 
+            // tabPageSets
+            // 
+            this.tabPageSets.BackColor = System.Drawing.Color.Transparent;
+            this.tabPageSets.Location = new System.Drawing.Point(4, 25);
+            this.tabPageSets.Name = "tabPageSets";
+            this.tabPageSets.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageSets.Size = new System.Drawing.Size(1310, 57);
+            this.tabPageSets.TabIndex = 1;
+            this.tabPageSets.Text = "选项";
             // 
             // panel4
             // 
@@ -1478,7 +1497,7 @@
             this.panel4.Controls.Add(this.checkBox1);
             this.panel4.Controls.Add(this.checkBox2);
             this.panel4.Location = new System.Drawing.Point(386, 1130);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.MaximumSize = new System.Drawing.Size(1312, 259);
             this.panel4.MinimumSize = new System.Drawing.Size(1312, 259);
             this.panel4.Name = "panel4";
@@ -1516,7 +1535,7 @@
             // button18
             // 
             this.button18.Location = new System.Drawing.Point(15, 228);
-            this.button18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button18.Margin = new System.Windows.Forms.Padding(4);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(115, 29);
             this.button18.TabIndex = 13;
@@ -1527,7 +1546,7 @@
             // 导出图像
             // 
             this.导出图像.Location = new System.Drawing.Point(15, 191);
-            this.导出图像.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.导出图像.Margin = new System.Windows.Forms.Padding(4);
             this.导出图像.Name = "导出图像";
             this.导出图像.Size = new System.Drawing.Size(115, 29);
             this.导出图像.TabIndex = 12;
@@ -1538,7 +1557,7 @@
             // button17
             // 
             this.button17.Location = new System.Drawing.Point(15, 88);
-            this.button17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button17.Margin = new System.Windows.Forms.Padding(4);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(115, 29);
             this.button17.TabIndex = 11;
@@ -1549,7 +1568,7 @@
             // buttonChooseObject
             // 
             this.buttonChooseObject.Location = new System.Drawing.Point(15, 18);
-            this.buttonChooseObject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonChooseObject.Margin = new System.Windows.Forms.Padding(4);
             this.buttonChooseObject.Name = "buttonChooseObject";
             this.buttonChooseObject.Size = new System.Drawing.Size(115, 29);
             this.buttonChooseObject.TabIndex = 10;
@@ -1573,7 +1592,7 @@
             this.panelRectSet.Controls.Add(this.label7);
             this.panelRectSet.Controls.Add(this.label6);
             this.panelRectSet.Location = new System.Drawing.Point(0, 829);
-            this.panelRectSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelRectSet.Margin = new System.Windows.Forms.Padding(4);
             this.panelRectSet.Name = "panelRectSet";
             this.panelRectSet.Size = new System.Drawing.Size(1316, 52);
             this.panelRectSet.TabIndex = 0;
@@ -1581,7 +1600,7 @@
             // DrawRect
             // 
             this.DrawRect.Location = new System.Drawing.Point(1175, 14);
-            this.DrawRect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DrawRect.Margin = new System.Windows.Forms.Padding(4);
             this.DrawRect.Name = "DrawRect";
             this.DrawRect.Size = new System.Drawing.Size(94, 29);
             this.DrawRect.TabIndex = 2;
@@ -1592,7 +1611,7 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(1008, 11);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(45, 25);
             this.textBox6.TabIndex = 1;
@@ -1600,7 +1619,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(805, 11);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(45, 25);
             this.textBox5.TabIndex = 1;
@@ -1608,7 +1627,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(610, 11);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(45, 25);
             this.textBox4.TabIndex = 1;
@@ -1616,7 +1635,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(430, 11);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(45, 25);
             this.textBox3.TabIndex = 1;
@@ -1624,7 +1643,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(265, 11);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(45, 25);
             this.textBox2.TabIndex = 1;
@@ -1632,7 +1651,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(100, 11);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(45, 25);
             this.textBox1.TabIndex = 1;
@@ -1701,7 +1720,7 @@
             // 
             this.panel6.Controls.Add(this.richTextBox1);
             this.panel6.Location = new System.Drawing.Point(0, 829);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1316, 52);
             this.panel6.TabIndex = 1;
@@ -1870,7 +1889,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(34, 199);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(116, 29);
             this.button4.TabIndex = 15;
@@ -1881,7 +1900,7 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(34, 148);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(152, 29);
             this.button6.TabIndex = 14;
@@ -3571,25 +3590,6 @@
             this.label32.Text = "当前节点总数：";
             this.label32.Click += new System.EventHandler(this.label32_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(266, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(1046, 315);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // tabPageSets
-            // 
-            this.tabPageSets.BackColor = System.Drawing.Color.Transparent;
-            this.tabPageSets.Location = new System.Drawing.Point(4, 25);
-            this.tabPageSets.Name = "tabPageSets";
-            this.tabPageSets.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSets.Size = new System.Drawing.Size(1310, 57);
-            this.tabPageSets.TabIndex = 1;
-            this.tabPageSets.Text = "选项";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -3628,6 +3628,7 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPageDraw.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -3670,7 +3671,6 @@
             this.groupBox4.PerformLayout();
             this.tabControlFeature.ResumeLayout(false);
             this.tabPageFeatureOptions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

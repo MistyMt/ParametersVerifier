@@ -18,7 +18,7 @@ using AnyCAD.Basic;
 using Microsoft.Office.Interop.Word;
 using System.Threading;
 using Interface.Forms;
-using System.Data.SqlClient;
+using System.Data.SQLite;
 
 
 namespace Interface
@@ -1598,8 +1598,49 @@ namespace Interface
 
         private void button60_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(Global.sensors[0].rangeMax.ToString());
-            //MessageBox.Show(sensor.rangeMax.ToString());
+            //后缀名可为.db也可以为.split
+            var filename = "DBofSensors" + ".db";
+            var path = System.Windows.Forms.Application.StartupPath + "\\bin\\DataBase\\" + filename;
+            SQLiteConnection dbConnection = new SQLiteConnection("data source = " + path);
+            dbConnection.Open();
+
+            if (dbConnection.State != System.Data.ConnectionState.Open)
+            {
+                dbConnection.Open();
+                SQLiteCommand cmd = new SQLiteCommand();
+                cmd.Connection = dbConnection;
+                cmd.CommandText = "CREATE TABLE t1(id varchar(4),score int)";
+                //cmd.CommandText = "CREATE TABLE IF NOT EXISTS t1(id varchar(4),score int)";
+                cmd.ExecuteNonQuery();
+            }
+
+            else
+            {
+                SQLiteCommand cmd = new SQLiteCommand();
+                cmd.Connection = dbConnection;
+                cmd.CommandText = "CREATE TABLE t1(id varchar(4),score int)";
+                //cmd.CommandText = "CREATE TABLE IF NOT EXISTS t1(id varchar(4),score int)";
+                cmd.ExecuteNonQuery();
+            }
+            dbConnection.Close();
+            ////创建表
+            //string[] colNames = new string[] { "ID", "Name", "Age", "Email" };
+            //string[] colTypes = new string[] { "INTEGER", "TEXT", "INTEGER", "TEXT" };
+
+            //string tableName = "testTable1";
+
+            //string queryString = "CREATE TABLE IF NOT EXISTS " + tableName + "( " + colNames[0] + " " + colTypes[0];
+
+            //for (int i = 1; i < colNames.Length; i++)
+            //{
+            //    queryString += ", " + colNames[i] + " " + colTypes[i];
+            //}
+            //queryString += "  ) ";
+            //SQLiteCommand dbCommand = dbConnection.CreateCommand();
+            //dbCommand.CommandText = queryString;
+            //SQLiteDataReader dataReader = dbCommand.ExecuteReader();
+
+
         }
 
     }

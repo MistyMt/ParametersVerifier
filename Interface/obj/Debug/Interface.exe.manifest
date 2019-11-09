@@ -78,24 +78,36 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interface.exe" size="1145344">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interface.exe" size="1145856">
       <assemblyIdentity name="Interface" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GmvqAwIq7lWT6ELqNpnKW6fCnq03p6bjgJj6n6CuTns=</dsig:DigestValue>
+        <dsig:DigestValue>sleFA7D5CYz5kzdClonbrSKgxI0rnuaAVVioUHnJeho=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Interface.exe.config" size="186">
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.dll" size="363520">
+      <assemblyIdentity name="System.Data.SQLite" version="1.0.112.0" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>IikkCHTLhjY7Ab+xF+dfy14aOIT1nX7KwBPa0dNstzA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Interface.exe.config" size="669">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>udkzHcF7CSyao6/9/keb6UQ5EGs1M5+q7mPvXoU9vOs=</dsig:DigestValue>
+      <dsig:DigestValue>zTY+treOuNPl7Fr8QPrcc8eh9G+7kLeaiwNNkpaJbHg=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
