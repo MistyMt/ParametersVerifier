@@ -279,3 +279,5 @@ D:\ParametersVerifier\Interface\obj\Debug\Interface.pdb
 D:\ParametersVerifier\Interface\obj\Debug\Interface.csprojResolveAssemblyReference.cache
 D:\ParametersVerifier\Interface\bin\Debug\System.Data.SQLite.dll
 D:\ParametersVerifier\Interface\bin\Debug\System.Data.SQLite.pdb
+D:\ParametersVerifier\Interface\obj\Debug\SQLiteHelperTestApp.Forms.Utilities.CreateTable.resources
+D:\ParametersVerifier\Interface\obj\Debug\SQLiteHelperTestApp.Forms.Utilities.Column.resources

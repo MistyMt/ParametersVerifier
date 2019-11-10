@@ -30,7 +30,7 @@ namespace Interface
         /// <summary>
         /// 对象名
         /// </summary>
-        public static string objectName = "未选择";
+        public static string objectName = "冷库";
 
 
         /// <summary>
@@ -64,6 +64,8 @@ namespace Interface
         public static int objectLen = 0;
         public static int objectWidth = 0;
         public static int objectHeight = 0;
+
+
 
 
 

@@ -112,6 +112,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\DBForms\Column.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DBForms\Column.Designer.cs">
+      <DependentUpon>Column.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DBForms\CreateTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DBForms\CreateTable.Designer.cs">
+      <DependentUpon>CreateTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormsOfWrite\FormAfterCalibrationValue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,14 +267,19 @@
     </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="HotKey.cs" />
-    <Compile Include="Forms\MainForm.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
+    <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLiteHelper\config.cs" />
+    <Compile Include="SQLiteHelper\SQLiteColumn.cs" />
+    <Compile Include="SQLiteHelper\SQLiteColumnList.cs" />
+    <Compile Include="SQLiteHelper\SQLiteHelper.cs" />
+    <Compile Include="SQLiteHelper\SQLiteTable.cs" />
     <Compile Include="ViewParametrs.cs" />
     <EmbeddedResource Include="Forms\banner.resx">
       <DependentUpon>banner.cs</DependentUpon>
@@ -272,6 +289,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Cutter.resx">
       <DependentUpon>Cutter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DBForms\Column.resx">
+      <DependentUpon>Column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DBForms\CreateTable.resx">
+      <DependentUpon>CreateTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormBasicInformation.resx">
       <DependentUpon>FormBasicInformation.cs</DependentUpon>
@@ -333,7 +356,7 @@
     <EmbeddedResource Include="Forms\GeneralInfo.resx">
       <DependentUpon>GeneralInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
+    <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
