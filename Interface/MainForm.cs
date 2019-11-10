@@ -1756,27 +1756,20 @@ namespace Interface
                     SQLiteHelper sh = new SQLiteHelper(cmd);
 
 
-                    int count = sh.ExecuteScalar<int>("select count(*) from " + Global.objectName + "sensorData;" ) + 1;
-
                     sh.BeginTransaction();
-                    try
-                    {
-                        for (int i = 0; i < 5; i++)
-                        {
-                            var dic = new Dictionary<string, object>();
-                            dic["name"] = "Product " + (count + i);
-                            dic["description"] = "Some description";
-                            dic["status"] = "Active";
 
-                            sh.Insert("product", dic);
-                        }
-
-                        sh.Commit();
-                    }
-                    catch (Exception)
+                    for (int i = 0; i < 5; i++)
                     {
-                        MessageBox.Show("COMMIT ERROR");
+                        var dic = new Dictionary<string, object>();
+                        dic["名称"] = "Product " +  i;
+
+                        dic["数据状态"] = "正常";
+
+                        sh.Insert(Global.objectName + "sensorData", dic);
                     }
+
+                    sh.Commit();
+
 
 
                     LoadData(sh, Global.objectName + "sensorData");
