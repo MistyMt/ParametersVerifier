@@ -1688,7 +1688,9 @@ namespace Interface
                 string[] colNames = new string[] { "ID", "名称", "编号", "运行状态", "检测时间", "检测数据", "数据状态" };
                 ColType[] colTypes = new ColType[] { ColType.Integer, ColType.Text, ColType.Integer, ColType.Text, ColType.DateTime, ColType.Decimal, ColType.Text };
 
-                for (int i = 1; i < colNames.Length + 1; i++)
+                tb.Columns.Add(new SQLiteColumn("ID",true));
+                
+                for (int i = 2; i < colNames.Length + 1; i++)
                 {
                     tb.Columns.Add(new SQLiteColumn(colNames[i - 1], colTypes[i - 1]));
                 }
@@ -1712,28 +1714,6 @@ namespace Interface
                         conn.Close();
                     }
                 }
-
-                //string connectionString = "data source = " + Global.dbName;
-                //SQLiteConnection dbConnection = new SQLiteConnection(connectionString);
-                //dbConnection.Open();
-
-
-                //string[] colNames = new string[] { "ID", "Name", "Age", "Email" };
-                //string[] colTypes = new string[] { "INTEGER", "TEXT", "INTEGER", "TEXT" };
-
-                //string tableName = "table1";
-
-                //string queryString = "CREATE TABLE IF NOT EXISTS " + tableName + "( " + colNames[0] + " " + colTypes[0];
-
-                //for (int i = 1; i < colNames.Length; i++)
-                //{
-                //    queryString += ", " + colNames[i] + " " + colTypes[i];
-                //}
-                //queryString += "  ) ";
-                //SQLiteCommand dbCommand = dbConnection.CreateCommand();
-                //dbCommand.CommandText = queryString;
-                //SQLiteDataReader dataReader = dbCommand.ExecuteReader();
-
                 MessageBox.Show("Table created.");
 
             }
@@ -1755,15 +1735,21 @@ namespace Interface
 
                     SQLiteHelper sh = new SQLiteHelper(cmd);
 
+                    int count = sh.ExecuteScalar<int>("select count(*) from "+Global.objectName + "sensorData"+";") + 1;
 
                     sh.BeginTransaction();
 
                     for (int i = 0; i < 5; i++)
                     {
                         var dic = new Dictionary<string, object>();
-                        dic["名称"] = "Product " +  i;
-
-                        dic["数据状态"] = "正常";
+                        dic["ID"] = count + i;
+                        dic["名称"] = "Product " + (count + i);
+                        dic["编号"] = null;
+                        dic["运行状态"] = "空载/断电/开门/关门/";
+                        dic["检测时间"] = null;
+                        dic["检测数据"] = null;
+                        dic["数据状态"] = "正常/偏高/偏低";
+                        
 
                         sh.Insert(Global.objectName + "sensorData", dic);
                     }
