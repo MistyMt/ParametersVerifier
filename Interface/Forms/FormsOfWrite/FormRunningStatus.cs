@@ -32,8 +32,6 @@ namespace Interface
             nowtable2.Cell(8, 3).Range.InsertAfter(textBox5.Text);
             nowtable2.Cell(9, 3).Range.InsertAfter(textBox6.Text);
             nowtable2.Cell(2, 4).Range.InsertAfter(textBox7.Text);
-            this.Close();
-            
         }
     }
 }

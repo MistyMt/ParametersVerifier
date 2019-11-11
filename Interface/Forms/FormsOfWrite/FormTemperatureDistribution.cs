@@ -41,8 +41,6 @@ namespace Interface
 
             myRange = wordDoc.Range(myRange.End, myRange.End + 28);
             myRange.Text = textBox1.Text;
-            this.Close();
-            
 
         }
     }

@@ -180,9 +180,6 @@ namespace Interface
                 g.Dispose();
                 CatchFinished = false;
                 this.BackgroundImage = originBmp;
-                string saveName = Global.objectName;
-                CatchedBmp.Save(System.Windows.Forms.Application.StartupPath + "\\bin\\"+saveName+".jpeg", System.Drawing.Imaging.ImageFormat.Jpeg);
-
                 CatchedBmp.Dispose();
                 this.DialogResult = DialogResult.OK;
                 this.Close();
