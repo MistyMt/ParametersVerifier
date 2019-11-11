@@ -124,6 +124,12 @@
     <Compile Include="Forms\DBForms\CreateTable.Designer.cs">
       <DependentUpon>CreateTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DBForms\selectedSensorData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DBForms\selectedSensorData.Designer.cs">
+      <DependentUpon>selectedSensorData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormsOfWrite\FormAfterCalibrationValue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DBForms\CreateTable.resx">
       <DependentUpon>CreateTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DBForms\selectedSensorData.resx">
+      <DependentUpon>selectedSensorData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormBasicInformation.resx">
       <DependentUpon>FormBasicInformation.cs</DependentUpon>

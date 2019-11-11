@@ -1421,7 +1421,7 @@ namespace Interface
                 EntitySceneNode node = new EntitySceneNode();
                 node.SetFaceStyle(style);
                 node.SetEntity(entity);
-                node.SetName(Convert.ToString(textBox43.Text));
+                node.SetName(Convert.ToString(textBox45.Text));
                 node.SetId(new ElementId(Convert.ToInt32(textBox44.Text)));
 
                 //生成仪表实例
@@ -1577,6 +1577,7 @@ namespace Interface
             throw new NotImplementedException();
         }
 
+
         private void button59_Click(object sender, EventArgs e)
         {
             SelectedEntityQuery query = new SelectedEntityQuery();
@@ -1587,13 +1588,12 @@ namespace Interface
             string nodeName = node2.GetName();
             if (Global.sensors.ContainsKey(nodeName))
             {
-                MessageBox.Show("1");
-            }
-            else
-            {
-                MessageBox.Show("2");
-            }
+                var f = new Forms.DBForms.selectedSensorData();
+                f.senorName = nodeName;
+                f.ShowDialog();
 
+                
+            }
         }
 
         private void button60_Click(object sender, EventArgs e)
