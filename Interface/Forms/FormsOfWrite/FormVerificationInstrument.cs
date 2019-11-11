@@ -55,6 +55,8 @@ namespace Interface
                     nowtable.Cell(i + 2, j + 2).Range.InsertAfter(dataGridView1[j, i].Value.ToString());//填充表格
                 }
             }
+            this.Close();
+            
         }
     }
 }

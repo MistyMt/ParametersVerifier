@@ -24,25 +24,6 @@ namespace Interface
             dataGridView1.Rows.Clear();
         }
 
-        private void FormValidationPerson_Load(object sender, EventArgs e)
-        {
-            object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
-            Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
-            Microsoft.Office.Interop.Word.Document wordDoc;
-            wordDoc = wordApp.Documents.Open(filename);
-            wordDoc.ActiveWindow.Visible = true;//打开word
-
-            Microsoft.Office.Interop.Word.Table nowtable = wordDoc.Tables[1];//检索表格
-
-            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-            {
-                for (int j = 0; j < dataGridView1.ColumnCount; j++)
-                {
-                    nowtable.Cell(i + 2, j + 1).Range.InsertAfter(dataGridView1[j, i].Value.ToString());//填充表格
-                }
-            }
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
@@ -72,6 +53,31 @@ namespace Interface
                     nowtable.Cell(i + 2, j + 1).Range.InsertAfter(dataGridView1[j, i].Value.ToString());//填充表格
                 }
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+            Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
+            Microsoft.Office.Interop.Word.Document wordDoc;
+            wordDoc = wordApp.Documents.Open(filename);
+            wordDoc.ActiveWindow.Visible = true;//打开word
+
+            Microsoft.Office.Interop.Word.Table nowtable = wordDoc.Tables[1];//检索表格
+
+            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+            {
+                for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                {
+                    nowtable.Cell(i + 2, j + 1).Range.InsertAfter(dataGridView1[j, i].Value.ToString());//填充表格
+                }
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }
