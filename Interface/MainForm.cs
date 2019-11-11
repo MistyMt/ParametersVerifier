@@ -752,6 +752,7 @@ namespace Interface
             m_RenderView.ShowSceneNode(node);
         }
         #region 截图功能
+
         public enum KeyModifiers
         {
             None = 0,
@@ -1592,7 +1593,7 @@ namespace Interface
                 f.senorName = nodeName;
                 f.ShowDialog();
 
-                
+
             }
         }
 
@@ -1688,8 +1689,8 @@ namespace Interface
                 string[] colNames = new string[] { "ID", "名称", "编号", "运行状态", "检测时间", "检测数据", "数据状态" };
                 ColType[] colTypes = new ColType[] { ColType.Integer, ColType.Text, ColType.Integer, ColType.Text, ColType.DateTime, ColType.Decimal, ColType.Text };
 
-                tb.Columns.Add(new SQLiteColumn("ID",true));
-                
+                tb.Columns.Add(new SQLiteColumn("ID", true));
+
                 for (int i = 2; i < colNames.Length + 1; i++)
                 {
                     tb.Columns.Add(new SQLiteColumn(colNames[i - 1], colTypes[i - 1]));
@@ -1735,7 +1736,7 @@ namespace Interface
 
                     SQLiteHelper sh = new SQLiteHelper(cmd);
 
-                    int count = sh.ExecuteScalar<int>("select count(*) from "+Global.objectName + "sensorData"+";") + 1;
+                    int count = sh.ExecuteScalar<int>("select count(*) from " + Global.objectName + "sensorData" + ";") + 1;
 
                     sh.BeginTransaction();
 
@@ -1749,7 +1750,7 @@ namespace Interface
                         dic["检测时间"] = null;
                         dic["检测数据"] = null;
                         dic["数据状态"] = "正常/偏高/偏低";
-                        
+
 
                         sh.Insert(Global.objectName + "sensorData", dic);
                     }
@@ -1771,9 +1772,16 @@ namespace Interface
             dataGridView1.DataSource = sh.Select("select * from " + tbName + " order by id;");
         }
 
-        private void button66_Click(object sender, EventArgs e)
+        private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (tabControl2.SelectedTab == tabPageDraw)
+            {
+                tabControl1.SelectedTab = tabPage1;
+            }
+            if (tabControl2.SelectedTab == tabPageData)
+            {
+                tabControl1.SelectedTab = tabPage3;
+            }
         }
     }
 }
