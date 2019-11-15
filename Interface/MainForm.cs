@@ -1783,5 +1783,22 @@ namespace Interface
                 tabControl1.SelectedTab = tabPage3;
             }
         }
+
+        private void button57_Click(object sender, EventArgs e)
+        {
+            FileInfo f111 = new FileInfo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + Global.templateName + ".doc");
+            if (f111.Exists)
+            {
+                f111.Delete();
+                FileInfo f222 = new FileInfo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + "\\Resource\\" + Global.templateName + ".doc");
+                f222.CopyTo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + Global.templateName + ".doc");
+            }
+            else
+            {
+                FileInfo f222 = new FileInfo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + "\\Resource\\" + Global.templateName + ".doc");
+                f222.CopyTo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + Global.templateName + ".doc");
+            }
+
+        }
     }
 }

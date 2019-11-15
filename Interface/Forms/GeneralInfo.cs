@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,22 @@ namespace Interface.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+            #region 从Resource文件夹提取模板
+            FileInfo f111 = new FileInfo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + Global.templateName + ".doc");
+            if (f111.Exists)
+            {
+                f111.Delete();
+                FileInfo f222 = new FileInfo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + "\\Resource\\" + Global.templateName + ".doc");
+                f222.CopyTo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + Global.templateName + ".doc");
+            }
+            else 
+            {
+                FileInfo f222 = new FileInfo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + "\\Resource\\" + Global.templateName + ".doc");
+                f222.CopyTo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + Global.templateName + ".doc");
+            }
+            #endregion
+
+            object filename = Application.StartupPath + "\\bin\\" + Global.templateName;
 
             object G_Missing = System.Reflection.Missing.Value;
             Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();

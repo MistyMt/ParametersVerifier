@@ -28,28 +28,27 @@ namespace Interface
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
             this.panel1.Visible = true;
             this.panel1.BringToFront();
         }
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "冷库")
+            if (Global.objectName == "冷库")
             {
                 this.panel1.BringToFront();
                 this.panel1.Visible = true;
                 this.panel2.Visible = false;
                 this.panel3.Visible = false;
             }
-            else if (comboBox1.Text == "高温热处理炉")
+            else if (Global.objectName == "高温热处理炉")
             {
                 this.panel2.BringToFront();
                 this.panel2.Visible = true;
                 this.panel1.Visible = false;
                 this.panel3.Visible = false;
             }
-            else if (comboBox1.Text == "灭菌器")
+            else if (Global.objectName == "灭菌器")
             {
                 this.panel3.BringToFront();
                 this.panel3.Visible = true;
@@ -75,8 +74,7 @@ namespace Interface
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Global.templateName = comboBox2.Text;
-            object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+            object filename = Application.StartupPath + "\\bin\\" + Global.templateName;
 
             object G_Missing = System.Reflection.Missing.Value;
             Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
@@ -269,7 +267,6 @@ namespace Interface
 
             //wordDoc.Close();
 
-            Global.objectName = comboBox1.Text;
             Global.objectLen = Convert.ToInt32( textBox2.Text);
             Global.objectWidth = Convert.ToInt32(textBox4.Text);
             Global.objectHeight = Convert.ToInt32(textBox5.Text);

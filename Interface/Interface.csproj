@@ -233,18 +233,24 @@
       <DependentUpon>GeneralInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="MeasureDistanceEditor.cs" />
+    <Compile Include="ObjectSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObjectSelect.Designer.cs">
+      <DependentUpon>ObjectSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sensor.cs" />
-    <Compile Include="Forms\banner.cs">
+    <Compile Include="Forms\banner1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\banner.Designer.cs">
-      <DependentUpon>banner.cs</DependentUpon>
+    <Compile Include="Forms\banner1.Designer.cs">
+      <DependentUpon>banner1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\BeginForm.cs">
+    <Compile Include="Forms\banner2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BeginForm.Designer.cs">
-      <DependentUpon>BeginForm.cs</DependentUpon>
+    <Compile Include="Forms\banner2.Designer.cs">
+      <DependentUpon>banner2.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Cutter.cs">
       <SubType>Form</SubType>
@@ -287,11 +293,11 @@
     <Compile Include="SQLiteHelper\SQLiteHelper.cs" />
     <Compile Include="SQLiteHelper\SQLiteTable.cs" />
     <Compile Include="ViewParametrs.cs" />
-    <EmbeddedResource Include="Forms\banner.resx">
-      <DependentUpon>banner.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\banner1.resx">
+      <DependentUpon>banner1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BeginForm.resx">
-      <DependentUpon>BeginForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\banner2.resx">
+      <DependentUpon>banner2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Cutter.resx">
       <DependentUpon>Cutter.cs</DependentUpon>
@@ -367,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectSelect.resx">
+      <DependentUpon>ObjectSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

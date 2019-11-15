@@ -78,14 +78,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interface.exe" size="1172480">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interface.exe" size="1173504">
       <assemblyIdentity name="Interface" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ev9DO5o7sIyc7/TH1+9vcf2VT4tYKKMxZk3a3iUzRPk=</dsig:DigestValue>
+        <dsig:DigestValue>Zdi9jlg659BH7Houp0F6RF0rNX4+2zRpZtFb+YvjD8A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
