@@ -91,6 +91,10 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\assembly\office.dll</HintPath>
     </Reference>
+    <Reference Include="Spire.Doc, Version=7.10.6.4046, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SDK\Spirl\Spire.Doc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />

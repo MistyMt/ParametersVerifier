@@ -1800,5 +1800,65 @@ namespace Interface
             }
 
         }
+
+        private void button56_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                FormValidationPerson validationPersonForm = new FormValidationPerson();
+                validationPersonForm.ShowDialog();
+
+                FormContentImplementation contentImplemenationForm = new FormContentImplementation();
+                contentImplemenationForm.ShowDialog();
+
+                FormVerificationInstrument verificationInstrumentForm = new FormVerificationInstrument();
+                verificationInstrumentForm.ShowDialog();
+
+                FormVerificationTime verificationTimeForm = new FormVerificationTime();
+                verificationTimeForm.ShowDialog();
+
+                FormEnvironmentInformation environmentInformationForm = new FormEnvironmentInformation();
+                environmentInformationForm.ShowDialog();
+
+                FormNoload noloadForm = new FormNoload();
+                noloadForm.ShowDialog();
+
+                FormFullload fullloadForm = new FormFullload();
+                fullloadForm.ShowDialog();
+
+                FormContrast contrastForm = new FormContrast();
+                contrastForm.ShowDialog();
+
+                FormOpenImpact openImpactForm = new FormOpenImpact();
+                openImpactForm.ShowDialog();
+
+                FormOutagesImpact outagesImpactForm = new FormOutagesImpact();
+                outagesImpactForm.ShowDialog();
+
+                FormTemperatureDistribution temperatureDistributionForm = new FormTemperatureDistribution();
+                temperatureDistributionForm.ShowDialog();
+
+                FormRunningStatus runningStatusForm = new FormRunningStatus();
+                runningStatusForm.ShowDialog();
+
+                FormFanRunningStatus fanRunningStatusForm = new FormFanRunningStatus();
+                fanRunningStatusForm.ShowDialog();
+
+                FormConclusion conclusionForm = new FormConclusion();
+                conclusionForm.ShowDialog();
+
+                FormBeforeCalibrationValue beforeCalibrationValue = new FormBeforeCalibrationValue();
+                beforeCalibrationValue.ShowDialog();
+
+                FormAfterCalibrationValue afterCalibrationValue = new FormAfterCalibrationValue();
+                afterCalibrationValue.ShowDialog();
+
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }
