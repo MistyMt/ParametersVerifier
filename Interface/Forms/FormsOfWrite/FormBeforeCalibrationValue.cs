@@ -41,7 +41,7 @@ namespace Interface
             Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
             Microsoft.Office.Interop.Word.Document wordDoc;
             wordDoc = wordApp.Documents.Open(filename);
-            wordDoc.ActiveWindow.Visible = true;//打开word
+            wordDoc.ActiveWindow.Visible = false;//打开word
 
             Microsoft.Office.Interop.Word.Table nowtable = wordDoc.Tables[15];//检索表格
 
@@ -52,6 +52,9 @@ namespace Interface
                     nowtable.Cell(i + 2, j + 2).Range.InsertAfter(dataGridView1[j, i].Value.ToString());//填充表格
                 }
             }
+            wordDoc.Save();
+            wordApp.Quit();
+            wordApp = null;
         }
     }
 }

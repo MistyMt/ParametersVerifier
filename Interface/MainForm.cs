@@ -26,13 +26,13 @@ namespace Interface
     public partial class MainForm : Form
     {
 
-        private AnyCAD.Presentation.RenderWindow3d m_RenderView = null;
+        public AnyCAD.Presentation.RenderWindow3d RenderView = null;
 
-        public AnyCAD.Presentation.RenderWindow3d RenderView
-        {
-            get { return m_RenderView; }
-            set { m_RenderView = value; }
-        }
+        //public AnyCAD.Presentation.RenderWindow3d RenderView
+        //{
+        //    get { return m_RenderView; }
+        //    set { m_RenderView = value; }
+        //}
         public MainForm()
         {
             InitializeComponent();
@@ -40,12 +40,12 @@ namespace Interface
             //Global.mainForms.Add(this);
 
             var container = this.panel3;
-            m_RenderView = new AnyCAD.Presentation.RenderWindow3d();
-            m_RenderView.Size = container.ClientSize;
-            m_RenderView.Dock = System.Windows.Forms.DockStyle.Fill;
+            RenderView = new AnyCAD.Presentation.RenderWindow3d();
+            RenderView.Size = container.ClientSize;
+            RenderView.Dock = System.Windows.Forms.DockStyle.Fill;
             //m_RenderView.BackColor = Color.White;
 
-            container.Controls.Add(m_RenderView);
+            container.Controls.Add(RenderView);
 
         }
 
@@ -144,9 +144,10 @@ namespace Interface
 
         private void buttonPrimitive_Click(object sender, EventArgs e)
         {
+            tabControlPrimitive.Visible = true;
             tabControlPrimitive.BringToFront();
 
-            tabControlPrimitive.Visible = true;
+
 
         }
 
@@ -502,61 +503,61 @@ namespace Interface
         private void button14_Click(object sender, EventArgs e)
         {
 
-            //创建"温度云图数据.txt"文件
-            string filedir = Environment.CurrentDirectory.ToString() + "\\bin";
+            ////创建"温度云图数据.txt"文件
+            string filedir = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin";
             string fullFilename = filedir + "\\温度云图数据.txt";
-            System.IO.File.Delete(fullFilename);
+            //System.IO.File.Delete(fullFilename);
 
+            ////读取数据源，写成text
+            //string fname = "";
+            //OpenFileDialog fdlg = new OpenFileDialog();
+            //fdlg.Title = "Excel File Dialog";
+            //fdlg.InitialDirectory = @filedir + "\\bin";
+            //fdlg.Filter = "All files (*.*)|*.*";
+            //fdlg.FilterIndex = 2;
+            //fdlg.RestoreDirectory = true;
+            //if (fdlg.ShowDialog() == DialogResult.OK)
+            //{
+            //    fname = fdlg.FileName;
+            //}
 
-            string fname = "";
-            OpenFileDialog fdlg = new OpenFileDialog();
-            fdlg.Title = "Excel File Dialog";
-            fdlg.InitialDirectory = @filedir + "\\bin";
-            fdlg.Filter = "All files (*.*)|*.*";
-            fdlg.FilterIndex = 2;
-            fdlg.RestoreDirectory = true;
-            if (fdlg.ShowDialog() == DialogResult.OK)
-            {
-                fname = fdlg.FileName;
-            }
+            //if (fname != "")
+            //{
+            //    string newTxtPath2 = filedir + "\\温度云图数据.txt";
+            //    StreamWriter sw2 = new StreamWriter(newTxtPath2, true, Encoding.Default);
+            //    Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            //    Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fname);
+            //    Microsoft.Office.Interop.Excel._Worksheet xlWorksheet2 = xlWorkbook.Sheets[2];
+            //    Microsoft.Office.Interop.Excel.Range xRange2 = xlWorksheet2.get_Range("C2:Q17");
+            //    int rowCount2 = xRange2.Rows.Count;
+            //    for (int k = 2; k <= rowCount2; k++)
+            //    {
+            //        string lineNum = k.ToString();
+            //        double LineC2 = xlWorksheet2.Range["C" + lineNum].Value;
+            //        double LineD2 = xlWorksheet2.Range["D" + lineNum].Value;
+            //        double LineE2 = xlWorksheet2.Range["E" + lineNum].Value;
+            //        double LineF2 = xlWorksheet2.Range["F" + lineNum].Value;
+            //        double LineG2 = xlWorksheet2.Range["G" + lineNum].Value;
+            //        double LineH2 = xlWorksheet2.Range["H" + lineNum].Value;
+            //        double LineI2 = xlWorksheet2.Range["I" + lineNum].Value;
+            //        double LineJ2 = xlWorksheet2.Range["J" + lineNum].Value;
+            //        double LineK2 = xlWorksheet2.Range["K" + lineNum].Value;
+            //        double LineL2 = xlWorksheet2.Range["L" + lineNum].Value;
+            //        double LineM2 = xlWorksheet2.Range["M" + lineNum].Value;
+            //        double LineN2 = xlWorksheet2.Range["N" + lineNum].Value;
+            //        double LineO2 = xlWorksheet2.Range["O" + lineNum].Value;
+            //        double LineP2 = xlWorksheet2.Range["P" + lineNum].Value;
+            //        double LineQ2 = xlWorksheet2.Range["Q" + lineNum].Value;
+            //        sw2.WriteLine(LineC2 + "\t" + LineD2 + "\t" + LineE2 + "\t" + LineF2 + "\t" + LineG2 + "\t" + LineH2 + "\t" + LineI2 + "\t" + LineJ2 + "\t" + LineK2 + "\t" + LineL2 + "\t" + LineM2 + "\t" + LineN2 + "\t" + LineO2 + "\t" + LineP2 + "\t" + LineQ2 + "\t");
+            //    }
+            //    sw2.Close();
+            //    MessageBox.Show("ok");
 
-            if (fname != "")
-            {
-                string newTxtPath2 = filedir + "\\温度云图数据.txt";
-                StreamWriter sw2 = new StreamWriter(newTxtPath2, true, Encoding.Default);
-                Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-                Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fname);
-                Microsoft.Office.Interop.Excel._Worksheet xlWorksheet2 = xlWorkbook.Sheets[2];
-                Microsoft.Office.Interop.Excel.Range xRange2 = xlWorksheet2.get_Range("C2:Q17");
-                int rowCount2 = xRange2.Rows.Count;
-                for (int k = 2; k <= rowCount2; k++)
-                {
-                    string lineNum = k.ToString();
-                    double LineC2 = xlWorksheet2.Range["C" + lineNum].Value;
-                    double LineD2 = xlWorksheet2.Range["D" + lineNum].Value;
-                    double LineE2 = xlWorksheet2.Range["E" + lineNum].Value;
-                    double LineF2 = xlWorksheet2.Range["F" + lineNum].Value;
-                    double LineG2 = xlWorksheet2.Range["G" + lineNum].Value;
-                    double LineH2 = xlWorksheet2.Range["H" + lineNum].Value;
-                    double LineI2 = xlWorksheet2.Range["I" + lineNum].Value;
-                    double LineJ2 = xlWorksheet2.Range["J" + lineNum].Value;
-                    double LineK2 = xlWorksheet2.Range["K" + lineNum].Value;
-                    double LineL2 = xlWorksheet2.Range["L" + lineNum].Value;
-                    double LineM2 = xlWorksheet2.Range["M" + lineNum].Value;
-                    double LineN2 = xlWorksheet2.Range["N" + lineNum].Value;
-                    double LineO2 = xlWorksheet2.Range["O" + lineNum].Value;
-                    double LineP2 = xlWorksheet2.Range["P" + lineNum].Value;
-                    double LineQ2 = xlWorksheet2.Range["Q" + lineNum].Value;
-                    sw2.WriteLine(LineC2 + "\t" + LineD2 + "\t" + LineE2 + "\t" + LineF2 + "\t" + LineG2 + "\t" + LineH2 + "\t" + LineI2 + "\t" + LineJ2 + "\t" + LineK2 + "\t" + LineL2 + "\t" + LineM2 + "\t" + LineN2 + "\t" + LineO2 + "\t" + LineP2 + "\t" + LineQ2 + "\t");
-                }
-                sw2.Close();
-                MessageBox.Show("ok");
-
-                xlWorkbook.Close();
+            //    xlWorkbook.Close();
 
                 //由"温度云图数据.txt"显示图像
-                double[] xdata = { -8.37, -7.87, -7.37, -6.87, -6.37, -5.87, -5.37, -4.87, -4.37, -3.87, -3.37, -2.87, -2.37, -1.87, -1.37 };
-                double[] ydata = { 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5 };
+                double[] xdata = { -8.37, -7.87, -7.37, -6.87, -6.37, -5.87, -5.37, -4.87, -4.37, -3.87, -3.37, -2.87, -2.37, -1.87, -1.37 ,-0.87};
+                double[] ydata = { 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5 ,8.0};
                 double[,] results = new double[xdata.Length, ydata.Length];
                 double minValue = 10000000;
                 double maxValue = -10000000;
@@ -651,7 +652,7 @@ namespace Interface
                 var node = new EntitySceneNode();
                 node.SetEntity(entity);
                 RenderView.ShowSceneNode(node);
-            }
+            //}
         }
 
         public void buttonChooseObject_Click(object sender, EventArgs e)
@@ -676,7 +677,62 @@ namespace Interface
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+
+                FormValidationPerson validationPersonForm = new FormValidationPerson();
+                validationPersonForm.ShowDialog();
+
+                FormContentImplementation contentImplemenationForm = new FormContentImplementation();
+                contentImplemenationForm.ShowDialog();
+
+                FormVerificationInstrument verificationInstrumentForm = new FormVerificationInstrument();
+                verificationInstrumentForm.ShowDialog();
+
+                FormVerificationTime verificationTimeForm = new FormVerificationTime();
+                verificationTimeForm.ShowDialog();
+
+                FormEnvironmentInformation environmentInformationForm = new FormEnvironmentInformation();
+                environmentInformationForm.ShowDialog();
+
+                FormNoload noloadForm = new FormNoload();
+                noloadForm.ShowDialog();
+
+                FormFullload fullloadForm = new FormFullload();
+                fullloadForm.ShowDialog();
+
+                FormContrast contrastForm = new FormContrast();
+                contrastForm.ShowDialog();
+
+                FormOpenImpact openImpactForm = new FormOpenImpact();
+                openImpactForm.ShowDialog();
+
+                FormOutagesImpact outagesImpactForm = new FormOutagesImpact();
+                outagesImpactForm.ShowDialog();
+
+                FormTemperatureDistribution temperatureDistributionForm = new FormTemperatureDistribution();
+                temperatureDistributionForm.ShowDialog();
+
+                FormRunningStatus runningStatusForm = new FormRunningStatus();
+                runningStatusForm.ShowDialog();
+
+                FormFanRunningStatus fanRunningStatusForm = new FormFanRunningStatus();
+                fanRunningStatusForm.ShowDialog();
+
+                FormConclusion conclusionForm = new FormConclusion();
+                conclusionForm.ShowDialog();
+
+                FormBeforeCalibrationValue beforeCalibrationValue = new FormBeforeCalibrationValue();
+                beforeCalibrationValue.ShowDialog();
+
+                FormAfterCalibrationValue afterCalibrationValue = new FormAfterCalibrationValue();
+                afterCalibrationValue.ShowDialog();
+
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void 传感器信息重置ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -696,6 +752,7 @@ namespace Interface
                 FormAnalysisOfData analysisOfDataForm = new FormAnalysisOfData();
                 Global.analysisOfDataForms.Add(analysisOfDataForm);
                 analysisOfDataForm.ShowDialog();
+                analysisOfDataForm.m_RenderView = RenderView;
             }
         }
 
@@ -749,7 +806,7 @@ namespace Interface
             geom.SetGeometry(rect);
             EntitySceneNode node = new EntitySceneNode();
             node.SetEntity(geom);
-            m_RenderView.ShowSceneNode(node);
+            RenderView.ShowSceneNode(node);
         }
         #region 截图功能
 
@@ -912,9 +969,9 @@ namespace Interface
             panelFrame.Visible = true;
             panelFrame.BringToFront();
 
-            textBox7.Text = Global.objectLen.ToString();
-            textBox8.Text = Global.objectWidth.ToString();
-            textBox9.Text = Global.objectHeight.ToString();
+            textBox7.Text = (Global.objectLen*100 ).ToString();
+            textBox8.Text = (Global.objectWidth *100).ToString();
+            textBox9.Text = (Global.objectHeight *100).ToString();
 
             ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
             ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
@@ -1060,17 +1117,26 @@ namespace Interface
 
         private void button4_Click_2(object sender, EventArgs e)
         {
-            SelectedEntityQuery query = new SelectedEntityQuery();
-            RenderView.QuerySelection(query);
-            SceneNode node2 = query.GetRootNode();
-
-            ElementId id = node2.GetId();
-            MessageBox.Show("Remove Node");
-            SceneManager sceneMgr = RenderView.SceneManager;
-            SceneNode node = sceneMgr.FindNode(id);
-            if (node != null)
+            try
             {
-                sceneMgr.RemoveNode(node);
+
+
+                SelectedEntityQuery query = new SelectedEntityQuery();
+                RenderView.QuerySelection(query);
+                SceneNode node2 = query.GetRootNode();
+
+                ElementId id = node2.GetId();
+                MessageBox.Show("Remove Node");
+                SceneManager sceneMgr = RenderView.SceneManager;
+                SceneNode node = sceneMgr.FindNode(id);
+                if (node != null)
+                {
+                    sceneMgr.RemoveNode(node);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("未选择节点。");
             }
         }
 
@@ -1382,15 +1448,113 @@ namespace Interface
 
         private void button31_Click_1(object sender, EventArgs e)
         {
-            tabControlPrimitive.SelectedTab = tabpagePrimitiveFrameParameterSetter;
-            panelSensor.Visible = true;
-            panelSensor.BringToFront();
+            tabControl1.SelectedTab = tabPage1;
+            try
+            {
 
 
-            ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
-            ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
-            textBox44.Text = ViewParametrs.CurrentId.AsInt().ToString();
+                tabControlPrimitive.SelectedTab = tabpagePrimitiveFrameParameterSetter;
+                panelSensor.Visible = true;
+                panelSensor.BringToFront();
+
+
+                ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
+                ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
+                textBox44.Text = ViewParametrs.CurrentId.AsInt().ToString();
+
+
+
+
+                #region 读取测点列表
+                using (SQLiteConnection conn = new SQLiteConnection(config.DataSource))
+                {
+                    using (SQLiteCommand cmd = new SQLiteCommand())
+                    {
+
+
+                        conn.Open();
+                        cmd.Connection = conn;
+
+                        SQLiteHelper sh = new SQLiteHelper(cmd);
+
+
+                        try
+                        {
+
+
+
+                            List<string> columnName = new List<string>();
+                            string sql = "PRAGMA table_info([断电]);";
+
+                            SQLiteCommand cmd2 = new SQLiteCommand(sql, conn);
+                            System.Data.SQLite.SQLiteDataReader dr = cmd2.ExecuteReader();
+
+                            while (dr.Read())
+                            {
+                                columnName.Add(dr[1].ToString());
+                            }
+                            dr.Close();
+                            conn.Close();
+                            var colName = new List<string>();
+                            for (int i = 3; i < columnName.Count; i++)
+                            {
+                                colName.Add(columnName[i]);
+                            }
+
+
+
+
+                            //var tableName = "开门";
+
+                            //System.Data.DataTable dt = sh.Select("select name from syscolumns where id = object_id('" + tableName + "');");
+                            comboBox5.DataSource = colName;
+                            //comboBox5.DisplayMember = "检测时间";
+
+                        }
+                        catch (Exception ex)
+                        {
+                            System.Data.DataTable dt = new System.Data.DataTable();
+                            dt.Columns.Add("Error");
+                            dt.Rows.Add(ex.ToString());
+                            comboBox5.DataSource = dt;
+                        }
+
+                        conn.Close();
+                    }
+                }
+                #endregion
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("未载入数据库。");
+            }
         }
+        public List<string> getSqlColumnName()
+        {
+            List<string> columnName = new List<string>();
+            string sql = "PRAGMA  table_info(“开门”);";
+
+            try
+            {
+                SQLiteConnection conn = new SQLiteConnection(config.DataSource);
+                conn.Open();
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                System.Data.SQLite.SQLiteDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    columnName.Add(dr[0].ToString());
+                }
+                dr.Close();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+            }
+
+            return columnName;
+        }
+
 
         private void button8_Click_2(object sender, EventArgs e)
         {
@@ -1422,12 +1586,12 @@ namespace Interface
                 EntitySceneNode node = new EntitySceneNode();
                 node.SetFaceStyle(style);
                 node.SetEntity(entity);
-                node.SetName(Convert.ToString(textBox45.Text));
+                node.SetName(Convert.ToString(comboBox5.Text));
                 node.SetId(new ElementId(Convert.ToInt32(textBox44.Text)));
 
                 //生成仪表实例
                 Sensor sensor = new Sensor();
-                sensor.name = textBox45.Text;
+                sensor.name = comboBox5.Text;
                 sensor.serialNumber = Convert.ToInt32(textBox46.Text);
                 sensor.rangeMin = Convert.ToInt32(textBox47.Text);
                 sensor.rangeMax = Convert.ToInt32(textBox51.Text);
@@ -1581,6 +1745,8 @@ namespace Interface
 
         private void button59_Click(object sender, EventArgs e)
         {
+            try
+            {
             SelectedEntityQuery query = new SelectedEntityQuery();
             RenderView.QuerySelection(query);
             SceneNode node2 = query.GetRootNode();
@@ -1594,6 +1760,11 @@ namespace Interface
                 f.ShowDialog();
 
 
+            }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("请选择测点。");
             }
         }
 
@@ -1683,11 +1854,10 @@ namespace Interface
         {
             if (comboBox4.Text == "Default")
             {
+                SQLiteTable tb = new SQLiteTable(Global.objectName + "sensorData111111");
 
-                SQLiteTable tb = new SQLiteTable(Global.objectName + "sensorData");
-
-                string[] colNames = new string[] { "ID", "名称", "编号", "运行状态", "检测时间", "检测数据", "数据状态" };
-                ColType[] colTypes = new ColType[] { ColType.Integer, ColType.Text, ColType.Integer, ColType.Text, ColType.DateTime, ColType.Decimal, ColType.Text };
+                string[] colNames = new string[] { "ID", "状况", "检测时间", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11", "T12", "T13", "T14", "T15" };
+                ColType[] colTypes = new ColType[] { ColType.Integer, ColType.Text, ColType.Text, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal };
 
                 tb.Columns.Add(new SQLiteColumn("ID", true));
 
@@ -1703,6 +1873,7 @@ namespace Interface
                     using (SQLiteCommand cmd = new SQLiteCommand())
                     {
                         conn.Open();
+
                         cmd.Connection = conn;
 
                         SQLiteHelper sh = new SQLiteHelper(cmd);
@@ -1710,12 +1881,20 @@ namespace Interface
                         sh.DropTable(textBox1.Text);
                         sh.CreateTable(tb);
 
-                        LoadData(sh, Global.objectName + "sensorData");
+
+
+
+
+
+                        LoadData(sh, Global.objectName + "sensorData111111");
 
                         conn.Close();
                     }
                 }
                 MessageBox.Show("Table created.");
+
+
+
 
             }
             else
@@ -1736,30 +1915,72 @@ namespace Interface
 
                     SQLiteHelper sh = new SQLiteHelper(cmd);
 
-                    int count = sh.ExecuteScalar<int>("select count(*) from " + Global.objectName + "sensorData" + ";") + 1;
+                    int count = sh.ExecuteScalar<int>("select count(*) from " + Global.objectName + "sensorData111111" + ";") + 1;
 
                     sh.BeginTransaction();
+                    string fileName = Environment.CurrentDirectory.ToString() + "\\bin\\" + "百源_冷库.xls";
+                    Microsoft.Office.Interop.Excel.Application EXC1 = new Microsoft.Office.Interop.Excel.Application();
+                    EXC1.Visible = false;
+                    Microsoft.Office.Interop.Excel.Workbooks wbs = EXC1.Workbooks;
+                    Microsoft.Office.Interop.Excel._Workbook wb = wbs.Add(fileName);
+                    Microsoft.Office.Interop.Excel._Worksheet exsheet = wb.Sheets[1];
+                    string sName = exsheet.Name;
+                    int sRowcount = exsheet.UsedRange.Rows.Count;
+                    exsheet.Activate();
 
-                    for (int i = 0; i < 5; i++)
+
+                    for (int i = 2; i < sRowcount - 1; i++)
                     {
+                        string a = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 3]).Text;
+                        string b = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 2]).Text;
+                        string c = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 4]).Text;
+                        string d = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 5]).Text;
+                        string q = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 6]).Text;
+                        string f = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 7]).Text;
+                        string g = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 8]).Text;
+                        string h = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 9]).Text;
+                        string r = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 10]).Text;
+                        string j = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 11]).Text;
+                        string k = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 12]).Text;
+                        string l = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 13]).Text;
+                        string m = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 14]).Text;
+                        string n = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 15]).Text;
+                        string o = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 16]).Text;
+                        string p = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 17]).Text;
                         var dic = new Dictionary<string, object>();
                         dic["ID"] = count + i;
-                        dic["名称"] = "Product " + (count + i);
-                        dic["编号"] = null;
-                        dic["运行状态"] = "空载/断电/开门/关门/";
-                        dic["检测时间"] = null;
-                        dic["检测数据"] = null;
-                        dic["数据状态"] = "正常/偏高/偏低";
+                        dic["状况"] = "空载";
+                        dic["检测时间"] = b;
+                        dic["T1"] = a;
+                        dic["T2"] = c;
+                        dic["T3"] = d;
+                        dic["T4"] = q;
+                        dic["T5"] = f;
+                        dic["T6"] = g;
+                        dic["T7"] = h;
+                        dic["T8"] = r;
+                        dic["T9"] = j;
+                        dic["T10"] = k;
+                        dic["T11"] = l;
+                        dic["T12"] = m;
+                        dic["T13"] = n;
+                        dic["T14"] = o;
+                        dic["T15"] = p;
 
 
-                        sh.Insert(Global.objectName + "sensorData", dic);
+
+                        sh.Insert(Global.objectName + "sensorData111111", dic);
                     }
+                    wb.Close();
+                    wbs.Close();
+                    EXC1.Quit();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(EXC1);
 
                     sh.Commit();
 
 
 
-                    LoadData(sh, Global.objectName + "sensorData");
+                    LoadData(sh, Global.objectName + "sensorData111111");
 
                     conn.Close();
                 }
@@ -1859,6 +2080,19 @@ namespace Interface
             catch (Exception)
             {
             }
+        }
+
+        private void button66_Click(object sender, EventArgs e)
+        {
+            tabControl2.Visible = true;
+            tabControl2.SelectedTab = tabPageDraw;
+            tabControl1.SelectedTab = tabPage1;
+        }
+
+        private void button67_Click(object sender, EventArgs e)
+        {
+            tabControl2.SelectedTab = tabPageData;
+            tabControl1.SelectedTab = tabPage3;
         }
     }
 }

@@ -38,8 +38,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.label4 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -113,7 +113,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "开门",
-            "关门",
+            "断电",
             "满载",
             "空载"});
             this.comboBox2.Location = new System.Drawing.Point(164, 15);
@@ -166,16 +166,6 @@
             this.splitContainer1.SplitterDistance = 469;
             this.splitContainer1.TabIndex = 9;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 28);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(142, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "查询该测点所有数据";
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(174, 56);
@@ -185,6 +175,16 @@
             this.button3.Text = "查询";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 28);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(142, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "查询该测点所有数据";
             // 
             // selectedSensorData
             // 

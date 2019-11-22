@@ -237,10 +237,10 @@
       <DependentUpon>GeneralInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="MeasureDistanceEditor.cs" />
-    <Compile Include="ObjectSelect.cs">
+    <Compile Include="Forms\ObjectSelect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ObjectSelect.Designer.cs">
+    <Compile Include="Forms\ObjectSelect.Designer.cs">
       <DependentUpon>ObjectSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="Sensor.cs" />
@@ -378,7 +378,7 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ObjectSelect.resx">
+    <EmbeddedResource Include="Forms\ObjectSelect.resx">
       <DependentUpon>ObjectSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

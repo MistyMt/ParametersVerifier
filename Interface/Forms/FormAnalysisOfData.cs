@@ -15,13 +15,15 @@ namespace Interface
 {
     public partial class FormAnalysisOfData : Form
     {
-        private AnyCAD.Presentation.RenderWindow3d m_RenderView = null;
+        public AnyCAD.Presentation.RenderWindow3d m_RenderView ;
+        //public AnyCAD.Presentation.RenderWindow3d RenderView
+        //{
+        //    set
+        //    {
+        //        m_RenderView = value;
+        //    }
+        //}
 
-        public AnyCAD.Presentation.RenderWindow3d RenderView
-        {
-            get { return m_RenderView; }
-            set { m_RenderView = value; }
-        }
         public FormAnalysisOfData()
         {
             InitializeComponent();

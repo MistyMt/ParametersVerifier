@@ -47,12 +47,14 @@ namespace Interface.Forms.DBForms
                     try
                     {
                         DataTable dt = sh.Select("SELECT " + " 检测时间 " + " FROM " + comboBox2.Text + ";");
-                        comboBox1.DataSource = dt;
                         comboBox1.DisplayMember = "检测时间";
+                        comboBox1.DataSource = dt;
+                        
 
                         DataTable dts = sh.Select("SELECT " + " ID " + " FROM " + comboBox2.Text + ";");
-                        comboBox3.DataSource = dts;
                         comboBox3.DisplayMember = "ID";
+                        comboBox3.DataSource = dts;
+                        
                     }
                     catch (Exception ex)
                     {
@@ -83,7 +85,11 @@ namespace Interface.Forms.DBForms
 
                     try
                     {
-                        DataTable dt = sh.Select("SELECT " + _senorName + " FROM " + comboBox2.Text + " WHERE ID=" + comboBox3.Text + ";");
+                        var a = _senorName;
+                        var b = comboBox2.Text;
+                        var c = comboBox3.Text;
+
+                        DataTable dt = sh.Select("SELECT " + _senorName + " FROM " + comboBox2.Text + " WHERE ID= " + comboBox3.Text + ";");
                         dataGridView1.DataSource = dt;
                     }
                     catch (Exception ex)

@@ -41,7 +41,7 @@ namespace Interface.Forms
             Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
             Microsoft.Office.Interop.Word.Document wordDoc;
             wordDoc = wordApp.Documents.Open(filename);
-            wordDoc.ActiveWindow.Visible = true;//打开word
+            wordDoc.ActiveWindow.Visible = false;//打开word
 
             Microsoft.Office.Interop.Word.Range myRange = wordDoc.Range();
 
@@ -212,6 +212,9 @@ namespace Interface.Forms
             myRange11 = wordDoc.Range(myRange11.End, myRange11.End + 14);
             myRange11.Text = textBox12.Text;
 
+            wordDoc.Save();
+            wordApp.Quit();
+            wordApp = null;
 
             this.Close();
         }

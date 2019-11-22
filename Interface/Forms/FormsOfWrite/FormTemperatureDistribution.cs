@@ -22,7 +22,7 @@ namespace Interface
         private void button1_Click(object sender, EventArgs e)
         {
 
-            string filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+            string filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName + ".doc";
 
             Spire.Doc.Document document = new Spire.Doc.Document(filename, FileFormat.Docx);
 

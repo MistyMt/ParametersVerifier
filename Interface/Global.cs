@@ -59,11 +59,11 @@ namespace Interface
 
 
         /// <summary>
-        /// 对象大小
+        /// 对象大小,单位m
         /// </summary>
-        public static int objectLen = 0;
-        public static int objectWidth = 0;
-        public static int objectHeight = 0;
+        public static double objectLen = 0;
+        public static double objectWidth = 0;
+        public static double objectHeight = 0;
 
 
 

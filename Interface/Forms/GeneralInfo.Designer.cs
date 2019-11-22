@@ -86,7 +86,7 @@
             this.textBox12.Location = new System.Drawing.Point(655, 300);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(120, 28);
-            this.textBox12.TabIndex = 53;
+            this.textBox12.TabIndex = 12;
             // 
             // textBox11
             // 
@@ -94,7 +94,7 @@
             this.textBox11.Location = new System.Drawing.Point(410, 300);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(120, 28);
-            this.textBox11.TabIndex = 52;
+            this.textBox11.TabIndex = 11;
             // 
             // textBox10
             // 
@@ -102,7 +102,7 @@
             this.textBox10.Location = new System.Drawing.Point(165, 300);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(120, 28);
-            this.textBox10.TabIndex = 51;
+            this.textBox10.TabIndex = 10;
             // 
             // label14
             // 
@@ -150,7 +150,7 @@
             this.textBox9.Location = new System.Drawing.Point(685, 233);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(46, 28);
-            this.textBox9.TabIndex = 46;
+            this.textBox9.TabIndex = 9;
             // 
             // label10
             // 
@@ -168,7 +168,7 @@
             this.textBox8.Location = new System.Drawing.Point(591, 234);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(46, 28);
-            this.textBox8.TabIndex = 44;
+            this.textBox8.TabIndex = 8;
             // 
             // label9
             // 
@@ -186,7 +186,7 @@
             this.textBox7.Location = new System.Drawing.Point(501, 234);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(46, 28);
-            this.textBox7.TabIndex = 42;
+            this.textBox7.TabIndex = 7;
             // 
             // label8
             // 
@@ -214,7 +214,7 @@
             this.textBox6.Location = new System.Drawing.Point(343, 234);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(46, 28);
-            this.textBox6.TabIndex = 39;
+            this.textBox6.TabIndex = 6;
             // 
             // label6
             // 
@@ -232,7 +232,7 @@
             this.textBox5.Location = new System.Drawing.Point(251, 234);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(46, 28);
-            this.textBox5.TabIndex = 37;
+            this.textBox5.TabIndex = 5;
             // 
             // label5
             // 
@@ -250,7 +250,7 @@
             this.textBox4.Location = new System.Drawing.Point(163, 234);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(46, 28);
-            this.textBox4.TabIndex = 35;
+            this.textBox4.TabIndex = 4;
             // 
             // label4
             // 
@@ -268,7 +268,7 @@
             this.textBox3.Location = new System.Drawing.Point(163, 176);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(612, 28);
-            this.textBox3.TabIndex = 33;
+            this.textBox3.TabIndex = 3;
             // 
             // label3
             // 
@@ -286,7 +286,7 @@
             this.textBox2.Location = new System.Drawing.Point(163, 114);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(613, 28);
-            this.textBox2.TabIndex = 31;
+            this.textBox2.TabIndex = 2;
             // 
             // label2
             // 
@@ -304,7 +304,7 @@
             this.textBox1.Location = new System.Drawing.Point(163, 52);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(613, 28);
-            this.textBox1.TabIndex = 29;
+            this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
