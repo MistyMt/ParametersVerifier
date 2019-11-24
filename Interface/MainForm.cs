@@ -555,16 +555,62 @@ namespace Interface
 
             //    xlWorkbook.Close();
 
-                //由"温度云图数据.txt"显示图像
-                double[] xdata = { -8.37, -7.87, -7.37, -6.87, -6.37, -5.87, -5.37, -4.87, -4.37, -3.87, -3.37, -2.87, -2.37, -1.87, -1.37 ,-0.87};
-                double[] ydata = { 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5 ,8.0};
+            //由"温度云图数据.txt"显示图像
+            try
+            {
+                SelectedEntityQuery query = new SelectedEntityQuery();
+                RenderView.QuerySelection(query);
+                SceneNode node2 = query.GetRootNode();
+                //string selectedSensor = node2.GetName();
+                //Sensor selectedSensors = Global.sensors[0];
+
+                AABox bbbox = node2.GetBBox();
+                var minPt = bbbox.MinPt;
+                var maxPt = bbbox.MaxPt;
+                int X = Convert.ToInt32(minPt.X);
+                int Y = Convert.ToInt32(minPt.Y);
+                int Z = Convert.ToInt32(minPt.Z);
+
+                int Len = Convert.ToInt32(maxPt.X - minPt.X);
+                int Width = Convert.ToInt32(maxPt.Y - minPt.Y);
+
+
+                //double X = -8.37;
+                //double Y = 0;
+                //double Z = 100;
+                //double Len = 75;
+                //double Width = 80;
+                int pNX = 16;
+                int pNY = 17;
+
+                #region xdata
+                double[] xdata = new double[pNX];
+                for (int i = 0; i < pNX; i++)
+                {
+                    xdata[i] = X + (Len / (pNX - 1)) * i;
+                }
+                #endregion
+
+                #region ydata
+                double[] ydata = new double[pNY];
+                for (int i = 0; i < pNY; i++)
+                {
+                    ydata[i] = Y + (Width / (pNY - 1)) * i;
+                }
+                #endregion
+
+
+                //double[] xdata = { -8.37, -7.87, -7.37, -6.87, -6.37, -5.87, -5.37, -4.87, -4.37, -3.87, -3.37, -2.87, -2.37, -1.87, -1.37, -0.87 };
+                //double[] ydata = { 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5, 8.0 };
                 double[,] results = new double[xdata.Length, ydata.Length];
                 double minValue = 10000000;
                 double maxValue = -10000000;
                 StreamReader sr = new StreamReader(fullFilename, Encoding.Default);
                 String line;
                 int numLine = 0;
-                while ((line = sr.ReadLine()) != null)
+
+
+                while (!sr.EndOfStream && ((line = sr.ReadLine()) != null))
                 {
                     String[] items = line.Split('\t');
                     if (items.Length < 1)
@@ -592,6 +638,7 @@ namespace Interface
                 const long MaxValue = 0xff0000;
                 const long MinValue = 0xffff00;
                 const double Range = MaxValue - MinValue;
+
                 float[] positionBuffer = new float[xdata.Length * ydata.Length * 3];
                 float[] normalBuffer = new float[positionBuffer.Length];
                 float[] colorBuffer = new float[positionBuffer.Length / 3 * 4];
@@ -600,9 +647,9 @@ namespace Interface
                     for (int ii = 0, lenii = xdata.Length; ii < lenii; ++ii)
                     {
                         int idx = jj * lenii + ii;
-                        positionBuffer[idx * 3] = (float)xdata[ii] * 10;
-                        positionBuffer[idx * 3 + 1] = (float)ydata[jj] * 10;
-                        positionBuffer[idx * 3 + 2] = 0;
+                        positionBuffer[idx * 3] = (float)xdata[ii];
+                        positionBuffer[idx * 3 + 1] = (float)ydata[jj];
+                        positionBuffer[idx * 3 + 2] = (float)Z;
                         normalBuffer[idx * 3] = 0;
                         normalBuffer[idx * 3 + 1] = 0;
                         normalBuffer[idx * 3 + 2] = 1;
@@ -652,7 +699,16 @@ namespace Interface
                 var node = new EntitySceneNode();
                 node.SetEntity(entity);
                 RenderView.ShowSceneNode(node);
-            //}
+
+                RenderView.SceneManager.RemoveNode(node2);
+                //}
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("请选择测点。");
+            }
         }
 
         public void buttonChooseObject_Click(object sender, EventArgs e)
@@ -752,7 +808,7 @@ namespace Interface
                 FormAnalysisOfData analysisOfDataForm = new FormAnalysisOfData();
                 Global.analysisOfDataForms.Add(analysisOfDataForm);
                 analysisOfDataForm.ShowDialog();
-                
+
             }
         }
 
@@ -797,16 +853,25 @@ namespace Interface
 
         private void DrawRect_Click(object sender, EventArgs e)
         {
+            try
+            {
 
-            Coordinate3 rectCoord = new Coordinate3();
-            rectCoord.Origion = new Vector3(int.Parse(textBox1.Text), int.Parse(textBox2.Text), int.Parse(textBox3.Text));
-            TopoShape rect = GlobalInstance.BrepTools.MakeRectangle(int.Parse(textBox4.Text), int.Parse(textBox5.Text), int.Parse(textBox6.Text), rectCoord);
-            rect = GlobalInstance.BrepTools.MakeFace(rect);
-            RenderableGeometry geom = new RenderableGeometry();
-            geom.SetGeometry(rect);
-            EntitySceneNode node = new EntitySceneNode();
-            node.SetEntity(geom);
-            RenderView.ShowSceneNode(node);
+
+                Coordinate3 rectCoord = new Coordinate3();
+                rectCoord.Origion = new Vector3(Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text));
+                TopoShape rect = GlobalInstance.BrepTools.MakeRectangle(Convert.ToDouble(textBox4.Text), Convert.ToDouble(textBox5.Text), Convert.ToDouble(textBox6.Text), rectCoord);
+                rect = GlobalInstance.BrepTools.MakeFace(rect);
+                RenderableGeometry geom = new RenderableGeometry();
+                geom.SetGeometry(rect);
+                EntitySceneNode node = new EntitySceneNode();
+                node.SetEntity(geom);
+                RenderView.ShowSceneNode(node);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("请输入正确格式。");
+            }
         }
         #region 截图功能
 
@@ -969,9 +1034,9 @@ namespace Interface
             panelFrame.Visible = true;
             panelFrame.BringToFront();
 
-            textBox7.Text = (Global.objectLen*100 ).ToString();
-            textBox8.Text = (Global.objectWidth *100).ToString();
-            textBox9.Text = (Global.objectHeight *100).ToString();
+            textBox7.Text = (Global.objectLen * 100).ToString();
+            textBox8.Text = (Global.objectWidth * 100).ToString();
+            textBox9.Text = (Global.objectHeight * 100).ToString();
 
             ViewParametrs.CurrentId = ++ViewParametrs.CurrentId;
             ViewParametrs.IDs.Add(ViewParametrs.CurrentId);
@@ -1747,20 +1812,20 @@ namespace Interface
         {
             try
             {
-            SelectedEntityQuery query = new SelectedEntityQuery();
-            RenderView.QuerySelection(query);
-            SceneNode node2 = query.GetRootNode();
-            //string selectedSensor = node2.GetName();
-            //Sensor selectedSensors = Global.sensors[0];
-            string nodeName = node2.GetName();
-            if (Global.sensors.ContainsKey(nodeName))
-            {
-                var f = new Forms.DBForms.selectedSensorData();
-                f.senorName = nodeName;
-                f.ShowDialog();
+                SelectedEntityQuery query = new SelectedEntityQuery();
+                RenderView.QuerySelection(query);
+                SceneNode node2 = query.GetRootNode();
+                //string selectedSensor = node2.GetName();
+                //Sensor selectedSensors = Global.sensors[0];
+                string nodeName = node2.GetName();
+                if (Global.sensors.ContainsKey(nodeName))
+                {
+                    var f = new Forms.DBForms.selectedSensorData();
+                    f.senorName = nodeName;
+                    f.ShowDialog();
 
 
-            }
+                }
             }
             catch (Exception)
             {
@@ -2093,6 +2158,27 @@ namespace Interface
         {
             tabControl2.SelectedTab = tabPageData;
             tabControl1.SelectedTab = tabPage3;
+        }
+
+        private void button18_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                SelectedEntityQuery query = new SelectedEntityQuery();
+                RenderView.QuerySelection(query);
+                SceneNode node2 = query.GetRootNode();
+                //string selectedSensor = node2.GetName();
+                //Sensor selectedSensors = Global.sensors[0];
+                AABox bbbox = node2.GetBBox();
+                var minPt = bbbox.MaxPt;
+                int strPtX = Convert.ToInt32(minPt.X);
+                int strPtY = Convert.ToInt32(minPt.Y);
+                MessageBox.Show(strPtX.ToString() + "   " + strPtY.ToString());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("请选择测点。");
+            }
         }
     }
 }

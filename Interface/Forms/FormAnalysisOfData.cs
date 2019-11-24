@@ -17,24 +17,13 @@ namespace Interface
     public partial class FormAnalysisOfData : Form
     {
         public string SqlString;
-        public AnyCAD.Presentation.RenderWindow3d m_RenderView ;
-        //public AnyCAD.Presentation.RenderWindow3d RenderView
-        //{
-        //    set
-        //    {
-        //        m_RenderView = value;
-        //    }
-        //}
+
+        
 
         public FormAnalysisOfData()
         {
             InitializeComponent();
-            var container = this.panel1;
-
-            m_RenderView = new AnyCAD.Presentation.RenderWindow3d();
-            m_RenderView.Size = container.ClientSize;
-            m_RenderView.Dock = System.Windows.Forms.DockStyle.Fill;
-            container.Controls.Add(m_RenderView);
+           
         }//初始化
 
         public static System.Data.DataTable ReadExcelToTable(string path)//excel存放的路径
