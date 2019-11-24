@@ -54,6 +54,8 @@ namespace Interface
 
         /// <summary>
         /// 测试布点列表
+        /// string:node的name属性
+        /// Sensor:测点传感器对象
         /// </summary>
         public static Dictionary<string, Sensor> sensors = new Dictionary<string, Sensor>();
 
