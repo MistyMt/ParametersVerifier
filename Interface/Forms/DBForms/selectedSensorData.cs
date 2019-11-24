@@ -47,8 +47,9 @@ namespace Interface.Forms.DBForms
                     try
                     {
                         DataTable dt = sh.Select("SELECT " + " 检测时间 " + " FROM " + comboBox2.Text + ";");
-                        comboBox1.DisplayMember = "检测时间";
                         comboBox1.DataSource = dt;
+                        comboBox1.DisplayMember = "检测时间";
+                        
                         
 
                         DataTable dts = sh.Select("SELECT " + " ID " + " FROM " + comboBox2.Text + ";");

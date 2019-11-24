@@ -16,7 +16,7 @@ namespace Interface
         /// 数据分析面板
         /// </summary>
         public static List<FormDataView> dataViewForms = new List<FormDataView>();
-       
+
         /// <summary>
         /// 基础信息面板
         /// </summary>
@@ -65,6 +65,10 @@ namespace Interface
         public static double objectWidth = 0;
         public static double objectHeight = 0;
 
+        /// <summary>
+        /// 渲染窗口
+        /// </summary>
+        public static AnyCAD.Presentation.RenderWindow3d RenderView = null;
 
 
 

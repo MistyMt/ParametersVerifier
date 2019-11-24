@@ -26,7 +26,7 @@ namespace Interface
     public partial class MainForm : Form
     {
 
-        public AnyCAD.Presentation.RenderWindow3d RenderView = null;
+        public AnyCAD.Presentation.RenderWindow3d RenderView = Global.RenderView;
 
         //public AnyCAD.Presentation.RenderWindow3d RenderView
         //{
@@ -752,7 +752,7 @@ namespace Interface
                 FormAnalysisOfData analysisOfDataForm = new FormAnalysisOfData();
                 Global.analysisOfDataForms.Add(analysisOfDataForm);
                 analysisOfDataForm.ShowDialog();
-                analysisOfDataForm.m_RenderView = RenderView;
+                
             }
         }
 
