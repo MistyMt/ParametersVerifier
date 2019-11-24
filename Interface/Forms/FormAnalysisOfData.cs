@@ -1552,6 +1552,65 @@ namespace Interface
             wordApp = null;
             MessageBox.Show("导入成功！");
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.DataSource != null)
+            {
+
+                System.Data.DataTable dt = (System.Data.DataTable)dataGridView1.DataSource;
+
+                dt.Rows.Clear();
+
+                dataGridView1.DataSource = dt;
+
+            }
+
+            else
+            {
+
+                dataGridView1.Rows.Clear();
+
+            }
+
+            foreach (KeyValuePair<string, Sensor> kvp in Global.sensors)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                int index = dataGridView2.Rows.Add(row);
+                dataGridView2.Rows[index].Cells[1].Value = kvp.Value.name;
+                dataGridView2.Rows[index].Cells[2].Value = kvp.Value.serialNumber;
+                dataGridView2.Rows[index].Cells[3].Value = kvp.Value.rangeMin + "-" + kvp.Value.rangeMax;
+                dataGridView2.Rows[index].Cells[4].Value = kvp.Value.type;
+                dataGridView2.Rows[index].Cells[5].Value = kvp.Value.uncertainty;
+                dataGridView2.Rows[index].Cells[6].Value = kvp.Value.certificateNo;
+                for (int i = 0; i < dataGridView2.RowCount - 1; i++)
+                {
+                    dataGridView2.Rows[i].Cells[0].Value = i + 1;
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+            Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
+            Microsoft.Office.Interop.Word.Document wordDoc;
+            wordDoc = wordApp.Documents.Open(filename);
+            wordDoc.ActiveWindow.Visible = false;//打开word
+
+            Microsoft.Office.Interop.Word.Table nowtable = wordDoc.Tables[3];//检索表格
+
+            for (int j = 0; j < dataGridView2.ColumnCount - 1; j++)
+            {
+                for (int i = 0; i < dataGridView2.RowCount - 1; i++)
+                {
+                    nowtable.Cell(i + 2, j + 2).Range.InsertAfter(dataGridView2[j + 1, i].Value.ToString());//填充表格
+                }
+            }
+            wordDoc.Save();
+            wordApp.Quit();
+            wordApp = null;
+        }
     }
 
 

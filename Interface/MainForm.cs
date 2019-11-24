@@ -117,6 +117,9 @@ namespace Interface
         private void butClear_Click(object sender, EventArgs e)
         {
             RenderView.ClearScene();
+            RenderView.SceneManager.ClearNodes();
+            Global.sensors.Clear();
+            ViewParametrs.IDs.Clear();
         }
 
 
@@ -2160,25 +2163,5 @@ namespace Interface
             tabControl1.SelectedTab = tabPage3;
         }
 
-        private void button18_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                SelectedEntityQuery query = new SelectedEntityQuery();
-                RenderView.QuerySelection(query);
-                SceneNode node2 = query.GetRootNode();
-                //string selectedSensor = node2.GetName();
-                //Sensor selectedSensors = Global.sensors[0];
-                AABox bbbox = node2.GetBBox();
-                var minPt = bbbox.MaxPt;
-                int strPtX = Convert.ToInt32(minPt.X);
-                int strPtY = Convert.ToInt32(minPt.Y);
-                MessageBox.Show(strPtX.ToString() + "   " + strPtY.ToString());
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("请选择测点。");
-            }
-        }
     }
 }

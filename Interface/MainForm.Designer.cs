@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series33 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series34 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series35 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series36 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series37 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series38 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series39 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series40 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series91 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series92 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series93 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series94 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series95 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series96 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series97 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series98 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series99 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series100 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
@@ -353,13 +353,11 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbDB = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.button18 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -974,76 +972,76 @@
             // 
             // chart1
             // 
-            chartArea4.AxisX.LabelAutoFitMinFontSize = 5;
-            chartArea4.AxisX.LabelStyle.Interval = 20D;
-            chartArea4.AxisX.MajorGrid.Enabled = false;
-            chartArea4.AxisY.MajorGrid.Enabled = false;
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
+            chartArea10.AxisX.LabelAutoFitMinFontSize = 5;
+            chartArea10.AxisX.LabelStyle.Interval = 20D;
+            chartArea10.AxisX.MajorGrid.Enabled = false;
+            chartArea10.AxisY.MajorGrid.Enabled = false;
+            chartArea10.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea10);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Margin = new System.Windows.Forms.Padding(2);
             this.chart1.Name = "chart1";
-            series31.ChartArea = "ChartArea1";
-            series31.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series31.Name = "1";
-            series31.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series31.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series32.ChartArea = "ChartArea1";
-            series32.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series32.Name = "2";
-            series32.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series32.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series33.ChartArea = "ChartArea1";
-            series33.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series33.Name = "3";
-            series33.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series33.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series34.ChartArea = "ChartArea1";
-            series34.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series34.Name = "4";
-            series34.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series34.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series35.ChartArea = "ChartArea1";
-            series35.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series35.Name = "5";
-            series35.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series35.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series36.ChartArea = "ChartArea1";
-            series36.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series36.Name = "6";
-            series36.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series36.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series37.ChartArea = "ChartArea1";
-            series37.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series37.Name = "7";
-            series37.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series37.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series38.ChartArea = "ChartArea1";
-            series38.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series38.Name = "8";
-            series38.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series38.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series39.ChartArea = "ChartArea1";
-            series39.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series39.Name = "9";
-            series39.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series39.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series40.ChartArea = "ChartArea1";
-            series40.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series40.Name = "10";
-            series40.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series40.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.chart1.Series.Add(series31);
-            this.chart1.Series.Add(series32);
-            this.chart1.Series.Add(series33);
-            this.chart1.Series.Add(series34);
-            this.chart1.Series.Add(series35);
-            this.chart1.Series.Add(series36);
-            this.chart1.Series.Add(series37);
-            this.chart1.Series.Add(series38);
-            this.chart1.Series.Add(series39);
-            this.chart1.Series.Add(series40);
+            series91.ChartArea = "ChartArea1";
+            series91.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series91.Name = "1";
+            series91.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series91.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series92.ChartArea = "ChartArea1";
+            series92.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series92.Name = "2";
+            series92.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series92.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series93.ChartArea = "ChartArea1";
+            series93.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series93.Name = "3";
+            series93.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series93.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series94.ChartArea = "ChartArea1";
+            series94.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series94.Name = "4";
+            series94.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series94.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series95.ChartArea = "ChartArea1";
+            series95.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series95.Name = "5";
+            series95.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series95.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series96.ChartArea = "ChartArea1";
+            series96.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series96.Name = "6";
+            series96.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series96.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series97.ChartArea = "ChartArea1";
+            series97.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series97.Name = "7";
+            series97.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series97.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series98.ChartArea = "ChartArea1";
+            series98.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series98.Name = "8";
+            series98.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series98.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series99.ChartArea = "ChartArea1";
+            series99.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series99.Name = "9";
+            series99.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series99.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series100.ChartArea = "ChartArea1";
+            series100.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series100.Name = "10";
+            series100.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series100.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.chart1.Series.Add(series91);
+            this.chart1.Series.Add(series92);
+            this.chart1.Series.Add(series93);
+            this.chart1.Series.Add(series94);
+            this.chart1.Series.Add(series95);
+            this.chart1.Series.Add(series96);
+            this.chart1.Series.Add(series97);
+            this.chart1.Series.Add(series98);
+            this.chart1.Series.Add(series99);
+            this.chart1.Series.Add(series100);
             this.chart1.Size = new System.Drawing.Size(611, 219);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
@@ -1075,7 +1073,6 @@
             // panel3
             // 
             this.panel3.AutoSize = true;
-            this.panel3.Controls.Add(this.button18);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(2, 2);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
@@ -2072,12 +2069,12 @@
             // 
             // tabpagePrimitiveFrameParameterSetter
             // 
-            this.tabpagePrimitiveFrameParameterSetter.Controls.Add(this.panelCylinder);
             this.tabpagePrimitiveFrameParameterSetter.Controls.Add(this.panelSensor);
             this.tabpagePrimitiveFrameParameterSetter.Controls.Add(this.panelBox);
             this.tabpagePrimitiveFrameParameterSetter.Controls.Add(this.panelSpiral);
             this.tabpagePrimitiveFrameParameterSetter.Controls.Add(this.panelSphere);
             this.tabpagePrimitiveFrameParameterSetter.Controls.Add(this.panelFrame);
+            this.tabpagePrimitiveFrameParameterSetter.Controls.Add(this.panelCylinder);
             this.tabpagePrimitiveFrameParameterSetter.Location = new System.Drawing.Point(4, 25);
             this.tabpagePrimitiveFrameParameterSetter.Margin = new System.Windows.Forms.Padding(2);
             this.tabpagePrimitiveFrameParameterSetter.Name = "tabpagePrimitiveFrameParameterSetter";
@@ -3729,16 +3726,6 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "审查";
             // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(1159, 30);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(75, 23);
-            this.button18.TabIndex = 0;
-            this.button18.Text = "button18";
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click_1);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -3776,7 +3763,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -4149,6 +4135,5 @@
         private System.Windows.Forms.Button button67;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.Button button18;
     }
 }
