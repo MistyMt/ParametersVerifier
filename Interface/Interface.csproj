@@ -218,12 +218,6 @@
     <Compile Include="Forms\FormsOfWrite\FormValidationPerson.Designer.cs">
       <DependentUpon>FormValidationPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormsOfWrite\FormVerificationInstrument.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormsOfWrite\FormVerificationInstrument.Designer.cs">
-      <DependentUpon>FormVerificationInstrument.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormsOfWrite\FormVerificationTime.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +229,15 @@
     </Compile>
     <Compile Include="Forms\GeneralInfo.Designer.cs">
       <DependentUpon>GeneralInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImagePreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImagePreview.Designer.cs">
+      <DependentUpon>ImagePreview.cs</DependentUpon>
     </Compile>
     <Compile Include="MeasureDistanceEditor.cs" />
     <Compile Include="Forms\ObjectSelect.cs">
@@ -282,7 +285,6 @@
       <DependentUpon>FormAnalysisOfData.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
-    <Compile Include="HotKey.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,14 +368,14 @@
     <EmbeddedResource Include="Forms\FormsOfWrite\FormValidationPerson.resx">
       <DependentUpon>FormValidationPerson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormsOfWrite\FormVerificationInstrument.resx">
-      <DependentUpon>FormVerificationInstrument.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormsOfWrite\FormVerificationTime.resx">
       <DependentUpon>FormVerificationTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GeneralInfo.resx">
       <DependentUpon>GeneralInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImagePreview.resx">
+      <DependentUpon>ImagePreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

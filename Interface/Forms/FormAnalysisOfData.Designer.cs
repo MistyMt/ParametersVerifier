@@ -55,6 +55,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.序号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,7 +65,6 @@
             this.型号规格 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.不确定度或准确度等级或最大允许误差 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.证书编号或有效期 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -364,6 +364,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "传感器汇总";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(103, 148);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(169, 42);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "导入报表";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(105, 70);
@@ -427,16 +437,6 @@
             // 
             this.证书编号或有效期.HeaderText = "证书编号或有效期";
             this.证书编号或有效期.Name = "证书编号或有效期";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(103, 148);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(169, 42);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "导入报表";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // FormAnalysisOfData
             // 

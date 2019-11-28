@@ -39,6 +39,11 @@ namespace Interface
         public static string templateName = "冷库验证项目模拟报告模板";
 
         /// <summary>
+        /// excel数据源名
+        /// </summary>
+        public static string dataSourceName = "";
+
+        /// <summary>
         /// 截图
         /// </summary>
         /// <returns></returns>

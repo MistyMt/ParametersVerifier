@@ -47,6 +47,8 @@ namespace Interface
 
             container.Controls.Add(RenderView);
 
+
+
         }
 
         private void 选择对象ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -710,7 +712,7 @@ namespace Interface
             }
             catch (Exception)
             {
-                MessageBox.Show("请选择测点。");
+                MessageBox.Show("请选择面。");
             }
         }
 
@@ -745,9 +747,6 @@ namespace Interface
 
                 FormContentImplementation contentImplemenationForm = new FormContentImplementation();
                 contentImplemenationForm.ShowDialog();
-
-                FormVerificationInstrument verificationInstrumentForm = new FormVerificationInstrument();
-                verificationInstrumentForm.ShowDialog();
 
                 FormVerificationTime verificationTimeForm = new FormVerificationTime();
                 verificationTimeForm.ShowDialog();
@@ -869,6 +868,9 @@ namespace Interface
                 EntitySceneNode node = new EntitySceneNode();
                 node.SetEntity(geom);
                 RenderView.ShowSceneNode(node);
+
+                panelRectSet.SendToBack();
+                panelRectSet.Visible = false;
             }
             catch (Exception)
             {
@@ -915,71 +917,98 @@ namespace Interface
             if (cutter.ShowDialog() == DialogResult.OK)
             {
                 IDataObject iData = Clipboard.GetDataObject();
-                DataFormats.Format format = DataFormats.GetFormat(DataFormats.Bitmap);
+                //DataFormats.Format format = DataFormats.GetFormat(DataFormats.Bitmap);
                 if (iData.GetDataPresent(DataFormats.Bitmap))
                 {
-                    richTextBox1.Paste(format);
+                    ImagePreview imgpr = new ImagePreview();
+                    
+                    imgpr.Show();
 
-                    // 清楚剪贴板的图片
-                    Clipboard.Clear();
-                }
-            }
-        }
-        /// <summary>
-        /// 窗体加载事件处理
-        /// 在窗体加载时注册热键
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            uint ctrlHotKey = (uint)(KeyModifiers.Alt | KeyModifiers.Ctrl);
-            // 注册热键为Alt+Ctrl+C, "100"为唯一标识热键
-            HotKey.RegisterHotKey(Handle, 100, ctrlHotKey, Keys.C);
-        }
-        /// <summary>
-        /// 窗体关闭时处理程序
-        /// 窗体关闭时取消热键注册
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // 卸载热键
-            HotKey.UnregisterHotKey(Handle, 100);
-        }
-        // 热键按下执行的方法
-        private void GlobalKeyProcess()
-        {
-            this.WindowState = FormWindowState.Minimized;
-            //// 窗口最小化也需要一定时间
-            Thread.Sleep(200);
-            button21.PerformClick();
-        }
+                    pictureBox1.Image = Clipboard.GetImage();
 
-        /// <summary>
-        /// 重写WndProc()方法，通过监视系统消息，来调用过程
-        /// 监视Windows消息
-        /// </summary>
-        /// <param name="m"></param>
-        protected override void WndProc(ref Message m)
-        {
-            //如果m.Msg的值为0x0312那么表示用户按下了热键
-            const int WM_HOTKEY = 0x0312;
-            switch (m.Msg)
-            {
-                case WM_HOTKEY:
-                    if (m.WParam.ToString() == "100")
+
+                    var saveFileDialog1 =new SaveFileDialog() ;
+                    saveFileDialog1.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif|PnG Image|*.png|Wmf  Image|*.wmf";
+                    saveFileDialog1.InitialDirectory = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin"+"\\图片";
+                    saveFileDialog1.FilterIndex = 0;
+                    if (pictureBox1.Image == null)
                     {
-                        GlobalKeyProcess();
+                        MessageBox.Show("没有预览图片");
+                    }
+                    else if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        if (pictureBox1.Image != null)
+                        {
+                            pictureBox1.Image.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                        }
                     }
 
-                    break;
-            }
+                    imgpr.Dispose();
+                    // 清楚剪贴板的图片
+                    Clipboard.Clear();
 
-            // 将系统消息传递自父类的WndProc
-            base.WndProc(ref m);
+                }
+            }
+            cutter.Dispose();
         }
+        ///// <summary>
+        ///// 窗体加载事件处理
+        ///// 在窗体加载时注册热键
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void MainForm_Load(object sender, EventArgs e)
+        //{
+        //    uint ctrlHotKey = (uint)(KeyModifiers.Alt | KeyModifiers.Ctrl);
+        //    // 注册热键为Alt+Ctrl+C, "100"为唯一标识热键
+        //    HotKey.RegisterHotKey(Handle, 100, ctrlHotKey, Keys.C);
+
+        //    tabPage3.Parent = null;
+
+        //}
+        ///// <summary>
+        ///// 窗体关闭时处理程序
+        ///// 窗体关闭时取消热键注册
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    // 卸载热键
+        //    HotKey.UnregisterHotKey(Handle, 100);
+        //}
+        //// 热键按下执行的方法
+        //private void GlobalKeyProcess()
+        //{
+        //    this.WindowState = FormWindowState.Minimized;
+        //    //// 窗口最小化也需要一定时间
+        //    Thread.Sleep(200);
+        //    button21.PerformClick();
+        //}
+
+        ///// <summary>
+        ///// 重写WndProc()方法，通过监视系统消息，来调用过程
+        ///// 监视Windows消息
+        ///// </summary>
+        ///// <param name="m"></param>
+        //protected override void WndProc(ref Message m)
+        //{
+        //    //如果m.Msg的值为0x0312那么表示用户按下了热键
+        //    const int WM_HOTKEY = 0x0312;
+        //    switch (m.Msg)
+        //    {
+        //        case WM_HOTKEY:
+        //            if (m.WParam.ToString() == "100")
+        //            {
+        //                GlobalKeyProcess();
+        //            }
+
+        //            break;
+        //    }
+
+        //    // 将系统消息传递自父类的WndProc
+        //    base.WndProc(ref m);
+        //}
 
 
 
@@ -1708,11 +1737,7 @@ namespace Interface
             contentImplemenationForm.ShowDialog();
         }
 
-        private void button54_Click(object sender, EventArgs e)
-        {
-            FormVerificationInstrument verificationInstrumentForm = new FormVerificationInstrument();
-            verificationInstrumentForm.ShowDialog();
-        }
+
 
         private void button52_Click(object sender, EventArgs e)
         {
@@ -1839,6 +1864,9 @@ namespace Interface
         private void button60_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabPage3;
+            button61.PerformClick();
+            button63.PerformClick();
+
         }
 
         private void button61_Click(object sender, EventArgs e)
@@ -1904,6 +1932,7 @@ namespace Interface
         private void button63_Click(object sender, EventArgs e)
         {
             OpenFileDialog f = new OpenFileDialog();
+            f.InitialDirectory = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\DataBase";
             if (f.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 config.DatabaseFile = f.FileName;
@@ -2090,66 +2119,6 @@ namespace Interface
 
         }
 
-        private void button56_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-
-                FormValidationPerson validationPersonForm = new FormValidationPerson();
-                validationPersonForm.ShowDialog();
-
-                FormContentImplementation contentImplemenationForm = new FormContentImplementation();
-                contentImplemenationForm.ShowDialog();
-
-                FormVerificationInstrument verificationInstrumentForm = new FormVerificationInstrument();
-                verificationInstrumentForm.ShowDialog();
-
-                FormVerificationTime verificationTimeForm = new FormVerificationTime();
-                verificationTimeForm.ShowDialog();
-
-                FormEnvironmentInformation environmentInformationForm = new FormEnvironmentInformation();
-                environmentInformationForm.ShowDialog();
-
-                FormNoload noloadForm = new FormNoload();
-                noloadForm.ShowDialog();
-
-                FormFullload fullloadForm = new FormFullload();
-                fullloadForm.ShowDialog();
-
-                FormContrast contrastForm = new FormContrast();
-                contrastForm.ShowDialog();
-
-                FormOpenImpact openImpactForm = new FormOpenImpact();
-                openImpactForm.ShowDialog();
-
-                FormOutagesImpact outagesImpactForm = new FormOutagesImpact();
-                outagesImpactForm.ShowDialog();
-
-                FormTemperatureDistribution temperatureDistributionForm = new FormTemperatureDistribution();
-                temperatureDistributionForm.ShowDialog();
-
-                FormRunningStatus runningStatusForm = new FormRunningStatus();
-                runningStatusForm.ShowDialog();
-
-                FormFanRunningStatus fanRunningStatusForm = new FormFanRunningStatus();
-                fanRunningStatusForm.ShowDialog();
-
-                FormConclusion conclusionForm = new FormConclusion();
-                conclusionForm.ShowDialog();
-
-                FormBeforeCalibrationValue beforeCalibrationValue = new FormBeforeCalibrationValue();
-                beforeCalibrationValue.ShowDialog();
-
-                FormAfterCalibrationValue afterCalibrationValue = new FormAfterCalibrationValue();
-                afterCalibrationValue.ShowDialog();
-
-            }
-            catch (Exception)
-            {
-            }
-        }
-
         private void button66_Click(object sender, EventArgs e)
         {
             tabControl2.Visible = true;
@@ -2161,6 +2130,80 @@ namespace Interface
         {
             tabControl2.SelectedTab = tabPageData;
             tabControl1.SelectedTab = tabPage3;
+        }
+
+        private void 传感器总览ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Global.analysisOfDataForms.Count != 0)
+            {
+                Global.analysisOfDataForms[0].ShowDialog();
+            }
+            else
+            {
+                FormAnalysisOfData analysisOfDataForm = new FormAnalysisOfData();
+                Global.analysisOfDataForms.Add(analysisOfDataForm);
+                analysisOfDataForm.ShowDialog();
+
+            }
+        }
+
+        private void 传感器信息导入ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button18_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                OpenFileDialog fd = new OpenFileDialog();//首先根据打开文件对话框，选择excel表格
+                fd.Filter = "表格|*.xls|所有文件(*.*)|*.*";//打开文件对话框筛选器
+                string strPath;//文件完整的路径名
+                if (fd.ShowDialog() == DialogResult.OK)
+                {
+                    string filename = fd.SafeFileName;
+                    Global.dataSourceName = filename;
+                    strPath = fd.FileName;
+                    FileInfo forig = new FileInfo(strPath);
+                    if (new FileInfo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + filename).Exists)
+                    {
+                        new FileInfo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + filename).Delete();
+                        forig.CopyTo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + filename);
+                    }
+                    else
+                    {
+                        forig.CopyTo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + filename);
+                    }
+
+                    tabPage3.Parent = tabControl1;
+                    button61.Visible = true;
+                    button60.Visible = true;
+                    button56.Visible = true;
+
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void button56_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+                button61.PerformClick();
+                button62.PerformClick();
+                button64.PerformClick();
+                button65.PerformClick();
+
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
     }

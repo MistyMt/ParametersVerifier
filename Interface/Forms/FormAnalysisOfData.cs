@@ -58,14 +58,15 @@ namespace Interface
 
         private void button5_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fd = new OpenFileDialog();//首先根据打开文件对话框，选择excel表格
-            fd.Filter = "表格|*.xls|所有文件(*.*)|*.*";//打开文件对话框筛选器
-            string strPath;//文件完整的路径名
-            if (fd.ShowDialog() == DialogResult.OK)
-            {
+            //OpenFileDialog fd = new OpenFileDialog();//首先根据打开文件对话框，选择excel表格
+            //fd.Filter = "表格|*.xls|所有文件(*.*)|*.*";//打开文件对话框筛选器
+            //string strPath;//文件完整的路径名
+            //if (fd.ShowDialog() == DialogResult.OK)
+            //{
                 try
                 {
-                    strPath = fd.FileName;
+                    //strPath = fd.FileName;
+                    string strPath = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\" + Global.dataSourceName;
                     string strCon = "provider=microsoft.ace.oledb.12.0;data source=" + strPath + ";extended properties='excel 12.0; HDR=NO;IMEX=1';";//关键是红色区域
                     OleDbConnection Con = new OleDbConnection(strCon);//建立连接
                     Con.Open();
@@ -87,7 +88,7 @@ namespace Interface
                     MessageBox.Show(ex.Message);//捕捉异常
                 }
 
-            }
+            //}
         }//制表开始
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
@@ -1432,14 +1433,15 @@ namespace Interface
 
         private void button8_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fd = new OpenFileDialog();//首先根据打开文件对话框，选择excel表格
-            fd.Filter = "表格|*.xls|所有文件(*.*)|*.*";//打开文件对话框筛选器
-            string strPath;//文件完整的路径名
-            if (fd.ShowDialog() == DialogResult.OK)
-            {
+            //OpenFileDialog fd = new OpenFileDialog();//首先根据打开文件对话框，选择excel表格
+            //fd.Filter = "表格|*.xls|所有文件(*.*)|*.*";//打开文件对话框筛选器
+            //string strPath;//文件完整的路径名
+            //if (fd.ShowDialog() == DialogResult.OK)
+            //{
                 try
                 {
-                    strPath = fd.FileName;
+                    //strPath = fd.FileName;
+                    string strPath = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\" + Global.dataSourceName;
                     string strCon = "provider=microsoft.ace.oledb.12.0;data source=" + strPath + ";extended properties='excel 12.0; HDR=NO;IMEX=1';";//关键是红色区域
                     OleDbConnection Con = new OleDbConnection(strCon);//建立连接
                     Con.Open();
@@ -1461,19 +1463,20 @@ namespace Interface
                     MessageBox.Show(ex.Message);//捕捉异常
                 }
 
-            }
+            //}
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fd = new OpenFileDialog();//首先根据打开文件对话框，选择excel表格
-            fd.Filter = "表格|*.xls|所有文件(*.*)|*.*";//打开文件对话框筛选器
-            string strPath;//文件完整的路径名
-            if (fd.ShowDialog() == DialogResult.OK)
-            {
+            //OpenFileDialog fd = new OpenFileDialog();//首先根据打开文件对话框，选择excel表格
+            //fd.Filter = "表格|*.xls|所有文件(*.*)|*.*";//打开文件对话框筛选器
+            //string strPath;//文件完整的路径名
+            //if (fd.ShowDialog() == DialogResult.OK)
+            //{
                 try
                 {
-                    strPath = fd.FileName;
+                    string strPath = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\" + Global.dataSourceName;
+                    //strPath = fd.FileName;
                     string strCon = "provider=microsoft.ace.oledb.12.0;data source=" + strPath + ";extended properties='excel 12.0; HDR=NO;IMEX=1';";//关键是红色区域
                     OleDbConnection Con = new OleDbConnection(strCon);//建立连接
                     Con.Open();
@@ -1495,19 +1498,20 @@ namespace Interface
                     MessageBox.Show(ex.Message);//捕捉异常
                 }
 
-            }
+            //}
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fd = new OpenFileDialog();//首先根据打开文件对话框，选择excel表格
-            fd.Filter = "表格|*.xls|所有文件(*.*)|*.*";//打开文件对话框筛选器
-            string strPath;//文件完整的路径名
-            if (fd.ShowDialog() == DialogResult.OK)
-            {
+            //OpenFileDialog fd = new OpenFileDialog();//首先根据打开文件对话框，选择excel表格
+            //fd.Filter = "表格|*.xls|所有文件(*.*)|*.*";//打开文件对话框筛选器
+            //string strPath;//文件完整的路径名
+            //if (fd.ShowDialog() == DialogResult.OK)
+            //{
                 try
                 {
-                    strPath = fd.FileName;
+                    string strPath = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\" + Global.dataSourceName;
+                    //strPath = fd.FileName;
                     string strCon = "provider=microsoft.ace.oledb.12.0;data source=" + strPath + ";extended properties='excel 12.0; HDR=NO;IMEX=1';";//关键是红色区域
                     OleDbConnection Con = new OleDbConnection(strCon);//建立连接
                     Con.Open();
@@ -1529,7 +1533,7 @@ namespace Interface
                     MessageBox.Show(ex.Message);//捕捉异常
                 }
 
-            }
+            //}
         }
 
         private void button2_Click(object sender, EventArgs e)
