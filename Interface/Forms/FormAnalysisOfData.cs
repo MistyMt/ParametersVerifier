@@ -1559,21 +1559,25 @@ namespace Interface
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.DataSource != null)
+            if (dataGridView2.DataSource != null)
             {
+                //System.Data.DataTable sss = new System.Data.DataTable;
+                //sss.Rows.Clear();
+                //dataGridView1.DataSource=sss;
+                
 
-                System.Data.DataTable dt = (System.Data.DataTable)dataGridView1.DataSource;
+                System.Data.DataTable dt = (System.Data.DataTable)dataGridView2.DataSource;
 
                 dt.Rows.Clear();
 
-                dataGridView1.DataSource = dt;
+                dataGridView2.DataSource = dt;
 
             }
 
             else
             {
 
-                dataGridView1.Rows.Clear();
+                dataGridView2.Rows.Clear();
 
             }
 

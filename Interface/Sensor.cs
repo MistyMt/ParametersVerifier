@@ -48,7 +48,12 @@ namespace Interface
         /// <summary>
         /// 坐标
         /// </summary>
-        public Vector3 positonCoordinate = Vector3.ZERO;
+        public Vector3 positionCoordinate = Vector3.ZERO;
+
+        /// <summary>
+        /// 布点位置
+        /// </summary>
+        public string positionName = "";
 
 
 

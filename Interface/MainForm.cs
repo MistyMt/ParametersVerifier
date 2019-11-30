@@ -1695,7 +1695,8 @@ namespace Interface
                 sensor.type = textBox48.Text;
                 sensor.uncertainty = Convert.ToInt32(textBox49.Text);
                 sensor.certificateNo = textBox50.Text;
-                sensor.positonCoordinate = start;
+                sensor.positionCoordinate = start;
+                sensor.positionName = comboBox6.Text;
 
 
                 Global.sensors.Add(node.GetName(), sensor);
@@ -2202,6 +2203,33 @@ namespace Interface
             }
             catch (Exception)
             {
+
+            }
+        }
+
+        private void button54_Click(object sender, EventArgs e)
+        {
+            FileInfo fif = new FileInfo(System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\" + Global.dataSourceName);
+            if (fif.Exists)
+            {
+                fif.Delete();
+                textBox52.Text = "";
+                comboBox4.Text = "";
+                if (dataGridView1.DataSource != null)
+                {
+
+                    System.Data.DataTable dt = (System.Data.DataTable)dataGridView1.DataSource;
+
+                    dt.Rows.Clear();
+
+                    dataGridView1.DataSource = dt;
+
+                }
+
+                else
+                {
+                    dataGridView1.Rows.Clear();
+                }
 
             }
         }

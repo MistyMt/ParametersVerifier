@@ -108,7 +108,16 @@ namespace Interface.Forms.DBForms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+
             comboBox3.SelectedIndex = comboBox1.SelectedIndex;
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("请勿选择多个测点。");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
