@@ -748,11 +748,7 @@ namespace Interface
                 FormContentImplementation contentImplemenationForm = new FormContentImplementation();
                 contentImplemenationForm.ShowDialog();
 
-                FormVerificationTime verificationTimeForm = new FormVerificationTime();
-                verificationTimeForm.ShowDialog();
 
-                FormEnvironmentInformation environmentInformationForm = new FormEnvironmentInformation();
-                environmentInformationForm.ShowDialog();
 
                 FormContrast contrastForm = new FormContrast();
                 contrastForm.ShowDialog();
@@ -771,9 +767,6 @@ namespace Interface
 
                 FormFanRunningStatus fanRunningStatusForm = new FormFanRunningStatus();
                 fanRunningStatusForm.ShowDialog();
-
-                FormConclusion conclusionForm = new FormConclusion();
-                conclusionForm.ShowDialog();
 
                 FormBeforeCalibrationValue beforeCalibrationValue = new FormBeforeCalibrationValue();
                 beforeCalibrationValue.ShowDialog();
@@ -1735,29 +1728,8 @@ namespace Interface
 
 
 
-        private void button52_Click(object sender, EventArgs e)
-        {
-            FormVerificationTime verificationTimeForm = new FormVerificationTime();
-            verificationTimeForm.ShowDialog();
-        }
 
-        private void button51_Click(object sender, EventArgs e)
-        {
-            FormEnvironmentInformation environmentInformationForm = new FormEnvironmentInformation();
-            environmentInformationForm.ShowDialog();
-        }
 
-        private void button50_Click(object sender, EventArgs e)
-        {
-            FormNoload noloadForm = new FormNoload();
-            noloadForm.ShowDialog();
-        }
-
-        private void button49_Click(object sender, EventArgs e)
-        {
-            FormFullload fullloadForm = new FormFullload();
-            fullloadForm.ShowDialog();
-        }
 
         private void button48_Click(object sender, EventArgs e)
         {
@@ -1795,11 +1767,7 @@ namespace Interface
             fanRunningStatusForm.ShowDialog();
         }
 
-        private void button42_Click(object sender, EventArgs e)
-        {
-            FormConclusion conclusionForm = new FormConclusion();
-            conclusionForm.ShowDialog();
-        }
+
 
         private void button41_Click(object sender, EventArgs e)
         {
@@ -2235,7 +2203,7 @@ namespace Interface
 
         private void button68_Click(object sender, EventArgs e)
         {
-            FormOutagesImpact f = new FormOutagesImpact();
+            FormAfterCalibrationValue f = new FormAfterCalibrationValue();
             f.ShowDialog();
         }
 
