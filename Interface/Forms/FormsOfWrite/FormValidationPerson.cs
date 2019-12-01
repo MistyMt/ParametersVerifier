@@ -15,13 +15,48 @@ namespace Interface
         public FormValidationPerson()
         {
             InitializeComponent();
+            for (int i = 0; i < 4; i++)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                int index = dataGridView1.Rows.Add(row);
+                dataGridView1.Rows[index].Cells[0].Value = "";
+                dataGridView1.Rows[index].Cells[1].Value = "";
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                int index = dataGridView2.Rows.Add(row);
+                dataGridView2.Rows[index].Cells[0].Value = "";
+                dataGridView2.Rows[index].Cells[1].Value = "";
+            }
+            {
+                DataTable dt = new DataTable();
+                DataColumn dc = new DataColumn("职责", typeof(System.String));
+                dt.Columns.Add(dc);
+                dt.Rows.Add("协助组织实施");
+                dt.Rows.Add("组织协调、监督实施，复核关键数据");
+                dt.Rows.Add("验证过程的复核");
+                dt.Rows.Add("方案、报告审核");
+                dataGridView3.DataSource = dt;
+            }
+            {
+                DataTable dt2 = new DataTable();
+                DataColumn dc3 = new DataColumn("验证职责", typeof(System.String));
+                dt2.Columns.Add(dc3);
+                dt2.Rows.Add("负责起草方案、书写报告");
+                dt2.Rows.Add("协助实施验证、对相关人员进行培训");
+                dt2.Rows.Add("协助验证项目整体管理、协调及内审");
+                dataGridView4.DataSource = dt2;
+            }
         }
 
-       
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
+            dataGridView2.Rows.Clear();
+
         }
 
         private void FormValidationPerson_Load(object sender, EventArgs e)
@@ -44,19 +79,11 @@ namespace Interface
             wordDoc.Close();
             wordApp.Quit();
             wordApp = null;
+
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DataGridViewRow row = new DataGridViewRow();
 
-
-            int index = dataGridView1.Rows.Add(row);
-
-            dataGridView1.Rows[index].Cells[0].Value = textBox1.Text;
-
-            dataGridView1.Rows[index].Cells[1].Value = textBox2.Text;
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -101,5 +128,7 @@ namespace Interface
             wordApp.Quit();
             wordApp = null;
         }
+
+
     }
 }

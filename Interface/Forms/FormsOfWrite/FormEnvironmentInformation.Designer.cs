@@ -68,7 +68,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(48, 81);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(444, 96);
+            this.dataGridView1.Size = new System.Drawing.Size(443, 168);
             this.dataGridView1.TabIndex = 1;
             // 
             // Column1
@@ -94,7 +94,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(199, 234);
+            this.button1.Location = new System.Drawing.Point(207, 304);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 40);
             this.button1.TabIndex = 2;

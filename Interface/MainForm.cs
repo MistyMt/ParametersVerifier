@@ -754,12 +754,6 @@ namespace Interface
                 FormEnvironmentInformation environmentInformationForm = new FormEnvironmentInformation();
                 environmentInformationForm.ShowDialog();
 
-                FormNoload noloadForm = new FormNoload();
-                noloadForm.ShowDialog();
-
-                FormFullload fullloadForm = new FormFullload();
-                fullloadForm.ShowDialog();
-
                 FormContrast contrastForm = new FormContrast();
                 contrastForm.ShowDialog();
 
@@ -1546,6 +1540,7 @@ namespace Interface
         private void button31_Click_1(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabPage1;
+            tabControl2.SelectedTab = tabPageDraw;
             try
             {
 
@@ -2182,6 +2177,7 @@ namespace Interface
                     button61.Visible = true;
                     button60.Visible = true;
                     button56.Visible = true;
+                    button54.Visible = true;
 
                 }
             }
@@ -2230,8 +2226,37 @@ namespace Interface
                 {
                     dataGridView1.Rows.Clear();
                 }
+                button56.Visible = false;
+                button60.Visible = false;
+                button61.Visible = false;
 
             }
+        }
+
+        private void button68_Click(object sender, EventArgs e)
+        {
+            FormOutagesImpact f = new FormOutagesImpact();
+            f.ShowDialog();
+        }
+
+        private void button69_Click(object sender, EventArgs e)
+        {
+            object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+            Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
+            Microsoft.Office.Interop.Word.Document wordDoc;
+            wordDoc = wordApp.Documents.Open(filename);
+            wordDoc.ActiveWindow.Visible = true;//打开word
+
+            //wordDoc.Save();
+            //wordApp.Quit();
+            //wordApp = null;
+
+
+        }
+
+        private void button70_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
     }
