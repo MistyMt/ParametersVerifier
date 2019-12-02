@@ -2123,7 +2123,6 @@ namespace Interface
 
 
                 OpenFileDialog fd = new OpenFileDialog();//首先根据打开文件对话框，选择excel表格
-                fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 fd.Filter = "表格|*.xls|所有文件(*.*)|*.*";//打开文件对话框筛选器
                 string strPath;//文件完整的路径名
                 if (fd.ShowDialog() == DialogResult.OK)
@@ -2204,7 +2203,7 @@ namespace Interface
 
         private void button68_Click(object sender, EventArgs e)
         {
-            FormContentImplementation f = new FormContentImplementation();
+            FormAfterCalibrationValue f = new FormAfterCalibrationValue();
             f.ShowDialog();
         }
 

@@ -247,6 +247,7 @@ D:\ParametersVerifier\Interface\obj\Debug\Interface.FormDataView.resources
 D:\ParametersVerifier\Interface\obj\Debug\Interface.FormAnalysisOfData.resources
 D:\ParametersVerifier\Interface\obj\Debug\Interface.FormAfterCalibrationValue.resources
 D:\ParametersVerifier\Interface\obj\Debug\Interface.FormBeforeCalibrationValue.resources
+D:\ParametersVerifier\Interface\obj\Debug\Interface.FormConclusion.resources
 D:\ParametersVerifier\Interface\obj\Debug\Interface.FormContentImplementation.resources
 D:\ParametersVerifier\Interface\obj\Debug\Interface.FormContrast.resources
 D:\ParametersVerifier\Interface\obj\Debug\Interface.FormFanRunningStatus.resources

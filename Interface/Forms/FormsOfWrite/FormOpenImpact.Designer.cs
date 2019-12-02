@@ -48,7 +48,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(29, 33);
+            this.label1.Location = new System.Drawing.Point(42, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(313, 19);
             this.label1.TabIndex = 0;
@@ -62,7 +62,7 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(33, 67);
+            this.dataGridView1.Location = new System.Drawing.Point(46, 65);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(443, 470);
@@ -92,7 +92,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(517, 33);
+            this.label2.Location = new System.Drawing.Point(600, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(256, 19);
             this.label2.TabIndex = 2;
@@ -100,9 +100,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(521, 67);
+            this.pictureBox1.Location = new System.Drawing.Point(604, 65);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(439, 350);
+            this.pictureBox1.Size = new System.Drawing.Size(351, 321);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -110,7 +110,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(518, 433);
+            this.label3.Location = new System.Drawing.Point(601, 431);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 19);
             this.label3.TabIndex = 4;
@@ -118,7 +118,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(522, 467);
+            this.textBox1.Location = new System.Drawing.Point(605, 465);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(438, 25);
             this.textBox1.TabIndex = 5;
@@ -126,9 +126,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(663, 498);
+            this.button1.Location = new System.Drawing.Point(709, 562);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 39);
+            this.button1.Size = new System.Drawing.Size(125, 45);
             this.button1.TabIndex = 6;
             this.button1.Text = "确认";
             this.button1.UseVisualStyleBackColor = true;
@@ -136,9 +136,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(860, 423);
+            this.button2.Location = new System.Drawing.Point(961, 341);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 39);
+            this.button2.Size = new System.Drawing.Size(93, 45);
             this.button2.TabIndex = 8;
             this.button2.Text = "选择图片";
             this.button2.UseVisualStyleBackColor = true;
@@ -148,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 570);
+            this.ClientSize = new System.Drawing.Size(1088, 678);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);

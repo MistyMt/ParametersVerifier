@@ -22,7 +22,7 @@ namespace Interface
         private void button1_Click(object sender, EventArgs e)
         {
 
-            string filename = Application.StartupPath + "\\bin\\" + Global.templateName + ".doc";
+            string filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName + ".doc";
 
             Spire.Doc.Document document = new Spire.Doc.Document(filename, FileFormat.Docx);
 
@@ -31,8 +31,8 @@ namespace Interface
             TextRange textRange = paragraph.AppendText(textBox1.Text);
             document.SaveToFile(filename, FileFormat.Docx);
 
-            object filename1 = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName + ".doc";
-            string ImagePath = Environment.CurrentDirectory.ToString() + "\\bin\\图片\\" + "ObjectPicturePreView.png";
+            object filename1 = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+            string ImagePath = Environment.CurrentDirectory.ToString() + "\\bin\\" + "ObjectPicturePreView.png";
             string strKey = "7.2.2温度曲线图";
             object MissingValue = Type.Missing;
             bool isFindSealLoc = false;
@@ -93,26 +93,6 @@ namespace Interface
             }
             this.Close();
             
-        }
-        private string pathname = string.Empty;     		//定义路径名变量
-        private void button2_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog file = new OpenFileDialog();
-            file.InitialDirectory = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\图片";
-            file.Filter = "所有文件(*.*)|*.*";
-            file.ShowDialog();
-            if (file.FileName != string.Empty)
-            {
-                try
-                {
-                    pathname = file.FileName;   //获得文件的绝对路径
-                    this.pictureBox1.Load(pathname);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            } 
         }
     }
 }
