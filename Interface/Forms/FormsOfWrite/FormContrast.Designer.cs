@@ -49,9 +49,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(49, 72);
+            this.pictureBox1.Location = new System.Drawing.Point(49, 57);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(548, 269);
+            this.pictureBox1.Size = new System.Drawing.Size(548, 322);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -75,7 +75,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(253, 523);
+            this.button1.Location = new System.Drawing.Point(278, 479);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 37);
             this.button1.TabIndex = 4;
@@ -85,9 +85,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(613, 296);
+            this.button2.Location = new System.Drawing.Point(518, 385);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 45);
+            this.button2.Size = new System.Drawing.Size(79, 35);
             this.button2.TabIndex = 8;
             this.button2.Text = "选择图片";
             this.button2.UseVisualStyleBackColor = true;
@@ -97,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 603);
+            this.ClientSize = new System.Drawing.Size(658, 542);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);

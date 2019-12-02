@@ -93,7 +93,7 @@ namespace Interface
             wordDoc = wordApp.Documents.Open(filename);
             wordDoc.ActiveWindow.Visible = false;//打开word
 
-            Microsoft.Office.Interop.Word.Table nowtable = wordDoc.Tables[3];//检索表格
+            Microsoft.Office.Interop.Word.Table nowtable = wordDoc.Tables[2];//检索表格
 
             for (int i = 0; i < dataGridView1.RowCount - 1; i++)
             {
@@ -115,7 +115,7 @@ namespace Interface
             wordDoc = wordApp.Documents.Open(filename);
             wordDoc.ActiveWindow.Visible = false;//打开word
 
-            Microsoft.Office.Interop.Word.Table nowtable = wordDoc.Tables[2];//检索表格
+            Microsoft.Office.Interop.Word.Table nowtable = wordDoc.Tables[1];//检索表格
 
             for (int i = 0; i < dataGridView1.RowCount - 1; i++)
             {
