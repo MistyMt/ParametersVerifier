@@ -31,7 +31,7 @@
     </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -64,15 +64,15 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AnyCAD.Exchange.Net, Version=10.0.6988.38528, Culture=neutral, PublicKeyToken=adad17ef48f32d48, processorArchitecture=AMD64">
+    <Reference Include="AnyCAD.Exchange.Net, Version=10.0.6995.39969, Culture=neutral, PublicKeyToken=adad17ef48f32d48, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\AnyCAD.Exchange.Net.dll</HintPath>
     </Reference>
-    <Reference Include="AnyCAD.Foundation.Net, Version=10.0.6988.38526, Culture=neutral, PublicKeyToken=adad17ef48f32d48, processorArchitecture=AMD64">
+    <Reference Include="AnyCAD.Foundation.Net, Version=10.0.6995.39967, Culture=neutral, PublicKeyToken=adad17ef48f32d48, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\AnyCAD.Foundation.Net.dll</HintPath>
     </Reference>
-    <Reference Include="AnyCAD.Presentation.Net, Version=10.0.6988.38528, Culture=neutral, PublicKeyToken=adad17ef48f32d48, processorArchitecture=AMD64">
+    <Reference Include="AnyCAD.Presentation.Net, Version=10.0.6995.39969, Culture=neutral, PublicKeyToken=adad17ef48f32d48, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\AnyCAD.Presentation.Net.dll</HintPath>
     </Reference>
@@ -98,8 +98,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SQLite">
-      <HintPath>..\..\SDK\SQLite2013\bin\System.Data.SQLite.dll</HintPath>
+    <Reference Include="System.Data.SQLite, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />

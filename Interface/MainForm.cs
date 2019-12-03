@@ -507,77 +507,22 @@ namespace Interface
 
         private void button14_Click(object sender, EventArgs e)
         {
+            //顶面
 
-            ////创建"温度云图数据.txt"文件
-            string filedir = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin";
-            string fullFilename = filedir + "\\温度云图数据.txt";
-            //System.IO.File.Delete(fullFilename);
 
-            ////读取数据源，写成text
-            //string fname = "";
-            //OpenFileDialog fdlg = new OpenFileDialog();
-            //fdlg.Title = "Excel File Dialog";
-            //fdlg.InitialDirectory = @filedir + "\\bin";
-            //fdlg.Filter = "All files (*.*)|*.*";
-            //fdlg.FilterIndex = 2;
-            //fdlg.RestoreDirectory = true;
-            //if (fdlg.ShowDialog() == DialogResult.OK)
-            //{
-            //    fname = fdlg.FileName;
-            //}
 
-            //if (fname != "")
-            //{
-            //    string newTxtPath2 = filedir + "\\温度云图数据.txt";
-            //    StreamWriter sw2 = new StreamWriter(newTxtPath2, true, Encoding.Default);
-            //    Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-            //    Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fname);
-            //    Microsoft.Office.Interop.Excel._Worksheet xlWorksheet2 = xlWorkbook.Sheets[2];
-            //    Microsoft.Office.Interop.Excel.Range xRange2 = xlWorksheet2.get_Range("C2:Q17");
-            //    int rowCount2 = xRange2.Rows.Count;
-            //    for (int k = 2; k <= rowCount2; k++)
-            //    {
-            //        string lineNum = k.ToString();
-            //        double LineC2 = xlWorksheet2.Range["C" + lineNum].Value;
-            //        double LineD2 = xlWorksheet2.Range["D" + lineNum].Value;
-            //        double LineE2 = xlWorksheet2.Range["E" + lineNum].Value;
-            //        double LineF2 = xlWorksheet2.Range["F" + lineNum].Value;
-            //        double LineG2 = xlWorksheet2.Range["G" + lineNum].Value;
-            //        double LineH2 = xlWorksheet2.Range["H" + lineNum].Value;
-            //        double LineI2 = xlWorksheet2.Range["I" + lineNum].Value;
-            //        double LineJ2 = xlWorksheet2.Range["J" + lineNum].Value;
-            //        double LineK2 = xlWorksheet2.Range["K" + lineNum].Value;
-            //        double LineL2 = xlWorksheet2.Range["L" + lineNum].Value;
-            //        double LineM2 = xlWorksheet2.Range["M" + lineNum].Value;
-            //        double LineN2 = xlWorksheet2.Range["N" + lineNum].Value;
-            //        double LineO2 = xlWorksheet2.Range["O" + lineNum].Value;
-            //        double LineP2 = xlWorksheet2.Range["P" + lineNum].Value;
-            //        double LineQ2 = xlWorksheet2.Range["Q" + lineNum].Value;
-            //        sw2.WriteLine(LineC2 + "\t" + LineD2 + "\t" + LineE2 + "\t" + LineF2 + "\t" + LineG2 + "\t" + LineH2 + "\t" + LineI2 + "\t" + LineJ2 + "\t" + LineK2 + "\t" + LineL2 + "\t" + LineM2 + "\t" + LineN2 + "\t" + LineO2 + "\t" + LineP2 + "\t" + LineQ2 + "\t");
-            //    }
-            //    sw2.Close();
-            //    MessageBox.Show("ok");
-
-            //    xlWorkbook.Close();
-
-            //由"温度云图数据.txt"显示图像
             try
             {
-                SelectedEntityQuery query = new SelectedEntityQuery();
-                RenderView.QuerySelection(query);
-                SceneNode node2 = query.GetRootNode();
-                //string selectedSensor = node2.GetName();
-                //Sensor selectedSensors = Global.sensors[0];
 
-                AABox bbbox = node2.GetBBox();
-                var minPt = bbbox.MinPt;
-                var maxPt = bbbox.MaxPt;
-                int X = Convert.ToInt32(minPt.X);
-                int Y = Convert.ToInt32(minPt.Y);
-                int Z = Convert.ToInt32(minPt.Z);
+                string filedir = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin";
+                string fullFilename = filedir + "\\温度云图数据.txt";
 
-                int Len = Convert.ToInt32(maxPt.X - minPt.X);
-                int Width = Convert.ToInt32(maxPt.Y - minPt.Y);
+                int X = 0;
+                int Y = -(int)Global.objectWidth * 100 / 2;
+                int Z = (int)Global.objectHeight * 100;
+
+                int Len = (int)Global.objectLen * 100;
+                int Width = (int)Global.objectWidth * 100;
 
 
                 //double X = -8.37;
@@ -701,19 +646,323 @@ namespace Interface
                 bbox.MinPt = new Vector3(positionBuffer[0], positionBuffer[1], positionBuffer[3]);
                 bbox.MaxPt = new Vector3(positionBuffer[positionBuffer.Length - 3], positionBuffer[positionBuffer.Length - 2], positionBuffer[positionBuffer.Length - 1]);
                 var entity = GlobalInstance.TopoShapeConvert.CreateColoredFaceEntity(positionBuffer, facets, normalBuffer, colorBuffer, bbox);
-                var node = new EntitySceneNode();
-                node.SetEntity(entity);
-                RenderView.ShowSceneNode(node);
+                var node22 = new EntitySceneNode();
+                node22.SetEntity(entity);
+                RenderView.ShowSceneNode(node22);
 
-                RenderView.SceneManager.RemoveNode(node2);
-                //}
 
 
             }
             catch (Exception)
             {
-                MessageBox.Show("请选择面。");
+
+                MessageBox.Show("云图绘制错误"); ;
             }
+
+
+            //中面
+
+
+            try
+            {
+
+                string filedir = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin";
+                string fullFilename = filedir + "\\温度云图数据.txt";
+
+                int X = 0;
+                int Y = -(int)Global.objectWidth * 100 / 2;
+                int Z = (int)Global.objectHeight * 100 / 2;
+
+                int Len = (int)Global.objectLen * 100;
+                int Width = (int)Global.objectWidth * 100;
+
+
+                //double X = -8.37;
+                //double Y = 0;
+                //double Z = 100;
+                //double Len = 75;
+                //double Width = 80;
+                int pNX = 16;
+                int pNY = 17;
+
+                #region xdata
+                double[] xdata = new double[pNX];
+                for (int i = 0; i < pNX; i++)
+                {
+                    xdata[i] = X + (Len / (pNX - 1)) * i;
+                }
+                #endregion
+
+                #region ydata
+                double[] ydata = new double[pNY];
+                for (int i = 0; i < pNY; i++)
+                {
+                    ydata[i] = Y + (Width / (pNY - 1)) * i;
+                }
+                #endregion
+
+
+                //double[] xdata = { -8.37, -7.87, -7.37, -6.87, -6.37, -5.87, -5.37, -4.87, -4.37, -3.87, -3.37, -2.87, -2.37, -1.87, -1.37, -0.87 };
+                //double[] ydata = { 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5, 8.0 };
+                double[,] results = new double[xdata.Length, ydata.Length];
+                double minValue = 10000000;
+                double maxValue = -10000000;
+                StreamReader sr = new StreamReader(fullFilename, Encoding.Default);
+                String line;
+                int numLine = 0;
+
+
+                while (!sr.EndOfStream && ((line = sr.ReadLine()) != null))
+                {
+                    String[] items = line.Split('\t');
+                    if (items.Length < 1)
+                        continue;
+
+                    for (int ii = 0; ii < items.Length; ++ii)
+                    {
+                        try
+                        {
+                            double val = double.Parse(items[ii]);
+                            results[ii, numLine] = val;
+
+                            minValue = Math.Min(minValue, val);
+                            maxValue = Math.Max(maxValue, val);
+                        }
+                        catch (Exception)
+                        {
+                        }
+
+                    }
+
+                    ++numLine;
+                }
+                double range = maxValue - minValue;
+                const long MaxValue = 0xff0000;
+                const long MinValue = 0xffff00;
+                const double Range = MaxValue - MinValue;
+
+                float[] positionBuffer = new float[xdata.Length * ydata.Length * 3];
+                float[] normalBuffer = new float[positionBuffer.Length];
+                float[] colorBuffer = new float[positionBuffer.Length / 3 * 4];
+
+                for (int jj = 0, lenjj = ydata.Length; jj < lenjj; ++jj)
+                    for (int ii = 0, lenii = xdata.Length; ii < lenii; ++ii)
+                    {
+                        int idx = jj * lenii + ii;
+                        positionBuffer[idx * 3] = (float)xdata[ii];
+                        positionBuffer[idx * 3 + 1] = (float)ydata[jj];
+                        positionBuffer[idx * 3 + 2] = (float)Z;
+                        normalBuffer[idx * 3] = 0;
+                        normalBuffer[idx * 3 + 1] = 0;
+                        normalBuffer[idx * 3 + 2] = 1;
+                        double rst = results[ii, jj];
+                        double ratio = (rst - minValue) / range;
+                        long rgb = (long)(Range * ratio) + MinValue;
+                        long red = rgb >> 16 & 0xFF;
+                        long green = rgb >> 8 & 0xFF;
+                        long blue = rgb & 0xFF;
+                        colorBuffer[idx * 4] = red / 255.0f;
+                        colorBuffer[idx * 4 + 1] = green / 255.0f;
+                        colorBuffer[idx * 4 + 2] = blue / 255.0f;
+                        colorBuffer[idx * 4 + 3] = 1.0f;
+                    }
+                int faceCount = (xdata.Length - 1) * (ydata.Length - 1) * 2;
+                uint[] facets = new uint[faceCount * 3];
+                int faceId = 0;
+                for (uint jj = 0, lenjj = (uint)ydata.Length; jj < lenjj - 1; ++jj)
+                    for (uint ii = 0, lenii = (uint)xdata.Length; ii < lenii - 1; ++ii)
+                    {
+                        uint a = jj * lenii + ii;
+                        uint b = a + 1;
+                        uint c = (jj + 1) * lenii + ii;
+                        uint d = c + 1;
+                        /*
+                        c----------d
+                        |          |
+                        |          |
+                        |          |
+                        a----------b
+                        */
+                        facets[faceId * 3] = a;
+                        facets[faceId * 3 + 1] = d;
+                        facets[faceId * 3 + 2] = c;
+
+                        ++faceId;
+                        facets[faceId * 3] = a;
+                        facets[faceId * 3 + 1] = b;
+                        facets[faceId * 3 + 2] = d;
+
+                        ++faceId;
+                    }
+                AABox bbox = new AABox();
+                bbox.MinPt = new Vector3(positionBuffer[0], positionBuffer[1], positionBuffer[3]);
+                bbox.MaxPt = new Vector3(positionBuffer[positionBuffer.Length - 3], positionBuffer[positionBuffer.Length - 2], positionBuffer[positionBuffer.Length - 1]);
+                var entity = GlobalInstance.TopoShapeConvert.CreateColoredFaceEntity(positionBuffer, facets, normalBuffer, colorBuffer, bbox);
+                var node22 = new EntitySceneNode();
+                node22.SetEntity(entity);
+                RenderView.ShowSceneNode(node22);
+
+
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("云图绘制错误"); ;
+            }
+
+            //底面
+
+            try
+            {
+
+                string filedir = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin";
+                string fullFilename = filedir + "\\温度云图数据.txt";
+
+                int X = 0;
+                int Y = -(int)Global.objectWidth * 100 / 2;
+                int Z = 0;
+
+                int Len = (int)Global.objectLen * 100;
+                int Width = (int)Global.objectWidth * 100;
+
+
+                //double X = -8.37;
+                //double Y = 0;
+                //double Z = 100;
+                //double Len = 75;
+                //double Width = 80;
+                int pNX = 16;
+                int pNY = 17;
+
+                #region xdata
+                double[] xdata = new double[pNX];
+                for (int i = 0; i < pNX; i++)
+                {
+                    xdata[i] = X + (Len / (pNX - 1)) * i;
+                }
+                #endregion
+
+                #region ydata
+                double[] ydata = new double[pNY];
+                for (int i = 0; i < pNY; i++)
+                {
+                    ydata[i] = Y + (Width / (pNY - 1)) * i;
+                }
+                #endregion
+
+
+                //double[] xdata = { -8.37, -7.87, -7.37, -6.87, -6.37, -5.87, -5.37, -4.87, -4.37, -3.87, -3.37, -2.87, -2.37, -1.87, -1.37, -0.87 };
+                //double[] ydata = { 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5, 8.0 };
+                double[,] results = new double[xdata.Length, ydata.Length];
+                double minValue = 10000000;
+                double maxValue = -10000000;
+                StreamReader sr = new StreamReader(fullFilename, Encoding.Default);
+                String line;
+                int numLine = 0;
+
+
+                while (!sr.EndOfStream && ((line = sr.ReadLine()) != null))
+                {
+                    String[] items = line.Split('\t');
+                    if (items.Length < 1)
+                        continue;
+
+                    for (int ii = 0; ii < items.Length; ++ii)
+                    {
+                        try
+                        {
+                            double val = double.Parse(items[ii]);
+                            results[ii, numLine] = val;
+
+                            minValue = Math.Min(minValue, val);
+                            maxValue = Math.Max(maxValue, val);
+                        }
+                        catch (Exception)
+                        {
+                        }
+
+                    }
+
+                    ++numLine;
+                }
+                double range = maxValue - minValue;
+                const long MaxValue = 0xff0000;
+                const long MinValue = 0xffff00;
+                const double Range = MaxValue - MinValue;
+
+                float[] positionBuffer = new float[xdata.Length * ydata.Length * 3];
+                float[] normalBuffer = new float[positionBuffer.Length];
+                float[] colorBuffer = new float[positionBuffer.Length / 3 * 4];
+
+                for (int jj = 0, lenjj = ydata.Length; jj < lenjj; ++jj)
+                    for (int ii = 0, lenii = xdata.Length; ii < lenii; ++ii)
+                    {
+                        int idx = jj * lenii + ii;
+                        positionBuffer[idx * 3] = (float)xdata[ii];
+                        positionBuffer[idx * 3 + 1] = (float)ydata[jj];
+                        positionBuffer[idx * 3 + 2] = (float)Z;
+                        normalBuffer[idx * 3] = 0;
+                        normalBuffer[idx * 3 + 1] = 0;
+                        normalBuffer[idx * 3 + 2] = 1;
+                        double rst = results[ii, jj];
+                        double ratio = (rst - minValue) / range;
+                        long rgb = (long)(Range * ratio) + MinValue;
+                        long red = rgb >> 16 & 0xFF;
+                        long green = rgb >> 8 & 0xFF;
+                        long blue = rgb & 0xFF;
+                        colorBuffer[idx * 4] = red / 255.0f;
+                        colorBuffer[idx * 4 + 1] = green / 255.0f;
+                        colorBuffer[idx * 4 + 2] = blue / 255.0f;
+                        colorBuffer[idx * 4 + 3] = 1.0f;
+                    }
+                int faceCount = (xdata.Length - 1) * (ydata.Length - 1) * 2;
+                uint[] facets = new uint[faceCount * 3];
+                int faceId = 0;
+                for (uint jj = 0, lenjj = (uint)ydata.Length; jj < lenjj - 1; ++jj)
+                    for (uint ii = 0, lenii = (uint)xdata.Length; ii < lenii - 1; ++ii)
+                    {
+                        uint a = jj * lenii + ii;
+                        uint b = a + 1;
+                        uint c = (jj + 1) * lenii + ii;
+                        uint d = c + 1;
+                        /*
+                        c----------d
+                        |          |
+                        |          |
+                        |          |
+                        a----------b
+                        */
+                        facets[faceId * 3] = a;
+                        facets[faceId * 3 + 1] = d;
+                        facets[faceId * 3 + 2] = c;
+
+                        ++faceId;
+                        facets[faceId * 3] = a;
+                        facets[faceId * 3 + 1] = b;
+                        facets[faceId * 3 + 2] = d;
+
+                        ++faceId;
+                    }
+                AABox bbox = new AABox();
+                bbox.MinPt = new Vector3(positionBuffer[0], positionBuffer[1], positionBuffer[3]);
+                bbox.MaxPt = new Vector3(positionBuffer[positionBuffer.Length - 3], positionBuffer[positionBuffer.Length - 2], positionBuffer[positionBuffer.Length - 1]);
+                var entity = GlobalInstance.TopoShapeConvert.CreateColoredFaceEntity(positionBuffer, facets, normalBuffer, colorBuffer, bbox);
+                var node22 = new EntitySceneNode();
+                node22.SetEntity(entity);
+                RenderView.ShowSceneNode(node22);
+
+
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("云图绘制错误"); ;
+            }
+
+
+
         }
 
         public void buttonChooseObject_Click(object sender, EventArgs e)
@@ -908,15 +1157,15 @@ namespace Interface
                 if (iData.GetDataPresent(DataFormats.Bitmap))
                 {
                     ImagePreview imgpr = new ImagePreview();
-                    
+
                     imgpr.Show();
 
                     pictureBox1.Image = Clipboard.GetImage();
 
 
-                    var saveFileDialog1 =new SaveFileDialog() ;
+                    var saveFileDialog1 = new SaveFileDialog();
                     saveFileDialog1.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif|PnG Image|*.png|Wmf  Image|*.wmf";
-                    saveFileDialog1.InitialDirectory = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin"+"\\图片";
+                    saveFileDialog1.InitialDirectory = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin" + "\\图片";
                     saveFileDialog1.FilterIndex = 0;
                     if (pictureBox1.Image == null)
                     {
@@ -1232,6 +1481,10 @@ namespace Interface
                 double len = Convert.ToDouble(textBox7.Text);
                 double width = Convert.ToDouble(textBox8.Text);
                 double height = Convert.ToDouble(textBox9.Text);
+
+                Global.objectLen = len/100;
+                Global.objectWidth = width/100;
+                Global.objectHeight = height/100;
 
                 //图像Topo结构
                 TopoShape box = GlobalInstance.BrepTools.MakeBox(Vector3.ZERO, new Vector3(len, 0, 0), width, height);
@@ -2226,6 +2479,217 @@ namespace Interface
         private void button70_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button42_Click(object sender, EventArgs e)
+        {
+
+            ////创建"温度云图数据.txt"文件
+            string filedir = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin";
+            string fullFilename = filedir + "\\温度云图数据.txt";
+            //System.IO.File.Delete(fullFilename);
+
+            ////读取数据源，写成text
+            //string fname = "";
+            //OpenFileDialog fdlg = new OpenFileDialog();
+            //fdlg.Title = "Excel File Dialog";
+            //fdlg.InitialDirectory = @filedir + "\\bin";
+            //fdlg.Filter = "All files (*.*)|*.*";
+            //fdlg.FilterIndex = 2;
+            //fdlg.RestoreDirectory = true;
+            //if (fdlg.ShowDialog() == DialogResult.OK)
+            //{
+            //    fname = fdlg.FileName;
+            //}
+
+            //if (fname != "")
+            //{
+            //    string newTxtPath2 = filedir + "\\温度云图数据.txt";
+            //    StreamWriter sw2 = new StreamWriter(newTxtPath2, true, Encoding.Default);
+            //    Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            //    Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fname);
+            //    Microsoft.Office.Interop.Excel._Worksheet xlWorksheet2 = xlWorkbook.Sheets[2];
+            //    Microsoft.Office.Interop.Excel.Range xRange2 = xlWorksheet2.get_Range("C2:Q17");
+            //    int rowCount2 = xRange2.Rows.Count;
+            //    for (int k = 2; k <= rowCount2; k++)
+            //    {
+            //        string lineNum = k.ToString();
+            //        double LineC2 = xlWorksheet2.Range["C" + lineNum].Value;
+            //        double LineD2 = xlWorksheet2.Range["D" + lineNum].Value;
+            //        double LineE2 = xlWorksheet2.Range["E" + lineNum].Value;
+            //        double LineF2 = xlWorksheet2.Range["F" + lineNum].Value;
+            //        double LineG2 = xlWorksheet2.Range["G" + lineNum].Value;
+            //        double LineH2 = xlWorksheet2.Range["H" + lineNum].Value;
+            //        double LineI2 = xlWorksheet2.Range["I" + lineNum].Value;
+            //        double LineJ2 = xlWorksheet2.Range["J" + lineNum].Value;
+            //        double LineK2 = xlWorksheet2.Range["K" + lineNum].Value;
+            //        double LineL2 = xlWorksheet2.Range["L" + lineNum].Value;
+            //        double LineM2 = xlWorksheet2.Range["M" + lineNum].Value;
+            //        double LineN2 = xlWorksheet2.Range["N" + lineNum].Value;
+            //        double LineO2 = xlWorksheet2.Range["O" + lineNum].Value;
+            //        double LineP2 = xlWorksheet2.Range["P" + lineNum].Value;
+            //        double LineQ2 = xlWorksheet2.Range["Q" + lineNum].Value;
+            //        sw2.WriteLine(LineC2 + "\t" + LineD2 + "\t" + LineE2 + "\t" + LineF2 + "\t" + LineG2 + "\t" + LineH2 + "\t" + LineI2 + "\t" + LineJ2 + "\t" + LineK2 + "\t" + LineL2 + "\t" + LineM2 + "\t" + LineN2 + "\t" + LineO2 + "\t" + LineP2 + "\t" + LineQ2 + "\t");
+            //    }
+            //    sw2.Close();
+            //    MessageBox.Show("ok");
+
+            //    xlWorkbook.Close();
+
+            //由"温度云图数据.txt"显示图像
+            try
+            {
+                SelectedEntityQuery query = new SelectedEntityQuery();
+                RenderView.QuerySelection(query);
+                SceneNode node2 = query.GetRootNode();
+                //string selectedSensor = node2.GetName();
+                //Sensor selectedSensors = Global.sensors[0];
+
+                AABox bbbox = node2.GetBBox();
+                var minPt = bbbox.MinPt;
+                var maxPt = bbbox.MaxPt;
+                int X = Convert.ToInt32(minPt.X);
+                int Y = Convert.ToInt32(minPt.Y);
+                int Z = Convert.ToInt32(minPt.Z);
+
+                int Len = Convert.ToInt32(maxPt.X - minPt.X);
+                int Width = Convert.ToInt32(maxPt.Y - minPt.Y);
+
+
+                //double X = -8.37;
+                //double Y = 0;
+                //double Z = 100;
+                //double Len = 75;
+                //double Width = 80;
+                int pNX = 16;
+                int pNY = 17;
+
+                #region xdata
+                double[] xdata = new double[pNX];
+                for (int i = 0; i < pNX; i++)
+                {
+                    xdata[i] = X + (Len / (pNX - 1)) * i;
+                }
+                #endregion
+
+                #region ydata
+                double[] ydata = new double[pNY];
+                for (int i = 0; i < pNY; i++)
+                {
+                    ydata[i] = Y + (Width / (pNY - 1)) * i;
+                }
+                #endregion
+
+
+                //double[] xdata = { -8.37, -7.87, -7.37, -6.87, -6.37, -5.87, -5.37, -4.87, -4.37, -3.87, -3.37, -2.87, -2.37, -1.87, -1.37, -0.87 };
+                //double[] ydata = { 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5, 8.0 };
+                double[,] results = new double[xdata.Length, ydata.Length];
+                double minValue = 10000000;
+                double maxValue = -10000000;
+                StreamReader sr = new StreamReader(fullFilename, Encoding.Default);
+                String line;
+                int numLine = 0;
+
+
+                while (!sr.EndOfStream && ((line = sr.ReadLine()) != null))
+                {
+                    String[] items = line.Split('\t');
+                    if (items.Length < 1)
+                        continue;
+
+                    for (int ii = 0; ii < items.Length; ++ii)
+                    {
+                        try
+                        {
+                            double val = double.Parse(items[ii]);
+                            results[ii, numLine] = val;
+
+                            minValue = Math.Min(minValue, val);
+                            maxValue = Math.Max(maxValue, val);
+                        }
+                        catch (Exception)
+                        {
+                        }
+
+                    }
+
+                    ++numLine;
+                }
+                double range = maxValue - minValue;
+                const long MaxValue = 0xff0000;
+                const long MinValue = 0xffff00;
+                const double Range = MaxValue - MinValue;
+
+                float[] positionBuffer = new float[xdata.Length * ydata.Length * 3];
+                float[] normalBuffer = new float[positionBuffer.Length];
+                float[] colorBuffer = new float[positionBuffer.Length / 3 * 4];
+
+                for (int jj = 0, lenjj = ydata.Length; jj < lenjj; ++jj)
+                    for (int ii = 0, lenii = xdata.Length; ii < lenii; ++ii)
+                    {
+                        int idx = jj * lenii + ii;
+                        positionBuffer[idx * 3] = (float)xdata[ii];
+                        positionBuffer[idx * 3 + 1] = (float)ydata[jj];
+                        positionBuffer[idx * 3 + 2] = (float)Z;
+                        normalBuffer[idx * 3] = 0;
+                        normalBuffer[idx * 3 + 1] = 0;
+                        normalBuffer[idx * 3 + 2] = 1;
+                        double rst = results[ii, jj];
+                        double ratio = (rst - minValue) / range;
+                        long rgb = (long)(Range * ratio) + MinValue;
+                        long red = rgb >> 16 & 0xFF;
+                        long green = rgb >> 8 & 0xFF;
+                        long blue = rgb & 0xFF;
+                        colorBuffer[idx * 4] = red / 255.0f;
+                        colorBuffer[idx * 4 + 1] = green / 255.0f;
+                        colorBuffer[idx * 4 + 2] = blue / 255.0f;
+                        colorBuffer[idx * 4 + 3] = 1.0f;
+                    }
+                int faceCount = (xdata.Length - 1) * (ydata.Length - 1) * 2;
+                uint[] facets = new uint[faceCount * 3];
+                int faceId = 0;
+                for (uint jj = 0, lenjj = (uint)ydata.Length; jj < lenjj - 1; ++jj)
+                    for (uint ii = 0, lenii = (uint)xdata.Length; ii < lenii - 1; ++ii)
+                    {
+                        uint a = jj * lenii + ii;
+                        uint b = a + 1;
+                        uint c = (jj + 1) * lenii + ii;
+                        uint d = c + 1;
+                        /*
+                        c----------d
+                        |          |
+                        |          |
+                        |          |
+                        a----------b
+                        */
+                        facets[faceId * 3] = a;
+                        facets[faceId * 3 + 1] = d;
+                        facets[faceId * 3 + 2] = c;
+
+                        ++faceId;
+                        facets[faceId * 3] = a;
+                        facets[faceId * 3 + 1] = b;
+                        facets[faceId * 3 + 2] = d;
+
+                        ++faceId;
+                    }
+                AABox bbox = new AABox();
+                bbox.MinPt = new Vector3(positionBuffer[0], positionBuffer[1], positionBuffer[3]);
+                bbox.MaxPt = new Vector3(positionBuffer[positionBuffer.Length - 3], positionBuffer[positionBuffer.Length - 2], positionBuffer[positionBuffer.Length - 1]);
+                var entity = GlobalInstance.TopoShapeConvert.CreateColoredFaceEntity(positionBuffer, facets, normalBuffer, colorBuffer, bbox);
+                var node = new EntitySceneNode();
+                node.SetEntity(entity);
+                RenderView.ShowSceneNode(node);
+
+                RenderView.SceneManager.RemoveNode(node2);
+                //}
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("请选择面。");
+            }
         }
 
     }
