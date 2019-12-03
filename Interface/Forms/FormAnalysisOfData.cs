@@ -11,6 +11,7 @@ using System.Data.OleDb;
 using System.IO;
 using Microsoft.Office.Interop.Word;
 using System.Data.SQLite;
+using System.Diagnostics;
 
 namespace Interface
 {
@@ -791,6 +792,9 @@ namespace Interface
 
         private void button7_Click(object sender, EventArgs e)
         {
+            try
+            {
+
             object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
             Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
             Microsoft.Office.Interop.Word.Document wordDoc;
@@ -808,7 +812,7 @@ namespace Interface
                     nowtable.Cell(2, 5).Range.InsertAfter(textBox8.Text);
                     nowtable.Cell(2, 6).Range.InsertAfter(textBox9.Text);
                     wordDoc.Save();
-                    ((Microsoft.Office.Interop.Word.Application)wordApp).Quit();
+                    wordApp.Quit();
                     wordApp = null;
                 }
 
@@ -1027,7 +1031,7 @@ namespace Interface
                     nowtable.Cell(2, 5).Range.InsertAfter(textBox8.Text);
                     nowtable.Cell(2, 6).Range.InsertAfter(textBox9.Text);
                     wordDoc.Save();
-                    ((Microsoft.Office.Interop.Word.Application)wordApp).Quit();
+                    wordApp.Quit();
                     wordApp = null;
                 }
 
@@ -1233,12 +1237,21 @@ namespace Interface
                 }
             }
 
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("请刷新。") ;
+            }
 
 
         }//confirm
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+
             object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
             Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
             Microsoft.Office.Interop.Word.Document wordDoc;
@@ -1424,10 +1437,20 @@ namespace Interface
                 nowtable5.Cell(12, 4).Range.InsertAfter(Convert.ToString(Convert.ToDouble(dataGridView1[10, dataGridView1.Rows.Count - 1].Value) - Convert.ToDouble(dataGridView1[10, 1].Value)));
                 nowtable5.Cell(13, 4).Range.InsertAfter(Convert.ToString(Convert.ToDouble(dataGridView1[11, dataGridView1.Rows.Count - 1].Value) - Convert.ToDouble(dataGridView1[11, 1].Value)));
             }
+
+
             wordDoc.Save();
             wordApp.Quit();
             wordApp = null;
             MessageBox.Show("导入成功！");
+
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("请刷新。");
+            }
 
         }
 
@@ -1538,6 +1561,9 @@ namespace Interface
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+
             object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
             Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
             Microsoft.Office.Interop.Word.Document wordDoc;
@@ -1555,6 +1581,13 @@ namespace Interface
             wordApp.Quit();
             wordApp = null;
             MessageBox.Show("导入成功！");
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("请刷新。");
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -1618,6 +1651,23 @@ namespace Interface
             wordDoc.Save();
             wordApp.Quit();
             wordApp = null;
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            Process myProcess = new Process();
+            Process[] wordProcess = Process.GetProcessesByName("winword");
+            foreach (Process pro in wordProcess) //这里是找到那些没有界面的Word进程
+            {
+                IntPtr ip = pro.MainWindowHandle;
+
+                string str = pro.MainWindowTitle; //发现程序中打开跟用户自己打开的区别就在这个属性
+                //用户打开的str 是文件的名称，程序中打开的就是空字符串
+                if (str != "冷库验证项目模拟报告模板")
+                {
+                    pro.Kill();
+                }
+            }
         }
     }
 

@@ -20,7 +20,7 @@ namespace Interface
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName + ".doc";
+            string filename = Application.StartupPath + "\\bin\\" + Global.templateName + ".doc";
             Spire.Doc.Document document = new Spire.Doc.Document(filename, FileFormat.Docx);
 
             Spire.Doc.Fields.TextBox textBox = document.TextBoxes[11];
@@ -28,8 +28,8 @@ namespace Interface
             Spire.Doc.Fields.TextRange textRange = paragraph.AppendText(textBox1.Text);
             document.SaveToFile(filename, FileFormat.Docx);
 
-            object filename1 = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
-            string ImagePath = Environment.CurrentDirectory.ToString() + "\\bin\\" + "ObjectPicturePreView.png";
+            object filename1 = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName + ".doc";
+            string ImagePath = Environment.CurrentDirectory.ToString() + "\\bin\\图片\\" + "ObjectPicturePreView.png";
             string strKey = "7.5.2断电保温测试冷库温度变化曲线图";
             object MissingValue = Type.Missing;
             bool isFindSealLoc = false;

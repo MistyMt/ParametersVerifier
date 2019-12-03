@@ -19,7 +19,7 @@ namespace Interface
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName + ".doc";
+            string filename = Application.StartupPath + "\\bin\\" + Global.templateName + ".doc";
             Spire.Doc.Document document = new Spire.Doc.Document(filename, Spire.Doc.FileFormat.Docx);
 
             Spire.Doc.Fields.TextBox textBox = document.TextBoxes[9];
@@ -27,7 +27,7 @@ namespace Interface
             Spire.Doc.Fields.TextRange textRange = paragraph.AppendText(textBox1.Text);
             document.SaveToFile(filename, Spire.Doc.FileFormat.Docx);
 
-            object filename1 = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+            object filename1 = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName + ".doc";
             string ImagePath = Environment.CurrentDirectory.ToString() + "\\bin\\" + "图片\\" + "ObjectPicturePreView.png";
             string strKey = "7.3.3监控系统测点温度与验证测点及均匀性温度分布对比图";
             object MissingValue = Type.Missing;
