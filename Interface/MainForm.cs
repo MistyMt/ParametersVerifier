@@ -1037,16 +1037,23 @@ namespace Interface
 
         private void button17_Click(object sender, EventArgs e)
         {
-            if (Global.analysisOfDataForms.Count != 0)
+            if (Global.dataSourceName != "")
             {
-                Global.analysisOfDataForms[0].ShowDialog();
+                if (Global.analysisOfDataForms.Count != 0)
+                {
+                    Global.analysisOfDataForms[0].ShowDialog();
+                }
+                else
+                {
+                    FormAnalysisOfData analysisOfDataForm = new FormAnalysisOfData();
+                    Global.analysisOfDataForms.Add(analysisOfDataForm);
+                    analysisOfDataForm.ShowDialog();
+
+                }
             }
             else
             {
-                FormAnalysisOfData analysisOfDataForm = new FormAnalysisOfData();
-                Global.analysisOfDataForms.Add(analysisOfDataForm);
-                analysisOfDataForm.ShowDialog();
-
+                MessageBox.Show("请先在数据面板导入Excel数据源。");
             }
         }
 
@@ -1482,9 +1489,9 @@ namespace Interface
                 double width = Convert.ToDouble(textBox8.Text);
                 double height = Convert.ToDouble(textBox9.Text);
 
-                Global.objectLen = len/100;
-                Global.objectWidth = width/100;
-                Global.objectHeight = height/100;
+                Global.objectLen = len / 100;
+                Global.objectWidth = width / 100;
+                Global.objectHeight = height / 100;
 
                 //图像Topo结构
                 TopoShape box = GlobalInstance.BrepTools.MakeBox(Vector3.ZERO, new Vector3(len, 0, 0), width, height);

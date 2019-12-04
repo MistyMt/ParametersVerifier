@@ -31,6 +31,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button5 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -65,13 +66,22 @@
             this.型号规格 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.不确定度或准确度等级或最大允许误差 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.证书编号或有效期 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button12 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -80,10 +90,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(5, 18);
+            this.button5.Location = new System.Drawing.Point(6, 19);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(111, 28);
+            this.button5.Size = new System.Drawing.Size(89, 28);
             this.button5.TabIndex = 33;
             this.button5.Text = "空载数据";
             this.button5.UseVisualStyleBackColor = true;
@@ -91,6 +101,8 @@
             // 
             // panel3
             // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.button12);
             this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.textBox9);
@@ -109,12 +121,22 @@
             this.panel3.Size = new System.Drawing.Size(455, 95);
             this.panel3.TabIndex = 0;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(378, 64);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(71, 28);
+            this.button6.TabIndex = 37;
+            this.button6.Text = "刷新";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(165, 65);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Location = new System.Drawing.Point(165, 64);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(101, 26);
+            this.button7.Size = new System.Drawing.Size(89, 28);
             this.button7.TabIndex = 35;
             this.button7.Text = "导入word";
             this.button7.UseVisualStyleBackColor = true;
@@ -224,10 +246,10 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(123, 19);
+            this.button8.Location = new System.Drawing.Point(96, 19);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(112, 28);
+            this.button8.Size = new System.Drawing.Size(89, 28);
             this.button8.TabIndex = 34;
             this.button8.Text = "开门数据";
             this.button8.UseVisualStyleBackColor = true;
@@ -235,10 +257,10 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(243, 19);
+            this.button9.Location = new System.Drawing.Point(186, 19);
             this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(111, 28);
+            this.button9.Size = new System.Drawing.Size(89, 28);
             this.button9.TabIndex = 35;
             this.button9.Text = "断电数据";
             this.button9.UseVisualStyleBackColor = true;
@@ -272,10 +294,10 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(359, 19);
+            this.button10.Location = new System.Drawing.Point(276, 19);
             this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(101, 28);
+            this.button10.Size = new System.Drawing.Size(89, 28);
             this.button10.TabIndex = 36;
             this.button10.Text = "满载数据";
             this.button10.UseVisualStyleBackColor = true;
@@ -283,6 +305,7 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
@@ -302,6 +325,7 @@
             this.label1.Size = new System.Drawing.Size(71, 15);
             this.label1.TabIndex = 16;
             this.label1.Text = "________";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button2
             // 
@@ -338,6 +362,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button11);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.button10);
             this.groupBox1.Controls.Add(this.comboBox1);
@@ -346,6 +371,7 @@
             this.groupBox1.Controls.Add(this.button8);
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.dataGridView3);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Location = new System.Drawing.Point(0, 333);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -366,14 +392,14 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(1371, 328);
+            this.groupBox2.Size = new System.Drawing.Size(1371, 329);
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "传感器汇总";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(103, 148);
+            this.button4.Location = new System.Drawing.Point(17, 132);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(169, 42);
@@ -384,7 +410,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(105, 70);
+            this.button3.Location = new System.Drawing.Point(20, 68);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(169, 42);
@@ -396,6 +422,7 @@
             // dataGridView2
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.序号,
@@ -406,11 +433,12 @@
             this.不确定度或准确度等级或最大允许误差,
             this.证书编号或有效期});
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dataGridView2.Location = new System.Drawing.Point(623, 20);
+            this.dataGridView2.Location = new System.Drawing.Point(276, 20);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(745, 306);
+            this.dataGridView2.Size = new System.Drawing.Size(1092, 307);
             this.dataGridView2.TabIndex = 0;
             // 
             // 序号
@@ -448,15 +476,81 @@
             this.证书编号或有效期.HeaderText = "证书编号或有效期";
             this.证书编号或有效期.Name = "证书编号或有效期";
             // 
-            // button6
+            // button11
             // 
-            this.button6.Location = new System.Drawing.Point(299, 67);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(101, 26);
-            this.button6.TabIndex = 37;
-            this.button6.Text = "刷新";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            this.button11.Location = new System.Drawing.Point(366, 19);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(89, 28);
+            this.button11.TabIndex = 3;
+            this.button11.Text = "已检查";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            this.dataGridView3.Location = new System.Drawing.Point(468, 19);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersVisible = false;
+            this.dataGridView3.RowTemplate.Height = 27;
+            this.dataGridView3.Size = new System.Drawing.Size(898, 309);
+            this.dataGridView3.TabIndex = 37;
+            this.dataGridView3.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "测点编号";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "最大值";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "最小值";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "均值";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "标准偏差";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "波动";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(265, 64);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(102, 28);
+            this.button12.TabIndex = 38;
+            this.button12.Text = "已检查导入";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // FormAnalysisOfData
             // 
@@ -481,6 +575,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -525,5 +620,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 证书编号或有效期;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Button button12;
     }
 }
