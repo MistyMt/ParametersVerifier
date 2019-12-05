@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -20,6 +21,23 @@ namespace Interface.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            #region 删除后台word占用。
+            //
+            Process myProcess = new Process();
+            Process[] wordProcess = Process.GetProcessesByName("winword");
+            foreach (Process pro in wordProcess) //这里是找到那些没有界面的Word进程
+            {
+                IntPtr ip = pro.MainWindowHandle;
+
+                string str = pro.MainWindowTitle; //发现程序中打开跟用户自己打开的区别就在这个属性
+                //用户打开的str 是文件的名称，程序中打开的就是空字符串
+                if (str != "冷库验证项目模拟报告模板")
+                {
+                    pro.Kill();
+                }
+            }
+            #endregion
+
             #region 从Resource文件夹提取模板
             FileInfo f111 = new FileInfo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + Global.templateName + ".doc");
             if (f111.Exists)
@@ -28,7 +46,7 @@ namespace Interface.Forms
                 FileInfo f222 = new FileInfo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + "\\Resource\\" + Global.templateName + ".doc");
                 f222.CopyTo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + Global.templateName + ".doc");
             }
-            else 
+            else
             {
                 FileInfo f222 = new FileInfo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + "\\Resource\\" + Global.templateName + ".doc");
                 f222.CopyTo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + Global.templateName + ".doc");

@@ -877,11 +877,12 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "基本信息修改";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(434, 30);
+            this.button1.Location = new System.Drawing.Point(429, 30);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 47);
@@ -1382,7 +1383,7 @@
             // 
             // button70
             // 
-            this.button70.Location = new System.Drawing.Point(636, 29);
+            this.button70.Location = new System.Drawing.Point(629, 29);
             this.button70.Name = "button70";
             this.button70.Size = new System.Drawing.Size(94, 47);
             this.button70.TabIndex = 16;
@@ -1392,17 +1393,17 @@
             // 
             // button69
             // 
-            this.button69.Location = new System.Drawing.Point(535, 30);
+            this.button69.Location = new System.Drawing.Point(529, 30);
             this.button69.Name = "button69";
             this.button69.Size = new System.Drawing.Size(94, 47);
             this.button69.TabIndex = 16;
-            this.button69.Text = "报表检查";
+            this.button69.Text = "报表预览";
             this.button69.UseVisualStyleBackColor = true;
             this.button69.Click += new System.EventHandler(this.button69_Click);
             // 
             // button31
             // 
-            this.button31.Location = new System.Drawing.Point(333, 30);
+            this.button31.Location = new System.Drawing.Point(329, 30);
             this.button31.Margin = new System.Windows.Forms.Padding(2);
             this.button31.Name = "button31";
             this.button31.Size = new System.Drawing.Size(94, 47);
@@ -1413,7 +1414,7 @@
             // 
             // button67
             // 
-            this.button67.Location = new System.Drawing.Point(232, 30);
+            this.button67.Location = new System.Drawing.Point(229, 30);
             this.button67.Margin = new System.Windows.Forms.Padding(2);
             this.button67.Name = "button67";
             this.button67.Size = new System.Drawing.Size(94, 47);
@@ -1424,7 +1425,7 @@
             // 
             // button66
             // 
-            this.button66.Location = new System.Drawing.Point(131, 29);
+            this.button66.Location = new System.Drawing.Point(129, 29);
             this.button66.Margin = new System.Windows.Forms.Padding(2);
             this.button66.Name = "button66";
             this.button66.Size = new System.Drawing.Size(94, 47);
@@ -1435,10 +1436,10 @@
             // 
             // buttonChooseObject
             // 
-            this.buttonChooseObject.Location = new System.Drawing.Point(9, 21);
+            this.buttonChooseObject.Location = new System.Drawing.Point(9, 29);
             this.buttonChooseObject.Margin = new System.Windows.Forms.Padding(4);
             this.buttonChooseObject.Name = "buttonChooseObject";
-            this.buttonChooseObject.Size = new System.Drawing.Size(115, 29);
+            this.buttonChooseObject.Size = new System.Drawing.Size(114, 47);
             this.buttonChooseObject.TabIndex = 10;
             this.buttonChooseObject.Text = "基本验证信息";
             this.buttonChooseObject.UseVisualStyleBackColor = true;

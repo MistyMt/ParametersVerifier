@@ -68,7 +68,7 @@ namespace Interface
             {
                 //strPath = fd.FileName;
                 string strPath = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\" + Global.dataSourceName;
-                string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + strPath + ";extended properties='excel 8.0; HDR=NO;IMEX=1';";//关键是红色区域
+                string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + strPath + ";extended properties='excel 12.0; HDR=NO;IMEX=1';";//关键是红色区域
                 OleDbConnection Con = new OleDbConnection(strCon);//建立连接
                 Con.Open();
 
@@ -936,6 +936,7 @@ namespace Interface
 
         private void button7_Click(object sender, EventArgs e)
         {
+            #region 删除后台word占用。
             Process myProcess = new Process();
             Process[] wordProcess = Process.GetProcessesByName("winword");
             foreach (Process pro in wordProcess) //这里是找到那些没有界面的Word进程
@@ -949,6 +950,8 @@ namespace Interface
                     pro.Kill();
                 }
             }
+            #endregion
+
             try
             {
 
@@ -1940,7 +1943,7 @@ namespace Interface
 
         private void button11_Click(object sender, EventArgs e)
         {
-            if (dataGridView3.Visible==true)
+            if (dataGridView3.Visible == true)
             {
                 dataGridView3.Visible = false;
             }

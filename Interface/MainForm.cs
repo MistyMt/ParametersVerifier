@@ -19,6 +19,7 @@ using Microsoft.Office.Interop.Word;
 using System.Threading;
 using Interface.Forms;
 using System.Data.SQLite;
+using System.Diagnostics;
 
 
 namespace Interface
@@ -974,10 +975,7 @@ namespace Interface
             {
                 buttonChooseObject.Enabled = false;
             }
-            //if (basicInformationForm)
-            //{
 
-            //}
         }
 
         private void MainForm_Activated(object sender, EventArgs e)
@@ -2470,22 +2468,60 @@ namespace Interface
 
         private void button69_Click(object sender, EventArgs e)
         {
+            #region 删除后台word占用。
+            Process myProcess = new Process();
+            Process[] wordProcess = Process.GetProcessesByName("winword");
+            foreach (Process pro in wordProcess) //这里是找到那些没有界面的Word进程
+            {
+                IntPtr ip = pro.MainWindowHandle;
+
+                string str = pro.MainWindowTitle; //发现程序中打开跟用户自己打开的区别就在这个属性
+                //用户打开的str 是文件的名称，程序中打开的就是空字符串
+                if (str != "冷库验证项目模拟报告模板")
+                {
+                    pro.Kill();
+                }
+            }
+            #endregion
+
             object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
             Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
             Microsoft.Office.Interop.Word.Document wordDoc;
             wordDoc = wordApp.Documents.Open(filename);
             wordDoc.ActiveWindow.Visible = true;//打开word
-
-            //wordDoc.Save();
-            //wordApp.Quit();
-            //wordApp = null;
-
-
         }
 
         private void button70_Click(object sender, EventArgs e)
         {
-            this.Close();
+            string strDesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            string nowtime = DateTime.Now.ToLongDateString().ToString();
+
+            FileInfo f = new FileInfo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + Global.templateName + ".doc");
+            if (f.Exists)
+            {
+
+                f.CopyTo(strDesktopPath + "\\" + nowtime + Global.objectName + "验证项目报告.doc");
+
+            }
+            else
+            {
+                MessageBox.Show("没有发现报表。");
+            }
+
+            FileInfo ft = new FileInfo(strDesktopPath + "\\" + nowtime + Global.objectName + "验证项目报告.doc");
+            if (ft.Exists)
+            {
+
+                MessageBox.Show("导出报表成功。");
+
+                //FileInfo f1 = new FileInfo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + Global.templateName + ".doc");
+
+                this.Close();
+            }
+
+
+
+
         }
 
         private void button42_Click(object sender, EventArgs e)
