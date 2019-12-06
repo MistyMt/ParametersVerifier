@@ -20,6 +20,7 @@ using System.Threading;
 using Interface.Forms;
 using System.Data.SQLite;
 using System.Diagnostics;
+using Interface.Forms.DBForms;
 
 
 namespace Interface
@@ -2462,7 +2463,7 @@ namespace Interface
 
         private void button68_Click(object sender, EventArgs e)
         {
-            FormContentImplementation f = new FormContentImplementation();
+            selectedSensorData f = new selectedSensorData();
             f.ShowDialog();
         }
 
