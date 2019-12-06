@@ -193,7 +193,9 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(452, 23);
+            this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox2.Size = new System.Drawing.Size(111, 25);
             this.textBox2.TabIndex = 3;
             // 
@@ -280,7 +282,9 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(452, 23);
+            this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
+            this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox5.Size = new System.Drawing.Size(111, 25);
             this.textBox5.TabIndex = 11;
             // 
@@ -367,7 +371,9 @@
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(452, 23);
+            this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
+            this.textBox8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox8.Size = new System.Drawing.Size(111, 25);
             this.textBox8.TabIndex = 19;
             // 
@@ -454,7 +460,9 @@
             // textBox11
             // 
             this.textBox11.Location = new System.Drawing.Point(452, 23);
+            this.textBox11.Multiline = true;
             this.textBox11.Name = "textBox11";
+            this.textBox11.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox11.Size = new System.Drawing.Size(111, 25);
             this.textBox11.TabIndex = 19;
             // 
@@ -540,7 +548,9 @@
             // textBox14
             // 
             this.textBox14.Location = new System.Drawing.Point(452, 23);
+            this.textBox14.Multiline = true;
             this.textBox14.Name = "textBox14";
+            this.textBox14.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox14.Size = new System.Drawing.Size(111, 25);
             this.textBox14.TabIndex = 19;
             // 
@@ -626,7 +636,9 @@
             // textBox17
             // 
             this.textBox17.Location = new System.Drawing.Point(452, 23);
+            this.textBox17.Multiline = true;
             this.textBox17.Name = "textBox17";
+            this.textBox17.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox17.Size = new System.Drawing.Size(111, 25);
             this.textBox17.TabIndex = 19;
             // 
@@ -712,7 +724,9 @@
             // textBox20
             // 
             this.textBox20.Location = new System.Drawing.Point(452, 23);
+            this.textBox20.Multiline = true;
             this.textBox20.Name = "textBox20";
+            this.textBox20.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox20.Size = new System.Drawing.Size(111, 25);
             this.textBox20.TabIndex = 19;
             // 
@@ -752,6 +766,7 @@
             this.Controls.Add(this.button1);
             this.Name = "FormContentImplementation";
             this.Text = "FormContentImplementation";
+            this.Load += new System.EventHandler(this.FormContentImplementation_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

@@ -19,8 +19,23 @@ namespace Interface
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Global.objectName = comboBox1.Text;
-            this.Close();
+            if (comboBox1.Text != string.Empty)
+            {
+                Global.objectName = comboBox1.Text;
+                switch (Global.objectName)
+                {
+                    case "冷库":
+                        Global.templateName = "冷库验证项目模拟报告模板";
+                        break;
+                    case "灭菌器":
+                        Global.templateName = "冷库验证项目模拟报告模板";
+                        break;
+                    case "高温热处理炉":
+                        Global.templateName = "冷库验证项目模拟报告模板";
+                        break;
+                }
+                this.Close();
+            }
         }
     }
 }

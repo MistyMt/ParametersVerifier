@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Interface
 {
     public partial class FormContentImplementation : Form
@@ -383,6 +384,73 @@ namespace Interface
             X = this.Width;
             Y = this.Height;
             setTag(this);
+        }
+
+        private void FormContentImplementation_Load(object sender, EventArgs e)
+        {
+            var sList1 = new List<Sensor>();
+            StringBuilder sb1 = new StringBuilder();
+            var sList2 = new List<Sensor>();
+            StringBuilder sb2 = new StringBuilder();
+            var sList3 = new List<Sensor>();
+            StringBuilder sb3 = new StringBuilder();
+            var sList4 = new List<Sensor>();
+            StringBuilder sb4 = new StringBuilder();
+            var sList5 = new List<Sensor>();
+            StringBuilder sb5 = new StringBuilder();
+            var sList6 = new List<Sensor>();
+            StringBuilder sb6 = new StringBuilder();
+            foreach (Sensor vs in Global.sensors.Values)
+            {
+                switch (vs.positionName)
+                {
+                    case "均匀性布点":
+                        sList1.Add(vs);
+                        sb1.Append(vs.serialNumber + "\r\n");
+                        break;
+                    case "风机出风口布点":
+                        sList2.Add(vs);
+                        sb2.Append(vs.serialNumber + "\r\n");
+                        break;
+                    case "出入口布点":
+                        sList3.Add(vs);
+                        sb3.Append(vs.serialNumber + "\r\n");
+                        break;
+                    case "死角布点":
+                        sList4.Add(vs);
+                        sb4.Append(vs.serialNumber + "\r\n");
+                        break;
+                    case "货架布点":
+                        sList5.Add(vs);
+                        sb5.Append(vs.serialNumber + "\r\n");
+                        break;
+                    case "监控系统探头及验证环境布点":
+                        sList6.Add(vs);
+                        sb6.Append(vs.serialNumber + "\r\n");
+                        break;
+                }
+            }
+            textBox1.Text = sList1.Count.ToString();
+            textBox2.Text = sb1.ToString();
+
+            textBox6.Text = sList2.Count.ToString();
+            textBox5.Text = sb2.ToString();
+
+            textBox9.Text = sList3.Count.ToString();
+            textBox8.Text = sb3.ToString();
+
+            textBox12.Text = sList4.Count.ToString();
+            textBox11.Text = sb4.ToString();
+
+            textBox15.Text = sList4.Count.ToString();
+            textBox14.Text = sb4.ToString();
+
+            textBox18.Text = sList5.Count.ToString();
+            textBox17.Text = sb5.ToString();
+
+            textBox21.Text = sList6.Count.ToString();
+            textBox20.Text = sb6.ToString();
+
         }
     }
 }

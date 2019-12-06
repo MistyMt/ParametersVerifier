@@ -12,6 +12,7 @@ namespace Interface
 {
     public static class Global
     {
+        #region 面板
         /// <summary>
         /// 数据分析面板
         /// </summary>
@@ -26,22 +27,23 @@ namespace Interface
         /// 数据总览面板
         /// </summary>
         public static List<FormAnalysisOfData> analysisOfDataForms = new List<FormAnalysisOfData>();
+        #endregion
 
         /// <summary>
         /// 对象名
         /// </summary>
-        public static string objectName = "冷库";
+        public static string objectName = string.Empty;
 
 
         /// <summary>
         /// 模板文件名
         /// </summary>
-        public static string templateName = "冷库验证项目模拟报告模板";
+        public static string templateName = string.Empty;
 
         /// <summary>
         /// excel数据源名
         /// </summary>
-        public static string dataSourceName = "";
+        public static string dataSourceName = string.Empty;
 
         /// <summary>
         /// 截图
