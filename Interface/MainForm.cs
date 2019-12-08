@@ -2495,21 +2495,20 @@ namespace Interface
         private void button70_Click(object sender, EventArgs e)
         {
             string strDesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-            string nowtime = DateTime.Now.ToLongDateString().ToString();
+            var nowtime = System.DateTime.Now;
+            string Nowtime = nowtime.ToLongDateString().ToString()+nowtime.Hour.ToString()+"时"+nowtime.Minute.ToString()+"分"+nowtime.Second.ToString()+"秒";
 
             FileInfo f = new FileInfo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + Global.templateName + ".doc");
             if (f.Exists)
             {
-
-                f.CopyTo(strDesktopPath + "\\" + nowtime + Global.objectName + "验证项目报告.doc");
-
+                    f.CopyTo(strDesktopPath + "\\" + Nowtime + Global.objectName + "验证项目报告.doc");
             }
             else
             {
                 MessageBox.Show("没有发现报表。");
             }
 
-            FileInfo ft = new FileInfo(strDesktopPath + "\\" + nowtime + Global.objectName + "验证项目报告.doc");
+            FileInfo ft = new FileInfo(strDesktopPath + "\\" + Nowtime + Global.objectName + "验证项目报告.doc");
             if (ft.Exists)
             {
 

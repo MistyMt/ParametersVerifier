@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -226,11 +227,15 @@ namespace Interface
             myRange13 = wordDoc.Range(myRange13.End, myRange13.End + 3);
             myRange13.Text = textBox20.Text;
 
+
             wordDoc.Save();
+            wordDoc.Close() ;
             wordApp.Quit();
             wordApp = null;
 
-            string ImagePath = Environment.CurrentDirectory.ToString() + "\\bin\\" + "图片\\" + "ObjectPicturePreView.png";
+
+
+            string ImagePath = pictureBox1.ImageLocation;
             string strKey = "示意图：（上层，中层，下层）";
             object MissingValue = Type.Missing;
             bool isFindSealLoc = false;
@@ -287,8 +292,387 @@ namespace Interface
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(wp);
                     wp = null;
                 }
+
+            }
+
+            string ImagePath1 = pictureBox2.ImageLocation;
+            string strKey1 = "6.1.2风机出风口布点";
+            object MissingValue1 = Type.Missing;
+            bool isFindSealLoc1 = false;
+            Microsoft.Office.Interop.Word.Application wp1 = null;
+            Microsoft.Office.Interop.Word.Document wd1 = null;
+            try
+            {
+                wp1 = new Microsoft.Office.Interop.Word.Application();
+                wd1 = wp1.Documents.Open(ref filename1, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue);
+                wp1.Selection.Find.ClearFormatting();
+                wp1.Selection.Find.Replacement.ClearFormatting();
+                wp1.Selection.Find.Text = strKey1;
+                object objReplace1 = Microsoft.Office.Interop.Word.WdReplace.wdReplaceNone;
+                if (wp1.Selection.Find.Execute(ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref objReplace1, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue))
+                {
+                    object Anchor1 = wp1.Selection.Range;
+                    object LinkToFile1 = false;
+                    object SaveWithDocument1 = true;
+                    Microsoft.Office.Interop.Word.InlineShape Inlineshape1 = wp1.Selection.InlineShapes.AddPicture(
+                        ImagePath1, ref LinkToFile1, ref SaveWithDocument1, ref Anchor1);
+                    Inlineshape1.Select();
+                    Microsoft.Office.Interop.Word.Shape shape1 = Inlineshape1.ConvertToShape();
+                    shape1.WrapFormat.Type = Microsoft.Office.Interop.Word.WdWrapType.wdWrapBehind;
+
+                    isFindSealLoc1 = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                if (wd1 != null)
+                {
+                    wd1.Close();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(wd1);
+                    wd1 = null;
+                }
+                if (wp1 != null)
+                {
+                    wp1.Quit();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(wp1);
+                    wp1 = null;
+                }
+
+            }
+
+            string ImagePath2 = pictureBox3.ImageLocation;
+            string strKey2 = "6.1.3出入口布点";
+            object MissingValue2 = Type.Missing;
+            bool isFindSealLoc2 = false;
+            Microsoft.Office.Interop.Word.Application wp2 = null;
+            Microsoft.Office.Interop.Word.Document wd2 = null;
+            try
+            {
+                wp2 = new Microsoft.Office.Interop.Word.Application();
+                wd2 = wp2.Documents.Open(ref filename1, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue);
+                wp2.Selection.Find.ClearFormatting();
+                wp2.Selection.Find.Replacement.ClearFormatting();
+                wp2.Selection.Find.Text = strKey2;
+                object objReplace2 = Microsoft.Office.Interop.Word.WdReplace.wdReplaceNone;
+                if (wp2.Selection.Find.Execute(ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref objReplace2, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue))
+                {
+                    object Anchor2 = wp2.Selection.Range;
+                    object LinkToFile2 = false;
+                    object SaveWithDocument2 = true;
+                    Microsoft.Office.Interop.Word.InlineShape Inlineshape2 = wp2.Selection.InlineShapes.AddPicture(
+                        ImagePath2, ref LinkToFile2, ref SaveWithDocument2, ref Anchor2);
+                    Inlineshape2.Select();
+                    Microsoft.Office.Interop.Word.Shape shape2 = Inlineshape2.ConvertToShape();
+                    shape2.WrapFormat.Type = Microsoft.Office.Interop.Word.WdWrapType.wdWrapBehind;
+
+                    isFindSealLoc2 = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                if (wd2 != null)
+                {
+                    wd2.Close();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(wd2);
+                    wd2 = null;
+                }
+                if (wp2 != null)
+                {
+                    wp2.Quit();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(wp2);
+                    wp2 = null;
+                }
+
+            }
+
+            string ImagePath3 = pictureBox4.ImageLocation;
+            string strKey3 = "6.1.4死角布点";
+            object MissingValue3 = Type.Missing;
+            bool isFindSealLoc3 = false;
+            Microsoft.Office.Interop.Word.Application wp3 = null;
+            Microsoft.Office.Interop.Word.Document wd3 = null;
+            try
+            {
+                wp3 = new Microsoft.Office.Interop.Word.Application();
+                wd3 = wp3.Documents.Open(ref filename1, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue);
+                wp3.Selection.Find.ClearFormatting();
+                wp3.Selection.Find.Replacement.ClearFormatting();
+                wp3.Selection.Find.Text = strKey3;
+                object objReplace3 = Microsoft.Office.Interop.Word.WdReplace.wdReplaceNone;
+                if (wp3.Selection.Find.Execute(ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref objReplace3, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue))
+                {
+                    object Anchor3 = wp3.Selection.Range;
+                    object LinkToFile3 = false;
+                    object SaveWithDocument3 = true;
+                    Microsoft.Office.Interop.Word.InlineShape Inlineshape3 = wp3.Selection.InlineShapes.AddPicture(
+                        ImagePath3, ref LinkToFile3, ref SaveWithDocument3, ref Anchor3);
+                    Inlineshape3.Select();
+                    Microsoft.Office.Interop.Word.Shape shape3 = Inlineshape3.ConvertToShape();
+                    shape3.WrapFormat.Type = Microsoft.Office.Interop.Word.WdWrapType.wdWrapBehind;
+
+                    isFindSealLoc3 = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                if (wd3 != null)
+                {
+                    wd3.Close();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(wd3);
+                    wd3 = null;
+                }
+                if (wp3 != null)
+                {
+                    wp3.Quit();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(wp3);
+                    wp3 = null;
+                }
+
+            }
+
+            string ImagePath4 = pictureBox5.ImageLocation;
+            string strKey4 = "6.1.5死角布点";
+            object MissingValue4 = Type.Missing;
+            bool isFindSealLoc4 = false;
+            Microsoft.Office.Interop.Word.Application wp4 = null;
+            Microsoft.Office.Interop.Word.Document wd4 = null;
+            try
+            {
+                wp4 = new Microsoft.Office.Interop.Word.Application();
+                wd4 = wp4.Documents.Open(ref filename1, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue);
+                wp4.Selection.Find.ClearFormatting();
+                wp4.Selection.Find.Replacement.ClearFormatting();
+                wp4.Selection.Find.Text = strKey4;
+                object objReplace4 = Microsoft.Office.Interop.Word.WdReplace.wdReplaceNone;
+                if (wp4.Selection.Find.Execute(ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref objReplace4, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue))
+                {
+                    object Anchor4 = wp4.Selection.Range;
+                    object LinkToFile4 = false;
+                    object SaveWithDocument4 = true;
+                    Microsoft.Office.Interop.Word.InlineShape Inlineshape4 = wp4.Selection.InlineShapes.AddPicture(
+                        ImagePath4, ref LinkToFile4, ref SaveWithDocument4, ref Anchor4);
+                    Inlineshape4.Select();
+                    Microsoft.Office.Interop.Word.Shape shape4 = Inlineshape4.ConvertToShape();
+                    shape4.WrapFormat.Type = Microsoft.Office.Interop.Word.WdWrapType.wdWrapBehind;
+
+                    isFindSealLoc4 = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                if (wd4 != null)
+                {
+                    wd4.Close();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(wd4);
+                    wd4 = null;
+                }
+                if (wp4 != null)
+                {
+                    wp4.Quit();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(wp4);
+                    wp4 = null;
+                }
+
+            }
+
+            string ImagePath5 = pictureBox6.ImageLocation;
+            string strKey5 = "6.1.6货架布点";
+            object MissingValue5 = Type.Missing;
+            bool isFindSealLoc5 = false;
+            Microsoft.Office.Interop.Word.Application wp5 = null;
+            Microsoft.Office.Interop.Word.Document wd5 = null;
+            try
+            {
+                wp5 = new Microsoft.Office.Interop.Word.Application();
+                wd5 = wp5.Documents.Open(ref filename1, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue);
+                wp5.Selection.Find.ClearFormatting();
+                wp5.Selection.Find.Replacement.ClearFormatting();
+                wp5.Selection.Find.Text = strKey5;
+                object objReplace5 = Microsoft.Office.Interop.Word.WdReplace.wdReplaceNone;
+                if (wp5.Selection.Find.Execute(ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref objReplace5, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue))
+                {
+                    object Anchor5 = wp5.Selection.Range;
+                    object LinkToFile5 = false;
+                    object SaveWithDocument5 = true;
+                    Microsoft.Office.Interop.Word.InlineShape Inlineshape5 = wp5.Selection.InlineShapes.AddPicture(
+                        ImagePath5, ref LinkToFile5, ref SaveWithDocument5, ref Anchor5);
+                    Inlineshape5.Select();
+                    Microsoft.Office.Interop.Word.Shape shape5 = Inlineshape5.ConvertToShape();
+                    shape5.WrapFormat.Type = Microsoft.Office.Interop.Word.WdWrapType.wdWrapBehind;
+
+                    isFindSealLoc5 = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                if (wd5 != null)
+                {
+                    wd5.Close();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(wd5);
+                    wd5 = null;
+                }
+                if (wp5 != null)
+                {
+                    wp5.Quit();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(wp5);
+                    wp5 = null;
+                }
+
+            }
+
+            string ImagePath6 = pictureBox7.ImageLocation;
+            string strKey6 = "6.1.7监控系统探头及验证环境布点";
+            object MissingValue6 = Type.Missing;
+            bool isFindSealLoc6 = false;
+            Microsoft.Office.Interop.Word.Application wp6 = null;
+            Microsoft.Office.Interop.Word.Document wd6 = null;
+            try
+            {
+                wp6 = new Microsoft.Office.Interop.Word.Application();
+                wd6 = wp6.Documents.Open(ref filename1, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue,
+                ref MissingValue, ref MissingValue);
+                wp6.Selection.Find.ClearFormatting();
+                wp6.Selection.Find.Replacement.ClearFormatting();
+                wp6.Selection.Find.Text = strKey6;
+                object objReplace6 = Microsoft.Office.Interop.Word.WdReplace.wdReplaceNone;
+                if (wp6.Selection.Find.Execute(ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue,
+                                           ref MissingValue, ref objReplace6, ref MissingValue,
+                                           ref MissingValue, ref MissingValue, ref MissingValue))
+                {
+                    object Anchor6 = wp6.Selection.Range;
+                    object LinkToFile6 = false;
+                    object SaveWithDocument6 = true;
+                    Microsoft.Office.Interop.Word.InlineShape Inlineshape6 = wp6.Selection.InlineShapes.AddPicture(
+                        ImagePath6, ref LinkToFile6, ref SaveWithDocument6, ref Anchor6);
+                    Inlineshape6.Select();
+                    Microsoft.Office.Interop.Word.Shape shape6 = Inlineshape6.ConvertToShape();
+                    shape6.WrapFormat.Type = Microsoft.Office.Interop.Word.WdWrapType.wdWrapBehind;
+
+                    isFindSealLoc6 = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                if (wd6 != null)
+                {
+                    wd6.Close();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(wd6);
+                    wd6 = null;
+                }
+                if (wp6 != null)
+                {
+                    wp6.Quit();
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(wp6);
+                    wp6 = null;
+                }
                 MessageBox.Show("导入成功！");
             }
+
+
+            #region 删除后台word占用。
+
+            Process myProcess = new Process();
+            Process[] wordProcess = Process.GetProcessesByName("winword");
+            foreach (Process pro in wordProcess) //这里是找到那些没有界面的Word进程
+            {
+                IntPtr ip = pro.MainWindowHandle;
+
+                string str = pro.MainWindowTitle; //发现程序中打开跟用户自己打开的区别就在这个属性
+                //用户打开的str 是文件的名称，程序中打开的就是空字符串
+                if (str != "冷库验证项目模拟报告模板")
+                {
+                    pro.Kill();
+                }
+            }
+            #endregion
+
 
             string filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName + ".doc";
             Spire.Doc.Document document = new Spire.Doc.Document(filename, FileFormat.Docx);
@@ -328,7 +712,7 @@ namespace Interface
             Spire.Doc.Fields.TextRange textRange8 = paragraph8.AppendText(textBox19.Text);
             document.SaveToFile(filename, FileFormat.Docx);
 
-
+            MessageBox.Show("导入成功！");
             this.Close();
 
         }
@@ -452,10 +836,10 @@ namespace Interface
             textBox20.Text = sb6.ToString();
 
         }
-  
+
         private void button2_Click(object sender, EventArgs e)
         {
-            string pathname = string.Empty;  
+            string pathname = string.Empty;
             OpenFileDialog file = new OpenFileDialog();
             file.InitialDirectory = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\图片";
             file.Filter = "所有文件(*.*)|*.*";
@@ -471,7 +855,7 @@ namespace Interface
                 {
                     MessageBox.Show(ex.Message);
                 }
-            } 
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -492,7 +876,7 @@ namespace Interface
                 {
                     MessageBox.Show(ex.Message);
                 }
-            } 
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -513,7 +897,7 @@ namespace Interface
                 {
                     MessageBox.Show(ex.Message);
                 }
-            } 
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -534,7 +918,7 @@ namespace Interface
                 {
                     MessageBox.Show(ex.Message);
                 }
-            } 
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -555,7 +939,7 @@ namespace Interface
                 {
                     MessageBox.Show(ex.Message);
                 }
-            } 
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -576,7 +960,7 @@ namespace Interface
                 {
                     MessageBox.Show(ex.Message);
                 }
-            } 
+            }
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -597,7 +981,7 @@ namespace Interface
                 {
                     MessageBox.Show(ex.Message);
                 }
-            } 
+            }
         }
     }
 }

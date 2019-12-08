@@ -30,7 +30,7 @@ namespace Interface
             document.SaveToFile(filename, FileFormat.Docx);
 
             object filename1 = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName + ".doc";
-            string ImagePath = Environment.CurrentDirectory.ToString() + "\\bin\\图片\\" + "ObjectPicturePreView.png";
+            string ImagePath = pictureBox1.ImageLocation;
             string strKey = "7.4.2 开门测试期间温度变化曲线图";
             object MissingValue = Type.Missing;
             bool isFindSealLoc = false;

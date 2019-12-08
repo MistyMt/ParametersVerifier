@@ -1396,6 +1396,7 @@ namespace Interface
                         wordApp = null;
                     }
                 }
+                MessageBox.Show("导入成功。");
 
             }
             catch (Exception)
@@ -1819,24 +1820,49 @@ namespace Interface
 
         private void button4_Click(object sender, EventArgs e)
         {
-            object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
-            Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
-            Microsoft.Office.Interop.Word.Document wordDoc;
-            wordDoc = wordApp.Documents.Open(filename);
-            wordDoc.ActiveWindow.Visible = false;//打开word
-
-            Microsoft.Office.Interop.Word.Table nowtable = wordDoc.Tables[3];//检索表格
-
-            for (int j = 0; j < dataGridView2.ColumnCount - 1; j++)
+            #region 删除后台word占用。
+            //
+            Process myProcess = new Process();
+            Process[] wordProcess = Process.GetProcessesByName("winword");
+            foreach (Process pro in wordProcess) //这里是找到那些没有界面的Word进程
             {
-                for (int i = 0; i < dataGridView2.RowCount - 1; i++)
+                IntPtr ip = pro.MainWindowHandle;
+
+                string str = pro.MainWindowTitle; //发现程序中打开跟用户自己打开的区别就在这个属性
+                //用户打开的str 是文件的名称，程序中打开的就是空字符串
+                if (str != "冷库验证项目模拟报告模板")
                 {
-                    nowtable.Cell(i + 2, j + 2).Range.InsertAfter(dataGridView2[j + 1, i].Value.ToString());//填充表格
+                    pro.Kill();
                 }
             }
-            wordDoc.Save();
-            wordApp.Quit();
-            wordApp = null;
+            #endregion
+            try
+            {
+                object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+                Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
+                Microsoft.Office.Interop.Word.Document wordDoc;
+                wordDoc = wordApp.Documents.Open(filename);
+                wordDoc.ActiveWindow.Visible = false;//打开word
+
+                Microsoft.Office.Interop.Word.Table nowtable = wordDoc.Tables[3];//检索表格
+
+                for (int j = 0; j < dataGridView2.ColumnCount - 1; j++)
+                {
+                    for (int i = 0; i < dataGridView2.RowCount - 1; i++)
+                    {
+                        nowtable.Cell(i + 2, j + 2).Range.InsertAfter(dataGridView2[j + 1, i].Value.ToString());//填充表格
+                    }
+                }
+                wordDoc.Save();
+                wordApp.Quit();
+                wordApp = null;
+
+                MessageBox.Show("导入成功。");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("失败。");
+            }
         }
 
         private void button6_Click_1(object sender, EventArgs e)
@@ -1875,8 +1901,15 @@ namespace Interface
                 dataGridView3.Rows.Clear();
 
             }
+            textBox1.Text = string.Empty;
+            textBox5.Text = string.Empty;
+            textBox6.Text = string.Empty;
+            textBox7.Text = string.Empty;
+            textBox8.Text = string.Empty;
+            textBox9.Text = string.Empty;
+            comboBox1.Text = string.Empty;
 
-
+            MessageBox.Show("已刷新。");
 
         }
 
@@ -1933,11 +1966,12 @@ namespace Interface
                 wordDoc.Save();
                 wordApp.Quit();
                 wordApp = null;
+                MessageBox.Show("导入成功。");
 
             }
             catch (Exception)
             {
-                MessageBox.Show("请先浏览全部测点数据。");
+                MessageBox.Show("无已检测点数据。");
             }
         }
 
@@ -1946,16 +1980,38 @@ namespace Interface
             if (dataGridView3.Visible == true)
             {
                 dataGridView3.Visible = false;
+                dataGridView3.SendToBack();
             }
             else
             {
                 dataGridView3.Visible = true;
+                dataGridView3.BringToFront();
             }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            button5.PerformClick();
+            for (int i = 0; i < 15; i++)
+            {
+                comboBox1.SelectedIndex = i;
+            }
+            button11.PerformClick();
+            button12.PerformClick();
+
+
+            button10.PerformClick();
+            for (int i = 0; i < 15; i++)
+            {
+                comboBox1.SelectedIndex = i;
+            }
+            button11.PerformClick();
+            button12.PerformClick();
         }
     }
 

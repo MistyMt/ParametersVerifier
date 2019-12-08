@@ -28,7 +28,7 @@ namespace Interface
             document.SaveToFile(filename, Spire.Doc.FileFormat.Docx);
 
             object filename1 = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName + ".doc";
-            string ImagePath = Environment.CurrentDirectory.ToString() + "\\bin\\" + "图片\\" + "ObjectPicturePreView.png";
+            string ImagePath = pictureBox1.ImageLocation;
             string strKey = "7.3.3监控系统测点温度与验证测点及均匀性温度分布对比图";
             object MissingValue = Type.Missing;
             bool isFindSealLoc = false;
