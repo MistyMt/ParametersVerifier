@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -87,46 +88,73 @@ namespace Interface
 
         private void button4_Click(object sender, EventArgs e)
         {
-            object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
-            Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
-            Microsoft.Office.Interop.Word.Document wordDoc;
-            wordDoc = wordApp.Documents.Open(filename);
-            wordDoc.ActiveWindow.Visible = false;//打开word
 
-            Microsoft.Office.Interop.Word.Table nowtable = wordDoc.Tables[2];//检索表格
-
-            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-            {
-                for (int j = 0; j < dataGridView1.ColumnCount; j++)
-                {
-                    nowtable.Cell(i + 2, j + 1).Range.InsertAfter(dataGridView1[j, i].Value.ToString());//填充表格
-                }
-            }
-            wordDoc.Save();
-            wordApp.Quit();
-            wordApp = null;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
-            Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
-            Microsoft.Office.Interop.Word.Document wordDoc;
-            wordDoc = wordApp.Documents.Open(filename);
-            wordDoc.ActiveWindow.Visible = false;//打开word
 
-            Microsoft.Office.Interop.Word.Table nowtable = wordDoc.Tables[1];//检索表格
+        }
 
-            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+        private void button2_Click(object sender, EventArgs e)
+        {
+            #region 删除后台word占用。
+            //
+            Process myProcess = new Process();
+            Process[] wordProcess = Process.GetProcessesByName("winword");
+            foreach (Process pro in wordProcess) //这里是找到那些没有界面的Word进程
             {
-                for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                IntPtr ip = pro.MainWindowHandle;
+
+                string str = pro.MainWindowTitle; //发现程序中打开跟用户自己打开的区别就在这个属性
+                //用户打开的str 是文件的名称，程序中打开的就是空字符串
+                if (str != "冷库验证项目模拟报告模板")
                 {
-                    nowtable.Cell(i + 2, j + 1).Range.InsertAfter(dataGridView1[j, i].Value.ToString());//填充表格
+                    pro.Kill();
                 }
             }
-            wordDoc.Save();
-            wordApp.Quit();
-            wordApp = null;
+            #endregion
+            try
+            {
+                object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+                Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
+                Microsoft.Office.Interop.Word.Document wordDoc;
+                wordDoc = wordApp.Documents.Open(filename);
+                wordDoc.ActiveWindow.Visible = false;//打开word
+
+                Microsoft.Office.Interop.Word.Table nowtable = wordDoc.Tables[1];//检索表格
+
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                    {
+                        nowtable.Cell(i + 2, j + 1).Range.InsertAfter(dataGridView1[j, i].Value.ToString());//填充表格
+                    }
+                }
+
+                Microsoft.Office.Interop.Word.Table nowtable2 = wordDoc.Tables[2];//检索表格
+
+                for (int i = 0; i < dataGridView2.RowCount - 1; i++)
+                {
+                    for (int j = 0; j < dataGridView2.ColumnCount; j++)
+                    {
+                        nowtable2.Cell(i + 2, j + 1).Range.InsertAfter(dataGridView2[j, i].Value.ToString());//填充表格
+                    }
+                }
+
+
+                wordDoc.Save();
+                wordApp.Quit();
+                wordApp = null;
+
+                MessageBox.Show("导入成功。");
+                this.Close();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("导入失败。");
+            }
         }
 
 

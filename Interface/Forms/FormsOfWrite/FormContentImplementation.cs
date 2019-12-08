@@ -452,5 +452,152 @@ namespace Interface
             textBox20.Text = sb6.ToString();
 
         }
+  
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string pathname = string.Empty;  
+            OpenFileDialog file = new OpenFileDialog();
+            file.InitialDirectory = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\图片";
+            file.Filter = "所有文件(*.*)|*.*";
+            file.ShowDialog();
+            if (file.FileName != string.Empty)
+            {
+                try
+                {
+                    pathname = file.FileName;   //获得文件的绝对路径
+                    this.pictureBox1.Load(pathname);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            } 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string pathname = string.Empty;
+            OpenFileDialog file = new OpenFileDialog();
+            file.InitialDirectory = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\图片";
+            file.Filter = "所有文件(*.*)|*.*";
+            file.ShowDialog();
+            if (file.FileName != string.Empty)
+            {
+                try
+                {
+                    pathname = file.FileName;   //获得文件的绝对路径
+                    this.pictureBox2.Load(pathname);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            } 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string pathname = string.Empty;
+            OpenFileDialog file = new OpenFileDialog();
+            file.InitialDirectory = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\图片";
+            file.Filter = "所有文件(*.*)|*.*";
+            file.ShowDialog();
+            if (file.FileName != string.Empty)
+            {
+                try
+                {
+                    pathname = file.FileName;   //获得文件的绝对路径
+                    this.pictureBox3.Load(pathname);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            } 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string pathname = string.Empty;
+            OpenFileDialog file = new OpenFileDialog();
+            file.InitialDirectory = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\图片";
+            file.Filter = "所有文件(*.*)|*.*";
+            file.ShowDialog();
+            if (file.FileName != string.Empty)
+            {
+                try
+                {
+                    pathname = file.FileName;   //获得文件的绝对路径
+                    this.pictureBox4.Load(pathname);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            } 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string pathname = string.Empty;
+            OpenFileDialog file = new OpenFileDialog();
+            file.InitialDirectory = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\图片";
+            file.Filter = "所有文件(*.*)|*.*";
+            file.ShowDialog();
+            if (file.FileName != string.Empty)
+            {
+                try
+                {
+                    pathname = file.FileName;   //获得文件的绝对路径
+                    this.pictureBox5.Load(pathname);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            } 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string pathname = string.Empty;
+            OpenFileDialog file = new OpenFileDialog();
+            file.InitialDirectory = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\图片";
+            file.Filter = "所有文件(*.*)|*.*";
+            file.ShowDialog();
+            if (file.FileName != string.Empty)
+            {
+                try
+                {
+                    pathname = file.FileName;   //获得文件的绝对路径
+                    this.pictureBox6.Load(pathname);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            } 
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string pathname = string.Empty;
+            OpenFileDialog file = new OpenFileDialog();
+            file.InitialDirectory = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\图片";
+            file.Filter = "所有文件(*.*)|*.*";
+            file.ShowDialog();
+            if (file.FileName != string.Empty)
+            {
+                try
+                {
+                    pathname = file.FileName;   //获得文件的绝对路径
+                    this.pictureBox7.Load(pathname);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            } 
+        }
     }
 }

@@ -31,6 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -40,6 +41,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -93,6 +95,11 @@
             this.label27 = new System.Windows.Forms.Label();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -138,6 +145,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.textBox3);
@@ -154,6 +162,16 @@
             this.tabPage1.Text = "均匀性布点";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(569, 338);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(91, 34);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "选择图片";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -228,6 +246,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.textBox4);
@@ -243,6 +262,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "风机出风口布点";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(569, 338);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(91, 34);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "选择图片";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox2
             // 
@@ -317,6 +346,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button3);
             this.tabPage3.Controls.Add(this.pictureBox3);
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Controls.Add(this.textBox7);
@@ -406,6 +436,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button5);
             this.tabPage4.Controls.Add(this.pictureBox4);
             this.tabPage4.Controls.Add(this.label13);
             this.tabPage4.Controls.Add(this.textBox10);
@@ -495,6 +526,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.button6);
             this.tabPage5.Controls.Add(this.pictureBox5);
             this.tabPage5.Controls.Add(this.label17);
             this.tabPage5.Controls.Add(this.textBox13);
@@ -583,6 +615,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.button7);
             this.tabPage6.Controls.Add(this.pictureBox6);
             this.tabPage6.Controls.Add(this.label21);
             this.tabPage6.Controls.Add(this.textBox16);
@@ -671,6 +704,7 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.button8);
             this.tabPage7.Controls.Add(this.pictureBox7);
             this.tabPage7.Controls.Add(this.label25);
             this.tabPage7.Controls.Add(this.textBox19);
@@ -756,6 +790,56 @@
             this.label28.Size = new System.Drawing.Size(123, 19);
             this.label28.TabIndex = 16;
             this.label28.Text = "测量点数量：";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(569, 338);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(91, 34);
+            this.button3.TabIndex = 24;
+            this.button3.Text = "选择图片";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(569, 338);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(91, 34);
+            this.button5.TabIndex = 24;
+            this.button5.Text = "选择图片";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(569, 338);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(91, 34);
+            this.button6.TabIndex = 24;
+            this.button6.Text = "选择图片";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(569, 338);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(91, 34);
+            this.button7.TabIndex = 24;
+            this.button7.Text = "选择图片";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(569, 338);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(91, 34);
+            this.button8.TabIndex = 24;
+            this.button8.Text = "选择图片";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // FormContentImplementation
             // 
@@ -860,5 +944,12 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }

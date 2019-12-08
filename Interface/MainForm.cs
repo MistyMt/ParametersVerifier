@@ -2463,7 +2463,7 @@ namespace Interface
 
         private void button68_Click(object sender, EventArgs e)
         {
-            selectedSensorData f = new selectedSensorData();
+            FormContentImplementation f = new FormContentImplementation();
             f.ShowDialog();
         }
 
