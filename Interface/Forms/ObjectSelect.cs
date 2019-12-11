@@ -28,10 +28,10 @@ namespace Interface
                         Global.templateName = "冷库验证项目模拟报告模板";
                         break;
                     case "灭菌器":
-                        Global.templateName = "冷库验证项目模拟报告模板";
+                        Global.templateName = "灭菌器验证项目模拟报告模板";
                         break;
                     case "高温热处理炉":
-                        Global.templateName = "冷库验证项目模拟报告模板";
+                        Global.templateName = "高温热处理炉验证项目模拟报告模板";
                         break;
                 }
                 this.Close();

@@ -145,6 +145,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label43 = new System.Windows.Forms.Label();
+            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.textBox44 = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.textBox45 = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.textBox46 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -842,19 +851,27 @@
             this.panel3.Location = new System.Drawing.Point(28, 72);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(799, 426);
+            this.panel3.Size = new System.Drawing.Size(799, 475);
             this.panel3.TabIndex = 8;
             this.panel3.Visible = false;
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.textBox46);
+            this.groupBox6.Controls.Add(this.label60);
+            this.groupBox6.Controls.Add(this.textBox45);
+            this.groupBox6.Controls.Add(this.label59);
+            this.groupBox6.Controls.Add(this.textBox44);
+            this.groupBox6.Controls.Add(this.label58);
+            this.groupBox6.Controls.Add(this.textBox34);
+            this.groupBox6.Controls.Add(this.label43);
             this.groupBox6.Controls.Add(this.groupBox9);
             this.groupBox6.Controls.Add(this.groupBox8);
             this.groupBox6.Location = new System.Drawing.Point(13, 246);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox6.Size = new System.Drawing.Size(772, 174);
+            this.groupBox6.Size = new System.Drawing.Size(772, 211);
             this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "验证对象安装环境";
@@ -1034,7 +1051,7 @@
             this.groupBox7.Size = new System.Drawing.Size(367, 222);
             this.groupBox7.TabIndex = 6;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "验证对象档案资料";
+            this.groupBox7.Text = "验证对象外观检查";
             // 
             // label51
             // 
@@ -1074,52 +1091,53 @@
             // 
             // textBox48
             // 
-            this.textBox48.Location = new System.Drawing.Point(175, 185);
+            this.textBox48.Location = new System.Drawing.Point(143, 185);
             this.textBox48.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox48.Name = "textBox48";
-            this.textBox48.Size = new System.Drawing.Size(168, 25);
+            this.textBox48.Size = new System.Drawing.Size(200, 25);
             this.textBox48.TabIndex = 4;
             // 
             // textBox47
             // 
-            this.textBox47.Location = new System.Drawing.Point(175, 149);
+            this.textBox47.Location = new System.Drawing.Point(143, 149);
             this.textBox47.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox47.Name = "textBox47";
-            this.textBox47.Size = new System.Drawing.Size(168, 25);
+            this.textBox47.Size = new System.Drawing.Size(200, 25);
             this.textBox47.TabIndex = 4;
             // 
             // textBox41
             // 
-            this.textBox41.Location = new System.Drawing.Point(175, 112);
+            this.textBox41.Location = new System.Drawing.Point(143, 112);
             this.textBox41.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox41.Name = "textBox41";
-            this.textBox41.Size = new System.Drawing.Size(168, 25);
+            this.textBox41.Size = new System.Drawing.Size(200, 25);
             this.textBox41.TabIndex = 4;
             // 
             // textBox39
             // 
-            this.textBox39.Location = new System.Drawing.Point(175, 78);
+            this.textBox39.Location = new System.Drawing.Point(143, 78);
             this.textBox39.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(168, 25);
+            this.textBox39.Size = new System.Drawing.Size(200, 25);
             this.textBox39.TabIndex = 4;
             // 
             // textBox33
             // 
-            this.textBox33.Location = new System.Drawing.Point(175, 41);
+            this.textBox33.Location = new System.Drawing.Point(143, 41);
             this.textBox33.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(168, 25);
+            this.textBox33.Size = new System.Drawing.Size(200, 25);
             this.textBox33.TabIndex = 4;
             // 
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(227, 21);
+            this.label47.Location = new System.Drawing.Point(210, 20);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(67, 15);
             this.label47.TabIndex = 2;
             this.label47.Text = "检查结果";
+            this.label47.Click += new System.EventHandler(this.label47_Click);
             // 
             // label49
             // 
@@ -1275,7 +1293,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(97, 529);
+            this.button1.Location = new System.Drawing.Point(97, 551);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 32);
@@ -1286,7 +1304,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(640, 529);
+            this.button2.Location = new System.Drawing.Point(640, 551);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(135, 32);
@@ -1300,12 +1318,15 @@
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "冷库验证项目模拟报告模板"});
+            "冷库验证项目模拟报告模板",
+            "高温热处理炉验证项目模拟报告模板",
+            "灭菌器验证项目模拟报告模板"});
             this.comboBox2.Location = new System.Drawing.Point(255, 34);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(225, 23);
+            this.comboBox2.Size = new System.Drawing.Size(276, 23);
             this.comboBox2.TabIndex = 10;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -1317,18 +1338,93 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "请选择报表模板";
             // 
+            // button3
+            // 
+            this.button3.Enabled = false;
+            this.button3.Location = new System.Drawing.Point(635, 28);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(135, 32);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "导入新模板";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(14, 184);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(60, 15);
+            this.label43.TabIndex = 1;
+            this.label43.Text = "检查人:";
+            // 
+            // textBox34
+            // 
+            this.textBox34.Location = new System.Drawing.Point(90, 179);
+            this.textBox34.Name = "textBox34";
+            this.textBox34.Size = new System.Drawing.Size(100, 25);
+            this.textBox34.TabIndex = 2;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(203, 184);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(82, 15);
+            this.label58.TabIndex = 1;
+            this.label58.Text = "检查日期：";
+            // 
+            // textBox44
+            // 
+            this.textBox44.Location = new System.Drawing.Point(279, 179);
+            this.textBox44.Name = "textBox44";
+            this.textBox44.Size = new System.Drawing.Size(100, 25);
+            this.textBox44.TabIndex = 2;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(392, 184);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(67, 15);
+            this.label59.TabIndex = 1;
+            this.label59.Text = "复核人：";
+            // 
+            // textBox45
+            // 
+            this.textBox45.Location = new System.Drawing.Point(468, 179);
+            this.textBox45.Name = "textBox45";
+            this.textBox45.Size = new System.Drawing.Size(100, 25);
+            this.textBox45.TabIndex = 2;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(581, 184);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(82, 15);
+            this.label60.TabIndex = 1;
+            this.label60.Text = "复核日期：";
+            // 
+            // textBox46
+            // 
+            this.textBox46.Location = new System.Drawing.Point(657, 179);
+            this.textBox46.Name = "textBox46";
+            this.textBox46.Size = new System.Drawing.Size(88, 25);
+            this.textBox46.TabIndex = 2;
+            // 
             // FormBasicInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 594);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormBasicInformation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -1346,6 +1442,7 @@
             this.groupBox3.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox8.ResumeLayout(false);
@@ -1478,6 +1575,15 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox46;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.TextBox textBox45;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.TextBox textBox44;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.TextBox textBox34;
+        private System.Windows.Forms.Label label43;
     }
 }
 

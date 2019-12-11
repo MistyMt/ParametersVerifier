@@ -138,6 +138,30 @@
     <Compile Include="Forms\DBForms\selectedSensorData.Designer.cs">
       <DependentUpon>selectedSensorData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormsOfWrite2\AfterCalibrationValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\AfterCalibrationValue.Designer.cs">
+      <DependentUpon>AfterCalibrationValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\BeforCalibrationValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\BeforCalibrationValue.Designer.cs">
+      <DependentUpon>BeforCalibrationValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\Diagramsss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\Diagramsss.Designer.cs">
+      <DependentUpon>Diagramsss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\ObjectRunValidation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\ObjectRunValidation.Designer.cs">
+      <DependentUpon>ObjectRunValidation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormsOfWrite\FormAfterCalibrationValue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +324,18 @@
     <EmbeddedResource Include="Forms\FormAnalysisOfData.resx">
       <DependentUpon>FormAnalysisOfData.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite2\AfterCalibrationValue.resx">
+      <DependentUpon>AfterCalibrationValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite2\BeforCalibrationValue.resx">
+      <DependentUpon>BeforCalibrationValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite2\Diagramsss.resx">
+      <DependentUpon>Diagramsss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite2\ObjectRunValidation.resx">
+      <DependentUpon>ObjectRunValidation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormsOfWrite\FormAfterCalibrationValue.resx">
       <DependentUpon>FormAfterCalibrationValue.cs</DependentUpon>
     </EmbeddedResource>
@@ -399,6 +435,7 @@
   <ItemGroup>
     <None Include="Resources\封面.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

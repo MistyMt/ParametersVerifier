@@ -21,6 +21,7 @@ using Interface.Forms;
 using System.Data.SQLite;
 using System.Diagnostics;
 using Interface.Forms.DBForms;
+using Interface.Forms.FormsOfWrite2;
 
 
 namespace Interface
@@ -986,46 +987,68 @@ namespace Interface
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            if (Global.objectName == "冷库")
             {
+                try
+                {
+                    FormValidationPerson validationPersonForm = new FormValidationPerson();
+                    validationPersonForm.ShowDialog();
 
+                    FormContentImplementation contentImplemenationForm = new FormContentImplementation();
+                    contentImplemenationForm.ShowDialog();
 
+                    FormContrast contrastForm = new FormContrast();
+                    contrastForm.ShowDialog();
+
+                    FormOpenImpact openImpactForm = new FormOpenImpact();
+                    openImpactForm.ShowDialog();
+
+                    FormOutagesImpact outagesImpactForm = new FormOutagesImpact();
+                    outagesImpactForm.ShowDialog();
+
+                    FormTemperatureDistribution temperatureDistributionForm = new FormTemperatureDistribution();
+                    temperatureDistributionForm.ShowDialog();
+
+                    FormRunningStatus runningStatusForm = new FormRunningStatus();
+                    runningStatusForm.ShowDialog();
+
+                    FormFanRunningStatus fanRunningStatusForm = new FormFanRunningStatus();
+                    fanRunningStatusForm.ShowDialog();
+
+                    FormBeforeCalibrationValue beforeCalibrationValue = new FormBeforeCalibrationValue();
+                    beforeCalibrationValue.ShowDialog();
+
+                    FormAfterCalibrationValue afterCalibrationValue = new FormAfterCalibrationValue();
+                    afterCalibrationValue.ShowDialog();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("其他信息导入失败。");
+                }
+            }
+            if (Global.objectName == "灭菌器")
+            {
                 FormValidationPerson validationPersonForm = new FormValidationPerson();
                 validationPersonForm.ShowDialog();
 
-                FormContentImplementation contentImplemenationForm = new FormContentImplementation();
-                contentImplemenationForm.ShowDialog();
+                ObjectRunValidation ss = new ObjectRunValidation();
+                ss.ShowDialog();
 
 
 
-                FormContrast contrastForm = new FormContrast();
-                contrastForm.ShowDialog();
+                AfterCalibrationValue ac = new AfterCalibrationValue();
+                ac.ShowDialog();
 
-                FormOpenImpact openImpactForm = new FormOpenImpact();
-                openImpactForm.ShowDialog();
-
-                FormOutagesImpact outagesImpactForm = new FormOutagesImpact();
-                outagesImpactForm.ShowDialog();
-
-                FormTemperatureDistribution temperatureDistributionForm = new FormTemperatureDistribution();
-                temperatureDistributionForm.ShowDialog();
-
-                FormRunningStatus runningStatusForm = new FormRunningStatus();
-                runningStatusForm.ShowDialog();
-
-                FormFanRunningStatus fanRunningStatusForm = new FormFanRunningStatus();
-                fanRunningStatusForm.ShowDialog();
-
-                FormBeforeCalibrationValue beforeCalibrationValue = new FormBeforeCalibrationValue();
-                beforeCalibrationValue.ShowDialog();
-
-                FormAfterCalibrationValue afterCalibrationValue = new FormAfterCalibrationValue();
-                afterCalibrationValue.ShowDialog();
-
+                BeforCalibrationValue sss = new BeforCalibrationValue();
+                sss.ShowDialog();
+                
             }
-            catch (Exception)
+            if (Global.objectName == "高温热处理炉")
             {
+                FormValidationPerson validationPersonForm = new FormValidationPerson();
+                validationPersonForm.ShowDialog();
             }
+
         }
 
         private void 传感器信息重置ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2496,12 +2519,12 @@ namespace Interface
         {
             string strDesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             var nowtime = System.DateTime.Now;
-            string Nowtime = nowtime.ToLongDateString().ToString()+nowtime.Hour.ToString()+"时"+nowtime.Minute.ToString()+"分"+nowtime.Second.ToString()+"秒";
+            string Nowtime = nowtime.ToLongDateString().ToString() + nowtime.Hour.ToString() + "时" + nowtime.Minute.ToString() + "分" + nowtime.Second.ToString() + "秒";
 
             FileInfo f = new FileInfo(System.Windows.Forms.Application.StartupPath + "\\bin\\" + Global.templateName + ".doc");
             if (f.Exists)
             {
-                    f.CopyTo(strDesktopPath + "\\" + Nowtime + Global.objectName + "验证项目报告.doc");
+                f.CopyTo(strDesktopPath + "\\" + Nowtime + Global.objectName + "验证项目报告.doc");
             }
             else
             {
