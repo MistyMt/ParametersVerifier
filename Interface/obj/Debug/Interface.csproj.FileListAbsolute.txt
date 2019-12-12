@@ -294,3 +294,6 @@ D:\ParametersVerifier\Interface\obj\Debug\Interface.Forms.FormsOfWrite2.Analysis
 D:\ParametersVerifier\Interface\obj\Debug\Interface.Forms.FormsOfWrite2.BeforCalibrationValue.resources
 D:\ParametersVerifier\Interface\obj\Debug\Interface.Forms.FormsOfWrite2.Diagramsss.resources
 D:\ParametersVerifier\Interface\obj\Debug\Interface.Forms.FormsOfWrite2.ObjectRunValidation.resources
+D:\ParametersVerifier\Interface\obj\Debug\Interface.Forms.FormsOfWrite2.AnalysisData.resources
+D:\ParametersVerifier\Interface\obj\Debug\Interface.Forms.FormsOfWrite3.ImplementationOfTestingContent.resources
+D:\ParametersVerifier\Interface\obj\Debug\Interface.Forms.FormsOfWrite3.TTFDiagram.resources

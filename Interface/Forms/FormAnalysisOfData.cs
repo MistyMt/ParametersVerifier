@@ -937,18 +937,21 @@ namespace Interface
         private void button7_Click(object sender, EventArgs e)
         {
             #region 删除后台word占用。
-            Process myProcess = new Process();
-            Process[] wordProcess = Process.GetProcessesByName("winword");
-            foreach (Process pro in wordProcess) //这里是找到那些没有界面的Word进程
+            System.Diagnostics.Process myproc = new System.Diagnostics.Process();
+            //得到所有打开的进程
+            try
             {
-                IntPtr ip = pro.MainWindowHandle;
-
-                string str = pro.MainWindowTitle; //发现程序中打开跟用户自己打开的区别就在这个属性
-                //用户打开的str 是文件的名称，程序中打开的就是空字符串
-                if (str != "冷库验证项目模拟报告模板")
+                foreach (Process thisproc in Process.GetProcessesByName("WINWORD"))
                 {
-                    pro.Kill();
+                    if (!thisproc.CloseMainWindow())
+                    {
+                        thisproc.Kill();
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("杀死" + "WINWORD" + "失败！");
             }
             #endregion
 
@@ -1821,19 +1824,21 @@ namespace Interface
         private void button4_Click(object sender, EventArgs e)
         {
             #region 删除后台word占用。
-            //
-            Process myProcess = new Process();
-            Process[] wordProcess = Process.GetProcessesByName("winword");
-            foreach (Process pro in wordProcess) //这里是找到那些没有界面的Word进程
+            System.Diagnostics.Process myproc = new System.Diagnostics.Process();
+            //得到所有打开的进程
+            try
             {
-                IntPtr ip = pro.MainWindowHandle;
-
-                string str = pro.MainWindowTitle; //发现程序中打开跟用户自己打开的区别就在这个属性
-                //用户打开的str 是文件的名称，程序中打开的就是空字符串
-                if (str != "冷库验证项目模拟报告模板")
+                foreach (Process thisproc in Process.GetProcessesByName("WINWORD"))
                 {
-                    pro.Kill();
+                    if (!thisproc.CloseMainWindow())
+                    {
+                        thisproc.Kill();
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("杀死" + "WINWORD" + "失败！");
             }
             #endregion
             try

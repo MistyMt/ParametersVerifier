@@ -145,6 +145,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(307, 29);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowHeadersWidth = 4;
             this.dataGridView3.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView3.RowTemplate.Height = 27;
@@ -163,6 +164,7 @@
             this.dataGridView4.Location = new System.Drawing.Point(307, 167);
             this.dataGridView4.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
             this.dataGridView4.RowHeadersWidth = 4;
             this.dataGridView4.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView4.RowTemplate.Height = 27;

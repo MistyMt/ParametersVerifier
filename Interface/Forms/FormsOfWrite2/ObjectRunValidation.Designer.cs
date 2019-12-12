@@ -302,6 +302,7 @@
             this.button1.TabIndex = 18;
             this.button1.Text = "确定";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -311,6 +312,7 @@
             this.button2.TabIndex = 18;
             this.button2.Text = "重置";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ObjectRunValidation
             // 
@@ -322,6 +324,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ObjectRunValidation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ObjectRunValidation";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
