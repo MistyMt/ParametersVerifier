@@ -1036,12 +1036,17 @@ namespace Interface
 
 
 
+
+
+                AnalysisData ad = new AnalysisData();
+                ad.ShowDialog();
+
                 AfterCalibrationValue ac = new AfterCalibrationValue();
                 ac.ShowDialog();
 
                 BeforCalibrationValue sss = new BeforCalibrationValue();
                 sss.ShowDialog();
-                
+
             }
             if (Global.objectName == "高温热处理炉")
             {
@@ -1067,10 +1072,22 @@ namespace Interface
                 }
                 else
                 {
-                    FormAnalysisOfData analysisOfDataForm = new FormAnalysisOfData();
-                    Global.analysisOfDataForms.Add(analysisOfDataForm);
-                    analysisOfDataForm.ShowDialog();
-
+                    if (Global.objectName=="冷库")
+                    {
+                        FormAnalysisOfData analysisOfDataForm = new FormAnalysisOfData();
+                        Global.analysisOfDataForms.Add(analysisOfDataForm);
+                        analysisOfDataForm.ShowDialog();
+                    }
+                    if (Global.objectName == "灭菌器")
+                    {
+                        AnalysisOfDate analysisOfDataForm = new AnalysisOfDate();
+                        Global.analysisOfDataForms.Add(analysisOfDataForm);
+                        analysisOfDataForm.ShowDialog();
+                    }
+                    if (Global.objectName == "  ")
+                    {
+                        
+                    }
                 }
             }
             else
@@ -1837,21 +1854,15 @@ namespace Interface
                 {
                     using (SQLiteCommand cmd = new SQLiteCommand())
                     {
-
-
                         conn.Open();
                         cmd.Connection = conn;
-
                         SQLiteHelper sh = new SQLiteHelper(cmd);
 
 
                         try
                         {
-
-
-
                             List<string> columnName = new List<string>();
-                            string sql = "PRAGMA table_info([断电]);";
+                            string sql = "PRAGMA table_info([满载]);";
 
                             SQLiteCommand cmd2 = new SQLiteCommand(sql, conn);
                             System.Data.SQLite.SQLiteDataReader dr = cmd2.ExecuteReader();
@@ -1867,16 +1878,11 @@ namespace Interface
                             {
                                 colName.Add(columnName[i]);
                             }
-
-
-
-
-                            //var tableName = "开门";
-
-                            //System.Data.DataTable dt = sh.Select("select name from syscolumns where id = object_id('" + tableName + "');");
                             comboBox5.DataSource = colName;
-                            //comboBox5.DisplayMember = "检测时间";
+                            //var tableName = "开门";
+                            //System.Data.DataTable dt = sh.Select("select name from syscolumns where id = object_id('" + tableName + "');");
 
+                            //comboBox5.DisplayMember = "检测时间";
                         }
                         catch (Exception ex)
                         {
@@ -1885,7 +1891,6 @@ namespace Interface
                             dt.Rows.Add(ex.ToString());
                             comboBox5.DataSource = dt;
                         }
-
                         conn.Close();
                     }
                 }
@@ -2197,41 +2202,54 @@ namespace Interface
         {
             if (comboBox4.Text == "Default")
             {
-                SQLiteTable tb = new SQLiteTable(Global.objectName + "sensorData111111");
-
-                string[] colNames = new string[] { "ID", "状况", "检测时间", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11", "T12", "T13", "T14", "T15" };
-                ColType[] colTypes = new ColType[] { ColType.Integer, ColType.Text, ColType.Text, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal };
-
-                tb.Columns.Add(new SQLiteColumn("ID", true));
-
-                for (int i = 2; i < colNames.Length + 1; i++)
-                {
-                    tb.Columns.Add(new SQLiteColumn(colNames[i - 1], colTypes[i - 1]));
-                }
-
-
-
                 using (SQLiteConnection conn = new SQLiteConnection(config.DataSource))
                 {
                     using (SQLiteCommand cmd = new SQLiteCommand())
                     {
-                        conn.Open();
+                        if (Global.objectName == "冷库")
+                        {
+                            conn.Open();
+                            cmd.Connection = conn;
+                            SQLiteHelper sh = new SQLiteHelper(cmd);
+                            SQLiteTable tb = new SQLiteTable(Global.objectName + "sensorData");
 
-                        cmd.Connection = conn;
+                            string[] colNames = new string[] { "ID", "状况", "检测时间", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11", "T12", "T13", "T14", "T15" };
+                            ColType[] colTypes = new ColType[] { ColType.Integer, ColType.Text, ColType.Text, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal };
+                            tb.Columns.Add(new SQLiteColumn("ID", true));
+                            for (int i = 2; i < colNames.Length + 1; i++)
+                            {
+                                tb.Columns.Add(new SQLiteColumn(colNames[i - 1], colTypes[i - 1]));
+                            }
 
-                        SQLiteHelper sh = new SQLiteHelper(cmd);
+                            //sh.DropTable(textBox1.Text);
+                            sh.CreateTable(tb);
 
-                        sh.DropTable(textBox1.Text);
-                        sh.CreateTable(tb);
+                            LoadData(sh, Global.objectName + "sensorData");
 
+                            conn.Close();
+                        }
+                        if (Global.objectName == "灭菌器")
+                        {
+                            conn.Open();
+                            cmd.Connection = conn;
+                            SQLiteHelper sh = new SQLiteHelper(cmd);
+                            SQLiteTable tb = new SQLiteTable(Global.objectName + "sensorData");
 
+                            string[] colNames = new string[] { "ID", "序列号", "检测时间", "名称", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11", "T12", "T13", "T14", "T15" };
+                            ColType[] colTypes = new ColType[] { ColType.Integer, ColType.Text, ColType.Text, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal };
+                            tb.Columns.Add(new SQLiteColumn("ID", true));
+                            for (int i = 2; i < colNames.Length + 1; i++)
+                            {
+                                tb.Columns.Add(new SQLiteColumn(colNames[i - 1], colTypes[i - 1]));
+                            }
 
+                            //sh.DropTable(textBox1.Text);
+                            sh.CreateTable(tb);
 
+                            LoadData(sh, Global.objectName + "sensorData111111");
 
-
-                        LoadData(sh, Global.objectName + "sensorData111111");
-
-                        conn.Close();
+                            conn.Close();
+                        }
                     }
                 }
                 MessageBox.Show("Table created.");
@@ -2253,79 +2271,87 @@ namespace Interface
             {
                 using (SQLiteCommand cmd = new SQLiteCommand())
                 {
-                    conn.Open();
-                    cmd.Connection = conn;
-
-                    SQLiteHelper sh = new SQLiteHelper(cmd);
-
-                    int count = sh.ExecuteScalar<int>("select count(*) from " + Global.objectName + "sensorData111111" + ";") + 1;
-
-                    sh.BeginTransaction();
-                    string fileName = Environment.CurrentDirectory.ToString() + "\\bin\\" + "百源_冷库.xls";
-                    Microsoft.Office.Interop.Excel.Application EXC1 = new Microsoft.Office.Interop.Excel.Application();
-                    EXC1.Visible = false;
-                    Microsoft.Office.Interop.Excel.Workbooks wbs = EXC1.Workbooks;
-                    Microsoft.Office.Interop.Excel._Workbook wb = wbs.Add(fileName);
-                    Microsoft.Office.Interop.Excel._Worksheet exsheet = wb.Sheets[1];
-                    string sName = exsheet.Name;
-                    int sRowcount = exsheet.UsedRange.Rows.Count;
-                    exsheet.Activate();
-
-
-                    for (int i = 2; i < sRowcount - 1; i++)
+                    #region 冷库
+                    if (Global.objectName == "冷库")
                     {
-                        string a = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 3]).Text;
-                        string b = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 2]).Text;
-                        string c = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 4]).Text;
-                        string d = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 5]).Text;
-                        string q = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 6]).Text;
-                        string f = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 7]).Text;
-                        string g = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 8]).Text;
-                        string h = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 9]).Text;
-                        string r = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 10]).Text;
-                        string j = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 11]).Text;
-                        string k = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 12]).Text;
-                        string l = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 13]).Text;
-                        string m = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 14]).Text;
-                        string n = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 15]).Text;
-                        string o = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 16]).Text;
-                        string p = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 17]).Text;
-                        var dic = new Dictionary<string, object>();
-                        dic["ID"] = count + i;
-                        dic["状况"] = "空载";
-                        dic["检测时间"] = b;
-                        dic["T1"] = a;
-                        dic["T2"] = c;
-                        dic["T3"] = d;
-                        dic["T4"] = q;
-                        dic["T5"] = f;
-                        dic["T6"] = g;
-                        dic["T7"] = h;
-                        dic["T8"] = r;
-                        dic["T9"] = j;
-                        dic["T10"] = k;
-                        dic["T11"] = l;
-                        dic["T12"] = m;
-                        dic["T13"] = n;
-                        dic["T14"] = o;
-                        dic["T15"] = p;
+
+                        conn.Open();
+                        cmd.Connection = conn;
+
+                        SQLiteHelper sh = new SQLiteHelper(cmd);
+
+                        int count = sh.ExecuteScalar<int>("select count(*) from " + Global.objectName + "sensorData" + ";") + 1;
+
+                        sh.BeginTransaction();
+                        string fileName = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.dataSourceName;
+                        Microsoft.Office.Interop.Excel.Application EXC1 = new Microsoft.Office.Interop.Excel.Application();
+                        EXC1.Visible = false;
+                        Microsoft.Office.Interop.Excel.Workbooks wbs = EXC1.Workbooks;
+                        Microsoft.Office.Interop.Excel._Workbook wb = wbs.Add(fileName);
+                        Microsoft.Office.Interop.Excel._Worksheet exsheet = wb.Sheets[1];
+                        string sName = exsheet.Name;
+                        int sRowcount = exsheet.UsedRange.Rows.Count;
+                        exsheet.Activate();
 
 
+                        for (int i = 2; i < sRowcount - 1; i++)
+                        {
+                            string a = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 3]).Text;
+                            string b = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 2]).Text;
+                            string c = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 4]).Text;
+                            string d = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 5]).Text;
+                            string q = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 6]).Text;
+                            string f = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 7]).Text;
+                            string g = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 8]).Text;
+                            string h = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 9]).Text;
+                            string r = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 10]).Text;
+                            string j = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 11]).Text;
+                            string k = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 12]).Text;
+                            string l = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 13]).Text;
+                            string m = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 14]).Text;
+                            string n = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 15]).Text;
+                            string o = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 16]).Text;
+                            string p = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 17]).Text;
+                            var dic = new Dictionary<string, object>();
+                            dic["ID"] = count + i;
+                            dic["状况"] = "空载";
+                            dic["检测时间"] = b;
+                            dic["T1"] = a;
+                            dic["T2"] = c;
+                            dic["T3"] = d;
+                            dic["T4"] = q;
+                            dic["T5"] = f;
+                            dic["T6"] = g;
+                            dic["T7"] = h;
+                            dic["T8"] = r;
+                            dic["T9"] = j;
+                            dic["T10"] = k;
+                            dic["T11"] = l;
+                            dic["T12"] = m;
+                            dic["T13"] = n;
+                            dic["T14"] = o;
+                            dic["T15"] = p;
+                            sh.Insert(Global.objectName + "sensorData", dic);
+                        }
+                        wb.Close();
+                        wbs.Close();
+                        EXC1.Quit();
+                        System.Runtime.InteropServices.Marshal.ReleaseComObject(EXC1);
+                        sh.Commit();
+                        LoadData(sh, Global.objectName + "sensorData");
+                        conn.Close();
 
-                        sh.Insert(Global.objectName + "sensorData111111", dic);
                     }
-                    wb.Close();
-                    wbs.Close();
-                    EXC1.Quit();
-                    System.Runtime.InteropServices.Marshal.ReleaseComObject(EXC1);
+                    #endregion
 
-                    sh.Commit();
+                    if (Global.objectName == "灭菌器")
+                    {
 
+                    }
+                    if (Global.objectName == "高温热处理炉")
+                    {
 
-
-                    LoadData(sh, Global.objectName + "sensorData111111");
-
-                    conn.Close();
+                    }
                 }
             }
         }
@@ -2756,6 +2782,11 @@ namespace Interface
             {
                 MessageBox.Show("请选择面。");
             }
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

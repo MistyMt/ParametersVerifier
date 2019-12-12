@@ -144,6 +144,18 @@
     <Compile Include="Forms\FormsOfWrite2\AfterCalibrationValue.Designer.cs">
       <DependentUpon>AfterCalibrationValue.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormsOfWrite2\AnalysisData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\AnalysisData.Designer.cs">
+      <DependentUpon>AnalysisData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\AnalysisOfDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\AnalysisOfDate.Designer.cs">
+      <DependentUpon>AnalysisOfDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormsOfWrite2\BeforCalibrationValue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +338,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormsOfWrite2\AfterCalibrationValue.resx">
       <DependentUpon>AfterCalibrationValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite2\AnalysisData.resx">
+      <DependentUpon>AnalysisData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite2\AnalysisOfDate.resx">
+      <DependentUpon>AnalysisOfDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormsOfWrite2\BeforCalibrationValue.resx">
       <DependentUpon>BeforCalibrationValue.cs</DependentUpon>

@@ -26,7 +26,7 @@ namespace Interface
         /// <summary>
         /// 数据总览面板
         /// </summary>
-        public static List<FormAnalysisOfData> analysisOfDataForms = new List<FormAnalysisOfData>();
+        public static List<Form> analysisOfDataForms = new List<Form>();
         #endregion
 
         /// <summary>

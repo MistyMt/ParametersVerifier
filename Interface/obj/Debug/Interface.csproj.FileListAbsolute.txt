@@ -289,3 +289,8 @@ D:\ParametersVerifier\Interface\obj\Debug\Interface.exe.manifest
 D:\ParametersVerifier\Interface\obj\Debug\Interface.application
 D:\ParametersVerifier\Interface\obj\Debug\Interface.exe
 D:\ParametersVerifier\Interface\obj\Debug\Interface.pdb
+D:\ParametersVerifier\Interface\obj\Debug\Interface.Forms.FormsOfWrite2.AfterCalibrationValue.resources
+D:\ParametersVerifier\Interface\obj\Debug\Interface.Forms.FormsOfWrite2.AnalysisOfDate.resources
+D:\ParametersVerifier\Interface\obj\Debug\Interface.Forms.FormsOfWrite2.BeforCalibrationValue.resources
+D:\ParametersVerifier\Interface\obj\Debug\Interface.Forms.FormsOfWrite2.Diagramsss.resources
+D:\ParametersVerifier\Interface\obj\Debug\Interface.Forms.FormsOfWrite2.ObjectRunValidation.resources
