@@ -174,6 +174,18 @@
     <Compile Include="Forms\FormsOfWrite2\ObjectRunValidation.Designer.cs">
       <DependentUpon>ObjectRunValidation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormsOfWrite3\ImplementationOfTestingContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite3\ImplementationOfTestingContent.Designer.cs">
+      <DependentUpon>ImplementationOfTestingContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite3\TTFDiagram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite3\TTFDiagram.Designer.cs">
+      <DependentUpon>TTFDiagram.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormsOfWrite\FormAfterCalibrationValue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -353,6 +365,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormsOfWrite2\ObjectRunValidation.resx">
       <DependentUpon>ObjectRunValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite3\ImplementationOfTestingContent.resx">
+      <DependentUpon>ImplementationOfTestingContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite3\TTFDiagram.resx">
+      <DependentUpon>TTFDiagram.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormsOfWrite\FormAfterCalibrationValue.resx">
       <DependentUpon>FormAfterCalibrationValue.cs</DependentUpon>

@@ -22,6 +22,8 @@ using System.Data.SQLite;
 using System.Diagnostics;
 using Interface.Forms.DBForms;
 using Interface.Forms.FormsOfWrite2;
+using Interface.Forms.FormsOfWrite3;
+
 
 
 namespace Interface
@@ -1052,6 +1054,13 @@ namespace Interface
             {
                 FormValidationPerson validationPersonForm = new FormValidationPerson();
                 validationPersonForm.ShowDialog();
+
+                ImplementationOfTestingContent iotc = new ImplementationOfTestingContent();
+                iotc.ShowDialog();
+
+                TTFDiagram ttfdia = new TTFDiagram();
+                ttfdia.ShowDialog();
+
             }
 
         }
@@ -1072,7 +1081,7 @@ namespace Interface
                 }
                 else
                 {
-                    if (Global.objectName=="冷库")
+                    if (Global.objectName == "冷库")
                     {
                         FormAnalysisOfData analysisOfDataForm = new FormAnalysisOfData();
                         Global.analysisOfDataForms.Add(analysisOfDataForm);
@@ -1084,9 +1093,9 @@ namespace Interface
                         Global.analysisOfDataForms.Add(analysisOfDataForm);
                         analysisOfDataForm.ShowDialog();
                     }
-                    if (Global.objectName == "  ")
+                    if (Global.objectName == "高温热处理炉")
                     {
-                        
+
                     }
                 }
             }
