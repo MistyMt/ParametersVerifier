@@ -62,7 +62,7 @@ namespace Interface
 
         private void FormValidationPerson_Load(object sender, EventArgs e)
         {
-          
+
         }
 
 
@@ -107,7 +107,7 @@ namespace Interface
 
                 Microsoft.Office.Interop.Word.Table nowtable = wordDoc.Tables[1];//检索表格
 
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
                     for (int j = 0; j < dataGridView1.ColumnCount; j++)
                     {
@@ -117,7 +117,7 @@ namespace Interface
 
                 Microsoft.Office.Interop.Word.Table nowtable2 = wordDoc.Tables[2];//检索表格
 
-                for (int i = 0; i < dataGridView2.RowCount - 1; i++)
+                for (int i = 0; i < dataGridView2.RowCount; i++)
                 {
                     for (int j = 0; j < dataGridView2.ColumnCount; j++)
                     {

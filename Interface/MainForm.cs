@@ -2522,7 +2522,7 @@ namespace Interface
 
         private void button68_Click(object sender, EventArgs e)
         {
-            FormContentImplementation f = new FormContentImplementation();
+            FormAfterCalibrationValue f = new FormAfterCalibrationValue();
             f.ShowDialog();
         }
 
@@ -2541,7 +2541,7 @@ namespace Interface
                     }
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 MessageBox.Show("杀死" + "WINWORD" + "失败！");
             }
@@ -2556,6 +2556,40 @@ namespace Interface
 
         private void button70_Click(object sender, EventArgs e)
         {
+            {//去除报表头部自动添加的文字
+                object filename1 =System.Windows.Forms.Application.StartupPath + "\\bin\\" + Global.templateName;
+
+                object G_Missing = System.Reflection.Missing.Value;
+
+                Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
+                Microsoft.Office.Interop.Word.Document wordDoc;
+                wordDoc = wordApp.Documents.Open(filename1);
+                wordDoc.ActiveWindow.Visible = false;//打开word
+
+                Microsoft.Office.Interop.Word.Range myRange = wordDoc.Range();
+
+                Microsoft.Office.Interop.Word.Find fSS = myRange.Find;
+                fSS.Text = "Evaluation Warning: The document was created with Spire.Doc for .NET.";
+                fSS.ClearFormatting();
+
+
+                bool finded = fSS.Execute(ref G_Missing, ref G_Missing, ref G_Missing,
+                                        ref G_Missing, ref G_Missing, ref G_Missing, ref G_Missing,
+                                        ref G_Missing, ref G_Missing, ref G_Missing, ref G_Missing,
+                                        ref G_Missing, ref G_Missing, ref G_Missing, ref G_Missing
+                                        );
+
+                myRange = wordDoc.Range(myRange.Start, myRange.End);
+                myRange.Text = string.Empty;
+
+                wordDoc.Save();
+                wordDoc.Close(ref G_Missing, ref G_Missing, ref G_Missing);
+                wordApp.Quit(ref G_Missing, ref G_Missing, ref G_Missing);
+                wordApp = null;
+
+            }
+
+
             string strDesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             var nowtime = System.DateTime.Now;
             string Nowtime = nowtime.ToLongDateString().ToString() + nowtime.Hour.ToString() + "时" + nowtime.Minute.ToString() + "分" + nowtime.Second.ToString() + "秒";

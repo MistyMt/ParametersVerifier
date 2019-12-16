@@ -56,6 +56,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // button2
@@ -143,6 +145,7 @@
             this.label11.Size = new System.Drawing.Size(29, 20);
             this.label11.TabIndex = 47;
             this.label11.Text = "日";
+            this.label11.Visible = false;
             // 
             // textBox9
             // 
@@ -151,6 +154,7 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(46, 28);
             this.textBox9.TabIndex = 9;
+            this.textBox9.Visible = false;
             // 
             // label10
             // 
@@ -161,6 +165,7 @@
             this.label10.Size = new System.Drawing.Size(29, 20);
             this.label10.TabIndex = 45;
             this.label10.Text = "月";
+            this.label10.Visible = false;
             // 
             // textBox8
             // 
@@ -169,6 +174,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(46, 28);
             this.textBox8.TabIndex = 8;
+            this.textBox8.Visible = false;
             // 
             // label9
             // 
@@ -179,6 +185,7 @@
             this.label9.Size = new System.Drawing.Size(29, 20);
             this.label9.TabIndex = 43;
             this.label9.Text = "年";
+            this.label9.Visible = false;
             // 
             // textBox7
             // 
@@ -187,12 +194,13 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(46, 28);
             this.textBox7.TabIndex = 7;
+            this.textBox7.Visible = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(440, 232);
+            this.label8.Location = new System.Drawing.Point(443, 234);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 20);
             this.label8.TabIndex = 41;
@@ -207,6 +215,7 @@
             this.label7.Size = new System.Drawing.Size(29, 20);
             this.label7.TabIndex = 40;
             this.label7.Text = "日";
+            this.label7.Visible = false;
             // 
             // textBox6
             // 
@@ -215,6 +224,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(46, 28);
             this.textBox6.TabIndex = 6;
+            this.textBox6.Visible = false;
             // 
             // label6
             // 
@@ -225,6 +235,7 @@
             this.label6.Size = new System.Drawing.Size(29, 20);
             this.label6.TabIndex = 38;
             this.label6.Text = "月";
+            this.label6.Visible = false;
             // 
             // textBox5
             // 
@@ -233,6 +244,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(46, 28);
             this.textBox5.TabIndex = 5;
+            this.textBox5.Visible = false;
             // 
             // label5
             // 
@@ -243,6 +255,7 @@
             this.label5.Size = new System.Drawing.Size(29, 20);
             this.label5.TabIndex = 36;
             this.label5.Text = "年";
+            this.label5.Visible = false;
             // 
             // textBox4
             // 
@@ -251,6 +264,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(46, 28);
             this.textBox4.TabIndex = 4;
+            this.textBox4.Visible = false;
             // 
             // label4
             // 
@@ -316,11 +330,33 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "委托单位：";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd_dddd";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(151, 232);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
+            this.dateTimePicker1.TabIndex = 56;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "yyyy-MM-dd_dddd";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(564, 232);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 25);
+            this.dateTimePicker2.TabIndex = 56;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            // 
             // GeneralInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 441);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox12);
@@ -388,5 +424,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

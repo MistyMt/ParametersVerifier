@@ -271,5 +271,19 @@ namespace Interface.Forms
             ClearAllText();
         }
 
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            textBox4.Text = dateTimePicker1.Value.ToString("yyyy");
+            textBox5.Text = dateTimePicker1.Value.ToString("MM");
+            textBox6.Text = dateTimePicker1.Value.ToString("dd");
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            textBox7.Text = dateTimePicker2.Value.ToString("yyyy");
+            textBox8.Text = dateTimePicker2.Value.ToString("MM");
+            textBox9.Text = dateTimePicker2.Value.ToString("dd");
+        }
+
     }
 }

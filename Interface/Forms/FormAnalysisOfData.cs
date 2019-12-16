@@ -958,7 +958,7 @@ namespace Interface
             try
             {
 
-                object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+                object filename = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\" + Global.templateName;
                 Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
                 Microsoft.Office.Interop.Word.Document wordDoc;
                 wordDoc = wordApp.Documents.Open(filename);
@@ -1429,7 +1429,7 @@ namespace Interface
             try
             {
 
-                object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+                object filename = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\" + Global.templateName;
                 Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
                 Microsoft.Office.Interop.Word.Document wordDoc;
                 wordDoc = wordApp.Documents.Open(filename);
@@ -1754,7 +1754,7 @@ namespace Interface
             try
             {
 
-                object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+                object filename = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\" + Global.templateName;
                 Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
                 Microsoft.Office.Interop.Word.Document wordDoc;
                 wordDoc = wordApp.Documents.Open(filename);
@@ -1843,7 +1843,7 @@ namespace Interface
             #endregion
             try
             {
-                object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+                object filename = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\" + Global.templateName;
                 Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
                 Microsoft.Office.Interop.Word.Document wordDoc;
                 wordDoc = wordApp.Documents.Open(filename);
@@ -1938,7 +1938,7 @@ namespace Interface
             try
             {
 
-                object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+                object filename = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\" + Global.templateName;
                 Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
                 Microsoft.Office.Interop.Word.Document wordDoc;
                 wordDoc = wordApp.Documents.Open(filename);

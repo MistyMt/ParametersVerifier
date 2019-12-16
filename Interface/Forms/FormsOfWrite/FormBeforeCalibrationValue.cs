@@ -37,7 +37,7 @@ namespace Interface
 
         private void button3_Click(object sender, EventArgs e)
         {
-            object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+            object filename =Application.StartupPath.ToString() + "\\bin\\" + Global.templateName;
             Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
             Microsoft.Office.Interop.Word.Document wordDoc;
             wordDoc = wordApp.Documents.Open(filename);

@@ -51,6 +51,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -60,6 +61,7 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -69,6 +71,7 @@
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
@@ -78,6 +81,7 @@
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
             this.textBox16 = new System.Windows.Forms.TextBox();
@@ -87,6 +91,7 @@
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label25 = new System.Windows.Forms.Label();
             this.textBox19 = new System.Windows.Forms.TextBox();
@@ -95,11 +100,6 @@
             this.label27 = new System.Windows.Forms.Label();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -120,7 +120,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(359, 468);
+            this.button1.Location = new System.Drawing.Point(360, 575);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 47);
             this.button1.TabIndex = 54;
@@ -140,7 +140,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(795, 438);
+            this.tabControl1.Size = new System.Drawing.Size(814, 557);
             this.tabControl1.TabIndex = 55;
             // 
             // tabPage1
@@ -157,7 +157,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(787, 409);
+            this.tabPage1.Size = new System.Drawing.Size(806, 528);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "均匀性布点";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -165,7 +165,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(569, 338);
+            this.button2.Location = new System.Drawing.Point(712, 488);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(91, 34);
             this.button2.TabIndex = 8;
@@ -177,7 +177,8 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(147, 158);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(416, 214);
+            this.pictureBox1.Size = new System.Drawing.Size(559, 364);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
@@ -258,14 +259,14 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(787, 409);
+            this.tabPage2.Size = new System.Drawing.Size(806, 528);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "风机出风口布点";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(569, 338);
+            this.button4.Location = new System.Drawing.Point(708, 488);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(91, 34);
             this.button4.TabIndex = 17;
@@ -277,7 +278,8 @@
             // 
             this.pictureBox2.Location = new System.Drawing.Point(147, 158);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(416, 214);
+            this.pictureBox2.Size = new System.Drawing.Size(555, 355);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
             // 
@@ -358,16 +360,27 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(787, 409);
+            this.tabPage3.Size = new System.Drawing.Size(806, 528);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "出入口布点";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(708, 488);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(91, 34);
+            this.button3.TabIndex = 24;
+            this.button3.Text = "选择图片";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Location = new System.Drawing.Point(147, 158);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(416, 214);
+            this.pictureBox3.Size = new System.Drawing.Size(555, 364);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 23;
             this.pictureBox3.TabStop = false;
             // 
@@ -448,16 +461,27 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(787, 409);
+            this.tabPage4.Size = new System.Drawing.Size(806, 528);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "死角布点";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(708, 488);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(91, 34);
+            this.button5.TabIndex = 24;
+            this.button5.Text = "选择图片";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // pictureBox4
             // 
             this.pictureBox4.Location = new System.Drawing.Point(147, 158);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(416, 214);
+            this.pictureBox4.Size = new System.Drawing.Size(555, 364);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 23;
             this.pictureBox4.TabStop = false;
             // 
@@ -537,16 +561,27 @@
             this.tabPage5.Controls.Add(this.label20);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(787, 409);
+            this.tabPage5.Size = new System.Drawing.Size(806, 528);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "死角布点";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(708, 491);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(91, 34);
+            this.button6.TabIndex = 24;
+            this.button6.Text = "选择图片";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // pictureBox5
             // 
             this.pictureBox5.Location = new System.Drawing.Point(147, 158);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(416, 214);
+            this.pictureBox5.Size = new System.Drawing.Size(555, 370);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 23;
             this.pictureBox5.TabStop = false;
             // 
@@ -626,16 +661,27 @@
             this.tabPage6.Controls.Add(this.label24);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(787, 409);
+            this.tabPage6.Size = new System.Drawing.Size(806, 528);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "货架布点";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(708, 491);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(91, 34);
+            this.button7.TabIndex = 24;
+            this.button7.Text = "选择图片";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // pictureBox6
             // 
             this.pictureBox6.Location = new System.Drawing.Point(147, 158);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(416, 214);
+            this.pictureBox6.Size = new System.Drawing.Size(555, 367);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 23;
             this.pictureBox6.TabStop = false;
             // 
@@ -715,16 +761,27 @@
             this.tabPage7.Controls.Add(this.label28);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(787, 409);
+            this.tabPage7.Size = new System.Drawing.Size(806, 528);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "监控系统探头及验证环境布点";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(708, 491);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(91, 34);
+            this.button8.TabIndex = 24;
+            this.button8.Text = "选择图片";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // pictureBox7
             // 
             this.pictureBox7.Location = new System.Drawing.Point(147, 158);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(416, 214);
+            this.pictureBox7.Size = new System.Drawing.Size(555, 367);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 23;
             this.pictureBox7.TabStop = false;
             // 
@@ -791,61 +848,11 @@
             this.label28.TabIndex = 16;
             this.label28.Text = "测量点数量：";
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(569, 338);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 34);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "选择图片";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(569, 338);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(91, 34);
-            this.button5.TabIndex = 24;
-            this.button5.Text = "选择图片";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(569, 338);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(91, 34);
-            this.button6.TabIndex = 24;
-            this.button6.Text = "选择图片";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(569, 338);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(91, 34);
-            this.button7.TabIndex = 24;
-            this.button7.Text = "选择图片";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(569, 338);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(91, 34);
-            this.button8.TabIndex = 24;
-            this.button8.Text = "选择图片";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
             // FormContentImplementation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 548);
+            this.ClientSize = new System.Drawing.Size(827, 643);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button1);
             this.Name = "FormContentImplementation";
