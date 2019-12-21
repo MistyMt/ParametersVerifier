@@ -2099,27 +2099,28 @@ namespace Interface
 
         private void button59_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SelectedEntityQuery query = new SelectedEntityQuery();
-                RenderView.QuerySelection(query);
-                SceneNode node2 = query.GetRootNode();
-                //string selectedSensor = node2.GetName();
-                //Sensor selectedSensors = Global.sensors[0];
-                string nodeName = node2.GetName();
-                if (Global.sensors.ContainsKey(nodeName))
-                {
-                    var f = new Forms.DBForms.selectedSensorData();
-                    f.senorName = nodeName;
-                    f.ShowDialog();
+            //// 先在图上选中点再查询
+            //try
+            //{
+            //    SelectedEntityQuery query = new SelectedEntityQuery();
+            //    RenderView.QuerySelection(query);
+            //    SceneNode node2 = query.GetRootNode();
+            //    string nodeName = node2.GetName();
+            //    if (Global.sensors.ContainsKey(nodeName))
+            //    {
+            //        var f = new Forms.DBForms.selectedSensorData();
+            //        f.senorName = nodeName;
+            //        f.ShowDialog();
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("请选择测点。");
+            //}
 
-
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("请选择测点。");
-            }
+            // 多测点查询（不用先选中点）
+            var f = new Interface.Forms.DBForms.Charts();
+            f.ShowDialog();
         }
 
         private void button60_Click(object sender, EventArgs e)
@@ -2522,7 +2523,7 @@ namespace Interface
 
         private void button68_Click(object sender, EventArgs e)
         {
-            FormAfterCalibrationValue f = new FormAfterCalibrationValue();
+            Interface.Forms.DBForms.Charts f = new Interface.Forms.DBForms.Charts();
             f.ShowDialog();
         }
 
