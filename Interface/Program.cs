@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Interface.Forms;
 
 
 namespace Interface
@@ -17,8 +18,10 @@ namespace Interface
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new banner());
-            Application.Run(new BeginForm());
+            Application.Run(new banner1());
+            Application.Run(new banner2());
+            Application.Run(new ObjectSelect());
+            Application.Run(new GeneralInfo());
             Application.Run(new MainForm());
         }
     }

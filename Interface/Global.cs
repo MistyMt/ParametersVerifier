@@ -5,38 +5,46 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
+using AnyCAD.Platform;
 
 
 namespace Interface
 {
     public static class Global
     {
-        /// <summary>
-        /// 主视图面板
-        /// </summary>
-        public static List<MainForm> mainForms = new List<MainForm>();
+        #region 面板
         /// <summary>
         /// 数据分析面板
         /// </summary>
         public static List<FormDataView> dataViewForms = new List<FormDataView>();
+
         /// <summary>
         /// 基础信息面板
         /// </summary>
         public static List<FormBasicInformation> basicInformationForms = new List<FormBasicInformation>();
+
         /// <summary>
         /// 数据总览面板
         /// </summary>
-        public static List<FormAnalysisOfData> analysisOfDataForms = new List<FormAnalysisOfData>();
-        
+        public static List<Form> analysisOfDataForms = new List<Form>();
+        #endregion
+
         /// <summary>
         /// 对象名
         /// </summary>
-        public static string objectName = "未选择";
-        public static object data;
+        public static string objectName = string.Empty;
+
+
         /// <summary>
         /// 模板文件名
         /// </summary>
-        public static string templateName = "未选择模板";
+        public static string templateName = string.Empty;
+
+        /// <summary>
+        /// excel数据源名
+        /// </summary>
+        public static string dataSourceName = string.Empty;
+
         /// <summary>
         /// 截图
         /// </summary>
@@ -50,6 +58,30 @@ namespace Interface
             gp.DrawImage(tSrcBmp, 0, 0, tScreenRect, GraphicsUnit.Pixel);
             return tSrcBmp;
         }
+
+        /// <summary>
+        /// 测试布点列表
+        /// string:node的name属性
+        /// Sensor:测点传感器对象
+        /// </summary>
+        public static Dictionary<string, Sensor> sensors = new Dictionary<string, Sensor>();
+
+
+        /// <summary>
+        /// 对象大小,单位m
+        /// </summary>
+        public static double objectLen = 0;
+        public static double objectWidth = 0;
+        public static double objectHeight = 0;
+
+        /// <summary>
+        /// 渲染窗口
+        /// </summary>
+        public static AnyCAD.Presentation.RenderWindow3d RenderView = null;
+
+
+
+
 
 
     }

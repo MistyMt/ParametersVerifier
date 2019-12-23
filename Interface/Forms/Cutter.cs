@@ -186,8 +186,6 @@ namespace Interface
             }
             else
             {
-
-
                 this.Close();
             }
         }        

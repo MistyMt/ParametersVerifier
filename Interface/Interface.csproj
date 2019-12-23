@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Interface</RootNamespace>
     <AssemblyName>Interface</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>C:\Users\樊开\Desktop\</PublishUrl>
@@ -66,15 +66,15 @@
   <ItemGroup>
     <Reference Include="AnyCAD.Exchange.Net, Version=10.0.6995.39969, Culture=neutral, PublicKeyToken=adad17ef48f32d48, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Release\AnyCAD.Exchange.Net.dll</HintPath>
+      <HintPath>bin\Debug\AnyCAD.Exchange.Net.dll</HintPath>
     </Reference>
     <Reference Include="AnyCAD.Foundation.Net, Version=10.0.6995.39967, Culture=neutral, PublicKeyToken=adad17ef48f32d48, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Release\AnyCAD.Foundation.Net.dll</HintPath>
+      <HintPath>bin\Debug\AnyCAD.Foundation.Net.dll</HintPath>
     </Reference>
     <Reference Include="AnyCAD.Presentation.Net, Version=10.0.6995.39969, Culture=neutral, PublicKeyToken=adad17ef48f32d48, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Release\AnyCAD.Presentation.Net.dll</HintPath>
+      <HintPath>bin\Debug\AnyCAD.Presentation.Net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -91,8 +91,19 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\assembly\office.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Spire.Doc, Version=7.10.6.4046, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SDK\Spirl\Spire.Doc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -106,20 +117,175 @@
       <HintPath>..\assembly\VBIDE.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\DBForms\Charts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DBForms\Charts.Designer.cs">
+      <DependentUpon>Charts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DBForms\Column.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DBForms\Column.Designer.cs">
+      <DependentUpon>Column.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DBForms\CreateTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DBForms\CreateTable.Designer.cs">
+      <DependentUpon>CreateTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DBForms\selectedSensorData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DBForms\selectedSensorData.Designer.cs">
+      <DependentUpon>selectedSensorData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\AfterCalibrationValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\AfterCalibrationValue.Designer.cs">
+      <DependentUpon>AfterCalibrationValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\AnalysisData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\AnalysisData.Designer.cs">
+      <DependentUpon>AnalysisData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\AnalysisOfDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\AnalysisOfDate.Designer.cs">
+      <DependentUpon>AnalysisOfDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\BeforCalibrationValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\BeforCalibrationValue.Designer.cs">
+      <DependentUpon>BeforCalibrationValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\Diagramsss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\Diagramsss.Designer.cs">
+      <DependentUpon>Diagramsss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\ObjectRunValidation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite2\ObjectRunValidation.Designer.cs">
+      <DependentUpon>ObjectRunValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite3\ImplementationOfTestingContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite3\ImplementationOfTestingContent.Designer.cs">
+      <DependentUpon>ImplementationOfTestingContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite3\TTFDiagram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite3\TTFDiagram.Designer.cs">
+      <DependentUpon>TTFDiagram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormAfterCalibrationValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormAfterCalibrationValue.Designer.cs">
+      <DependentUpon>FormAfterCalibrationValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormBeforeCalibrationValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormBeforeCalibrationValue.Designer.cs">
+      <DependentUpon>FormBeforeCalibrationValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormContentImplementation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormContentImplementation.Designer.cs">
+      <DependentUpon>FormContentImplementation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormContrast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormContrast.Designer.cs">
+      <DependentUpon>FormContrast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormFanRunningStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormFanRunningStatus.Designer.cs">
+      <DependentUpon>FormFanRunningStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormOpenImpact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormOpenImpact.Designer.cs">
+      <DependentUpon>FormOpenImpact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormOutagesImpact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormOutagesImpact.Designer.cs">
+      <DependentUpon>FormOutagesImpact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormRunningStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormRunningStatus.Designer.cs">
+      <DependentUpon>FormRunningStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormTemperatureDistribution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormTemperatureDistribution.Designer.cs">
+      <DependentUpon>FormTemperatureDistribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormValidationPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsOfWrite\FormValidationPerson.Designer.cs">
+      <DependentUpon>FormValidationPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GeneralInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GeneralInfo.Designer.cs">
+      <DependentUpon>GeneralInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImagePreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImagePreview.Designer.cs">
+      <DependentUpon>ImagePreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeasureDistanceEditor.cs" />
+    <Compile Include="Forms\ObjectSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ObjectSelect.Designer.cs">
+      <DependentUpon>ObjectSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sensor.cs" />
-    <Compile Include="Forms\banner.cs">
+    <Compile Include="Forms\banner1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\banner.Designer.cs">
-      <DependentUpon>banner.cs</DependentUpon>
+    <Compile Include="Forms\banner1.Designer.cs">
+      <DependentUpon>banner1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\BeginForm.cs">
+    <Compile Include="Forms\banner2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BeginForm.Designer.cs">
-      <DependentUpon>BeginForm.cs</DependentUpon>
+    <Compile Include="Forms\banner2.Designer.cs">
+      <DependentUpon>banner2.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Cutter.cs">
       <SubType>Form</SubType>
@@ -147,24 +313,40 @@
       <DependentUpon>FormAnalysisOfData.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
-    <Compile Include="HotKey.cs" />
-    <Compile Include="Forms\MainForm.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
+    <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLiteHelper\config.cs" />
+    <Compile Include="SQLiteHelper\SQLiteColumn.cs" />
+    <Compile Include="SQLiteHelper\SQLiteColumnList.cs" />
+    <Compile Include="SQLiteHelper\SQLiteHelper.cs" />
+    <Compile Include="SQLiteHelper\SQLiteTable.cs" />
     <Compile Include="ViewParametrs.cs" />
-    <EmbeddedResource Include="Forms\banner.resx">
-      <DependentUpon>banner.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\banner1.resx">
+      <DependentUpon>banner1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BeginForm.resx">
-      <DependentUpon>BeginForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\banner2.resx">
+      <DependentUpon>banner2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Cutter.resx">
       <DependentUpon>Cutter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DBForms\Charts.resx">
+      <DependentUpon>Charts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DBForms\Column.resx">
+      <DependentUpon>Column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DBForms\CreateTable.resx">
+      <DependentUpon>CreateTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DBForms\selectedSensorData.resx">
+      <DependentUpon>selectedSensorData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormBasicInformation.resx">
       <DependentUpon>FormBasicInformation.cs</DependentUpon>
@@ -175,8 +357,71 @@
     <EmbeddedResource Include="Forms\FormAnalysisOfData.resx">
       <DependentUpon>FormAnalysisOfData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
+    <EmbeddedResource Include="Forms\FormsOfWrite2\AfterCalibrationValue.resx">
+      <DependentUpon>AfterCalibrationValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite2\AnalysisData.resx">
+      <DependentUpon>AnalysisData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite2\AnalysisOfDate.resx">
+      <DependentUpon>AnalysisOfDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite2\BeforCalibrationValue.resx">
+      <DependentUpon>BeforCalibrationValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite2\Diagramsss.resx">
+      <DependentUpon>Diagramsss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite2\ObjectRunValidation.resx">
+      <DependentUpon>ObjectRunValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite3\ImplementationOfTestingContent.resx">
+      <DependentUpon>ImplementationOfTestingContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite3\TTFDiagram.resx">
+      <DependentUpon>TTFDiagram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormAfterCalibrationValue.resx">
+      <DependentUpon>FormAfterCalibrationValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormBeforeCalibrationValue.resx">
+      <DependentUpon>FormBeforeCalibrationValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormContentImplementation.resx">
+      <DependentUpon>FormContentImplementation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormContrast.resx">
+      <DependentUpon>FormContrast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormFanRunningStatus.resx">
+      <DependentUpon>FormFanRunningStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormOpenImpact.resx">
+      <DependentUpon>FormOpenImpact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormOutagesImpact.resx">
+      <DependentUpon>FormOutagesImpact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormRunningStatus.resx">
+      <DependentUpon>FormRunningStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormTemperatureDistribution.resx">
+      <DependentUpon>FormTemperatureDistribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsOfWrite\FormValidationPerson.resx">
+      <DependentUpon>FormValidationPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GeneralInfo.resx">
+      <DependentUpon>GeneralInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImagePreview.resx">
+      <DependentUpon>ImagePreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ObjectSelect.resx">
+      <DependentUpon>ObjectSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -235,6 +480,7 @@
   <ItemGroup>
     <None Include="Resources\封面.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

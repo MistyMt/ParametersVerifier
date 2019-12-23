@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AnyCAD.Platform;
+using AnyCAD.Basic;
 
 namespace Interface
 {
-    class Sensor
+    public class Sensor
     {
         /// <summary>
         /// 名称
@@ -42,6 +44,21 @@ namespace Interface
         /// 证书编号/有效期
         /// </summary>
         public string certificateNo = "未指定编号";
+
+        /// <summary>
+        /// 坐标
+        /// </summary>
+        public Vector3 positionCoordinate = Vector3.ZERO;
+
+        /// <summary>
+        /// 布点位置
+        /// </summary>
+        public string positionName = "";
+
+
+
+
+
 
     }
 }

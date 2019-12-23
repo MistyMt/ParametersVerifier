@@ -73,3 +73,7 @@ D:\测试软件\10-8\Interface\obj\Release\Interface.Properties.Resources.resour
 D:\测试软件\10-8\Interface\obj\Release\Interface.csproj.GenerateResource.Cache
 D:\测试软件\10-8\Interface\obj\Release\Interface.exe.manifest
 D:\测试软件\10-8\Interface\obj\Release\Interface.application
+D:\ParametersVerifier\Interface\bin\Release\Interface.exe.config
+D:\ParametersVerifier\Interface\obj\Release\Interface.csproj.ResolveComReference.cache
+D:\ParametersVerifier\Interface\obj\Release\Interface.exe
+D:\ParametersVerifier\Interface\obj\Release\Interface.pdb
