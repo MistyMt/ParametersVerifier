@@ -2523,7 +2523,7 @@ namespace Interface
 
         private void button68_Click(object sender, EventArgs e)
         {
-            Interface.Forms.DBForms.Charts f = new Interface.Forms.DBForms.Charts();
+            TTFDiagram f = new TTFDiagram();
             f.ShowDialog();
         }
 
@@ -2548,7 +2548,9 @@ namespace Interface
             }
             #endregion
 
-            object filename = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.templateName;
+
+
+            object filename =System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\" + Global.templateName;
             Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
             Microsoft.Office.Interop.Word.Document wordDoc;
             wordDoc = wordApp.Documents.Open(filename);
@@ -2557,8 +2559,8 @@ namespace Interface
 
         private void button70_Click(object sender, EventArgs e)
         {
-            {//去除报表头部自动添加的文字
-                object filename1 =System.Windows.Forms.Application.StartupPath + "\\bin\\" + Global.templateName;
+            {// 去除报表头部自动添加的文字
+                object filename1 = System.Windows.Forms.Application.StartupPath + "\\bin\\" + Global.templateName;
 
                 object G_Missing = System.Reflection.Missing.Value;
 
@@ -2580,16 +2582,15 @@ namespace Interface
                                         ref G_Missing, ref G_Missing, ref G_Missing, ref G_Missing
                                         );
 
-                myRange = wordDoc.Range(myRange.Start, myRange.End);
+                //myRange = wordDoc.Range(myRange.Start, myRange.End);
                 myRange.Text = string.Empty;
+
 
                 wordDoc.Save();
                 wordDoc.Close(ref G_Missing, ref G_Missing, ref G_Missing);
                 wordApp.Quit(ref G_Missing, ref G_Missing, ref G_Missing);
                 wordApp = null;
-
             }
-
 
             string strDesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             var nowtime = System.DateTime.Now;
