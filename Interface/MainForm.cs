@@ -2310,7 +2310,7 @@ namespace Interface
                                 int num = 0;
                                 for (int iii = 0; iii < sColcount; iii++)
                                 {
-                                    if (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, iii+1]).Text != string.Empty)
+                                    if (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, iii + 1]).Text != string.Empty)
                                     {
                                         num += 1;
                                     }
@@ -2447,7 +2447,7 @@ namespace Interface
 
                         for (int i = 0; i < tbList.Length; i++)
                         {
-                            comboBox7.Items.Add(tbList[i].ToString().Substring(tbList[i].ToString().Length, 2));
+                            comboBox7.Items.Add(tbList[i].ToString().Substring(tbList[i].ToString().Length - 2, 2));
                         }
 
                         //循环录入所有sheet数据
@@ -3150,6 +3150,11 @@ namespace Interface
                     conn.Close();
                 }
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
     }

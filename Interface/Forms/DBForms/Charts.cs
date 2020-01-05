@@ -22,7 +22,7 @@ namespace Interface.Forms.DBForms
 
         private void Charts_Load(object sender, EventArgs e)
         {
-            #region 读取测点列表
+
             using (SQLiteConnection conn = new SQLiteConnection(config.DataSource))
             {
                 using (SQLiteCommand cmd = new SQLiteCommand())
@@ -31,11 +31,28 @@ namespace Interface.Forms.DBForms
                     cmd.Connection = conn;
                     SQLiteHelper sh = new SQLiteHelper(cmd);
 
+                    #region 读取状态
+                    //获取表名
+                    var tbListDT = sh.GetTableList();
+                    List<string> tbList = new List<string>();
+                    for (int i = 0; i < tbListDT.Rows.Count; i++)
+                    {
+                        tbList.Add(tbListDT.Rows[i][0].ToString());
+                    }
+                    //获取状态
+                    for (int i = 0; i < tbList.Count; i++)
+                    {
+                        string listItem = tbList[i];
+                        comboBox2.Items.Add(listItem);
+                    }
+                    #endregion
 
+                    #region 读取测点列表
                     try
                     {
+                        string tableName = tbList[0];
                         List<string> columnName = new List<string>();
-                        string sql = "PRAGMA table_info([满载]);";
+                        string sql = "PRAGMA table_info([" + tableName + "]);";
 
                         SQLiteCommand cmd2 = new SQLiteCommand(sql, conn);
                         System.Data.SQLite.SQLiteDataReader dr = cmd2.ExecuteReader();
@@ -52,15 +69,19 @@ namespace Interface.Forms.DBForms
                         {
                             checkedListBox1.Items.Add(columnName[i].ToString());
                         }
+                    #endregion
 
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                     }
                     conn.Close();
                 }
             }
-            #endregion
+
+            //温度范围
+            textBox2.Text = Global.tempLimitLow.ToString();
+            textBox3.Text = Global.tempLimitHigh.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -305,7 +326,7 @@ namespace Interface.Forms.DBForms
                     chart1.Series[s[i].Columns[0].Name.ToString()].IsValueShownAsLabel = false;//是否显示值
                     chart1.Series[s[i].Columns[0].Name.ToString()].ChartType = SeriesChartType.Spline;//设置显示样式
                     chart1.Series[s[i].Columns[0].Name.ToString()].BorderWidth = 1;
-                    chart1.Series[s[i].Columns[0].Name.ToString()].Color = Color.FromArgb(i, i + 1, i + 2);
+                    chart1.Series[s[i].Columns[0].Name.ToString()].Color = ColorTranslator.FromHtml(GetRandomColor());
                     //chart1.Series[s[i].Columns[0].Name.ToString()].ToolTip = "测点" + comboBox2.Text + "时数据统计";
                     chart1.Series[s[i].Columns[0].Name.ToString()].YValueType = ChartValueType.Double;
 
@@ -335,9 +356,63 @@ namespace Interface.Forms.DBForms
                             nowRow++;
                         }
                     }
-
-
                 }
+
+
+
+                List<string> templimit = new List<string> { "温度上界", "温度下界" };
+                //画上下界
+                for (int i = 0; i < templimit.Count; i++)
+                {
+                    this.chart1.Series.Add(templimit[i]);
+
+
+                    //设置char样式
+                    chart1.Series[templimit[i]].MarkerColor = Color.Black;//设置标志
+                    chart1.Series[templimit[i]].MarkerSize = 3;
+                    chart1.Series[templimit[i]].MarkerStyle = MarkerStyle.Square;
+                    chart1.Series[templimit[i]].IsValueShownAsLabel = false;//是否显示值
+                    chart1.Series[templimit[i]].ChartType = SeriesChartType.Spline;//设置显示样式
+                    chart1.Series[templimit[i]].BorderWidth = 1;
+                    chart1.Series[templimit[i]].Color = ColorTranslator.FromHtml(GetRandomColor());
+                    //chart1.Series[templimit[i]].ToolTip = "测点" + comboBox2.Text + "时数据统计";
+                    chart1.Series[templimit[i]].YValueType = ChartValueType.Double;
+
+
+                    List<string> time = new List<string>();
+                    for (int ii = 0; ii < ((DataGridView)panel1.Controls[0]).Rows.Count - 1; ii++)
+                    {
+                        time.Add(((DataGridView)panel1.Controls[0]).Rows[ii].Cells["检测时间"].Value.ToString());
+                    }
+
+
+                    List<double> data = new List<double>();
+                    for (int ii = 0; ii < ((DataGridView)panel1.Controls[0]).Rows.Count - 1; ii++)
+                    {
+                        if (i == 0)
+                        {
+                            data.Add(Global.tempLimitHigh);
+                        }
+                        else
+                        {
+                            data.Add(Global.tempLimitLow);
+                        }
+
+                    }
+
+
+
+                    int nowRow = 0;
+                    if (((DataGridView)panel1.Controls[0]).Rows.Count > 1)
+                    {
+                        while (nowRow < ((DataGridView)panel1.Controls[0]).Rows.Count - 1)
+                        {
+                            chart1.Series[templimit[i]].Points.AddXY(time[nowRow], data[nowRow]);
+                            nowRow++;
+                        }
+                    }
+                }
+
 
                 chart1.ChartAreas[0].AxisY.Minimum = allData.Min() * 0.90;
                 chart1.ChartAreas[0].AxisY.Maximum = allData.Max() * 1.10;
@@ -392,7 +467,33 @@ namespace Interface.Forms.DBForms
             {
             }
         }
+        public string GetRandomColor()
+        {
 
+            Random RandomNum_First = new Random((int)DateTime.Now.Ticks);
+
+            //  对于C#的随机数，没什么好说的
+
+            System.Threading.Thread.Sleep(RandomNum_First.Next(50));
+
+            Random RandomNum_Sencond = new Random((int)DateTime.Now.Ticks);
+
+
+
+            //  为了在白色背景上显示，尽量生成深色
+
+            int int_Red = RandomNum_First.Next(256);
+
+            int int_Green = RandomNum_Sencond.Next(256);
+
+            int int_Blue = (int_Red + int_Green > 400) ? 0 : 400 - int_Red - int_Green;
+
+            int_Blue = (int_Blue > 255) ? 255 : int_Blue;
+            Color color = Color.FromArgb(int_Red, int_Green, int_Blue);
+            string strColor = "#" + Convert.ToString(color.ToArgb(), 16).PadLeft(8, '0').Substring(2, 6);
+            return strColor;
+
+        }
         private void button5_Click(object sender, EventArgs e)
         {
             var saveFileDialog1 = new SaveFileDialog();
@@ -438,10 +539,10 @@ namespace Interface.Forms.DBForms
 
         private void button10_Click(object sender, EventArgs e)
         {
-            
+
             if (true)
             {
-               
+
             }
 
         }

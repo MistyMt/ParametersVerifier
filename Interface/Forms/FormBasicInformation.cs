@@ -306,6 +306,10 @@ namespace Interface
                         Global.objectLen = Convert.ToDouble(textBox2.Text);
                         Global.objectWidth = Convert.ToDouble(textBox4.Text);
                         Global.objectHeight = Convert.ToDouble(textBox5.Text);
+
+
+                        Global.tempLimitLow = Convert.ToDouble(textBox10.Text);
+                        Global.tempLimitHigh = Convert.ToDouble(textBox12.Text);
                     }
                     catch (Exception)
                     {
@@ -366,6 +370,23 @@ namespace Interface
 
 
 
+                    try
+                    {
+
+                        Global.objectLen = Convert.ToDouble(textBox15.Text);
+                        Global.objectWidth = Convert.ToDouble(textBox19.Text);
+                        Global.objectHeight = Convert.ToDouble(textBox20.Text);
+
+
+
+                        Global.tempLimitLow = Convert.ToDouble(textBox16.Text);
+
+                        Global.tempLimitHigh = Convert.ToDouble(textBox18.Text);
+
+                    }
+                    catch (Exception)
+                    {
+                    }
 
                 }
 

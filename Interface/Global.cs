@@ -79,9 +79,15 @@ namespace Interface
         /// </summary>
         public static AnyCAD.Presentation.RenderWindow3d RenderView = null;
 
+        /// <summary>
+        /// 温度上界
+        /// </summary>
+        public static double tempLimitHigh = 0.0;
 
-
-
+        /// <summary>
+        /// 温度下界
+        /// </summary>
+        public static double tempLimitLow = 0.0;
 
 
     }
