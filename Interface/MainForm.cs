@@ -2134,7 +2134,11 @@ namespace Interface
         private void button61_Click(object sender, EventArgs e)
         {
             comboBox4.SelectedIndex = 0;
-            textBox52.Text = Global.objectName + "DB";
+
+            var nowtime = System.DateTime.Now;
+            string Nowtime = nowtime.ToLongDateString().ToString() + nowtime.Hour.ToString() + "时" + nowtime.Minute.ToString() + "分" + nowtime.Second.ToString() + "秒";
+
+            textBox52.Text = Nowtime + Global.objectName + "DB";
 
         }
         bool TestConnection()
@@ -2219,47 +2223,152 @@ namespace Interface
                     {
                         if (Global.objectName == "冷库")
                         {
-                            conn.Open();
-                            cmd.Connection = conn;
-                            SQLiteHelper sh = new SQLiteHelper(cmd);
-                            SQLiteTable tb = new SQLiteTable(Global.objectName + "sensorData");
-
-                            string[] colNames = new string[] { "ID", "状况", "检测时间", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11", "T12", "T13", "T14", "T15" };
-                            ColType[] colTypes = new ColType[] { ColType.Integer, ColType.Text, ColType.Text, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal };
-                            tb.Columns.Add(new SQLiteColumn("ID", true));
-                            for (int i = 2; i < colNames.Length + 1; i++)
+                            #region 建表
+                            //查询excel页名和页数
+                            string fileName = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.dataSourceName;
+                            Microsoft.Office.Interop.Excel.Application EXC1 = new Microsoft.Office.Interop.Excel.Application();
+                            EXC1.Visible = false;
+                            Microsoft.Office.Interop.Excel.Workbooks wbs = EXC1.Workbooks;
+                            Microsoft.Office.Interop.Excel._Workbook wb = wbs.Add(fileName);
+                            //Microsoft.Office.Interop.Excel._Worksheet exsheet = wb.Sheets[ii];
+                            //string sName = exsheet.Name;
+                            //var s = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 3]).Text;
+                            for (int i = 0; i < wb.Sheets.Count; i++)
                             {
-                                tb.Columns.Add(new SQLiteColumn(colNames[i - 1], colTypes[i - 1]));
+                                Microsoft.Office.Interop.Excel._Worksheet exsheet = wb.Sheets[i + 1];
+                                int sColcount = exsheet.UsedRange.Columns.Count;//总列数
+                                string[] colNames2 = new string[sColcount - 2];//测点名列表
+                                for (int j = 0; j < sColcount - 2; j++)
+                                {
+                                    colNames2[j] = "T" + ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, j + 3]).Text;
+                                }
+                                ColType[] colTypes2 = new ColType[sColcount - 2];//测点名列表
+                                for (int j = 0; j < sColcount - 2; j++)
+                                {
+                                    colTypes2[j] = ColType.Decimal;
+                                }
+
+
+                                conn.Open();
+                                cmd.Connection = conn;
+                                SQLiteHelper sh = new SQLiteHelper(cmd);
+                                //表名
+                                SQLiteTable tb = new SQLiteTable(Global.objectName + "sensorData" + ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[2, 1]).Text);
+
+                                //字段名
+                                string[] colNames1 = new string[] { "ID", "状况", "检测时间" };
+                                //, "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11", "T12", "T13", "T14", "T15"
+                                string[] colNames = new string[colNames1.Length + colNames2.Length];
+                                colNames1.CopyTo(colNames, 0);
+                                colNames2.CopyTo(colNames, colNames1.Length);
+
+                                //字段数据类型
+                                ColType[] colTypes1 = new ColType[] { ColType.Integer, ColType.Text, ColType.Text };
+                                ColType[] colTypes = new ColType[colTypes1.Length + colTypes2.Length];
+                                colTypes1.CopyTo(colTypes, 0);
+                                colTypes2.CopyTo(colTypes, colTypes1.Length);
+
+
+                                tb.Columns.Add(new SQLiteColumn("ID", true));
+                                for (int ii = 2; ii < colNames.Length + 1; ii++)
+                                {
+                                    tb.Columns.Add(new SQLiteColumn(colNames[ii - 1], colTypes[ii - 1]));
+                                }
+
+                                //sh.DropTable(textBox1.Text);
+                                sh.CreateTable(tb);
+
+
+                                //展示sheet数据by“ID”
+                                //LoadData(sh, Global.objectName + "sensorData");
+                                conn.Close();
                             }
-
-                            //sh.DropTable(textBox1.Text);
-                            sh.CreateTable(tb);
-
-                            LoadData(sh, Global.objectName + "sensorData");
-
-                            conn.Close();
+                            wb.Close();
+                            wbs.Close();
+                            EXC1.Quit();
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(EXC1);
+                            #endregion
                         }
                         if (Global.objectName == "灭菌器")
                         {
-                            conn.Open();
-                            cmd.Connection = conn;
-                            SQLiteHelper sh = new SQLiteHelper(cmd);
-                            SQLiteTable tb = new SQLiteTable(Global.objectName + "sensorData");
+                            #region 建表
+                            //查询excel页名和页数
+                            string fileName = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.dataSourceName;
+                            Microsoft.Office.Interop.Excel.Application EXC1 = new Microsoft.Office.Interop.Excel.Application();
+                            EXC1.Visible = false;
+                            Microsoft.Office.Interop.Excel.Workbooks wbs = EXC1.Workbooks;
+                            Microsoft.Office.Interop.Excel._Workbook wb = wbs.Add(fileName);
+                            //Microsoft.Office.Interop.Excel._Worksheet exsheet = wb.Sheets[ii];
+                            //string sName = exsheet.Name;
+                            //var s = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 3]).Text;
 
-                            string[] colNames = new string[] { "ID", "序列号", "检测时间", "名称", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11", "T12", "T13", "T14", "T15" };
-                            ColType[] colTypes = new ColType[] { ColType.Integer, ColType.Text, ColType.Text, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal, ColType.Decimal };
-                            tb.Columns.Add(new SQLiteColumn("ID", true));
-                            for (int i = 2; i < colNames.Length + 1; i++)
+
+                            for (int i = 0; i < wb.Sheets.Count; i++)
                             {
-                                tb.Columns.Add(new SQLiteColumn(colNames[i - 1], colTypes[i - 1]));
+                                Microsoft.Office.Interop.Excel._Worksheet exsheet = wb.Sheets[i + 1];
+                                int sColcount = exsheet.UsedRange.Columns.Count;//总列数
+                                int num = 0;
+                                for (int iii = 0; iii < sColcount; iii++)
+                                {
+                                    if (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, iii+1]).Text != string.Empty)
+                                    {
+                                        num += 1;
+                                    }
+                                }
+                                sColcount = num;
+                                string[] colNames2 = new string[sColcount - 1];//测点名列表
+                                for (int j = 0; j < sColcount - 1; j++)
+                                {
+                                    if (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, j + 2]).Text != string.Empty && ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, j + 2]).Text != null)
+                                    {
+                                        colNames2[j] = "T" + ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, j + 2]).Text;
+                                    }
+                                }
+                                ColType[] colTypes2 = new ColType[colNames2.Length];//测点数据类型列表
+                                for (int j = 0; j < sColcount - 1; j++)
+                                {
+                                    colTypes2[j] = ColType.Decimal;
+                                }
+
+
+                                conn.Open();
+                                cmd.Connection = conn;
+                                SQLiteHelper sh = new SQLiteHelper(cmd);
+                                //表名
+                                SQLiteTable tb = new SQLiteTable(Global.objectName + "sensorData" + exsheet.Name.ToString().Substring(0, 2));
+
+                                //字段名
+                                string[] colNames1 = new string[] { "ID", "状况", "检测时间" };
+                                string[] colNames = new string[colNames1.Length + colNames2.Length];
+                                colNames1.CopyTo(colNames, 0);
+                                colNames2.CopyTo(colNames, colNames1.Length);
+
+                                //字段数据类型
+                                ColType[] colTypes1 = new ColType[] { ColType.Integer, ColType.Text, ColType.Text };
+                                ColType[] colTypes = new ColType[colTypes1.Length + colTypes2.Length];
+                                colTypes1.CopyTo(colTypes, 0);
+                                colTypes2.CopyTo(colTypes, colTypes1.Length);
+
+
+                                tb.Columns.Add(new SQLiteColumn("ID", true));
+                                for (int ii = 2; ii < colNames.Length + 1; ii++)
+                                {
+                                    tb.Columns.Add(new SQLiteColumn(colNames[ii - 1], colTypes[ii - 1]));
+                                }
+
+                                //sh.DropTable(textBox1.Text);
+                                sh.CreateTable(tb);
+
+
+                                //展示sheet数据by“ID”
+                                //LoadData(sh, Global.objectName + "sensorData");
+                                conn.Close();
                             }
-
-                            //sh.DropTable(textBox1.Text);
-                            sh.CreateTable(tb);
-
-                            LoadData(sh, Global.objectName + "sensorData111111");
-
-                            conn.Close();
+                            wb.Close();
+                            wbs.Close();
+                            EXC1.Quit();
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(EXC1);
+                            #endregion
                         }
                     }
                 }
@@ -2276,93 +2385,281 @@ namespace Interface
             }
         }
 
+        private volatile bool canStop = false;
+        public static void loadingGIF()
+        {
+            //loadingGIF
+            //用WinForm自带的Label： AutoSize属性设置为false； Text属性为空； Image属性指定GIF图片；
+            //ImageAlign属性设置图片位置；
+
+            Form loading = new Form();
+            loading.StartPosition = FormStartPosition.CenterParent;
+            loading.Dock = DockStyle.Fill;
+            loading.FormBorderStyle = FormBorderStyle.None;
+
+
+
+            System.Windows.Forms.Label labLoading = new System.Windows.Forms.Label();
+            labLoading.Parent = loading;
+            //labLoading.Size = new Size(500, 91);
+            labLoading.Dock = DockStyle.Fill;
+            labLoading.AutoSize = false;
+            labLoading.Text = string.Empty;
+            labLoading.Image = Properties.Resources.loading;
+            labLoading.ImageAlign = ContentAlignment.MiddleCenter;
+
+
+            loading.ShowDialog();
+            labLoading.BringToFront();
+            labLoading.Show();
+        }
         private void button65_Click(object sender, EventArgs e)
         {
+
+
             using (SQLiteConnection conn = new SQLiteConnection(config.DataSource))
             {
                 using (SQLiteCommand cmd = new SQLiteCommand())
                 {
-                    #region 冷库
+
                     if (Global.objectName == "冷库")
                     {
-
-                        conn.Open();
-                        cmd.Connection = conn;
-
-                        SQLiteHelper sh = new SQLiteHelper(cmd);
-
-                        int count = sh.ExecuteScalar<int>("select count(*) from " + Global.objectName + "sensorData" + ";") + 1;
-
-                        sh.BeginTransaction();
+                        #region 导入
+                        //打开excel
                         string fileName = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.dataSourceName;
                         Microsoft.Office.Interop.Excel.Application EXC1 = new Microsoft.Office.Interop.Excel.Application();
                         EXC1.Visible = false;
                         Microsoft.Office.Interop.Excel.Workbooks wbs = EXC1.Workbooks;
                         Microsoft.Office.Interop.Excel._Workbook wb = wbs.Add(fileName);
-                        Microsoft.Office.Interop.Excel._Worksheet exsheet = wb.Sheets[1];
-                        string sName = exsheet.Name;
-                        int sRowcount = exsheet.UsedRange.Rows.Count;
-                        exsheet.Activate();
+                        //连接数据库
+                        conn.Open();
+                        cmd.Connection = conn;
+                        SQLiteHelper sh = new SQLiteHelper(cmd);
 
-
-                        for (int i = 2; i < sRowcount - 1; i++)
+                        //获取表名列表
+                        var tbListDT = sh.GetTableList();
+                        string[] tbList = new string[wb.Sheets.Count];
+                        for (int i = 0; i < tbListDT.Rows.Count; i++)
                         {
-                            string a = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 3]).Text;
-                            string b = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 2]).Text;
-                            string c = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 4]).Text;
-                            string d = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 5]).Text;
-                            string q = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 6]).Text;
-                            string f = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 7]).Text;
-                            string g = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 8]).Text;
-                            string h = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 9]).Text;
-                            string r = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 10]).Text;
-                            string j = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 11]).Text;
-                            string k = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 12]).Text;
-                            string l = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 13]).Text;
-                            string m = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 14]).Text;
-                            string n = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 15]).Text;
-                            string o = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 16]).Text;
-                            string p = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 17]).Text;
-                            var dic = new Dictionary<string, object>();
-                            dic["ID"] = count + i;
-                            dic["状况"] = "空载";
-                            dic["检测时间"] = b;
-                            dic["T1"] = a;
-                            dic["T2"] = c;
-                            dic["T3"] = d;
-                            dic["T4"] = q;
-                            dic["T5"] = f;
-                            dic["T6"] = g;
-                            dic["T7"] = h;
-                            dic["T8"] = r;
-                            dic["T9"] = j;
-                            dic["T10"] = k;
-                            dic["T11"] = l;
-                            dic["T12"] = m;
-                            dic["T13"] = n;
-                            dic["T14"] = o;
-                            dic["T15"] = p;
-                            sh.Insert(Global.objectName + "sensorData", dic);
+                            tbList[i] = tbListDT.Rows[i][0].ToString();
                         }
+
+
+                        for (int i = 0; i < tbList.Length; i++)
+                        {
+                            comboBox7.Items.Add(tbList[i].ToString().Substring(tbList[i].ToString().Length, 2));
+                        }
+
+                        //循环录入所有sheet数据
+                        for (int ii = 1; ii <= wb.Sheets.Count; ii++)
+                        {
+                            int count = sh.ExecuteScalar<int>("select count(*) from " + tbList[ii - 1] + ";") + 1;
+
+                            //创建sqlite事务
+                            sh.BeginTransaction();
+                            try
+                            {
+                                Microsoft.Office.Interop.Excel._Worksheet exsheet = wb.Sheets[ii];
+                                string sName = exsheet.Name;
+                                int sRowcount = exsheet.UsedRange.Rows.Count;
+                                exsheet.Activate();
+
+
+                                for (int i = 2; i <= sRowcount; i++)
+                                {
+                                    //依行次读取excel数据
+                                    var dic = new Dictionary<string, object>();
+                                    dic["ID"] = count + i - 2;
+                                    dic["状况"] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[2, 1]).Text;
+                                    //tbList[ii - 1].Substring(tbList[ii - 1].Length - 3, 2);
+                                    dic["检测时间"] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 2]).Text;
+
+                                    //循环录入测点数据
+                                    int sColcount = exsheet.UsedRange.Columns.Count;//总列数
+                                    string[] colNames2 = new string[sColcount - 2];//测点名列表
+                                    for (int j = 0; j < sColcount - 2; j++)
+                                    {
+                                        colNames2[j] = "T" + ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, j + 3]).Text;
+                                    }
+
+                                    for (int k = 0; k < sColcount - 2; k++)
+                                    {
+                                        dic[colNames2[k]] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, k + 3]).Text;
+                                    }
+                                    //插入数据库
+                                    sh.Insert(tbList[ii - 1], dic);
+                                }
+
+                                sh.Commit();
+                            }
+                            catch (Exception)
+                            {
+                                sh.Rollback();
+                            }
+                        }
+                        //展示数据
+                        LoadData(sh, tbList[1]);
+                        //关闭Excel
+                        conn.Close();
+                        wb.Close();
+                        wbs.Close();
+                        EXC1.Quit();
+                        EXC1 = null;
+                        System.Runtime.InteropServices.Marshal.ReleaseComObject(EXC1);
+                        #endregion
+                        label84.Visible = true;
+                        comboBox7.Visible = true;
+                        button49.Visible = true;
+                    }
+
+
+                    if (Global.objectName == "灭菌器")
+                    {
+                        #region 导入
+                        //打开excel
+                        string fileName = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.dataSourceName;
+                        Microsoft.Office.Interop.Excel.Application EXC1 = new Microsoft.Office.Interop.Excel.Application();
+                        EXC1.Visible = false;
+                        Microsoft.Office.Interop.Excel.Workbooks wbs = EXC1.Workbooks;
+                        Microsoft.Office.Interop.Excel._Workbook wb = wbs.Add(fileName);
+                        //连接数据库
+                        conn.Open();
+                        cmd.Connection = conn;
+                        SQLiteHelper sh = new SQLiteHelper(cmd);
+
+                        //获取表名列表
+                        var tbListDT = sh.GetTableList();
+                        string[] tbList = new string[wb.Sheets.Count];
+                        for (int i = 0; i < tbListDT.Rows.Count; i++)
+                        {
+                            tbList[i] = tbListDT.Rows[i][0].ToString();
+                        }
+
+
+                        for (int i = 0; i < tbList.Length; i++)
+                        {
+                            string listItem = tbList[i];
+                            comboBox7.Items.Add(listItem);
+                        }
+
+                        //循环录入所有sheet数据
+                        for (int ii = 1; ii <= wb.Sheets.Count; ii++)
+                        {
+                            int count = sh.ExecuteScalar<int>("select count(*) from " + tbList[ii - 1] + ";") + 1;
+
+                            //创建sqlite事务
+                            sh.BeginTransaction();
+                            try
+                            {
+                                Microsoft.Office.Interop.Excel._Worksheet exsheet = wb.Sheets[ii];
+                                string sName = exsheet.Name;
+                                int sRowcount = exsheet.UsedRange.Rows.Count;
+                                exsheet.Activate();
+
+                                if (tbList[ii - 1].Substring(tbList[ii - 1].Length - 2, 2) == "废弃")
+                                {
+                                    for (int i = 3; i <= sRowcount; i++)
+                                    {
+                                        //依行次读取excel数据
+                                        var dic = new Dictionary<string, object>();
+                                        dic["ID"] = count + i - 3;
+                                        dic["状况"] = sName.Substring(0, 2);
+                                        //tbList[ii - 1].Substring(tbList[ii - 1].Length - 3, 2);
+                                        dic["检测时间"] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 1]).Text;
+                                        if (dic["检测时间"].ToString() == "最小" || dic["检测时间"].ToString() == "最大" || dic["检测时间"].ToString() == "平均" || dic["检测时间"].ToString() == string.Empty)
+                                        {
+                                            continue;
+                                        }
+                                        //循环录入测点数据
+                                        int sColcount = exsheet.UsedRange.Columns.Count;//总列数
+                                        int num = 0;
+                                        for (int iii = 0; iii < sColcount; iii++)
+                                        {
+                                            if (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, iii + 1]).Text != string.Empty)
+                                            {
+                                                num += 1;
+                                            }
+                                        }
+                                        sColcount = num;
+                                        string[] colNames2 = new string[sColcount - 1];//测点名列表
+                                        for (int j = 0; j < sColcount - 1; j++)
+                                        {
+                                            colNames2[j] = "T" + ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, j + 2]).Text;
+                                        }
+
+                                        for (int k = 0; k < sColcount - 1; k++)
+                                        {
+                                            dic[colNames2[k]] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, k + 2]).Text;
+                                        }
+                                        //插入数据库
+                                        sh.Insert(tbList[ii - 1], dic);
+                                    }
+                                }
+                                else
+                                {
+                                    for (int i = 8; i <= sRowcount; i++)
+                                    {
+                                        //依行次读取excel数据
+                                        var dic = new Dictionary<string, object>();
+                                        dic["ID"] = count + i - 8;
+                                        dic["状况"] = sName.Substring(0, 2);
+                                        //tbList[ii - 1].Substring(tbList[ii - 1].Length - 3, 2);
+                                        dic["检测时间"] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 1]).Text;
+                                        if (dic["检测时间"].ToString() == "最小" || dic["检测时间"].ToString() == "最大" || dic["检测时间"].ToString() == "平均" || dic["检测时间"].ToString() == string.Empty)
+                                        {
+                                            continue;
+                                        }
+                                        //循环录入测点数据
+                                        int sColcount = exsheet.UsedRange.Columns.Count;//总列数
+                                        int num = 0;
+                                        for (int iii = 0; iii < sColcount; iii++)
+                                        {
+                                            if (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, iii + 1]).Text != string.Empty)
+                                            {
+                                                num += 1;
+                                            }
+                                        }
+                                        sColcount = num;
+                                        string[] colNames2 = new string[sColcount - 1];//测点名列表
+                                        for (int j = 0; j < sColcount - 1; j++)
+                                        {
+                                            colNames2[j] = "T" + ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, j + 2]).Text;
+                                        }
+
+                                        for (int k = 0; k < sColcount - 1; k++)
+                                        {
+                                            dic[colNames2[k]] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, k + 2]).Text;
+                                        }
+                                        //插入数据库
+                                        sh.Insert(tbList[ii - 1], dic);
+                                    }
+                                }
+
+                                sh.Commit();
+                            }
+                            catch (Exception)
+                            {
+                                sh.Rollback();
+                            }
+                        }
+                        //展示数据
+                        LoadData(sh, tbList[0]);
+                        //关闭Excel
+                        conn.Close();
                         wb.Close();
                         wbs.Close();
                         EXC1.Quit();
                         System.Runtime.InteropServices.Marshal.ReleaseComObject(EXC1);
-                        sh.Commit();
-                        LoadData(sh, Global.objectName + "sensorData");
-                        conn.Close();
-
-                    }
-                    #endregion
-
-                    if (Global.objectName == "灭菌器")
-                    {
-
+                        #endregion
+                        label84.Visible = true;
+                        comboBox7.Visible = true;
+                        button49.Visible = true;
                     }
                     if (Global.objectName == "高温热处理炉")
                     {
 
                     }
+
                 }
             }
         }
@@ -2550,7 +2847,7 @@ namespace Interface
 
 
 
-            object filename =System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\" + Global.templateName;
+            object filename = System.Windows.Forms.Application.StartupPath.ToString() + "\\bin\\" + Global.templateName;
             Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
             Microsoft.Office.Interop.Word.Document wordDoc;
             wordDoc = wordApp.Documents.Open(filename);
@@ -2836,6 +3133,23 @@ namespace Interface
         private void tabPage3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button49_Click(object sender, EventArgs e)
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(config.DataSource))
+            {
+                using (SQLiteCommand cmd = new SQLiteCommand())
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
+                    SQLiteHelper sh = new SQLiteHelper(cmd);
+
+                    //展示数据
+                    LoadData(sh, comboBox7.Text);
+                    conn.Close();
+                }
+            }
         }
 
     }
