@@ -1521,7 +1521,7 @@
             // 
             this.butClear.Location = new System.Drawing.Point(3, 170);
             this.butClear.Name = "butClear";
-            this.butClear.Size = new System.Drawing.Size(78, 33);
+            this.butClear.Size = new System.Drawing.Size(163, 33);
             this.butClear.TabIndex = 0;
             this.butClear.Text = "全部清除";
             this.butClear.UseVisualStyleBackColor = true;
@@ -1529,9 +1529,9 @@
             // 
             // butMove
             // 
-            this.butMove.Location = new System.Drawing.Point(58, 36);
+            this.butMove.Location = new System.Drawing.Point(84, 36);
             this.butMove.Name = "butMove";
-            this.butMove.Size = new System.Drawing.Size(54, 33);
+            this.butMove.Size = new System.Drawing.Size(82, 33);
             this.butMove.TabIndex = 1;
             this.butMove.Text = "平移";
             this.butMove.UseVisualStyleBackColor = true;
@@ -1570,10 +1570,10 @@
             // 
             // button42
             // 
-            this.button42.Location = new System.Drawing.Point(58, 103);
+            this.button42.Location = new System.Drawing.Point(84, 103);
             this.button42.Margin = new System.Windows.Forms.Padding(2);
             this.button42.Name = "button42";
-            this.button42.Size = new System.Drawing.Size(54, 33);
+            this.button42.Size = new System.Drawing.Size(82, 33);
             this.button42.TabIndex = 5;
             this.button42.Text = "云图";
             this.button42.UseVisualStyleBackColor = true;
@@ -1584,7 +1584,7 @@
             this.button21.Location = new System.Drawing.Point(3, 103);
             this.button21.Margin = new System.Windows.Forms.Padding(2);
             this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(54, 33);
+            this.button21.Size = new System.Drawing.Size(82, 33);
             this.button21.TabIndex = 14;
             this.button21.Text = "截图";
             this.button21.UseVisualStyleBackColor = true;
@@ -1595,7 +1595,7 @@
             this.button58.Location = new System.Drawing.Point(3, 137);
             this.button58.Margin = new System.Windows.Forms.Padding(2);
             this.button58.Name = "button58";
-            this.button58.Size = new System.Drawing.Size(54, 33);
+            this.button58.Size = new System.Drawing.Size(163, 33);
             this.button58.TabIndex = 13;
             this.button58.Text = "测距";
             this.button58.UseVisualStyleBackColor = true;
@@ -1606,7 +1606,7 @@
             this.button39.Location = new System.Drawing.Point(3, 69);
             this.button39.Margin = new System.Windows.Forms.Padding(2);
             this.button39.Name = "button39";
-            this.button39.Size = new System.Drawing.Size(54, 33);
+            this.button39.Size = new System.Drawing.Size(163, 33);
             this.button39.TabIndex = 5;
             this.button39.Text = "全览";
             this.button39.UseVisualStyleBackColor = true;
@@ -1616,7 +1616,7 @@
             // 
             this.buttonFeature.Location = new System.Drawing.Point(3, 36);
             this.buttonFeature.Name = "buttonFeature";
-            this.buttonFeature.Size = new System.Drawing.Size(54, 33);
+            this.buttonFeature.Size = new System.Drawing.Size(82, 33);
             this.buttonFeature.TabIndex = 3;
             this.buttonFeature.Text = "特性";
             this.buttonFeature.UseVisualStyleBackColor = true;
@@ -1626,7 +1626,7 @@
             // 
             this.buttonPrimitive.Location = new System.Drawing.Point(3, 2);
             this.buttonPrimitive.Name = "buttonPrimitive";
-            this.buttonPrimitive.Size = new System.Drawing.Size(78, 33);
+            this.buttonPrimitive.Size = new System.Drawing.Size(163, 33);
             this.buttonPrimitive.TabIndex = 2;
             this.buttonPrimitive.Text = "基础功能";
             this.buttonPrimitive.UseVisualStyleBackColor = true;
@@ -3786,6 +3786,7 @@
             this.button68.TabIndex = 27;
             this.button68.Text = "导入窗口测试";
             this.button68.UseVisualStyleBackColor = true;
+            this.button68.Visible = false;
             this.button68.Click += new System.EventHandler(this.button68_Click);
             // 
             // MainForm

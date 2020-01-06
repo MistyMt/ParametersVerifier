@@ -391,11 +391,11 @@ namespace Interface.Forms.DBForms
                     {
                         if (i == 0)
                         {
-                            data.Add(Global.tempLimitHigh);
+                            data.Add(Convert.ToDouble(textBox2.Text));
                         }
                         else
                         {
-                            data.Add(Global.tempLimitLow);
+                            data.Add(Convert.ToDouble(textBox3.Text));
                         }
 
                     }

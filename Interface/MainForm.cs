@@ -2119,9 +2119,17 @@ namespace Interface
             //}
 
             // 多测点查询（不用先选中点）
-            var f = new Interface.Forms.DBForms.Charts();
-            f.ShowDialog();
+            if (Global.dataSourceName != "")
+            {
+                var f = new Interface.Forms.DBForms.Charts();
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("未找到数据库。");
+            }
         }
+
 
         private void button60_Click(object sender, EventArgs e)
         {
