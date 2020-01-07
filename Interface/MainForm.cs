@@ -1868,11 +1868,22 @@ namespace Interface
                         cmd.Connection = conn;
                         SQLiteHelper sh = new SQLiteHelper(cmd);
 
-
+                        #region 读取测点列表
                         try
                         {
+                            //获取表名
+                            var tbListDT = sh.GetTableList();
+                            List<string> tbList = new List<string>();
+                            for (int i = 0; i < tbListDT.Rows.Count; i++)
+                            {
+                                tbList.Add(tbListDT.Rows[i][0].ToString());
+                            }
+                            string tableName = tbList[0];
+
+
+                            //获取测点名列表
                             List<string> columnName = new List<string>();
-                            string sql = "PRAGMA table_info([满载]);";
+                            string sql = "PRAGMA table_info([" + tableName + "]);";
 
                             SQLiteCommand cmd2 = new SQLiteCommand(sql, conn);
                             System.Data.SQLite.SQLiteDataReader dr = cmd2.ExecuteReader();
@@ -1880,6 +1891,7 @@ namespace Interface
                             while (dr.Read())
                             {
                                 columnName.Add(dr[1].ToString());
+
                             }
                             dr.Close();
                             conn.Close();
@@ -1889,6 +1901,7 @@ namespace Interface
                                 colName.Add(columnName[i]);
                             }
                             comboBox5.DataSource = colName;
+                        #endregion
                             //var tableName = "开门";
                             //System.Data.DataTable dt = sh.Select("select name from syscolumns where id = object_id('" + tableName + "');");
 
@@ -1930,7 +1943,7 @@ namespace Interface
                 dr.Close();
                 conn.Close();
             }
-            catch (Exception e)
+            catch (Exception)
             {
             }
 
@@ -2218,6 +2231,34 @@ namespace Interface
 
                 textBox52.Text = f.FileName;
 
+                //获取表名 列表
+                using (SQLiteConnection conn = new SQLiteConnection(config.DataSource))
+                {
+                    using (SQLiteCommand cmd = new SQLiteCommand())
+                    {
+                        conn.Open();
+                        cmd.Connection = conn;
+                        SQLiteHelper sh = new SQLiteHelper(cmd);
+
+
+                        var tbListDT = sh.GetTableList();
+                        List<string> tbList = new List<string>();
+
+                        //string[] tbList = new string[wb.Sheets.Count];
+                        for (int i = 0; i < tbListDT.Rows.Count; i++)
+                        {
+                            tbList.Add(tbListDT.Rows[i][0].ToString());
+                        }
+
+                        for (int i = 0; i < tbList.Count; i++)
+                        {
+                            comboBox7.Items.Add(tbList[i].ToString());
+                        }
+                    }
+                }
+                label84.Visible = true;
+                comboBox7.Visible = true;
+
             }
         }
 
@@ -2380,7 +2421,7 @@ namespace Interface
                         }
                     }
                 }
-                MessageBox.Show("Table created.");
+                MessageBox.Show("建表完成\n准备开始导入数据\n可能需要较长一段时间......","数据库",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
 
 
@@ -2455,7 +2496,7 @@ namespace Interface
 
                         for (int i = 0; i < tbList.Length; i++)
                         {
-                            comboBox7.Items.Add(tbList[i].ToString().Substring(tbList[i].ToString().Length - 2, 2));
+                            comboBox7.Items.Add(tbList[i].ToString());
                         }
 
                         //循环录入所有sheet数据
@@ -2505,6 +2546,8 @@ namespace Interface
                                 sh.Rollback();
                             }
                         }
+                        label84.Visible = true;
+                        comboBox7.Visible = true;
                         //展示数据
                         LoadData(sh, tbList[1]);
                         //关闭Excel
@@ -2515,9 +2558,8 @@ namespace Interface
                         EXC1 = null;
                         System.Runtime.InteropServices.Marshal.ReleaseComObject(EXC1);
                         #endregion
-                        label84.Visible = true;
-                        comboBox7.Visible = true;
-                        button49.Visible = true;
+
+
                     }
 
 
@@ -2661,7 +2703,7 @@ namespace Interface
                         #endregion
                         label84.Visible = true;
                         comboBox7.Visible = true;
-                        button49.Visible = true;
+
                     }
                     if (Global.objectName == "高温热处理炉")
                     {
@@ -3163,6 +3205,23 @@ namespace Interface
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(config.DataSource))
+            {
+                using (SQLiteCommand cmd = new SQLiteCommand())
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
+                    SQLiteHelper sh = new SQLiteHelper(cmd);
+
+                    //展示数据
+                    LoadData(sh, comboBox7.Text);
+                    conn.Close();
+                }
+            }
         }
 
     }
