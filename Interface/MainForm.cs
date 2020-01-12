@@ -3224,5 +3224,40 @@ namespace Interface
             }
         }
 
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private void toolStripMenuItem13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 数据重置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label85_Click(object sender, EventArgs e)
+        {
+            label85.Text = "当前模板为：" + Global.templateName;
+        }
+
     }
 }
