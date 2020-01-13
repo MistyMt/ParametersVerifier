@@ -63,9 +63,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(530, 360);
+            this.button2.Location = new System.Drawing.Point(398, 288);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 41);
+            this.button2.Size = new System.Drawing.Size(91, 33);
             this.button2.TabIndex = 55;
             this.button2.Text = "重置";
             this.button2.UseVisualStyleBackColor = true;
@@ -74,9 +75,10 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(198, 360);
+            this.button1.Location = new System.Drawing.Point(148, 288);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 41);
+            this.button1.Size = new System.Drawing.Size(90, 33);
             this.button1.TabIndex = 54;
             this.button1.Text = "确认";
             this.button1.UseVisualStyleBackColor = true;
@@ -85,34 +87,38 @@
             // textBox12
             // 
             this.textBox12.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox12.Location = new System.Drawing.Point(643, 293);
+            this.textBox12.Location = new System.Drawing.Point(482, 234);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(120, 28);
+            this.textBox12.Size = new System.Drawing.Size(91, 24);
             this.textBox12.TabIndex = 12;
             // 
             // textBox11
             // 
             this.textBox11.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox11.Location = new System.Drawing.Point(398, 293);
+            this.textBox11.Location = new System.Drawing.Point(298, 234);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(120, 28);
+            this.textBox11.Size = new System.Drawing.Size(91, 24);
             this.textBox11.TabIndex = 11;
             // 
             // textBox10
             // 
             this.textBox10.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox10.Location = new System.Drawing.Point(153, 293);
+            this.textBox10.Location = new System.Drawing.Point(115, 234);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(120, 28);
+            this.textBox10.Size = new System.Drawing.Size(91, 24);
             this.textBox10.TabIndex = 10;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(526, 297);
+            this.label14.Location = new System.Drawing.Point(394, 238);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(109, 20);
+            this.label14.Size = new System.Drawing.Size(88, 16);
             this.label14.TabIndex = 50;
             this.label14.Text = "批准人员：";
             // 
@@ -120,9 +126,10 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label13.Location = new System.Drawing.Point(281, 297);
+            this.label13.Location = new System.Drawing.Point(211, 238);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(109, 20);
+            this.label13.Size = new System.Drawing.Size(88, 16);
             this.label13.TabIndex = 49;
             this.label13.Text = "审核人员：";
             // 
@@ -130,9 +137,10 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(36, 297);
+            this.label12.Location = new System.Drawing.Point(27, 238);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(109, 20);
+            this.label12.Size = new System.Drawing.Size(88, 16);
             this.label12.TabIndex = 48;
             this.label12.Text = "编写人员：";
             // 
@@ -140,9 +148,10 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(734, 231);
+            this.label11.Location = new System.Drawing.Point(550, 185);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(29, 20);
+            this.label11.Size = new System.Drawing.Size(24, 16);
             this.label11.TabIndex = 47;
             this.label11.Text = "日";
             this.label11.Visible = false;
@@ -150,9 +159,10 @@
             // textBox9
             // 
             this.textBox9.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox9.Location = new System.Drawing.Point(673, 226);
+            this.textBox9.Location = new System.Drawing.Point(505, 181);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(46, 28);
+            this.textBox9.Size = new System.Drawing.Size(36, 24);
             this.textBox9.TabIndex = 9;
             this.textBox9.Visible = false;
             // 
@@ -160,9 +170,10 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(638, 231);
+            this.label10.Location = new System.Drawing.Point(478, 185);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(29, 20);
+            this.label10.Size = new System.Drawing.Size(24, 16);
             this.label10.TabIndex = 45;
             this.label10.Text = "月";
             this.label10.Visible = false;
@@ -170,9 +181,10 @@
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox8.Location = new System.Drawing.Point(579, 227);
+            this.textBox8.Location = new System.Drawing.Point(434, 182);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(46, 28);
+            this.textBox8.Size = new System.Drawing.Size(36, 24);
             this.textBox8.TabIndex = 8;
             this.textBox8.Visible = false;
             // 
@@ -180,9 +192,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(544, 232);
+            this.label9.Location = new System.Drawing.Point(408, 186);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(29, 20);
+            this.label9.Size = new System.Drawing.Size(24, 16);
             this.label9.TabIndex = 43;
             this.label9.Text = "年";
             this.label9.Visible = false;
@@ -190,9 +203,10 @@
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox7.Location = new System.Drawing.Point(489, 227);
+            this.textBox7.Location = new System.Drawing.Point(367, 182);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(46, 28);
+            this.textBox7.Size = new System.Drawing.Size(36, 24);
             this.textBox7.TabIndex = 7;
             this.textBox7.Visible = false;
             // 
@@ -200,9 +214,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(443, 234);
+            this.label8.Location = new System.Drawing.Point(332, 187);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 20);
+            this.label8.Size = new System.Drawing.Size(24, 16);
             this.label8.TabIndex = 41;
             this.label8.Text = "至";
             // 
@@ -210,9 +225,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(393, 232);
+            this.label7.Location = new System.Drawing.Point(295, 186);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 20);
+            this.label7.Size = new System.Drawing.Size(24, 16);
             this.label7.TabIndex = 40;
             this.label7.Text = "日";
             this.label7.Visible = false;
@@ -220,9 +236,10 @@
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox6.Location = new System.Drawing.Point(331, 227);
+            this.textBox6.Location = new System.Drawing.Point(248, 182);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(46, 28);
+            this.textBox6.Size = new System.Drawing.Size(36, 24);
             this.textBox6.TabIndex = 6;
             this.textBox6.Visible = false;
             // 
@@ -230,9 +247,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(296, 232);
+            this.label6.Location = new System.Drawing.Point(222, 186);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 20);
+            this.label6.Size = new System.Drawing.Size(24, 16);
             this.label6.TabIndex = 38;
             this.label6.Text = "月";
             this.label6.Visible = false;
@@ -240,9 +258,10 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox5.Location = new System.Drawing.Point(239, 227);
+            this.textBox5.Location = new System.Drawing.Point(179, 182);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(46, 28);
+            this.textBox5.Size = new System.Drawing.Size(36, 24);
             this.textBox5.TabIndex = 5;
             this.textBox5.Visible = false;
             // 
@@ -250,9 +269,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(204, 232);
+            this.label5.Location = new System.Drawing.Point(153, 186);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 20);
+            this.label5.Size = new System.Drawing.Size(24, 16);
             this.label5.TabIndex = 36;
             this.label5.Text = "年";
             this.label5.Visible = false;
@@ -260,9 +280,10 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox4.Location = new System.Drawing.Point(151, 227);
+            this.textBox4.Location = new System.Drawing.Point(113, 182);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(46, 28);
+            this.textBox4.Size = new System.Drawing.Size(36, 24);
             this.textBox4.TabIndex = 4;
             this.textBox4.Visible = false;
             // 
@@ -270,63 +291,70 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(36, 235);
+            this.label4.Location = new System.Drawing.Point(27, 188);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 20);
+            this.label4.Size = new System.Drawing.Size(88, 16);
             this.label4.TabIndex = 34;
             this.label4.Text = "验证时间：";
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox3.Location = new System.Drawing.Point(151, 169);
+            this.textBox3.Location = new System.Drawing.Point(113, 135);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(612, 28);
+            this.textBox3.Size = new System.Drawing.Size(460, 24);
             this.textBox3.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(36, 173);
+            this.label3.Location = new System.Drawing.Point(27, 138);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 20);
+            this.label3.Size = new System.Drawing.Size(88, 16);
             this.label3.TabIndex = 32;
             this.label3.Text = "验证地点：";
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox2.Location = new System.Drawing.Point(151, 107);
+            this.textBox2.Location = new System.Drawing.Point(113, 86);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(613, 28);
+            this.textBox2.Size = new System.Drawing.Size(461, 24);
             this.textBox2.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(36, 111);
+            this.label2.Location = new System.Drawing.Point(27, 89);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 20);
+            this.label2.Size = new System.Drawing.Size(88, 16);
             this.label2.TabIndex = 30;
             this.label2.Text = "验证对象：";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(151, 45);
+            this.textBox1.Location = new System.Drawing.Point(113, 36);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(613, 28);
+            this.textBox1.Size = new System.Drawing.Size(461, 24);
             this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(36, 49);
+            this.label1.Location = new System.Drawing.Point(27, 39);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 20);
+            this.label1.Size = new System.Drawing.Size(88, 16);
             this.label1.TabIndex = 28;
             this.label1.Text = "委托单位：";
             // 
@@ -334,9 +362,10 @@
             // 
             this.dateTimePicker1.CustomFormat = "yyyy-MM-dd_dddd";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(151, 232);
+            this.dateTimePicker1.Location = new System.Drawing.Point(113, 186);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
+            this.dateTimePicker1.Size = new System.Drawing.Size(178, 21);
             this.dateTimePicker1.TabIndex = 56;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -344,17 +373,18 @@
             // 
             this.dateTimePicker2.CustomFormat = "yyyy-MM-dd_dddd";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(564, 232);
+            this.dateTimePicker2.Location = new System.Drawing.Point(395, 186);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 25);
+            this.dateTimePicker2.Size = new System.Drawing.Size(178, 21);
             this.dateTimePicker2.TabIndex = 56;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // GeneralInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 441);
+            this.ClientSize = new System.Drawing.Size(627, 353);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button2);
@@ -386,6 +416,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GeneralInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GeneralInfo";

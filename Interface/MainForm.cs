@@ -23,6 +23,7 @@ using System.Diagnostics;
 using Interface.Forms.DBForms;
 using Interface.Forms.FormsOfWrite2;
 using Interface.Forms.FormsOfWrite3;
+using System.Text.RegularExpressions;
 
 
 
@@ -2419,9 +2420,90 @@ namespace Interface
                             System.Runtime.InteropServices.Marshal.ReleaseComObject(EXC1);
                             #endregion
                         }
+                        if (Global.objectName == "高温热处理炉")
+                        {
+                            #region 建表
+                            //查询excel页名和页数
+                            string fileName = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.dataSourceName;
+                            Microsoft.Office.Interop.Excel.Application EXC1 = new Microsoft.Office.Interop.Excel.Application();
+                            EXC1.Visible = false;
+                            Microsoft.Office.Interop.Excel.Workbooks wbs = EXC1.Workbooks;
+                            Microsoft.Office.Interop.Excel._Workbook wb = wbs.Add(fileName);
+                            //Microsoft.Office.Interop.Excel._Worksheet exsheet = wb.Sheets[ii];
+                            //string sName = exsheet.Name;
+                            //var s = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 3]).Text;
+                            for (int i = 0; i < wb.Sheets.Count; i++)
+                            {
+                                //当前页exsheet
+                                Microsoft.Office.Interop.Excel._Worksheet exsheet = wb.Sheets[i + 1];
+
+                                //测点名列表 + 测点数据类型列表
+                                List<string> colNames2 = new List<string>();
+                                List<ColType> colTypes2 = new List<ColType>();
+                                int strRow = 1;//检索初始行
+                                int strCol = 1;//检索初始列
+                                bool fdColName = false;
+                                //开始检索“序列号”标识符
+                                while (!fdColName)
+                                {
+                                    if (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[strRow, 1]).Text == "序列号")
+                                    {
+                                        //检索到“序列号”后开始循环添加标识符后的测点名到colNames2
+                                        while (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[strRow, strCol + 1]).Text != null)
+                                        {
+                                            colNames2.Add(((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[strRow, strCol + 1]).Text);
+                                            colTypes2.Add(ColType.Decimal);
+                                            strCol += 1;
+                                        }
+                                        fdColName = true;
+                                    }
+                                    else
+                                    {
+                                        strRow += 1;
+                                    }
+                                }
+                                conn.Open();
+                                cmd.Connection = conn;
+                                SQLiteHelper sh = new SQLiteHelper(cmd);
+                                //表名
+                                SQLiteTable tb = new SQLiteTable(Global.objectName + exsheet.Name + "sensorData");
+
+                                //字段名
+                                string[] colNames1 = new string[] { "ID", "状况", "检测时间" };
+                                string[] colNames = new string[colNames1.Length + colNames2.ToArray().Length];
+                                colNames1.CopyTo(colNames, 0);
+                                colNames2.CopyTo(colNames, colNames1.Length);
+
+                                //字段数据类型
+                                ColType[] colTypes1 = new ColType[] { ColType.Integer, ColType.Text, ColType.Text };
+                                ColType[] colTypes = new ColType[colTypes1.Length + colTypes2.ToArray().Length];
+                                colTypes1.CopyTo(colTypes, 0);
+                                colTypes2.CopyTo(colTypes, colTypes1.Length);
+
+
+                                tb.Columns.Add(new SQLiteColumn("ID", true));
+                                for (int ii = 2; ii < colNames.Length + 1; ii++)
+                                {
+                                    tb.Columns.Add(new SQLiteColumn(colNames[ii - 1], colTypes[ii - 1]));
+                                }
+
+                                //sh.DropTable(textBox1.Text);
+                                sh.CreateTable(tb);
+
+
+                                //展示sheet数据by“ID”
+                                //LoadData(sh, Global.objectName + "sensorData");
+                                conn.Close();
+                            }
+                            wb.Close();
+                            wbs.Close();
+                            EXC1.Quit();
+                            System.Runtime.InteropServices.Marshal.ReleaseComObject(EXC1);
+                            #endregion
+                        }
                     }
                 }
-                MessageBox.Show("建表完成\n准备开始导入数据\n可能需要较长一段时间......","数据库",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("建表完成\n准备开始导入数据\n可能需要较长一段时间......", "数据库", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
 
@@ -2461,6 +2543,65 @@ namespace Interface
             loading.ShowDialog();
             labLoading.BringToFront();
             labLoading.Show();
+        }
+        /// <summary>  
+        /// 使用正则表达式判断是否为日期  
+        /// </summary>  
+        /// <param name="str" type=string></param>  
+        /// <returns name="isDateTime" type=bool></returns>  
+        public bool IsDateTime(string str)
+        {
+            bool isDateTime = false;
+            // yyyy/MM/dd  
+            if (Regex.IsMatch(str, "^(?<year>\\d{2,4})/(?<month>\\d{1,2})/(?<day>\\d{1,2})$"))
+                isDateTime = true;
+            // yyyy-MM-dd   
+            else if (Regex.IsMatch(str, "^(?<year>\\d{2,4})-(?<month>\\d{1,2})-(?<day>\\d{1,2})$"))
+                isDateTime = true;
+            // yyyy.MM.dd   
+            else if (Regex.IsMatch(str, "^(?<year>\\d{2,4})[.](?<month>\\d{1,2})[.](?<day>\\d{1,2})$"))
+                isDateTime = true;
+            // yyyy年MM月dd日  
+            else if (Regex.IsMatch(str, "^((?<year>\\d{2,4})年)?(?<month>\\d{1,2})月((?<day>\\d{1,2})日)?$"))
+                isDateTime = true;
+            // yyyy年MM月dd日  
+            else if (Regex.IsMatch(str, "^((?<year>\\d{2,4})年)?(正|一|二|三|四|五|六|七|八|九|十|十一|十二)月((一|二|三|四|五|六|七|八|九|十){1,3}日)?$"))
+                isDateTime = true;
+
+            // yyyy年MM月dd日  
+            else if (Regex.IsMatch(str, "^(零|〇|一|二|三|四|五|六|七|八|九|十){2,4}年((正|一|二|三|四|五|六|七|八|九|十|十一|十二)月((一|二|三|四|五|六|七|八|九|十){1,3}(日)?)?)?$"))
+                isDateTime = true;
+            // yyyy年  
+            //else if (Regex.IsMatch(str, "^(?<year>\\d{2,4})年$"))  
+            //    isDateTime = true;  
+
+            // 农历1  
+            else if (Regex.IsMatch(str, "^(甲|乙|丙|丁|戊|己|庚|辛|壬|癸)(子|丑|寅|卯|辰|巳|午|未|申|酉|戌|亥)年((正|一|二|三|四|五|六|七|八|九|十|十一|十二)月((一|二|三|四|五|六|七|八|九|十){1,3}(日)?)?)?$"))
+                isDateTime = true;
+            // 农历2  
+            else if (Regex.IsMatch(str, "^((甲|乙|丙|丁|戊|己|庚|辛|壬|癸)(子|丑|寅|卯|辰|巳|午|未|申|酉|戌|亥)年)?(正|一|二|三|四|五|六|七|八|九|十|十一|十二)月初(一|二|三|四|五|六|七|八|九|十)$"))
+                isDateTime = true;
+
+            // XX时XX分XX秒  
+            else if (Regex.IsMatch(str, "^(?<hour>\\d{1,2})(时|点)(?<minute>\\d{1,2})分((?<second>\\d{1,2})秒)?$"))
+                isDateTime = true;
+            // XX时XX分XX秒  
+            else if (Regex.IsMatch(str, "^((零|一|二|三|四|五|六|七|八|九|十){1,3})(时|点)((零|一|二|三|四|五|六|七|八|九|十){1,3})分(((零|一|二|三|四|五|六|七|八|九|十){1,3})秒)?$"))
+                isDateTime = true;
+            // XX分XX秒  
+            else if (Regex.IsMatch(str, "^(?<minute>\\d{1,2})分(?<second>\\d{1,2})秒$"))
+                isDateTime = true;
+            // XX分XX秒  
+            else if (Regex.IsMatch(str, "^((零|一|二|三|四|五|六|七|八|九|十){1,3})分((零|一|二|三|四|五|六|七|八|九|十){1,3})秒$"))
+                isDateTime = true;
+
+            // XX时  
+            else if (Regex.IsMatch(str, "\\b(?<hour>\\d{1,2})(时|点钟)\\b"))
+                isDateTime = true;
+            else
+                isDateTime = false;
+
+            return isDateTime;
         }
         private void button65_Click(object sender, EventArgs e)
         {
@@ -2558,8 +2699,8 @@ namespace Interface
                         EXC1 = null;
                         System.Runtime.InteropServices.Marshal.ReleaseComObject(EXC1);
                         #endregion
-
-
+                        label84.Visible = true;
+                        comboBox7.Visible = true;
                     }
 
 
@@ -2707,7 +2848,212 @@ namespace Interface
                     }
                     if (Global.objectName == "高温热处理炉")
                     {
+                        #region 导入
+                        //打开excel
+                        string fileName = Environment.CurrentDirectory.ToString() + "\\bin\\" + Global.dataSourceName;
+                        Microsoft.Office.Interop.Excel.Application EXC1 = new Microsoft.Office.Interop.Excel.Application();
+                        EXC1.Visible = false;
+                        Microsoft.Office.Interop.Excel.Workbooks wbs = EXC1.Workbooks;
+                        Microsoft.Office.Interop.Excel._Workbook wb = wbs.Add(fileName);
+                        //连接数据库
+                        conn.Open();
+                        cmd.Connection = conn;
+                        SQLiteHelper sh = new SQLiteHelper(cmd);
 
+                        //获取表名数组
+                        var tbListDT = sh.GetTableList();
+                        string[] tbList = new string[wb.Sheets.Count];
+                        for (int i = 0; i < tbListDT.Rows.Count; i++)
+                        {
+                            tbList[i] = tbListDT.Rows[i][0].ToString();
+                        }
+
+                        //添加切换数据类型下拉框的选项
+                        for (int i = 0; i < tbList.Length; i++)
+                        {
+                            string listItem = tbList[i];
+                            comboBox7.Items.Add(listItem);
+                        }
+
+                        //循环录入所有sheet数据
+                        for (int ii = 1; ii <= wb.Sheets.Count; ii++)
+                        {
+                            int count = sh.ExecuteScalar<int>("select count(*) from " + tbList[ii - 1] + ";") + 1;
+
+                            //创建sqlite事务
+                            sh.BeginTransaction();
+                            try
+                            {
+                                Microsoft.Office.Interop.Excel._Worksheet exsheet = wb.Sheets[ii];
+                                string sName = exsheet.Name;
+                                int sRowcount = exsheet.UsedRange.Rows.Count;
+                                exsheet.Activate();
+
+                                {
+                                    int strRow = 1;//检索初始行
+                                    bool fdColName = false;
+                                    //开始检索“Time”标识符
+                                    while (!fdColName)
+                                    {
+                                        if (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[strRow, 1]).Text == "Time")
+                                        {
+                                            for (int i = strRow + 1; i <= sRowcount; i++)
+                                            {
+                                                //依行次读取excel数据
+                                                var dic = new Dictionary<string, object>();
+                                                dic["ID"] = count + i - 3;
+                                                dic["状况"] = sName.Substring(0, 2);
+                                                //tbList[ii - 1].Substring(tbList[ii - 1].Length - 3, 2);
+                                                dic["检测时间"] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 1]).Text;
+
+                                                //判断dic["检测时间"]是不是日期
+                                                string[] timeStrs = Regex.Split(dic["检测时间"].ToString(), @"\s+");
+                                                if (!IsDateTime(timeStrs[0]))
+                                                {
+                                                    continue;//若不是日期则跳到下一行
+                                                }
+                                                //循环录入测点数据
+
+
+                                                List<string> colNames2 = new List<string>();
+                                                List<ColType> colTypes2 = new List<ColType>();
+                                                int strRow2 = 1;//检索初始行
+                                                int strCol = 1;//检索初始列
+                                                bool fdColName2 = false;
+                                                //开始检索“序列号”标识符
+                                                while (!fdColName2)
+                                                {
+                                                    if (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[strRow2, 1]).Text == "序列号")
+                                                    {
+                                                        //检索到“序列号”后开始循环添加标识符后的测点名到colNames2
+                                                        while (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[strRow2, strCol + 1]).Text != null)
+                                                        {
+                                                            colNames2.Add(((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[strRow2, strCol + 1]).Text);
+                                                            strCol += 1;
+                                                        }
+                                                        fdColName2 = true;
+                                                    }
+                                                    else
+                                                    {
+                                                        strRow2 += 1;
+                                                    }
+                                                }
+                                                for (int k = 0; k < colNames2.Count; k++)
+                                                {
+                                                    dic[colNames2[k].ToString()] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, k + 2]).Text;
+                                                }
+
+
+                                                //插入数据库
+                                                sh.Insert(tbList[ii - 1], dic);
+                                            }
+
+                                            fdColName = true;
+                                        }
+                                        else
+                                        {
+                                            strRow += 1;
+                                        }
+                                    }
+                                }
+
+                                if (tbList[ii - 1].Substring(tbList[ii - 1].Length - 2, 2) == "废弃")
+                                {
+                                    for (int i = 3; i <= sRowcount; i++)
+                                    {
+                                        //依行次读取excel数据
+                                        var dic = new Dictionary<string, object>();
+                                        dic["ID"] = count + i - 3;
+                                        dic["状况"] = sName.Substring(0, 2);
+                                        //tbList[ii - 1].Substring(tbList[ii - 1].Length - 3, 2);
+                                        dic["检测时间"] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 1]).Text;
+                                        if (dic["检测时间"].ToString() == "最小" || dic["检测时间"].ToString() == "最大" || dic["检测时间"].ToString() == "平均" || dic["检测时间"].ToString() == string.Empty)
+                                        {
+                                            continue;
+                                        }
+                                        //循环录入测点数据
+                                        int sColcount = exsheet.UsedRange.Columns.Count;//总列数
+                                        int num = 0;
+                                        for (int iii = 0; iii < sColcount; iii++)
+                                        {
+                                            if (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, iii + 1]).Text != string.Empty)
+                                            {
+                                                num += 1;
+                                            }
+                                        }
+                                        sColcount = num;
+                                        string[] colNames2 = new string[sColcount - 1];//测点名列表
+                                        for (int j = 0; j < sColcount - 1; j++)
+                                        {
+                                            colNames2[j] = "T" + ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, j + 2]).Text;
+                                        }
+
+                                        for (int k = 0; k < sColcount - 1; k++)
+                                        {
+                                            dic[colNames2[k]] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, k + 2]).Text;
+                                        }
+                                        //插入数据库
+                                        sh.Insert(tbList[ii - 1], dic);
+                                    }
+                                }
+                                else
+                                {
+                                    for (int i = 8; i <= sRowcount; i++)
+                                    {
+                                        //依行次读取excel数据
+                                        var dic = new Dictionary<string, object>();
+                                        dic["ID"] = count + i - 8;
+                                        dic["状况"] = sName.Substring(0, 2);
+                                        //tbList[ii - 1].Substring(tbList[ii - 1].Length - 3, 2);
+                                        dic["检测时间"] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 1]).Text;
+                                        if (dic["检测时间"].ToString() == "最小" || dic["检测时间"].ToString() == "最大" || dic["检测时间"].ToString() == "平均" || dic["检测时间"].ToString() == string.Empty)
+                                        {
+                                            continue;
+                                        }
+                                        //循环录入测点数据
+                                        int sColcount = exsheet.UsedRange.Columns.Count;//总列数
+                                        int num = 0;
+                                        for (int iii = 0; iii < sColcount; iii++)
+                                        {
+                                            if (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, iii + 1]).Text != string.Empty)
+                                            {
+                                                num += 1;
+                                            }
+                                        }
+                                        sColcount = num;
+                                        string[] colNames2 = new string[sColcount - 1];//测点名列表
+                                        for (int j = 0; j < sColcount - 1; j++)
+                                        {
+                                            colNames2[j] = "T" + ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, j + 2]).Text;
+                                        }
+
+                                        for (int k = 0; k < sColcount - 1; k++)
+                                        {
+                                            dic[colNames2[k]] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, k + 2]).Text;
+                                        }
+                                        //插入数据库
+                                        sh.Insert(tbList[ii - 1], dic);
+                                    }
+                                }
+
+                                sh.Commit();
+                            }
+                            catch (Exception)
+                            {
+                                sh.Rollback();
+                            }
+                        }
+                        //展示数据
+                        LoadData(sh, tbList[0]);
+                        //关闭Excel
+                        conn.Close();
+                        wb.Close();
+                        wbs.Close();
+                        EXC1.Quit();
+                        System.Runtime.InteropServices.Marshal.ReleaseComObject(EXC1);
+                        #endregion
+                        label84.Visible = true;
+                        comboBox7.Visible = true;
                     }
 
                 }
