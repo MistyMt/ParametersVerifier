@@ -2449,7 +2449,7 @@ namespace Interface
                                     if (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[strRow, 1]).Text == "序列号")
                                     {
                                         //检索到“序列号”后开始循环添加标识符后的测点名到colNames2
-                                        while (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[strRow, strCol + 1]).Text != null)
+                                        while (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[strRow, strCol + 1]).Text != "")
                                         {
                                             colNames2.Add(((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[strRow, strCol + 1]).Text);
                                             colTypes2.Add(ColType.Decimal);
@@ -2901,8 +2901,8 @@ namespace Interface
                                             {
                                                 //依行次读取excel数据
                                                 var dic = new Dictionary<string, object>();
-                                                dic["ID"] = count + i - 3;
-                                                dic["状况"] = sName.Substring(0, 2);
+                                                dic["ID"] = count + i - (strRow + 1);
+                                                dic["状况"] = sName;
                                                 //tbList[ii - 1].Substring(tbList[ii - 1].Length - 3, 2);
                                                 dic["检测时间"] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 1]).Text;
 
@@ -2926,7 +2926,7 @@ namespace Interface
                                                     if (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[strRow2, 1]).Text == "序列号")
                                                     {
                                                         //检索到“序列号”后开始循环添加标识符后的测点名到colNames2
-                                                        while (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[strRow2, strCol + 1]).Text != null)
+                                                        while (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[strRow2, strCol + 1]).Text != "")
                                                         {
                                                             colNames2.Add(((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[strRow2, strCol + 1]).Text);
                                                             strCol += 1;
@@ -2957,84 +2957,7 @@ namespace Interface
                                     }
                                 }
 
-                                if (tbList[ii - 1].Substring(tbList[ii - 1].Length - 2, 2) == "废弃")
-                                {
-                                    for (int i = 3; i <= sRowcount; i++)
-                                    {
-                                        //依行次读取excel数据
-                                        var dic = new Dictionary<string, object>();
-                                        dic["ID"] = count + i - 3;
-                                        dic["状况"] = sName.Substring(0, 2);
-                                        //tbList[ii - 1].Substring(tbList[ii - 1].Length - 3, 2);
-                                        dic["检测时间"] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 1]).Text;
-                                        if (dic["检测时间"].ToString() == "最小" || dic["检测时间"].ToString() == "最大" || dic["检测时间"].ToString() == "平均" || dic["检测时间"].ToString() == string.Empty)
-                                        {
-                                            continue;
-                                        }
-                                        //循环录入测点数据
-                                        int sColcount = exsheet.UsedRange.Columns.Count;//总列数
-                                        int num = 0;
-                                        for (int iii = 0; iii < sColcount; iii++)
-                                        {
-                                            if (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, iii + 1]).Text != string.Empty)
-                                            {
-                                                num += 1;
-                                            }
-                                        }
-                                        sColcount = num;
-                                        string[] colNames2 = new string[sColcount - 1];//测点名列表
-                                        for (int j = 0; j < sColcount - 1; j++)
-                                        {
-                                            colNames2[j] = "T" + ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, j + 2]).Text;
-                                        }
 
-                                        for (int k = 0; k < sColcount - 1; k++)
-                                        {
-                                            dic[colNames2[k]] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, k + 2]).Text;
-                                        }
-                                        //插入数据库
-                                        sh.Insert(tbList[ii - 1], dic);
-                                    }
-                                }
-                                else
-                                {
-                                    for (int i = 8; i <= sRowcount; i++)
-                                    {
-                                        //依行次读取excel数据
-                                        var dic = new Dictionary<string, object>();
-                                        dic["ID"] = count + i - 8;
-                                        dic["状况"] = sName.Substring(0, 2);
-                                        //tbList[ii - 1].Substring(tbList[ii - 1].Length - 3, 2);
-                                        dic["检测时间"] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, 1]).Text;
-                                        if (dic["检测时间"].ToString() == "最小" || dic["检测时间"].ToString() == "最大" || dic["检测时间"].ToString() == "平均" || dic["检测时间"].ToString() == string.Empty)
-                                        {
-                                            continue;
-                                        }
-                                        //循环录入测点数据
-                                        int sColcount = exsheet.UsedRange.Columns.Count;//总列数
-                                        int num = 0;
-                                        for (int iii = 0; iii < sColcount; iii++)
-                                        {
-                                            if (((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, iii + 1]).Text != string.Empty)
-                                            {
-                                                num += 1;
-                                            }
-                                        }
-                                        sColcount = num;
-                                        string[] colNames2 = new string[sColcount - 1];//测点名列表
-                                        for (int j = 0; j < sColcount - 1; j++)
-                                        {
-                                            colNames2[j] = "T" + ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[1, j + 2]).Text;
-                                        }
-
-                                        for (int k = 0; k < sColcount - 1; k++)
-                                        {
-                                            dic[colNames2[k]] = ((Microsoft.Office.Interop.Excel.Range)exsheet.Cells[i, k + 2]).Text;
-                                        }
-                                        //插入数据库
-                                        sh.Insert(tbList[ii - 1], dic);
-                                    }
-                                }
 
                                 sh.Commit();
                             }
@@ -3136,7 +3059,7 @@ namespace Interface
 
                 OpenFileDialog fd = new OpenFileDialog();//首先根据打开文件对话框，选择excel表格
                 fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                fd.Filter = "表格|*.xls|所有文件(*.*)|*.*";//打开文件对话框筛选器
+                fd.Filter = "表格|*.xls;*.xlsx|所有文件(*.*)|*.*";//打开文件对话框筛选器
                 string strPath;//文件完整的路径名
                 if (fd.ShowDialog() == DialogResult.OK)
                 {
@@ -3164,6 +3087,7 @@ namespace Interface
             }
             catch (Exception)
             {
+                MessageBox.Show("导入Excel错误。");
             }
         }
 
